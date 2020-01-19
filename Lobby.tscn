@@ -1,0 +1,147 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://VarelaRound-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/Back.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.941176, 0.203922, 0.156863, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.941176, 0.203922, 0.156863, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="DynamicFont" id=10]
+size = 250
+outline_size = 5
+outline_color = Color( 0.941176, 0.203922, 0.156863, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
+draw_center = false
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.329412, 0.627451, 0.309804, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
+draw_center = false
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.329412, 0.627451, 0.309804, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 250
+outline_size = 5
+outline_color = Color( 0.329412, 0.627451, 0.309804, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
+draw_center = false
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.941176, 0.203922, 0.156863, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
+
+[node name="Lobby" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 1260, 310 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 540.0 ],
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ 970.0 ]
+}
+
+[node name="Back" type="Button" parent="."]
+margin_left = 980.0
+margin_top = 550.0
+margin_right = 1900.0
+margin_bottom = 1060.0
+rect_pivot_offset = Vector2( 450, 210 )
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/focus = SubResource( 12 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color_disabled = Color( 0.952941, 0.843137, 0.329412, 1 )
+custom_colors/font_color = Color( 0.952941, 0.843137, 0.329412, 1 )
+custom_colors/font_color_hover = Color( 0.941176, 0.203922, 0.156863, 1 )
+custom_colors/font_color_pressed = Color( 0.941176, 0.203922, 0.156863, 1 )
+text = "back"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ready" type="Button" parent="."]
+margin_left = 980.0
+margin_top = 20.0
+margin_right = 1900.0
+margin_bottom = 530.0
+rect_pivot_offset = Vector2( 450, 210 )
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 15 )
+custom_styles/normal = SubResource( 15 )
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color_disabled = Color( 0.952941, 0.843137, 0.329412, 1 )
+custom_colors/font_color = Color( 0.952941, 0.843137, 0.329412, 1 )
+custom_colors/font_color_hover = Color( 0.329412, 0.627451, 0.309804, 1 )
+custom_colors/font_color_pressed = Color( 0.329412, 0.627451, 0.309804, 1 )
+text = "ready"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Players" type="PanelContainer" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 960.0
+margin_bottom = 1060.0
+custom_styles/panel = SubResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

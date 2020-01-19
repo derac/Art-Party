@@ -15,9 +15,13 @@ _global_script_class_icons={
 
 [application]
 
-config/name="UDP-Broadcast-Chat"
-run/main_scene="res://Main.tscn"
+config/name="Draw, Pass, Guess"
+run/main_scene="res://Info.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Global.gd"
 
 [display]
 
@@ -30,4 +34,4 @@ window/stretch/aspect="keep"
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+environment/default_clear_color=Color( 0.882353, 0.882353, 0.87451, 1 )
