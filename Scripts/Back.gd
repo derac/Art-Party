@@ -9,4 +9,5 @@ func _process(delta):
 	pass
 
 func _pressed():
+	Global.game_server = false
 	get_tree().change_scene_to(next_scene)

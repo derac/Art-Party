@@ -3,7 +3,7 @@
 [ext_resource path="res://VarelaRound-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/Back.gd" type="Script" id=2]
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
 border_width_left = 20
 border_width_top = 20
@@ -15,7 +15,7 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="StyleBoxFlat" id=11]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
 border_width_left = 20
 border_width_top = 20
@@ -27,13 +27,13 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=3]
 size = 250
 outline_size = 5
 outline_color = Color( 0.941176, 0.203922, 0.156863, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
 draw_center = false
 border_width_left = 20
@@ -47,7 +47,7 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
 
-[sub_resource type="StyleBoxFlat" id=15]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
 draw_center = false
 border_width_left = 20
@@ -61,13 +61,13 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=6]
 size = 250
 outline_size = 5
 outline_color = Color( 0.329412, 0.627451, 0.309804, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=16]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
 draw_center = false
 border_width_left = 20
@@ -98,12 +98,12 @@ margin_right = 1900.0
 margin_bottom = 1060.0
 rect_pivot_offset = Vector2( 450, 210 )
 mouse_default_cursor_shape = 2
-custom_styles/hover = SubResource( 12 )
-custom_styles/pressed = SubResource( 12 )
-custom_styles/focus = SubResource( 12 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 11 )
-custom_fonts/font = SubResource( 10 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_disabled = Color( 0.952941, 0.843137, 0.329412, 1 )
 custom_colors/font_color = Color( 0.952941, 0.843137, 0.329412, 1 )
 custom_colors/font_color_hover = Color( 0.941176, 0.203922, 0.156863, 1 )
@@ -121,12 +121,12 @@ margin_right = 1900.0
 margin_bottom = 530.0
 rect_pivot_offset = Vector2( 450, 210 )
 mouse_default_cursor_shape = 2
-custom_styles/hover = SubResource( 9 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = SubResource( 9 )
-custom_styles/disabled = SubResource( 15 )
-custom_styles/normal = SubResource( 15 )
-custom_fonts/font = SubResource( 14 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0.952941, 0.843137, 0.329412, 1 )
 custom_colors/font_color = Color( 0.952941, 0.843137, 0.329412, 1 )
 custom_colors/font_color_hover = Color( 0.329412, 0.627451, 0.309804, 1 )
@@ -141,7 +141,7 @@ margin_left = 20.0
 margin_top = 20.0
 margin_right = 960.0
 margin_bottom = 1060.0
-custom_styles/panel = SubResource( 16 )
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
