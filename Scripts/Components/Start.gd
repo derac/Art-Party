@@ -1,6 +1,6 @@
 extends Button
 
-var lobby_scene = load("res://Screens/Lobby.tscn")
+var lobby_scene = preload("res://Screens/Lobby.tscn")
 
 func _process(_delta):
 	if is_hovered():
@@ -13,5 +13,6 @@ func _process(_delta):
 func _pressed():
 	var err : int = Game_Server.start_serving(3)
 	if err == OK:
+		UDP_Server.stop_listening()
 		get_tree().change_scene_to(lobby_scene)
 

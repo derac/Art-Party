@@ -1,20 +1,14 @@
 extends Node
 
-var Name_Generator := load("res://Scripts/Utility/name-generator.gd")
+var Name_Generator := preload("res://Scripts/Utility/name-generator.gd")
 
 var my_name := ""
 var udp_data := {} setget udp_data_set
 signal udp_data_changed
-var game_data := {} setget game_data_set
-signal game_data_changed
 
 func udp_data_set(value):
 	udp_data = value
 	emit_signal("udp_data_changed")
-
-func game_data_set(value):
-	game_data = value
-	emit_signal("game_data_changed")
 
 func _ready() -> void:
 	OS.set_borderless_window(true)
@@ -23,7 +17,7 @@ func _ready() -> void:
 	OS.set_window_position(Vector2(0, 0))
 	
 	randomize()
-	my_name = Name_Generator.generate(3,7)
+	my_name = Name_Generator.generate(3,5)
 	
 	get_tree().set_auto_accept_quit(false)
 
