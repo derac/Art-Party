@@ -3,8 +3,15 @@ extends Node
 var udp := PacketPeerUDP.new()
 const PORT = 23572
 var heartbeat_timer := OS.get_system_time_msecs()
-var listening := true
+var listening := true setget set_listening
 var broadcasting := true
+
+func set_listening(new_value : bool) -> void:
+	if new_value == false:
+		listening = false
+		Global.udp_data = {}
+	else:
+		listening = true
 
 func _ready():
 	# Broadcasting setup
@@ -23,10 +30,12 @@ func process_udp():
 		if inc_var is String and Global.udp_data.has(inc_ip):
 			if inc_var == "remove":
 				Global.udp_data.erase(inc_ip)
+				# Crappy workaround to trigger setter
+				Global.udp_data_set(Global.udp_data)
 			if inc_var == "stop_serving":
-				Global.udp_data[inc_ip]["serving"] = false
+				Global.udp_data[inc_ip]["is_server"] = false
 		if (inc_var is Dictionary) and inc_var.has("name")\
-		and inc_var.has("serving") and inc_var.has("port"):
+		and inc_var.has("is_server") and inc_var.has("port"):
 			inc_var["last_tick"] = OS.get_system_time_msecs()
 			Global.udp_data[inc_ip] = inc_var
 
@@ -35,26 +44,15 @@ func send_heartbeat():
 		if OS.get_system_time_msecs() - heartbeat_timer > 500:
 			heartbeat_timer = OS.get_system_time_msecs()
 			udp.put_var({"name": Global.my_name,
-						 "serving": Game_Server.serving,
+						 "is_server": Game_Server.is_server,
 						 "port": Game_Server.server_port})
 			# Remove inactive players
 			if listening:
 				for ip in Global.udp_data.keys():
 					if heartbeat_timer - Global.udp_data[ip]["last_tick"] > 5000:
 						Global.udp_data.erase(ip)
-
-func stop_listening():
-	listening = false
-	Global.udp_data = {}
-
-func start_listening():
-	listening = true
-
-func start_broadcasting():
-	broadcasting = true
-
-func stop_broadcasting():
-	broadcasting = false
+						# Crappy workaround to trigger setter
+						Global.udp_data_set(Global.udp_data)
 	
 func _exit_tree():
 	udp.close()
