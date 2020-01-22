@@ -8,13 +8,10 @@ export var position := {"x" : 20,     "y" : 340,
 						"width": 1060, "height": 720}
 
 func _ready():
-	update_text()
+	Global.connect("udp_data_changed", self, "_on_udp_data_changed")
 
-func _on_Update_timeout():
-	update_text()
-
-func update_text():
-	var ip_list := UDP_Server.ip_list
+func _on_udp_data_changed():
+	var ip_list := Global.udp_data
 #	var ip_list = {}
 #	for i in range(10):
 #		ip_list[str(i)] = {"name" : "sadasdas",

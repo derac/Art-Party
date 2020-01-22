@@ -15,20 +15,20 @@ func _on_Update_timeout():
 
 func update_text():
 	# Comment to use test inc_var
-	#var ip_list = UDP_Server.ip_list
-	var ip_list = {}
+	#var udp_data = UDP_Server.udp_data
+	var udp_data = {}
 	for i in range(10):
-		ip_list[str(i)] = {"name" : "sadasdas",
+		udp_data[str(i)] = {"name" : "sadasdas",
 						   "serving" : 0,
 						   "port": 12354,
 						   "last_tick": OS.get_system_time_msecs()}
 	
-	var ip_list_keys = ip_list.keys()
-	var ip_list_size = ip_list_keys.size()
-	var cols = floor(sqrt(ip_list_size))
+	var udp_data_keys = udp_data.keys()
+	var udp_data_size = udp_data_keys.size()
+	var cols = floor(sqrt(udp_data_size))
 	if cols > 0:
-		var row_extra = floor((ip_list_size / cols) - cols)
-		var last_row_extra = ip_list_size - cols * cols - row_extra * cols
+		var row_extra = floor((udp_data_size / cols) - cols)
+		var last_row_extra = udp_data_size - cols * cols - row_extra * cols
 		var player_width = (position["width"] - (20 * (cols - 1))) / cols
 		
 		for player in player_array:
@@ -46,7 +46,7 @@ func update_text():
 				# Creating and setting up a new player instance
 				# Should probably refactor into own function
 				var player_instance
-				if ip_list[ip_list_keys[col*cols+row]]["serving"]:
+				if udp_data[udp_data_keys[col*cols+row]]["serving"]:
 					player_instance = server_label.instance()
 				else:
 					player_instance = player_label.instance()
@@ -56,5 +56,5 @@ func update_text():
 													 position["y"] + row_y))
 				player_instance.set_size(Vector2(player_width,
 												 player_height))
-				player_instance.text = ip_list[ip_list_keys[col*cols+row]]["name"]
+				player_instance.text = udp_data[udp_data_keys[col*cols+row]]["name"]
 				

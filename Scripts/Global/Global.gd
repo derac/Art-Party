@@ -3,6 +3,12 @@ extends Node
 var Name_Generator := preload("res://Scripts/Utility/name-generator.gd")
 
 var my_name := ""
+var udp_data := {} setget udp_data_set
+signal udp_data_changed
+
+func udp_data_set(value):
+	udp_data = value
+	emit_signal("udp_data_changed")
 
 func _ready() -> void:
 	OS.set_borderless_window(true)

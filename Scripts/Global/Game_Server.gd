@@ -3,7 +3,7 @@ extends Node
 var serving := false
 var server_port := (30000 + randi() % 30000)
 var peer := NetworkedMultiplayerENet.new()
-var player_info := {}
+var udp_data := {}
 
 var start_screen := load("res://Screens/Start.tscn")
 
@@ -13,10 +13,10 @@ func _ready() -> void:
 	get_tree().connect("server_disconnected", self, "_server_disconnected")
 	
 func _player_connected(id : int) -> void:
-	player_info[id] = Global.my_name
+	udp_data[id] = Global.my_name
 
 func _player_disconnected(id : int) -> void:
-	player_info.erase(id)
+	udp_data.erase(id)
 
 func _server_disconnected() -> void:
 	stop_serving()
@@ -38,7 +38,7 @@ func stop_serving() -> void:
 		UDP_Server.udp.put_var("stop_serving")
 		peer.close_connection()
 		get_tree().set_network_peer(null)
-		player_info = {}
+		udp_data = {}
 		serving = false
 
 func start_client(ip : String, port : int, retries : int) -> int:
