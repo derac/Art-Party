@@ -16,13 +16,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Draw, Pass, Guess"
-run/main_scene="res://Info.tscn"
+run/main_scene="res://Screens/Start.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://Scripts/Global.gd"
-UDP_Server="*res://Scripts/UDP_Server.gd"
+Global="*res://Scripts/Global/Global.gd"
+UDP_Server="*res://Scripts/Global/UDP_Server.gd"
+Game_Server="*res://Scripts/Global/Game_Server.gd"
 
 [display]
 
@@ -35,4 +36,4 @@ window/stretch/aspect="keep"
 
 [rendering]
 
-environment/default_clear_color=Color( 0.882353, 0.882353, 0.87451, 1 )
+environment/default_clear_color=Color( 0.960784, 0.945098, 0.929412, 1 )

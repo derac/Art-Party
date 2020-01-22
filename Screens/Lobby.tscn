@@ -1,15 +1,18 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://VarelaRound-Regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Scripts/Back.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Components/Back.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Components/Game_Players.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Components/Ready.gd" type="Script" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
+draw_center = false
 border_width_left = 20
 border_width_top = 20
 border_width_right = 20
 border_width_bottom = 20
-border_color = Color( 0.941176, 0.203922, 0.156863, 1 )
+border_color = Color( 0.670588, 0.160784, 0.160784, 1 )
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
@@ -17,20 +20,21 @@ corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
+draw_center = false
 border_width_left = 20
 border_width_top = 20
 border_width_right = 20
 border_width_bottom = 20
-border_color = Color( 0.941176, 0.203922, 0.156863, 1 )
+border_color = Color( 0.960784, 0.792157, 0.184314, 1 )
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
 [sub_resource type="DynamicFont" id=3]
-size = 250
+size = 150
 outline_size = 5
-outline_color = Color( 0.941176, 0.203922, 0.156863, 1 )
+outline_color = Color( 0.670588, 0.160784, 0.160784, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=4]
@@ -40,7 +44,7 @@ border_width_left = 20
 border_width_top = 20
 border_width_right = 20
 border_width_bottom = 20
-border_color = Color( 0.329412, 0.627451, 0.309804, 1 )
+border_color = Color( 0.372549, 0.580392, 0.282353, 1 )
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
@@ -54,7 +58,7 @@ border_width_left = 20
 border_width_top = 20
 border_width_right = 20
 border_width_bottom = 20
-border_color = Color( 0.329412, 0.627451, 0.309804, 1 )
+border_color = Color( 0.6, 0.760784, 0.305882, 1 )
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
@@ -62,24 +66,10 @@ corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
 
 [sub_resource type="DynamicFont" id=6]
-size = 250
+size = 150
 outline_size = 5
-outline_color = Color( 0.329412, 0.627451, 0.309804, 1 )
+outline_color = Color( 0.372549, 0.580392, 0.282353, 1 )
 font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
-draw_center = false
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color( 0.941176, 0.203922, 0.156863, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
 
 [node name="Lobby" type="Control"]
 anchor_right = 1.0
@@ -92,7 +82,7 @@ __meta__ = {
 }
 
 [node name="Back" type="Button" parent="."]
-margin_left = 980.0
+margin_left = 1390.0
 margin_top = 550.0
 margin_right = 1900.0
 margin_bottom = 1060.0
@@ -104,10 +94,11 @@ custom_styles/focus = SubResource( 1 )
 custom_styles/disabled = SubResource( 2 )
 custom_styles/normal = SubResource( 2 )
 custom_fonts/font = SubResource( 3 )
-custom_colors/font_color_disabled = Color( 0.952941, 0.843137, 0.329412, 1 )
-custom_colors/font_color = Color( 0.952941, 0.843137, 0.329412, 1 )
-custom_colors/font_color_hover = Color( 0.941176, 0.203922, 0.156863, 1 )
-custom_colors/font_color_pressed = Color( 0.941176, 0.203922, 0.156863, 1 )
+custom_colors/font_color_disabled = Color( 0.960784, 0.792157, 0.184314, 1 )
+custom_colors/font_color = Color( 0.960784, 0.792157, 0.184314, 1 )
+custom_colors/font_color_hover = Color( 0.670588, 0.160784, 0.160784, 1 )
+custom_colors/font_color_pressed = Color( 0.670588, 0.160784, 0.160784, 1 )
+action_mode = 0
 text = "back"
 script = ExtResource( 2 )
 __meta__ = {
@@ -115,7 +106,7 @@ __meta__ = {
 }
 
 [node name="Ready" type="Button" parent="."]
-margin_left = 980.0
+margin_left = 1390.0
 margin_top = 20.0
 margin_right = 1900.0
 margin_bottom = 530.0
@@ -127,21 +118,27 @@ custom_styles/focus = SubResource( 4 )
 custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 5 )
 custom_fonts/font = SubResource( 6 )
-custom_colors/font_color_disabled = Color( 0.952941, 0.843137, 0.329412, 1 )
-custom_colors/font_color = Color( 0.952941, 0.843137, 0.329412, 1 )
-custom_colors/font_color_hover = Color( 0.329412, 0.627451, 0.309804, 1 )
-custom_colors/font_color_pressed = Color( 0.329412, 0.627451, 0.309804, 1 )
+custom_colors/font_color_disabled = Color( 0.6, 0.760784, 0.305882, 1 )
+custom_colors/font_color = Color( 0.6, 0.760784, 0.305882, 1 )
+custom_colors/font_color_hover = Color( 0.372549, 0.580392, 0.282353, 1 )
+custom_colors/font_color_pressed = Color( 0.372549, 0.580392, 0.282353, 1 )
+action_mode = 0
 text = "ready"
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Players" type="PanelContainer" parent="."]
-margin_left = 20.0
-margin_top = 20.0
-margin_right = 960.0
-margin_bottom = 1060.0
-custom_styles/panel = SubResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
+[node name="Game_Players" type="Node" parent="."]
+script = ExtResource( 3 )
+position = {
+"height": 1040,
+"width": 1350,
+"x": 20,
+"y": 20
 }
+
+[node name="Update" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+[connection signal="timeout" from="Update" to="Game_Players" method="_on_Update_timeout"]

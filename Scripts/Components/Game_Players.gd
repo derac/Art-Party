@@ -1,24 +1,11 @@
 extends Node
 
-var player_label = preload("res://Components/Player_Label.tscn")
+var player_label = preload("res://Screens/Components/Player_Label.tscn")
+var server_label = preload("res://Screens/Components/Join_Server.tscn")
 
 var player_array = []
-var position = {"x" : 20,     "y" : 340,
-				"width": 940, "height": 720}
-
-var ip_list = {"asd": {"name": "dasdads"},
-				"asd2": {"name": "dasdaads"},
-				"asd3": {"name": "dasdadfds"},
-				"asd4": {"name": "dasdfdads"},
-				"asd5": {"name": "wfdssdfaaw"},
-				"asd6": {"name": "fdgfdgsdfw"},
-				"asd7": {"name": "wwwfgsdfw"},
-				"asd8": {"name": "wwwgsdfgsww"},
-				"asd9": {"name": "wwasdfsadsdgfdsf"},
-				"asd10": {"name": "wwasdffsasdfasdf"},
-				"asd11": {"name": "wadsfw"},
-				"asd12": {"name": "wwwasdfasdfasd"},
-				"asd13": {"name": "wwsdfasdfasdf"}}
+export var position = {"x" : 20,     "y" : 340,
+				"width": 1060, "height": 720}
 
 func _ready():
 	update_text()
@@ -27,8 +14,15 @@ func _on_Update_timeout():
 	update_text()
 
 func update_text():
-	# Comment to use test data
-	ip_list = UDP_Server.ip_list
+	# Comment to use test inc_var
+	#var ip_list = UDP_Server.ip_list
+	var ip_list = {}
+	for i in range(10):
+		ip_list[str(i)] = {"name" : "sadasdas",
+						   "serving" : 0,
+						   "port": 12354,
+						   "last_tick": OS.get_system_time_msecs()}
+	
 	var ip_list_keys = ip_list.keys()
 	var ip_list_size = ip_list_keys.size()
 	var cols = floor(sqrt(ip_list_size))
@@ -51,7 +45,11 @@ func update_text():
 				var row_y = row * (player_height + 20)
 				# Creating and setting up a new player instance
 				# Should probably refactor into own function
-				var player_instance = player_label.instance()
+				var player_instance
+				if ip_list[ip_list_keys[col*cols+row]]["serving"]:
+					player_instance = server_label.instance()
+				else:
+					player_instance = player_label.instance()
 				player_array.append(player_instance)
 				add_child(player_instance)
 				player_instance.set_position(Vector2(position["x"] + col_x,
@@ -59,8 +57,4 @@ func update_text():
 				player_instance.set_size(Vector2(player_width,
 												 player_height))
 				player_instance.text = ip_list[ip_list_keys[col*cols+row]]["name"]
-				if ip_list[ip_list_keys[col*cols+row]]["game_server"]:
-					var style_box = preload("res://Styleboxes/Player_Label.tres")
-					style_box.set_border_color(Color("#54a04f"))
-					player_instance.text = "Join " + player_instance.text
-					player_instance.set('custom_styles/normal', style_box)
+				
