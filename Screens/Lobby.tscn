@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://VarelaRound-Regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Scripts/Components/Back.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Components/Back_Button.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Components/Game_Players.gd" type="Script" id=3]
-[ext_resource path="res://Scripts/Components/Ready.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Components/Ready_Button.gd" type="Script" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
@@ -71,7 +71,7 @@ outline_size = 5
 outline_color = Color( 0.372549, 0.580392, 0.282353, 1 )
 font_data = ExtResource( 1 )
 
-[node name="Lobby" type="Control"]
+[node name="Lobby_Screen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 1260, 310 )
@@ -131,14 +131,3 @@ __meta__ = {
 
 [node name="Game_Players" type="Node" parent="."]
 script = ExtResource( 3 )
-position = {
-"height": 1040,
-"width": 1350,
-"x": 20,
-"y": 20
-}
-
-[node name="Update" type="Timer" parent="."]
-wait_time = 0.1
-autostart = true
-[connection signal="timeout" from="Update" to="Game_Players" method="_on_Update_timeout"]

@@ -1,60 +1,46 @@
 extends Node
 
-var player_label = preload("res://Screens/Components/Player_Label.tscn")
-var server_label = preload("res://Screens/Components/Join_Server.tscn")
+var player_label = load("res://Screens/Components/Player_Label.tscn")
+var start_screen := load("res://Screens/Start.tscn")
 
-var player_array = []
-export var position = {"x" : 20,     "y" : 340,
-				"width": 1060, "height": 720}
+var bounds_pos = Vector2(20, 20)
+var bounds_size = Vector2(1350, 1040)
 
 func _ready():
-	update_text()
+	Global.connect("game_data_changed", self, "_on_game_data_changed")
+	_on_game_data_changed()
 
-func _on_Update_timeout():
-	update_text()
-
-func update_text():
-	# Comment to use test inc_var
-	#var udp_data = UDP_Server.udp_data
-	var udp_data = {}
-	for i in range(10):
-		udp_data[str(i)] = {"name" : "sadasdas",
-						   "serving" : 0,
-						   "port": 12354,
-						   "last_tick": OS.get_system_time_msecs()}
+func _on_game_data_changed():
+	for child in get_children():
+		child.queue_free()
 	
-	var udp_data_keys = udp_data.keys()
-	var udp_data_size = udp_data_keys.size()
-	var cols = floor(sqrt(udp_data_size))
+	var data_keys : Array = Global.game_data.keys()
+	var data_size : int = data_keys.size()
+	var dimensions : Vector2
+	var label_pos : Vector2
+	
+	var cols := floor(sqrt(data_size))
 	if cols > 0:
-		var row_extra = floor((udp_data_size / cols) - cols)
-		var last_row_extra = udp_data_size - cols * cols - row_extra * cols
-		var player_width = (position["width"] - (20 * (cols - 1))) / cols
+		dimensions.x = (bounds_size.x - (20 * (cols - 1))) / cols
 		
-		for player in player_array:
-			player.free()
-		player_array = []
-	
 		for col in range(cols):
-			var col_x = col * (player_width + 20)
-			var rows = cols + row_extra
+			label_pos.x = col * (dimensions.x + 20)
+			var rows = cols + floor((data_size / cols) - cols)
 			if col == (cols - 1):
-				rows += last_row_extra
+				rows += (data_size - cols * rows)
 			for row in rows:
-				var player_height = (position["height"] - 20 * (rows - 1)) / rows
-				var row_y = row * (player_height + 20)
-				# Creating and setting up a new player instance
-				# Should probably refactor into own function
-				var player_instance
-				if udp_data[udp_data_keys[col*cols+row]]["serving"]:
-					player_instance = server_label.instance()
-				else:
-					player_instance = player_label.instance()
-				player_array.append(player_instance)
-				add_child(player_instance)
-				player_instance.set_position(Vector2(position["x"] + col_x,
-													 position["y"] + row_y))
-				player_instance.set_size(Vector2(player_width,
-												 player_height))
-				player_instance.text = udp_data[udp_data_keys[col*cols+row]]["name"]
+				dimensions.y = (bounds_size.y - 20 * (rows - 1)) / rows
+				label_pos.y = row * (dimensions.y + 20)
 				
+				create_player_label(bounds_pos + label_pos,
+									dimensions,
+									Global.game_data[data_keys[col*cols+row]])
+
+func create_player_label(position : Vector2,\
+						 size : Vector2,\
+						 text : String) -> void:
+	var instance = player_label.instance()
+	add_child(instance)
+	instance.set_position(position)
+	instance.set_size(size)
+	instance.text = text
