@@ -1,7 +1,8 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scripts/Components/Join_Server.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Start/Join_Button.gd" type="Script" id=1]
 [ext_resource path="res://VarelaRound-Regular.ttf" type="DynamicFontData" id=2]
+
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 30.0
@@ -14,7 +15,7 @@ border_width_left = 20
 border_width_top = 20
 border_width_right = 20
 border_width_bottom = 20
-border_color = Color( 0.329412, 0.627451, 0.309804, 1 )
+border_color = Color( 0.372549, 0.580392, 0.282353, 1 )
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
@@ -36,7 +37,7 @@ content_margin_bottom = 0.0
 [sub_resource type="DynamicFont" id=4]
 size = 60
 outline_size = 5
-outline_color = Color( 0.941176, 0.741176, 0.541176, 1 )
+outline_color = Color( 0.6, 0.760784, 0.305882, 1 )
 font_data = ExtResource( 2 )
 
 [node name="Join_Server" type="Button"]

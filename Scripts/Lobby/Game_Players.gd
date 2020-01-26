@@ -1,10 +1,7 @@
-extends Node
+extends Control
 
 var player_label = load("res://Screens/Components/Player_Label.tscn")
 var start_screen := load("res://Screens/Start.tscn")
-
-var bounds_pos = Vector2(20, 20)
-var bounds_size = Vector2(1350, 1040)
 
 func _ready():
 	Global.connect("game_data_changed", self, "_on_game_data_changed")
@@ -21,18 +18,18 @@ func _on_game_data_changed():
 	
 	var cols := floor(sqrt(data_size))
 	if cols > 0:
-		dimensions.x = (bounds_size.x - (20 * (cols - 1))) / cols
+		dimensions.x = (rect_size.x - (20 * (cols - 1))) / cols
 		
 		for col in range(cols):
-			label_pos.x = col * (dimensions.x + 20)
+			label_pos.x = col * (dimensions.x + 20) - 20
 			var rows = cols + floor((data_size / cols) - cols)
 			if col == (cols - 1):
 				rows += (data_size - cols * rows)
 			for row in rows:
-				dimensions.y = (bounds_size.y - 20 * (rows - 1)) / rows
-				label_pos.y = row * (dimensions.y + 20)
+				dimensions.y = (rect_size.y - 20 * (rows - 1)) / rows
+				label_pos.y = row * (dimensions.y + 20) - 20
 				
-				create_player_label(bounds_pos + label_pos,
+				create_player_label(rect_position + label_pos,
 									dimensions,
 									Global.game_data[data_keys[col*cols+row]])
 

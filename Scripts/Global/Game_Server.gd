@@ -4,6 +4,7 @@ var is_server := false
 var is_client := false
 var server_port := (30000 + randi() % 30000)
 var peer := NetworkedMultiplayerENet.new()
+var connection_status : int
 
 var start_screen := load("res://Screens/Start.tscn")
 
@@ -11,9 +12,6 @@ func _ready() -> void:
 	get_tree().connect("network_peer_connected", self, "_player_connected")
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
 	get_tree().connect("server_disconnected", self, "_server_disconnected")
-
-func _process(_delta) -> void:
-	print(Game_Server.peer.get_connection_status())
 	
 func _player_connected(id : int) -> void:
 	rpc_id(id, "register_player", Global.my_name)

@@ -1,10 +1,10 @@
 extends Node
 
 var player_label := load("res://Screens/Components/Player_Label.tscn")
-var server_label := load("res://Screens/Components/Join_Server.tscn")
+var server_label := load("res://Screens/Components/Join_Button.tscn")
 
-var position := {"x" : 20,     "y" : 340,
-				 "width": 1060, "height": 720}
+var position := {"x" : 20,     "y" : 330,
+				 "width": 1060, "height": 730}
 
 func _ready():
 	Global.connect("udp_data_changed", self, "_on_udp_data_changed")

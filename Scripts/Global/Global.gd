@@ -3,10 +3,16 @@ extends Node
 var Name_Generator := load("res://Scripts/Utility/name-generator.gd")
 
 var my_name := ""
+var color := Color("#339db5") setget color_set
+signal color_changed
 var udp_data := {} setget udp_data_set
 signal udp_data_changed
 var game_data := {} setget game_data_set
 signal game_data_changed
+
+func color_set(value):
+	color = value
+	emit_signal("color_changed")
 
 func udp_data_set(value):
 	udp_data = value

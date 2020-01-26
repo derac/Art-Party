@@ -34,6 +34,14 @@ window/size/fullscreen=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
+[input]
+
+ui_undo={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":true,"meta":false,"command":true,"pressed":false,"scancode":90,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
 [rendering]
 
 environment/default_clear_color=Color( 0.960784, 0.945098, 0.929412, 1 )

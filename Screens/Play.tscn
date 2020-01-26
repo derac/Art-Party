@@ -1,0 +1,114 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Screens/Components/Color_Picker.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Play/Draw_Area.gd" type="Script" id=2]
+[ext_resource path="res://VarelaRound-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Undo.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_top = 25.0
+bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.184314, 0.168627, 0.419608, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+outline_size = 5
+outline_color = Color( 0.372549, 0.580392, 0.282353, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 30.0
+content_margin_right = 30.0
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.184314, 0.168627, 0.419608, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
+
+[sub_resource type="InputEventAction" id=5]
+action = "ui_undo"
+pressed = true
+
+[sub_resource type="ShortCut" id=4]
+shortcut = SubResource( 5 )
+
+[node name="Play" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ 960.0 ]
+}
+
+[node name="Draw_Area" type="Control" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+mouse_filter = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="LineEdit" parent="."]
+margin_left = 230.0
+margin_top = 10.0
+margin_right = 1690.0
+margin_bottom = 190.0
+mouse_default_cursor_shape = 0
+custom_styles/read_only = SubResource( 1 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/selection_color = Color( 0.2, 0.615686, 0.709804, 0.392157 )
+custom_colors/font_color_selected = Color( 0.2, 0.615686, 0.709804, 1 )
+custom_colors/font_color = Color( 0.6, 0.760784, 0.305882, 1 )
+custom_colors/font_color_uneditable = Color( 0.6, 0.760784, 0.305882, 1 )
+text = "One-Armed Bandit"
+align = 1
+editable = false
+expand_to_text_length = true
+selecting_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Color_Picker" parent="." instance=ExtResource( 1 )]
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Undo_Button" type="Button" parent="."]
+margin_left = 1700.0
+margin_top = 10.0
+margin_right = 1910.0
+margin_bottom = 220.0
+hint_tooltip = "Ctrl+Z"
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
+shortcut_in_tooltip = false
+action_mode = 0
+shortcut = SubResource( 4 )
+icon = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="Undo_Button" to="Draw_Area" method="_on_Undo_Button_button_down"]
