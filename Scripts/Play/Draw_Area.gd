@@ -42,13 +42,27 @@ func _process(_delta):
 # Input section
 
 func _gui_input(event):
+#	if event is InputEventScreenTouch \
+#				and event.pressed:
+#		history[-1].append({"position": mouse_locs[-1],
+#							"speed": speed,
+#							"color": Global.color})	
+#	elif event is InputEventScreenDrag:
+#		history[-1].append({"position": mouse_locs[-1],
+#							"speed": event.relative.length(),
+#							"color": Global.color})	
+#		_pen.update()
+#	elif history[-1].size() > 0:
+#			history.append([])
+			
 	if event is InputEventMouseButton \
 				and event.button_index == BUTTON_LEFT \
 				and event.pressed:
 		history[-1].append({"position": mouse_locs[-1],
 							"speed": speed,
 							"color": Global.color})
-	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+	if Input.is_mouse_button_pressed(BUTTON_LEFT) or \
+				event is InputEventScreenDrag:
 		history[-1].append({"position": mouse_locs[-1],
 							"speed": speed,
 							"color": Global.color})
@@ -57,9 +71,6 @@ func _gui_input(event):
 		history.append([])
 		
 func _on_Undo_Button_button_down():
-	undo()
-
-func undo() -> void:
 	if history.size() > 1:
 		history.remove(history.size()-2)
 		undo = true
@@ -70,29 +81,33 @@ func _on_draw():
 	if undo:
 		_pen.draw_rect(get_rect(), Color("#f5f1ed"))
 		for stroke in history:
-			for offset in range(stroke.size()):
-				draw_brush(stroke, -offset - 1)
+			for index in range(stroke.size()):
+#				draw_pen(stroke, index)
+				draw_brush(stroke, index)
+
 		undo = false
 	if history[-1].size() > 0:
-		draw_brush(history[-1])
+#		draw_pen(history[-1], history[-1].size() - 1)
+		draw_brush(history[-1], history[-1].size() - 1)
 	elif history.size() > 1:
-		draw_brush(history[-2])
+#		draw_pen(history[-2], history[-2].size() - 1)
+		draw_brush(history[-2], history[-2].size() - 1)
 
-func draw_pen():
-	var h_size = history[-1].size() - 1
+func draw_pen(stroke : Array, index : int) -> void:
 	var radius = 10
-	if h_size >= 1:
-		_pen.draw_circle(history[-1][h_size]["position"],
-						 radius, Global.color)
-		_pen.draw_line(history[-1][h_size - 1]["position"],
-					   history[-1][h_size]["position"], Global.color,
+	if index >= 1 and index < stroke.size():
+		_pen.draw_circle(stroke[index]["position"],
+						 radius,
+						 stroke[index]["color"])
+		_pen.draw_line(stroke[index - 1]["position"],
+					   stroke[index]["position"],
+					   stroke[index - 1]["color"],
 					   radius * 2)
 
-func draw_brush(stroke : Array, offset := -1) -> void:
-	var size := stroke.size()
-	if size + offset >= 1 and offset < 0:
-		var tangent = (stroke[offset - 1]["position"] - \
-					   stroke[offset]["position"]).tangent()
+func draw_brush(stroke : Array, index : int) -> void:
+	if index >= 1 and index < stroke.size():
+		var tangent = (stroke[index - 1]["position"] - \
+					   stroke[index]["position"]).tangent()
 		if tangent == Vector2(0,0):
 			tangent = Vector2(1,1)
 		var factor = 3.5
@@ -100,18 +115,18 @@ func draw_brush(stroke : Array, offset := -1) -> void:
 		var minus_width = 20
 		var width = []
 		for i in range(2):
-			width.append(stroke[offset - i]["speed"])
+			width.append(stroke[index - i]["speed"])
 			if width[i] > minus_width * factor:
 				width[i] = minus_width * factor
 			width[i] = tangent.normalized() * \
 					   (base_width + width[i] / factor)
-			_pen.draw_circle(stroke[offset - i]["position"],
-							 width[-i].length(), stroke[offset]["color"])
+		_pen.draw_circle(stroke[index]["position"],
+						 width[0].length(),
+						 stroke[index]["color"])
 
 		var points = PoolVector2Array()
-		points.append(stroke[offset]["position"] - width[0])
-		points.append(stroke[offset]["position"] + width[0])
-		points.append(stroke[offset - 1]["position"] + width[1])
-		points.append(stroke[offset - 1]["position"] - width[1])
-		_pen.draw_polygon(points,PoolColorArray([stroke[offset]["color"]]))
-
+		points.append(stroke[index]["position"] - width[0])
+		points.append(stroke[index]["position"] + width[0])
+		points.append(stroke[index - 1]["position"] + width[1])
+		points.append(stroke[index - 1]["position"] - width[1])
+		_pen.draw_polygon(points,PoolColorArray([stroke[index]["color"]]))

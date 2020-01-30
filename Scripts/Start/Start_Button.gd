@@ -1,6 +1,6 @@
 extends Button
 
-var lobby_scene = load("res://Screens/Lobby.tscn")
+var lobby_scene = load("res://Screens/Play.tscn")
 
 func _process(_delta):
 	if is_hovered():
