@@ -4,7 +4,7 @@ extends Control
 # down to pen up, so undo will just be a pop and so on
 var history := [[]]
 var _pen = null
-var mouse_locs = PoolVector2Array()
+var mouse_history = PoolVector2Array()
 var undo := false
 var speed := 0
 
@@ -27,48 +27,39 @@ func _ready():
 	board.set_texture(rt)
 	add_child(board)
 	
-	mouse_locs.append(get_viewport().get_mouse_position())
+	mouse_history.append(get_viewport().get_mouse_position())
 
 func _process(_delta):
-	mouse_locs.append(get_viewport().get_mouse_position())
-	if mouse_locs.size() > 15:
-		mouse_locs.remove(0)
+	mouse_history.append(get_viewport().get_mouse_position())
+	if mouse_history.size() > 15:
+		mouse_history.remove(0)
+
+func average(positions : PoolVector2Array) -> int:
 	var acc = 0
-	for index in (mouse_locs.size() - 1):
-		acc += (mouse_locs[index] - mouse_locs[index + 1]).length()
-	acc /= (mouse_locs.size() - 1)
-	speed = acc
+	for index in (positions.size() - 1):
+		acc += (positions[index] - positions[index + 1]).length()
+	acc /= (positions.size() - 1)
+	return acc
 
 # Input section
 
 func _gui_input(event):
-#	if event is InputEventScreenTouch \
-#				and event.pressed:
-#		history[-1].append({"position": mouse_locs[-1],
-#							"speed": speed,
-#							"color": Global.color})	
-#	elif event is InputEventScreenDrag:
-#		history[-1].append({"position": mouse_locs[-1],
-#							"speed": event.relative.length(),
-#							"color": Global.color})	
-#		_pen.update()
-#	elif history[-1].size() > 0:
-#			history.append([])
-			
 	if event is InputEventMouseButton \
-				and event.button_index == BUTTON_LEFT \
-				and event.pressed:
-		history[-1].append({"position": mouse_locs[-1],
-							"speed": speed,
-							"color": Global.color})
-	if Input.is_mouse_button_pressed(BUTTON_LEFT) or \
-				event is InputEventScreenDrag:
-		history[-1].append({"position": mouse_locs[-1],
+				and event.button_index == BUTTON_LEFT:
+		if event.pressed:
+			history[-1].append({"position": mouse_history[-1],
+								"speed": speed,
+								"color": Global.color})
+			_pen.update()
+		elif history[-1].size() > 0:
+			print(history.size())
+			history.append([])
+	elif event is InputEventMouseMotion and \
+				history[-1].size() > 0:
+		history[-1].append({"position": mouse_history[-1],
 							"speed": speed,
 							"color": Global.color})
 		_pen.update()
-	elif history[-1].size() > 0:
-		history.append([])
 		
 func _on_Undo_Button_button_down():
 	if history.size() > 1:
