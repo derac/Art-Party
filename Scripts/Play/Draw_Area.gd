@@ -33,6 +33,7 @@ func _process(_delta):
 	mouse_history.append(get_viewport().get_mouse_position())
 	if mouse_history.size() > 15:
 		mouse_history.remove(0)
+	speed = average(mouse_history)
 
 func average(positions : PoolVector2Array) -> int:
 	var acc = 0
@@ -40,19 +41,17 @@ func average(positions : PoolVector2Array) -> int:
 		acc += (positions[index] - positions[index + 1]).length()
 	acc /= (positions.size() - 1)
 	return acc
-
+	
 # Input section
-
 func _gui_input(event):
-	if event is InputEventMouseButton \
-				and event.button_index == BUTTON_LEFT:
+	if (event is InputEventMouseButton \
+				and event.button_index == BUTTON_LEFT) \
+				or event is InputEventScreenTouch:
 		if event.pressed:
-			history[-1].append({"position": mouse_history[-1],
+			history[-1].append({"position": get_viewport().get_mouse_position(),
 								"speed": speed,
 								"color": Global.color})
-			_pen.update()
 		elif history[-1].size() > 0:
-			print(history.size())
 			history.append([])
 	elif event is InputEventMouseMotion and \
 				history[-1].size() > 0:
@@ -114,7 +113,10 @@ func draw_brush(stroke : Array, index : int) -> void:
 		_pen.draw_circle(stroke[index]["position"],
 						 width[0].length(),
 						 stroke[index]["color"])
-
+		if index == 1:
+			_pen.draw_circle(stroke[0]["position"],
+						 width[1].length(),
+						 stroke[0]["color"])
 		var points = PoolVector2Array()
 		points.append(stroke[index]["position"] - width[0])
 		points.append(stroke[index]["position"] + width[0])
