@@ -8,3 +8,4 @@ func _ready():
 
 func _exit_tree():
 	UDP_Server.listening = false
+	Global.udp_data = {}

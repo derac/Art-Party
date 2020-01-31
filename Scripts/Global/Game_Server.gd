@@ -1,12 +1,11 @@
 extends Node
 
-var is_server := false
 var is_client := false
 var server_port := (30000 + randi() % 30000)
 var peer := NetworkedMultiplayerENet.new()
-var connection_status : int
 
-var start_screen := load("res://Screens/Start.tscn")
+var setup_screen := load("res://Screens/Setup.tscn")
+var play_screen := load("res://Screens/Play.tscn")
 
 func _ready() -> void:
 	get_tree().connect("network_peer_connected", self, "_player_connected")
@@ -14,28 +13,30 @@ func _ready() -> void:
 	get_tree().connect("server_disconnected", self, "_server_disconnected")
 	
 func _player_connected(id : int) -> void:
-	rpc_id(id, "register_player", Global.my_name)
+	rpc_id(id, "register_player", get_my_data())
 
 func _player_disconnected(id : int) -> void:
-	Global.game_data.erase(id)
+	Global.game_state.erase(id)
 	# Crappy workaround to trigger setter
-	Global.game_data_set(Global.game_data)
+	Global.game_state_set(Global.game_state)
 
 func _server_disconnected() -> void:
-	get_tree().change_scene_to(start_screen)
+	get_tree().change_scene_to(setup_screen)
 	
-remote func register_player(info):
+remote func register_player(player_data : Dictionary) -> void:
 	var id = get_tree().get_rpc_sender_id()
-	Global.game_data[id] = info
+	Global.game_state[id] = player_data
+
+remotesync func start_game() -> void:
+	get_tree().change_scene_to(play_screen)
 
 func start_serving(retries : int) -> int:
 	var err : int
-	if is_server == false:
+	if get_tree().is_network_server() == false:
 		err = peer.create_server(server_port, 32)
 		if err == OK:
-			Global.game_data[1] = Global.my_name
+			Global.game_state[1] = get_my_data()
 			get_tree().set_network_peer(peer)
-			is_server = true
 			return err
 		else:
 			server_port = (30000 + randi() % 30000)
@@ -43,11 +44,10 @@ func start_serving(retries : int) -> int:
 	return err
 
 func stop_serving() -> void:
-	if is_server == true:
+	if get_tree().is_network_server() == true:
 		UDP_Server.udp.put_var("stop_serving")
 		peer.close_connection()
-		Global.game_data = {}
-		is_server = false
+		Global.game_state = {}
 
 func start_client(ip : String, port : int, retries : int) -> int:
 	if is_client == false:
@@ -55,7 +55,7 @@ func start_client(ip : String, port : int, retries : int) -> int:
 		var err := peer.create_client(ip, port)
 		if err == OK:
 			get_tree().set_network_peer(peer)
-			Global.game_data[peer.get_unique_id()] = Global.my_name
+			Global.game_state[peer.get_unique_id()] = get_my_data()
 			is_client = true
 		else:
 			start_client(ip, port, retries - 1)
@@ -65,5 +65,8 @@ func start_client(ip : String, port : int, retries : int) -> int:
 func stop_client() -> void:
 	if is_client == true:
 		peer.close_connection()
-		Global.game_data = {}
+		Global.game_state = {}
 		is_client = false
+
+func get_my_data() -> Dictionary:
+	return {'name': Global.my_name, 'cards': []}

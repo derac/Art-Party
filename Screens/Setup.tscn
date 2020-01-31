@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Scripts/Start/UDP_Players.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/Start/Start_Button.gd" type="Script" id=2]
-[ext_resource path="res://Scripts/Start/Name_Field.gd" type="Script" id=3]
-[ext_resource path="res://VarelaRound-Regular.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Scripts/Start/Start_Screen.gd" type="Script" id=5]
+[ext_resource path="res://VarelaRound-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/Setup/UDP_Players.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Setup/Name_Field.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Setup/Start_Button.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Setup/Setup_Screen.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://VarelaRound-Regular.ttf"
@@ -32,7 +32,7 @@ corner_radius_bottom_left = 50
 size = 200
 outline_size = 5
 outline_color = Color( 0.960784, 0.792157, 0.184314, 1 )
-font_data = ExtResource( 4 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="Theme" id=6]
 
@@ -68,9 +68,9 @@ shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
 size = 220
 outline_size = 5
 outline_color = Color( 0.372549, 0.580392, 0.282353, 1 )
-font_data = ExtResource( 4 )
+font_data = ExtResource( 1 )
 
-[node name="Start" type="Control"]
+[node name="Setup" type="Control"]
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false,
@@ -113,7 +113,7 @@ custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 8 )
 shortcut_in_tooltip = false
 action_mode = 0
-script = ExtResource( 2 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -138,5 +138,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="UDP_Players" type="Node" parent="."]
-script = ExtResource( 1 )
+[node name="UDP_Players" type="Control" parent="."]
+margin_left = 20.0
+margin_top = 330.0
+margin_right = 1080.0
+margin_bottom = 1060.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
