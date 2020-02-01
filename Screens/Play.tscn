@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Assets/Dropper_Liquid.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Play/Draw_Area.gd" type="Script" id=2]
@@ -197,10 +197,10 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=22]
 content_margin_left = 0.0
 content_margin_right = 0.0
-content_margin_top = 5.0
+content_margin_top = 0.0
 content_margin_bottom = 0.0
 bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
 border_width_left = 20
@@ -243,6 +243,23 @@ pressed = true
 [sub_resource type="ShortCut" id=5]
 shortcut = SubResource( 4 )
 
+[sub_resource type="StyleBoxFlat" id=23]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.184314, 0.168627, 0.419608, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
+
 [node name="Play" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -253,7 +270,8 @@ __meta__ = {
 }
 
 [node name="Draw_Area" type="Control" parent="."]
-margin_right = 1920.0
+margin_left = 10.0
+margin_right = 1930.0
 margin_bottom = 1080.0
 mouse_filter = 1
 script = ExtResource( 2 )
@@ -262,8 +280,6 @@ __meta__ = {
 }
 
 [node name="Color_Picker" type="Control" parent="."]
-margin_right = 300.0
-margin_bottom = 1080.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -287,11 +303,9 @@ __meta__ = {
 }
 
 [node name="#ab2929" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_left = 110.0
-margin_top = 190.0
-margin_right = 210.0
-margin_bottom = 290.0
+margin_top = 410.0
+margin_right = 100.0
+margin_bottom = 510.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 8 )
@@ -305,10 +319,10 @@ __meta__ = {
 }
 
 [node name="#339db5" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_top = 410.0
-margin_right = 100.0
-margin_bottom = 510.0
+margin_left = 220.0
+margin_top = 300.0
+margin_right = 320.0
+margin_bottom = 400.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 9 )
@@ -322,11 +336,10 @@ __meta__ = {
 }
 
 [node name="#99c24e" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_left = 220.0
-margin_top = 300.0
-margin_right = 320.0
-margin_bottom = 400.0
+margin_left = 110.0
+margin_top = 520.0
+margin_right = 210.0
+margin_bottom = 620.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 10 )
@@ -340,11 +353,10 @@ __meta__ = {
 }
 
 [node name="#878c81" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_left = 330.0
-margin_top = 300.0
-margin_right = 430.0
-margin_bottom = 400.0
+margin_left = 110.0
+margin_top = 190.0
+margin_right = 210.0
+margin_bottom = 290.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 11 )
@@ -358,11 +370,10 @@ __meta__ = {
 }
 
 [node name="#d1691f" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
 margin_left = 110.0
-margin_top = 300.0
+margin_top = 410.0
 margin_right = 210.0
-margin_bottom = 400.0
+margin_bottom = 510.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 12 )
@@ -376,10 +387,8 @@ __meta__ = {
 }
 
 [node name="#0a0a0a" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_left = 330.0
 margin_top = 190.0
-margin_right = 430.0
+margin_right = 100.0
 margin_bottom = 290.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
@@ -394,10 +403,9 @@ __meta__ = {
 }
 
 [node name="#2f2b6b" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_top = 190.0
+margin_top = 300.0
 margin_right = 100.0
-margin_bottom = 290.0
+margin_bottom = 400.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 14 )
@@ -411,10 +419,9 @@ __meta__ = {
 }
 
 [node name="#f5f1ed" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_left = 440.0
+margin_left = 220.0
 margin_top = 190.0
-margin_right = 540.0
+margin_right = 320.0
 margin_bottom = 290.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
@@ -429,10 +436,9 @@ __meta__ = {
 }
 
 [node name="#9c7248" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_top = 520.0
+margin_top = 630.0
 margin_right = 100.0
-margin_bottom = 620.0
+margin_bottom = 730.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 16 )
@@ -446,11 +452,9 @@ __meta__ = {
 }
 
 [node name="#5f9448" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_left = 220.0
-margin_top = 190.0
-margin_right = 320.0
-margin_bottom = 290.0
+margin_top = 520.0
+margin_right = 100.0
+margin_bottom = 620.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 17 )
@@ -464,9 +468,9 @@ __meta__ = {
 }
 
 [node name="#2d6296" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
+margin_left = 110.0
 margin_top = 300.0
-margin_right = 100.0
+margin_right = 210.0
 margin_bottom = 400.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
@@ -481,10 +485,9 @@ __meta__ = {
 }
 
 [node name="#f5ca2f" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_left = 110.0
+margin_left = 220.0
 margin_top = 410.0
-margin_right = 210.0
+margin_right = 320.0
 margin_bottom = 510.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
@@ -499,11 +502,10 @@ __meta__ = {
 }
 
 [node name="#f0bd8a" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
 margin_left = 110.0
-margin_top = 520.0
+margin_top = 630.0
 margin_right = 210.0
-margin_bottom = 620.0
+margin_bottom = 730.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 20 )
@@ -517,11 +519,10 @@ __meta__ = {
 }
 
 [node name="#ffc0cb" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
 margin_left = 220.0
-margin_top = 410.0
+margin_top = 520.0
 margin_right = 320.0
-margin_bottom = 510.0
+margin_bottom = 620.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 21 )
@@ -549,17 +550,18 @@ texture = ExtResource( 8 )
 [node name="Title" type="LineEdit" parent="."]
 margin_left = 390.0
 margin_top = 10.0
-margin_right = 1600.0
+margin_right = 1640.0
 margin_bottom = 190.0
 mouse_default_cursor_shape = 0
-custom_styles/read_only = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/read_only = SubResource( 22 )
+custom_styles/focus = SubResource( 22 )
+custom_styles/normal = SubResource( 22 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/selection_color = Color( 0.2, 0.615686, 0.709804, 0.392157 )
 custom_colors/font_color_selected = Color( 0.2, 0.615686, 0.709804, 1 )
 custom_colors/font_color = Color( 0.6, 0.760784, 0.305882, 1 )
 custom_colors/font_color_uneditable = Color( 0.6, 0.760784, 0.305882, 1 )
+text = "text"
 align = 1
 editable = false
 expand_to_text_length = true
@@ -589,15 +591,16 @@ __meta__ = {
 }
 
 [node name="Send_Button" type="Button" parent="."]
-margin_left = 1610.0
+margin_left = 1650.0
 margin_top = 10.0
-margin_right = 1907.0
+margin_right = 1910.0
 margin_bottom = 190.0
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 3 )
-custom_styles/normal = SubResource( 3 )
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 23 )
+custom_styles/pressed = SubResource( 23 )
+custom_styles/focus = SubResource( 23 )
+custom_styles/disabled = SubResource( 23 )
+custom_styles/normal = SubResource( 23 )
 icon = ExtResource( 11 )
 align = 0
 __meta__ = {

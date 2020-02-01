@@ -53,6 +53,8 @@ func _gui_input(event):
 								"color": Global.color})
 		elif history[-1].size() > 0:
 			history.append([])
+			history[-2] = brush_douglas_peucker(history[-2], 5)
+
 	elif event is InputEventMouseMotion and \
 				history[-1].size() > 0:
 		history[-1].append({"position": mouse_history[-1],
@@ -123,3 +125,44 @@ func draw_brush(stroke : Array, index : int) -> void:
 		points.append(stroke[index - 1]["position"] + width[1])
 		points.append(stroke[index - 1]["position"] - width[1])
 		_pen.draw_polygon(points,PoolColorArray([stroke[index]["color"]]))
+
+func brush_douglas_peucker(point_list : Array, epsilon : float) -> Array:
+	var array_hist := []
+	for pos in history[-2]:
+		array_hist.append(pos["position"])
+	array_hist = douglas_peucker(array_hist, .3)
+	var new_stroke = []
+	for pos in history[-2]:
+		if array_hist.has(pos["position"]):
+			new_stroke.append(pos)
+	history[-2] = new_stroke
+	return new_stroke
+	
+func douglas_peucker(point_list : Array, epsilon : float) -> Array:
+	# Find the point with the maximum distance
+	var dmax := 0
+	var index := 0
+	var end := point_list.size()
+	for i in range(1, end):
+		var d = perpendicular_distance(point_list[i],
+									   point_list[0],
+									   point_list[end - 1])
+		if (d > dmax):
+			index = i
+			dmax = d
+	
+	# If max distance is greater than epsilon, recursively simplify
+	if dmax > epsilon:
+		return (douglas_peucker(point_list.slice(0, index), epsilon) +
+				douglas_peucker(point_list.slice(index, end), epsilon))
+	else:
+		return [point_list[0], point_list[end - 1]]
+
+func perpendicular_distance(p_test : Vector2, p1 : Vector2, p2 : Vector2) -> float:
+	var two_times_area := abs((p2.y - p1.y) * p_test.x - (p2.x - p1.x) * 
+						  p_test.y + p2.x * p1.y - p2.y * p1.x)
+	var base_length := p1.distance_to(p2)
+	if base_length > 0:
+		return two_times_area / base_length
+	else:
+		return 0.0
