@@ -42,10 +42,6 @@ ui_undo={
  ]
 }
 
-[input_devices]
-
-pointing/emulate_touch_from_mouse=true
-
 [rendering]
 
 environment/default_clear_color=Color( 0.960784, 0.945098, 0.929412, 1 )

@@ -265,22 +265,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 5 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false,
 "_edit_vertical_guides_": [ 960.0 ]
 }
 
 [node name="Draw_Area" type="Control" parent="."]
-margin_left = 10.0
-margin_right = 1930.0
+margin_right = 1920.0
 margin_bottom = 1080.0
 mouse_filter = 1
 script = ExtResource( 2 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Color_Picker" type="Control" parent="."]
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -303,9 +305,9 @@ __meta__ = {
 }
 
 [node name="#ab2929" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-margin_top = 410.0
+margin_top = 400.0
 margin_right = 100.0
-margin_bottom = 510.0
+margin_bottom = 500.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 8 )
@@ -319,10 +321,10 @@ __meta__ = {
 }
 
 [node name="#339db5" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-margin_left = 220.0
-margin_top = 300.0
-margin_right = 320.0
-margin_bottom = 400.0
+margin_left = 210.0
+margin_top = 295.0
+margin_right = 310.0
+margin_bottom = 395.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 9 )
@@ -336,10 +338,10 @@ __meta__ = {
 }
 
 [node name="#99c24e" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-margin_left = 110.0
-margin_top = 520.0
-margin_right = 210.0
-margin_bottom = 620.0
+margin_left = 105.0
+margin_top = 505.0
+margin_right = 205.0
+margin_bottom = 605.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 10 )
@@ -353,9 +355,9 @@ __meta__ = {
 }
 
 [node name="#878c81" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-margin_left = 110.0
+margin_left = 105.0
 margin_top = 190.0
-margin_right = 210.0
+margin_right = 205.0
 margin_bottom = 290.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
@@ -370,10 +372,10 @@ __meta__ = {
 }
 
 [node name="#d1691f" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-margin_left = 110.0
-margin_top = 410.0
-margin_right = 210.0
-margin_bottom = 510.0
+margin_left = 105.0
+margin_top = 400.0
+margin_right = 205.0
+margin_bottom = 500.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 12 )
@@ -403,9 +405,9 @@ __meta__ = {
 }
 
 [node name="#2f2b6b" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-margin_top = 300.0
+margin_top = 295.0
 margin_right = 100.0
-margin_bottom = 400.0
+margin_bottom = 395.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 14 )
@@ -419,9 +421,9 @@ __meta__ = {
 }
 
 [node name="#f5f1ed" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-margin_left = 220.0
+margin_left = 210.0
 margin_top = 190.0
-margin_right = 320.0
+margin_right = 310.0
 margin_bottom = 290.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
@@ -436,9 +438,9 @@ __meta__ = {
 }
 
 [node name="#9c7248" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-margin_top = 630.0
+margin_top = 610.0
 margin_right = 100.0
-margin_bottom = 730.0
+margin_bottom = 710.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 16 )
@@ -452,9 +454,9 @@ __meta__ = {
 }
 
 [node name="#5f9448" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-margin_top = 520.0
+margin_top = 505.0
 margin_right = 100.0
-margin_bottom = 620.0
+margin_bottom = 605.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 17 )
@@ -468,10 +470,10 @@ __meta__ = {
 }
 
 [node name="#2d6296" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-margin_left = 110.0
-margin_top = 300.0
-margin_right = 210.0
-margin_bottom = 400.0
+margin_left = 105.0
+margin_top = 295.0
+margin_right = 205.0
+margin_bottom = 395.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 18 )
@@ -485,10 +487,10 @@ __meta__ = {
 }
 
 [node name="#f5ca2f" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-margin_left = 220.0
-margin_top = 410.0
-margin_right = 320.0
-margin_bottom = 510.0
+margin_left = 210.0
+margin_top = 400.0
+margin_right = 310.0
+margin_bottom = 500.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 19 )
@@ -502,10 +504,10 @@ __meta__ = {
 }
 
 [node name="#f0bd8a" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-margin_left = 110.0
-margin_top = 630.0
-margin_right = 210.0
-margin_bottom = 730.0
+margin_left = 105.0
+margin_top = 610.0
+margin_right = 205.0
+margin_bottom = 710.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 20 )
@@ -519,10 +521,10 @@ __meta__ = {
 }
 
 [node name="#ffc0cb" type="Button" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-margin_left = 220.0
-margin_top = 520.0
-margin_right = 320.0
-margin_bottom = 620.0
+margin_left = 315.0
+margin_top = 190.0
+margin_right = 415.0
+margin_bottom = 290.0
 rect_pivot_offset = Vector2( 30, 70 )
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 21 )
@@ -567,6 +569,7 @@ editable = false
 expand_to_text_length = true
 selecting_enabled = false
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -587,6 +590,7 @@ action_mode = 0
 shortcut = SubResource( 5 )
 icon = ExtResource( 4 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -604,6 +608,7 @@ custom_styles/normal = SubResource( 23 )
 icon = ExtResource( 11 )
 align = 0
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 [connection signal="button_down" from="Undo_Button" to="Draw_Area" method="_on_Undo_Button_button_down"]
