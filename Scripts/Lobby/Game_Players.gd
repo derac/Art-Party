@@ -1,6 +1,6 @@
 extends Control
 
-var player_label = load("res://Screens/Components/Player_Label.tscn")
+var ready_label = load("res://Screens/Components/Ready_Label.tscn")
 
 func _ready():
 	Global.connect("game_state_changed", self, "_on_game_state_changed")
@@ -28,14 +28,14 @@ func _on_game_state_changed():
 			for row in rows:
 				label_pos.y = row * (dimensions.y + 20) - 20
 				
-				create_player_label(rect_position + label_pos,
+				create_ready_label(rect_position + label_pos,
 									dimensions,
 									Global.game_state[data_keys[col*cols+row]]['name'])
 
-func create_player_label(position : Vector2,\
+func create_ready_label(position : Vector2,\
 						 size : Vector2,\
 						 text : String) -> void:
-	var instance = player_label.instance()
+	var instance = ready_label.instance()
 	add_child(instance)
 	instance.set_position(position)
 	instance.set_size(size)

@@ -4,17 +4,13 @@ extends Control
 # down to pen up, so undo will just be a pop and so on
 var history := [[]]
 var _pen = null
-var mouse_history = PoolVector2Array()
 var undo := false
 var min_draw_dist := 1.0
 var stroke_tools := load("res://Scripts/Utility/douglas-peucker.gd")
-var board
-var previous_img
-var viewport
 
 # Setting up drawing surface
 func _ready():
-	viewport = Viewport.new()
+	var viewport = Viewport.new()
 	var rect = get_rect()
 	viewport.size = rect.size
 	viewport.usage = Viewport.USAGE_2D
@@ -28,7 +24,7 @@ func _ready():
 	add_child(viewport)
 	
 	var rt = viewport.get_texture()
-	board = TextureRect.new()
+	var board = TextureRect.new()
 	board.set_texture(rt)
 	add_child(board)
 	
