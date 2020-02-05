@@ -4,7 +4,7 @@ extends Control
 # down to pen up, so undo will just be a pop and so on
 var history := [[]]
 var _pen = null
-var undo := false
+var redraw := false
 var min_draw_dist := 1.0
 var stroke_tools := load("res://Scripts/Utility/douglas-peucker.gd")
 
@@ -53,17 +53,20 @@ func _gui_input(event):
 func _on_Undo_Button_button_down():
 	if history.size() > 1:
 		history.remove(history.size()-2)
-		undo = true
-		_pen.update()
+		redraw()
+
+func redraw():
+	redraw = true
+	_pen.update()
 
 # Drawing section
 func _on_draw():
-	if undo:
+	if redraw:
 		_pen.draw_rect(get_rect(), Color("#f5f1ed"))
 		for stroke in history:
 			for index in range(stroke.size()):
 				draw_brush(stroke, index)
-		undo = false
+		redraw = false
 	if history[-1].size() > 0:
 		draw_brush(history[-1], history[-1].size() - 1)
 	elif history.size() > 1 and history[-2].size() > 0:

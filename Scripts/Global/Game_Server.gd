@@ -17,7 +17,7 @@ func _player_connected(id : int) -> void:
 
 func _player_disconnected(id : int) -> void:
 	Global.game_state.erase(id)
-	# Crappy workaround to trigger setter
+	# Trigger setter
 	Global.game_state_set(Global.game_state)
 
 func _server_disconnected() -> void:
@@ -29,6 +29,11 @@ remote func register_player(player_data : Dictionary) -> void:
 
 remotesync func start_game() -> void:
 	get_tree().change_scene_to(play_screen)
+
+remotesync func send_data(data, id) -> void:
+	Global.game_state[id]["cards"].append(data)
+	# Trigger signal
+	Global.game_state_set(Global.game_state)
 
 func start_serving(retries : int) -> int:
 	var err : int
