@@ -29,7 +29,7 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
 [sub_resource type="DynamicFont" id=5]
-size = 100
+size = 90
 outline_size = 5
 outline_color = Color( 0.960784, 0.792157, 0.184314, 1 )
 font_data = ExtResource( 1 )
@@ -65,7 +65,7 @@ corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
 
 [sub_resource type="DynamicFont" id=9]
-size = 100
+size = 90
 outline_size = 5
 outline_color = Color( 0.372549, 0.580392, 0.282353, 1 )
 font_data = ExtResource( 1 )
@@ -89,11 +89,10 @@ custom_fonts/font = SubResource( 5 )
 custom_colors/selection_color = Color( 0.2, 0.615686, 0.709804, 0.313726 )
 custom_colors/cursor_color = Color( 0.2, 0.615686, 0.709804, 0.313726 )
 custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
-custom_colors/font_color_selected = Color( 0.960784, 0.792157, 0.184314, 1 )
+custom_colors/font_color_selected = Color( 0.2, 0.615686, 0.709804, 1 )
 custom_colors/font_color = Color( 0.2, 0.615686, 0.709804, 1 )
 align = 1
 max_length = 12
-placeholder_text = "enter name"
 placeholder_alpha = 1.0
 caret_blink = true
 script = ExtResource( 3 )

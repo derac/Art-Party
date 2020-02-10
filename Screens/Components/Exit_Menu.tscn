@@ -19,11 +19,11 @@ corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 100
+size = 90
 outline_color = Color( 0.184314, 0.168627, 0.419608, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.819608, 0.411765, 0.121569, 1 )
 draw_center = false
 border_width_left = 20
@@ -37,7 +37,7 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
 draw_center = false
 border_width_left = 20
@@ -51,8 +51,8 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
 
-[sub_resource type="DynamicFont" id=4]
-size = 100
+[sub_resource type="DynamicFont" id=5]
+size = 90
 font_data = ExtResource( 2 )
 
 [node name="Exit_Menu" type="CanvasLayer"]
@@ -70,7 +70,7 @@ __meta__ = {
 }
 
 [node name="Mute_Button" type="CheckBox" parent="Panel"]
-margin_left = 90.0
+margin_left = 85.0
 margin_top = 70.0
 margin_right = 380.0
 margin_bottom = 225.0
@@ -82,6 +82,7 @@ custom_colors/font_color = Color( 0.184314, 0.168627, 0.419608, 1 )
 custom_colors/font_color_hover = Color( 0.184314, 0.168627, 0.419608, 1 )
 custom_colors/font_color_pressed = Color( 0.0392157, 0.0392157, 0.0392157, 1 )
 text = "Mute"
+align = 1
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -93,12 +94,12 @@ margin_top = 260.0
 margin_right = 390.0
 margin_bottom = 421.0
 mouse_default_cursor_shape = 2
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/focus = SubResource( 5 )
-custom_styles/disabled = SubResource( 3 )
-custom_styles/normal = SubResource( 3 )
-custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color_disabled = Color( 0.184314, 0.168627, 0.419608, 1 )
 custom_colors/font_color = Color( 0.184314, 0.168627, 0.419608, 1 )
 custom_colors/font_color_hover = Color( 0.0392157, 0.0392157, 0.0392157, 1 )

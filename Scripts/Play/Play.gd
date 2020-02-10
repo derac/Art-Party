@@ -12,7 +12,7 @@ var awaiting_end = false
 # more than once per game session
 func _ready():
 	#Change music
-	Sound.change_music("res://Sounds/Play.ogg", 25)
+	Sound.change_music("res://Sounds/play.ogg", 25)
 	Sound.play_sfx("res://Sounds/Buttons/complete.ogg", -8.0)
 	
 	ids.sort()
@@ -56,6 +56,7 @@ func _on_Send_Button_button_down() -> void:
 	# end game
 	if turn >= max_turns:
 		$Pause.set_visible(true)
+		Sound.change_music("res://Sounds/end.ogg", 35)
 		get_node("/root/Play/Pause/Waiting_Label").text = "Game Over"
 		awaiting_end = true
 		return

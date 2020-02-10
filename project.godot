@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Draw, Pass, Guess"
+config/name="SketchGuess"
 run/main_scene="res://Screens/Setup.tscn"
 config/icon="res://Assets/icon.png"
 

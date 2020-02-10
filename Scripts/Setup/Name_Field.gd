@@ -8,4 +8,6 @@ func _focus_entered():
 	Sound.play_sfx("res://Sounds/Buttons/on.ogg")
 
 func _gui_input(event):
-	Global.my_name = text
+	if Global.my_name != text:
+		Sound.play_sfx("res://Sounds/Buttons/on.ogg")
+		Global.my_name = text

@@ -9,13 +9,13 @@ func _ready():
 		get_node("/root/Lobby_Screen/Start").set_visible(false)
 
 func _pressed():
-	Sound.play_sfx("res://Sounds/Buttons/button2.ogg")
 	if get_tree().is_network_server() == true:
 		Game_Server.peer.set_refuse_new_connections(true)
 		UDP_Server.broadcasting = false
 		rpc("start_timer")
 
 remotesync func start_timer():
+	Sound.play_sfx("res://Sounds/Buttons/button2.ogg")
 	countdown = 3
 	text = String(countdown)
 	$Start_Timer.start()
@@ -27,6 +27,7 @@ remotesync func start_timer():
 
 func _on_Timer_timeout():
 	if countdown > 1:
+		Sound.play_sfx("res://Sounds/Buttons/button1.ogg")
 		countdown -= 1
 		text = String(countdown)
 		$Start_Timer.start()
