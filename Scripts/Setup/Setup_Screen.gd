@@ -5,6 +5,7 @@ func _ready():
 	Game_Server.stop_client()
 	UDP_Server.listening = true
 	UDP_Server.broadcasting = true
+	Sound.change_music("res://Sounds/Menu.ogg", 15)
 
 func _exit_tree():
 	UDP_Server.listening = false

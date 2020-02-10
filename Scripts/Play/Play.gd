@@ -6,10 +6,15 @@ var turn
 var max_turns
 var ids = Global.game_state.keys()
 var awaiting_data = false
+var awaiting_end = false
 
 # note: may need to move this logic if I am loading the play screen
 # more than once per game session
 func _ready():
+	#Change music
+	Sound.change_music("res://Sounds/Play.ogg", 25)
+	Sound.play_sfx("res://Sounds/Buttons/complete.ogg")
+	
 	ids.sort()
 	my_id = get_tree().get_network_unique_id()
 	my_id_index = ids.find(my_id)
@@ -30,6 +35,11 @@ func _ready():
 func _on_game_state_changed():
 	if awaiting_data:
 		get_card_data()
+	if awaiting_end:
+		for id in ids:
+			if Global.game_state[id]["cards"].size() != max_turns + 1:
+				return
+		get_node("/root/Play/Pause/Waiting_Label").text = "All data sent"
 
 func _on_Send_Button_button_down() -> void:
 	# Send data for current card along with the id for that card stack
@@ -45,6 +55,7 @@ func _on_Send_Button_button_down() -> void:
 	if turn >= max_turns:
 		$Pause.set_visible(true)
 		get_node("/root/Play/Pause/Waiting_Label").text = "Game Over"
+		awaiting_end = true
 		return
 		
 	awaiting_data = true
@@ -62,7 +73,7 @@ func get_card_data():
 		if turn % 2:
 			$Drawing.history = cards[-1]
 			$Drawing.redraw()
-			$Title.text = 'enter title'
+			$Title.text = ''
 			$Title.set("selecting_enabled", true)
 			$Title.set("editable", true)
 		# last card was a title

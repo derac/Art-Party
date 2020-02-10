@@ -9,6 +9,7 @@ func _ready():
 		get_node("/root/Lobby_Screen/Start").set_visible(false)
 
 func _pressed():
+	Sound.play_sfx("res://Sounds/Buttons/button2.ogg")
 	if get_tree().is_network_server() == true:
 		Game_Server.peer.set_refuse_new_connections(true)
 		UDP_Server.broadcasting = false
