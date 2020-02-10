@@ -13,6 +13,7 @@ var game_state := {} setget game_state_set
 signal game_state_changed
 
 func color_set(value):
+	Sound.play_sfx("res://Sounds/Buttons/on.ogg")
 	color = value
 	emit_signal("color_changed")
 

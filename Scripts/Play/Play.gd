@@ -13,7 +13,7 @@ var awaiting_end = false
 func _ready():
 	#Change music
 	Sound.change_music("res://Sounds/Play.ogg", 25)
-	Sound.play_sfx("res://Sounds/Buttons/complete.ogg")
+	Sound.play_sfx("res://Sounds/Buttons/complete.ogg", -8.0)
 	
 	ids.sort()
 	my_id = get_tree().get_network_unique_id()
@@ -42,6 +42,8 @@ func _on_game_state_changed():
 		get_node("/root/Play/Pause/Waiting_Label").text = "All data sent"
 
 func _on_Send_Button_button_down() -> void:
+	Sound.play_sfx("res://Sounds/Buttons/on.ogg", -8.0)
+	
 	# Send data for current card along with the id for that card stack
 	if Global.game_state[ids[my_id_index - turn]]["cards"].size() % 2:
 		Game_Server.rpc("send_data", $Drawing.history, ids[my_id_index - turn])

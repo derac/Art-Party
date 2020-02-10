@@ -13,6 +13,8 @@ func _notification(what) -> void:
 func _input(event) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		if $Panel.is_visible():
+			Sound.play_sfx("res://Sounds/Buttons/off.ogg")
 			$Panel.set_visible(false)
 		else:
+			Sound.play_sfx("res://Sounds/Buttons/on.ogg")
 			$Panel.set_visible(true)

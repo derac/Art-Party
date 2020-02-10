@@ -11,6 +11,69 @@
 [ext_resource path="res://Screens/Components/Color_Button.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/send.png" type="Texture" id=11]
 
+[sub_resource type="StyleBoxFlat" id=16]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.184314, 0.168627, 0.419608, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="DynamicFont" id=17]
+size = 100
+outline_size = 5
+outline_color = Color( 0.372549, 0.580392, 0.282353, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+content_margin_left = 30.0
+content_margin_right = 30.0
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.184314, 0.168627, 0.419608, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
+
+[sub_resource type="InputEventAction" id=19]
+action = "ui_undo"
+pressed = true
+
+[sub_resource type="ShortCut" id=20]
+shortcut = SubResource( 19 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.184314, 0.168627, 0.419608, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
+
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 30.0
 content_margin_right = 30.0
@@ -196,69 +259,6 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id=16]
-content_margin_left = 0.0
-content_margin_right = 0.0
-content_margin_top = 0.0
-content_margin_bottom = 0.0
-bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color( 0.184314, 0.168627, 0.419608, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="DynamicFont" id=17]
-size = 100
-outline_size = 5
-outline_color = Color( 0.372549, 0.580392, 0.282353, 1 )
-font_data = ExtResource( 3 )
-
-[sub_resource type="StyleBoxFlat" id=18]
-content_margin_left = 30.0
-content_margin_right = 30.0
-content_margin_top = 20.0
-content_margin_bottom = 20.0
-bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color( 0.184314, 0.168627, 0.419608, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
-
-[sub_resource type="InputEventAction" id=19]
-action = "ui_undo"
-pressed = true
-
-[sub_resource type="ShortCut" id=20]
-shortcut = SubResource( 19 )
-
-[sub_resource type="StyleBoxFlat" id=21]
-content_margin_left = 10.0
-content_margin_right = 10.0
-content_margin_top = 20.0
-content_margin_bottom = 20.0
-bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color( 0.184314, 0.168627, 0.419608, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
-
 [sub_resource type="StyleBoxFlat" id=22]
 content_margin_left = 0.0
 content_margin_right = 0.0
@@ -304,219 +304,6 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
-
-[node name="Color_Picker" type="Control" parent="."]
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Toggle_Colors" type="Button" parent="Color_Picker"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 190.0
-margin_bottom = 190.0
-mouse_default_cursor_shape = 2
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
-action_mode = 0
-expand_icon = true
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="#ab2929" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_top = 400.0
-margin_right = 100.0
-margin_bottom = 500.0
-rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/focus = SubResource( 2 )
-custom_styles/disabled = SubResource( 2 )
-custom_styles/normal = SubResource( 2 )
-
-[node name="#339db5" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_left = 210.0
-margin_top = 295.0
-margin_right = 310.0
-margin_bottom = 395.0
-rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 3 )
-custom_styles/normal = SubResource( 3 )
-
-[node name="#99c24e" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_left = 105.0
-margin_top = 505.0
-margin_right = 205.0
-margin_bottom = 605.0
-rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/focus = SubResource( 4 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 4 )
-
-[node name="#878c81" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_left = 105.0
-margin_top = 190.0
-margin_right = 205.0
-margin_bottom = 290.0
-rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/focus = SubResource( 5 )
-custom_styles/disabled = SubResource( 5 )
-custom_styles/normal = SubResource( 5 )
-
-[node name="#d1691f" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_left = 105.0
-margin_top = 400.0
-margin_right = 205.0
-margin_bottom = 500.0
-rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 6 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
-
-[node name="#0a0a0a" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_top = 190.0
-margin_right = 100.0
-margin_bottom = 290.0
-rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 7 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/focus = SubResource( 7 )
-custom_styles/disabled = SubResource( 7 )
-custom_styles/normal = SubResource( 7 )
-
-[node name="#2f2b6b" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_top = 295.0
-margin_right = 100.0
-margin_bottom = 395.0
-rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 8 )
-custom_styles/focus = SubResource( 8 )
-custom_styles/disabled = SubResource( 8 )
-custom_styles/normal = SubResource( 8 )
-
-[node name="#f5f1ed" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_left = 210.0
-margin_top = 190.0
-margin_right = 310.0
-margin_bottom = 290.0
-rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 9 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = SubResource( 9 )
-custom_styles/disabled = SubResource( 9 )
-custom_styles/normal = SubResource( 9 )
-
-[node name="#9c7248" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_top = 610.0
-margin_right = 100.0
-margin_bottom = 710.0
-rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 10 )
-custom_styles/pressed = SubResource( 10 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/disabled = SubResource( 10 )
-custom_styles/normal = SubResource( 10 )
-
-[node name="#5f9448" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_top = 505.0
-margin_right = 100.0
-margin_bottom = 605.0
-rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 11 )
-custom_styles/pressed = SubResource( 11 )
-custom_styles/focus = SubResource( 11 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 11 )
-
-[node name="#2d6296" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_left = 105.0
-margin_top = 295.0
-margin_right = 205.0
-margin_bottom = 395.0
-rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 12 )
-custom_styles/pressed = SubResource( 12 )
-custom_styles/focus = SubResource( 12 )
-custom_styles/disabled = SubResource( 12 )
-custom_styles/normal = SubResource( 12 )
-
-[node name="#f5ca2f" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_left = 210.0
-margin_top = 400.0
-margin_right = 310.0
-margin_bottom = 500.0
-rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 13 )
-custom_styles/pressed = SubResource( 13 )
-custom_styles/focus = SubResource( 13 )
-custom_styles/disabled = SubResource( 13 )
-custom_styles/normal = SubResource( 13 )
-
-[node name="#f0bd8a" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_left = 105.0
-margin_top = 610.0
-margin_right = 205.0
-margin_bottom = 710.0
-rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 14 )
-custom_styles/pressed = SubResource( 14 )
-custom_styles/focus = SubResource( 14 )
-custom_styles/disabled = SubResource( 14 )
-custom_styles/normal = SubResource( 14 )
-
-[node name="#ffc0cb" parent="Color_Picker/Toggle_Colors" instance=ExtResource( 10 )]
-visible = false
-margin_left = 315.0
-margin_top = 190.0
-margin_right = 415.0
-margin_bottom = 290.0
-rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/focus = SubResource( 15 )
-custom_styles/disabled = SubResource( 15 )
-custom_styles/normal = SubResource( 15 )
-
-[node name="Dropper_Liquid" type="Sprite" parent="Color_Picker"]
-self_modulate = Color( 0.2, 0.615686, 0.709804, 1 )
-position = Vector2( 100, 100 )
-texture = ExtResource( 1 )
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Dropper_Empty" type="Sprite" parent="Color_Picker/Dropper_Liquid"]
-texture = ExtResource( 8 )
 
 [node name="Title" type="LineEdit" parent="."]
 margin_left = 390.0
@@ -582,6 +369,207 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="Color_Picker" type="Button" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 190.0
+margin_bottom = 190.0
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
+action_mode = 0
+expand_icon = true
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Colors" type="Control" parent="Color_Picker"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="#ab2929" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_top = 400.0
+margin_right = 100.0
+margin_bottom = 500.0
+rect_pivot_offset = Vector2( 30, 70 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+
+[node name="#339db5" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_left = 210.0
+margin_top = 295.0
+margin_right = 310.0
+margin_bottom = 395.0
+rect_pivot_offset = Vector2( 30, 70 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
+
+[node name="#99c24e" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_left = 105.0
+margin_top = 505.0
+margin_right = 205.0
+margin_bottom = 605.0
+rect_pivot_offset = Vector2( 30, 70 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
+
+[node name="#878c81" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_left = 105.0
+margin_top = 190.0
+margin_right = 205.0
+margin_bottom = 290.0
+rect_pivot_offset = Vector2( 30, 70 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 5 )
+
+[node name="#d1691f" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_left = 105.0
+margin_top = 400.0
+margin_right = 205.0
+margin_bottom = 500.0
+rect_pivot_offset = Vector2( 30, 70 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+
+[node name="#0a0a0a" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_top = 190.0
+margin_right = 100.0
+margin_bottom = 290.0
+rect_pivot_offset = Vector2( 30, 70 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 7 )
+
+[node name="#2f2b6b" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_top = 295.0
+margin_right = 100.0
+margin_bottom = 395.0
+rect_pivot_offset = Vector2( 30, 70 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
+
+[node name="#f5f1ed" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_left = 210.0
+margin_top = 190.0
+margin_right = 310.0
+margin_bottom = 290.0
+rect_pivot_offset = Vector2( 30, 70 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 9 )
+
+[node name="#9c7248" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_top = 610.0
+margin_right = 100.0
+margin_bottom = 710.0
+rect_pivot_offset = Vector2( 30, 70 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+
+[node name="#5f9448" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_top = 505.0
+margin_right = 100.0
+margin_bottom = 605.0
+rect_pivot_offset = Vector2( 30, 70 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
+
+[node name="#2d6296" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_left = 105.0
+margin_top = 295.0
+margin_right = 205.0
+margin_bottom = 395.0
+rect_pivot_offset = Vector2( 30, 70 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/focus = SubResource( 12 )
+custom_styles/disabled = SubResource( 12 )
+custom_styles/normal = SubResource( 12 )
+
+[node name="#f5ca2f" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_left = 210.0
+margin_top = 400.0
+margin_right = 310.0
+margin_bottom = 500.0
+rect_pivot_offset = Vector2( 30, 70 )
+custom_styles/hover = SubResource( 13 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/focus = SubResource( 13 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 13 )
+
+[node name="#f0bd8a" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_left = 105.0
+margin_top = 610.0
+margin_right = 205.0
+margin_bottom = 710.0
+rect_pivot_offset = Vector2( 30, 70 )
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/disabled = SubResource( 14 )
+custom_styles/normal = SubResource( 14 )
+
+[node name="#ffc0cb" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_left = 315.0
+margin_top = 190.0
+margin_right = 415.0
+margin_bottom = 290.0
+rect_pivot_offset = Vector2( 30, 70 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/focus = SubResource( 15 )
+custom_styles/disabled = SubResource( 15 )
+custom_styles/normal = SubResource( 15 )
+
+[node name="Dropper_Liquid" type="Sprite" parent="Color_Picker"]
+self_modulate = Color( 0.2, 0.615686, 0.709804, 1 )
+position = Vector2( 90, 90 )
+texture = ExtResource( 1 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Dropper_Empty" type="Sprite" parent="Color_Picker/Dropper_Liquid"]
+texture = ExtResource( 8 )
 
 [node name="Pause" type="ColorRect" parent="."]
 visible = false

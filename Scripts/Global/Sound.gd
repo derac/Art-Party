@@ -12,6 +12,7 @@ func set_mute(is_muted: bool) -> void:
 		AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"), true)
 	else:
 		AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"), false)
+		play_sfx("res://Sounds/Buttons/on.ogg")
 
 func change_music(music_file, seek_to := 0, volume := 0.0):
 	if File.new().file_exists(music_file):
@@ -22,12 +23,13 @@ func change_music(music_file, seek_to := 0, volume := 0.0):
 			music_player.play()
 			music_player.seek(seek_to)
 
-func play_sfx(sound_file):
+func play_sfx(sound_file, volume := 0.0):
 	if File.new().file_exists(sound_file):
 		var sfx_player := AudioStreamPlayer.new()
 		add_child(sfx_player)
 		sfx_player.bus = "SFX"
 		sfx_player.stream = load(sound_file)
+		sfx_player.volume_db = volume
 		sfx_player.stream.loop = false
 		sfx_player.play()
 		sfx_player.connect("finished", sfx_player, "queue_free")
