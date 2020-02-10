@@ -15,19 +15,23 @@ func _pressed():
 		rpc("start_timer")
 
 remotesync func start_timer():
-	Sound.play_sfx("res://Sounds/Buttons/button2.ogg")
+	Sound.play_sfx("res://Sounds/Buttons/button2.wav")
 	countdown = 3
 	text = String(countdown)
 	$Start_Timer.start()
-	get_node("/root/Lobby_Screen/Start").set_visible(true)
-	get_node("/root/Lobby_Screen/Start").rect_position = Vector2(1570, 20)
-	get_node("/root/Lobby_Screen/Start").rect_size = Vector2(330, 1040)
-	get_node("/root/Lobby_Screen/Start").set_disabled(true)
+	set_visible(true)
+	grab_click_focus()
+	rect_position = Vector2(1570, 20)
+	rect_size = Vector2(330, 1040)
+	set_disabled(true)
 	get_node("/root/Lobby_Screen/Back").set_visible(false)
 
 func _on_Timer_timeout():
+	if countdown == 3:
+		Sound.play_sfx("res://Sounds/Buttons/button2.wav", 0.0, 0.75)
+	if countdown == 2:
+		Sound.play_sfx("res://Sounds/Buttons/button2.wav", 0.0, 0.5)
 	if countdown > 1:
-		Sound.play_sfx("res://Sounds/Buttons/button1.ogg")
 		countdown -= 1
 		text = String(countdown)
 		$Start_Timer.start()

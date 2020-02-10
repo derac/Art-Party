@@ -13,7 +13,7 @@ var awaiting_end = false
 func _ready():
 	#Change music
 	Sound.change_music("res://Sounds/play.ogg", 25)
-	Sound.play_sfx("res://Sounds/Buttons/complete.ogg", -8.0)
+	Sound.play_sfx("res://Sounds/Buttons/complete.wav", -6.0, 0.75)
 	
 	ids.sort()
 	my_id = get_tree().get_network_unique_id()
@@ -42,8 +42,6 @@ func _on_game_state_changed():
 		get_node("/root/Play/Pause/Waiting_Label").text = "All data sent"
 
 func _on_Send_Button_button_down() -> void:
-	Sound.play_sfx("res://Sounds/Buttons/on.ogg", -8.0)
-	
 	# Send data for current card along with the id for that card stack
 	if Global.game_state[ids[my_id_index - turn]]["cards"].size() % 2:
 		Game_Server.rpc("send_data", $Drawing.history, ids[my_id_index - turn])
@@ -56,22 +54,26 @@ func _on_Send_Button_button_down() -> void:
 	# end game
 	if turn >= max_turns:
 		$Pause.set_visible(true)
-		Sound.change_music("res://Sounds/end.ogg", 35)
+		Sound.play_sfx("res://Sounds/Buttons/complete.wav", -6.0, 0.75)
+		Sound.change_music("res://Sounds/end.ogg", 35, -3.0)
 		get_node("/root/Play/Pause/Waiting_Label").text = "Game Over"
 		awaiting_end = true
 		return
 		
 	awaiting_data = true
 	$Pause.set_visible(true)
-	get_node("/root/Play/Pause/Waiting_Label").text = \
-		"Waiting for " + Global.game_state[ids[my_id_index - 1]]["name"]
 	get_card_data()
+	if awaiting_data:
+		Sound.play_sfx("res://Sounds/Buttons/button1.wav")
+		get_node("/root/Play/Pause/Waiting_Label").text = \
+			"Waiting for " + Global.game_state[ids[my_id_index - 1]]["name"]
 
 
 func get_card_data():
 	var cards = Global.game_state[ids[my_id_index - turn]]["cards"]
-	# Does the next card stack have the right number of cards?
+	# If the card we are waiting for is here
 	if cards.size() == turn + 1:
+		Sound.play_sfx("res://Sounds/Buttons/button2.wav")
 		# Last card was a picture
 		if turn % 2:
 			$Drawing.history = cards[-1]

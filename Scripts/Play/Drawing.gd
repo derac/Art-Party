@@ -52,7 +52,7 @@ func _gui_input(event):
 		
 func _on_Undo_Button_button_down():
 	if history.size() > 1:
-		Sound.play_sfx("res://Sounds/Buttons/off.ogg")
+		Sound.play_sfx("res://Sounds/Buttons/button1.wav", 0.0, 1.25)
 		history.remove(history.size()-2)
 		redraw()
 
