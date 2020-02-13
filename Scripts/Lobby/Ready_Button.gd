@@ -11,10 +11,11 @@ func _ready():
 func _pressed():
 	if get_tree().is_network_server() == true:
 		Game_Server.peer.set_refuse_new_connections(true)
-		UDP_Server.broadcasting = false
 		rpc("start_timer")
 
 remotesync func start_timer():
+	UDP_Server.broadcasting = false
+	UDP_Server.udp.put_var("remove")
 	Sound.play_sfx("res://Sounds/Buttons/button2.wav")
 	countdown = 3
 	text = String(countdown)

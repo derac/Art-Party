@@ -31,7 +31,7 @@ corner_radius_bottom_left = 50
 [sub_resource type="DynamicFont" id=5]
 size = 90
 outline_size = 5
-outline_color = Color( 0.941176, 0.741176, 0.541176, 1 )
+outline_color = Color( 0.960784, 0.792157, 0.184314, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="Theme" id=6]
@@ -80,17 +80,17 @@ __meta__ = {
 [node name="Name" type="LineEdit" parent="."]
 margin_left = 20.0
 margin_top = 20.0
-margin_right = 1510.0
+margin_right = 1540.0
 margin_bottom = 200.0
 theme = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
-custom_colors/selection_color = Color( 0.941176, 0.741176, 0.541176, 0.392157 )
-custom_colors/cursor_color = Color( 0.611765, 0.447059, 0.282353, 0.392157 )
+custom_colors/selection_color = Color( 0.2, 0.615686, 0.709804, 0.27451 )
+custom_colors/cursor_color = Color( 0.2, 0.615686, 0.709804, 0.392157 )
 custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
-custom_colors/font_color_selected = Color( 0.611765, 0.447059, 0.282353, 1 )
-custom_colors/font_color = Color( 0.611765, 0.447059, 0.282353, 1 )
+custom_colors/font_color_selected = Color( 0.184314, 0.168627, 0.419608, 1 )
+custom_colors/font_color = Color( 0.184314, 0.168627, 0.419608, 1 )
 align = 1
 max_length = 12
 placeholder_alpha = 1.0
@@ -102,7 +102,7 @@ __meta__ = {
 }
 
 [node name="Start_Button" type="Button" parent="."]
-margin_left = 1530.0
+margin_left = 1560.0
 margin_top = 20.0
 margin_right = 1900.0
 margin_bottom = 200.0
@@ -119,7 +119,7 @@ custom_colors/font_color_hover = Color( 0.6, 0.760784, 0.305882, 1 )
 custom_colors/font_color_pressed = Color( 0.6, 0.760784, 0.305882, 1 )
 shortcut_in_tooltip = false
 action_mode = 0
-text = "lobby"
+text = "make"
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true,

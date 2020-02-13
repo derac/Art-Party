@@ -1,29 +1,18 @@
 shoelace
-iron
 library
-uncle
-sister
 notebook
-outer space
+space
 brake
 shark
 money
 strong
 tunnel
 telephone
-fix
 study
-long
 purse
-mop
-wave
 beach
 markers
-bank
-nice
-knee
 cough
-big
 pencil
 field trip
 black
@@ -33,7 +22,6 @@ mascot
 radio
 hello
 toothbrush
-pig
 shout
 sleep
 empty
@@ -45,70 +33,42 @@ vacation
 pajamas
 juice
 hungry
-chew
-moon
 storm
-pail
 dump truck
 guitar
 animal
-fan
-play
-kick
 athlete
 forehead
 computer
 scooter
-claw
 antlers
 young
 shopping
 magic
-horn
 silly
 rhyme
 fountain
 prince
-pen
-crib
-coat
 violin
 stick
-taxi
-red
-melt
-bag
 glasses
-boo
 jewelry
 bird's nest
-car
 dirty
-fall
 swimming pool
-gift
 tractor
 dress
 state
 country
-hail
 mouth
 brother
 makeup
 house
-hot
 lullaby
 fire hydrant
-dog
 chicken
-ear
-man
 night
-cat
-new
-fish
 mountain
-aunt
 happy
 roller coaster
 football
@@ -116,28 +76,16 @@ cafeteria
 cowboy
 cousin
 paint
-buy
-nose
-type
-body
-zoo
 monster
 hide-and-seek
-weak
 artist
 diamond
 dishwasher
-high
 jelly
 stomach
-peas
 ladybug
 yellow
 spoon
-fox
-hair
-dad
-bird
 birthday
 water
 dream
@@ -145,15 +93,10 @@ hotel
 stapler
 stump
 cloud
-nap
 puppy
 elephant
 asleep
-TV
-desk
-wind
 school
-wall
 calculator
 ballet
 finger
@@ -162,84 +105,42 @@ journal
 laugh
 seashell
 candy
-tuba
-talk
 heavy
 trash can
 scientist
 shirt
-cold
 neighbor
 plank
 piano
-clap
-kite
-boat
-box
-bark
-grin
 quarter
 pants
-mall
-toe
 nurse
 escalator
 train
-shoe
-go
-salt
 tissue
 rainbow
-ring
 actor
 grandma
-race
 ranch
 straw
-cake
 ice cream cone
 tired
-moo
 wagon
 sailboat
 triangle
-duck
-lung
-good
-head
-wolf
-tree
 movie
-sun
 candle
-cook
 opposite
 shower
-up
-room
-girl
-lime
 thunder
-run
 stream
 letter
-bed
 dictionary
 alarm clock
-king
-hug
-doll
-rent
-cast
 couch
-slow
 bridge
 grandchild
-arm
-jump
-snow
 tree house
-eat
 fire engine
 towel
 mirror
@@ -252,45 +153,28 @@ doctor
 nightmare
 fire station
 witch
-spy
-tent
 baseball
 clean
 green
-dirt
 mailbox
-bug
-cow
-roof
-fire
 motorcycle
 lightning
-boy
-beak
 clock
 princess
 share
 frying pan
 cheek
 spider
-hit
-chef
 music
 dance
 Internet
-lock
 pepper
 grown-up
-bite
-sad
 paper
 fairy
 wheelchair
 crayon
-leg
-hurt
 picture
-mud
 winter
 museum
 singer
@@ -299,48 +183,31 @@ bottle
 flower
 bride
 flashlight
-list
 popsicle
-day
 classroom
 shadow
 exercise
-zero
 white
 orange
 faucet
 umbrella
-worm
-fur
 pizza
 waitress
 chalk
 scarf
-hat
 sandcastle
 awake
 playground
-lion
-trip
 sleep in
-full
 pillow
-back
-loud
-flag
 toilet paper
 carrot
 family
-ball
 butterfly
 nephew
 banana
 scissors
-rose
-road
-baby
 suitcase
-oink
 bedtime
 fence
 earth
@@ -353,34 +220,22 @@ whisper
 lemon
 spool
 swing
-jail
-draw
-bike
 robot
 apple
-twig
 laundry
-gum
-park
-old
 horse
 shovel
 balloon
 grass
 light bulb
 pudding
-neck
 pantry
 volcano
 climb
-nest
-leaf
 grape
 lawn mower
-door
 tornado
 little
-belt
 tiger
 wrinkle
 dollar
@@ -388,45 +243,26 @@ breakfast
 backpack
 brave
 costume
-ice
 mouse
 elbow
 yo-yo
-poem
-bat
 hot air balloon
 present
-fog
 light
-farm
 broom
-line
-eye
-push
 astronaut
 dentist
 stamp
-star
 please
-half
 blind
 helicopter
 hospital
 recycle
-soap
-city
-bald
 chocolate
 smell
 above
-rain
-frog
-fork
 school bus
-walk
-stop
 student
-blue
 cheerleader
 chair
 skirt
@@ -435,53 +271,34 @@ clown
 oven mitt
 circle
 river
-cave
 party
-bowl
 refrigerator
 smoke
 lizard
-gym
-bib
 stairs
 smile
-sick
-sink
 eyebrow
 count
-rock
-ride
 airplane
 frown
-deep
 teacher
-help
 bedroom
 blanket
 fireman
 wallet
 pilot
-bath
 penny
 wrong
 restaurant
 marker
-pear
 prayer
 street
-vet
 picnic
 sandwich
 stand
-bad
-tusk
-tail
 heart
-noon
-cup
 scared
 snowman
-hill
 microwave
 goodbye
 hopscotch
@@ -495,80 +312,49 @@ church
 homework
 policeman
 lollipop
-hoof
 blue jeans
-mom
-Monday
-last
-golf
 broken
-fast
 first
-low
 grandpa
-key
 drums
 elevator
-sing
-down
 purple
 watermelon
-fly
 camera
 nail polish
 lunchbox
-sock
 pocket
-book
 right
-feet
-page
-game
 lunch
 drums
-chin
 classroom
 flock
 dimple
 skull
-hike
 button
-harp
 quilt
 tiptoe
-gold
 recycle
-coin
 doghouse
 wedding ring
 lighthouse
 index
 spine
-bake
 airport
 money
 saddle
 softball
 trash can
-mall
 firefighter
-net
-aunt
 time machine
 throne
-vase
 bicycle
 bathroom scale
 poster
-goal
-claw
 clown
-sap
 police officer
 cowboy
-pawn
 nightmare
-lip
 quill
 fishing pole
 paint
@@ -576,31 +362,22 @@ prize
 sandpaper
 tickle
 stoplight
-dirt
 water
-jeep
 stomp
 spring
 seashell
-mute
 monster
 sunburn
 shipwreck
 snuggle
-hose
 shelf
-iPod
-saw
-pond
 torch
 blunt
 driveway
 astronaut
-log
 surfboard
 sneeze
 tooth
-maid
 front porch
 blue jeans
 silverware
@@ -611,25 +388,17 @@ spaceship
 cruise
 cramp
 bridge
-dock
 darts
 laugh
 fetch
-taxi
 plumber
 ceiling fan
-bite
 snowball
 story
-sink
 blanket
 match
-tank
 hotel
 tennis shoes
-kiss
-ivy
-skin
 wristwatch
 music
 blush
@@ -639,71 +408,47 @@ wrench
 crack
 pocket
 attic
-draw
 bedspread
 cheer
-jog
 huddle
-barn
 candle
-lake
 t-shirt
 hot tub
-wag
 post office
 earache
-tool
 rollerblades
 bunk bed
-scar
 snowman
-germ
-mold
 pinch
 rainbow
 alarm clock
 president
 baby-sitter
-face
 sprinkler
-sip
 organ
-wrap
 Windex
 knight
-fog
 windmill
 fence
 movie
 bruise
 lunch tray
-lamp
-hook
 sponge
-pack
 crumb
-date
 easel
 snack
 cello
-shed
 flagpole
 gasoline
 dollar
-card
 grown-up
 railroad
-rind
 hopscotch
 swamp
 letter opener
 living room
 hide-and-seek
 between
-hip
-cape
-heel
-bib
 forest
 rattle
 paperclip
@@ -711,68 +456,45 @@ waist
 stiff
 slide
 outer space
-rake
 sun block
 standing ovation
 blink
-map
-flu
 hurdle
-yawn
-rug
 cloud
 ironing board
 banana peel
-weed
 forehead
 click
 telephone booth
-skip
 Christmas carolers
 brick
-acne
 porch swing
 scale
 paperback
-mast
 dance
 grandfather
 bubble
-desk
 corner
 home movies
 batteries
 banister
-rib
 chain
 blackboard
 washing machine
-dawn
-ink
 plant
 photograph
-pull
-eat
 leather
 grill
-mop
 check
-rim
 basketball
-bud
-spy
 matchstick
 wallet
 shopping cart
-oil
-robe
 bedbug
 gumball
-curb
 puzzle piece
 mountain
 newspaper
-plow
 seesaw
 glide
 feast
@@ -780,123 +502,79 @@ dentist
 campsite
 basket
 printer
-beg
-runt
 puppet
 plastic
-camp
 paddle
 eraser
-twig
-race
-elf
 sidewalk
-sofa
 headache
 candlestick
-lid
 magic
 sheet
-wick
 photographer
 ditch
-ship
 snowboard
 shoulder
 stage
 think
-pin
 ballpoint pen
 finger
 robot
 beach
-gate
 country
 rocking chair
-foil
 pigpen
 pride
 shower curtain
 Internet
-pea
 chess
-hand
 ping pong
-pipe
 trumpet
-jaw
 pogo stick
-rock
-tar
-smog
 tulip
 flute
-rut
 rocket
-bait
 thread
 step-daughter
 stripe
-tag
 sailboat
 goblin
-leak
-team
 coach
 Old Spice
 grandma
 ticket
-arm
 riddle
-tire
 brass
 waves
 shack
 fiddle
 birthday
-nail
 curtains
-cot
 earthquake
 stapler
-wind
 snowflake
-hug
-snap
 insect
 yo-yo
 squint
-stem
 stationery
 stove
 church
 address
 ribbon
-mail
-park
 spider web
 baseboards
-cage
 cartoon
 stairs
-wood
-city
-dew
 zipper
-Friday
 branch
 top hat
-air
 blossom
 swing
 bobsled
 brain
-boil
 bonnet
 bowtie
 beanstalk
-fad
-sin
 teleconference
 audacity
 cuticle
@@ -905,111 +583,73 @@ standard
 airway
 spite
 feast
-safe
 pinch
 billboard
-wool
-raft
 blimp
 shear
-mast
-sash
 falsetto
 buddy
 pine tree
 bucket
 jockey
-tine
-standing ovation
-tilt
 confused
 diver
 fireman pole
 tugboat
 shrink ray
-bob
 Olympian
-half
-leak
 chime
 nutrient
 banana peel
-twitterpated
 highjack
 cloak
-sum
-tide
-reimbursement
 picture frame
-punk
 capitalism
 garden hose
 cabin
 organ
-cure
-cot
-inconceivable
 cardboard
 retina
 battle
-fizz
-Christmas carolers
 tinting
-elm
 sling
-shrub
-gusto
 suntan
-my
 applause
 beanstalk
 firefighter
 dust bunny
 sunflower
-wish
-pomp
 flannel
 screenplay
-race
 hedge
-jig
-jury
 blunt
 jammin'
-club
 fiddle
 reggae
 riddle
 number
-demo
 phonemics
 example
 spoil
-Zen
 ginger
 romance
-jade
 plaid
 yardstick
 forever
 cliff
-fort
 sheriff
 mortician
 gray hairs
 beehive
 indent
 nanny
-path
 humidifier
 puzzle piece
-jazz
 whiplash
 amateur
 outer space
 shock collar
 immune
-BFF
 brainstorm
 catering
 feudalism
@@ -1019,49 +659,28 @@ step-daughter
 guile
 potassium
 crate
-mess
-rag
 flush
-glum
-lend
 whatever
 hardhearted
-help
 campsite
-sale
-new
 darts
 sandbox
-peck
 through
-fear
 haiku
 clockwork
-crop
-maze
 laminate
 password
 image
-bay
 lollipop
 booth
 fancy
 ditch
 think
 urgent
-sow's ear
 dimple
 plank
-multiplication
-clay
-blur
-gang
 cupola
-wow
-life
 full moon
-sod
-inn
 fabric
 hatch
 hearty
@@ -1069,18 +688,12 @@ brand
 impact
 oak tree
 squint
-dawn
 chain
-jog
 degree
 voice
-end
-tip
 simmer
 zigzag
 superpower
-pile
-flu
 welder
 eternity
 whole milk
@@ -1091,35 +704,24 @@ rendering
 shipwreck
 application
 Murphy's Law
-hem
 escalator
 spool
 group
-dent
-sip
 deployed
-hut
 ebony and ivory
 bonnet
 tiptop
 overhang
 rhetoric
 sunglasses
-dud
 goblin
 collage
 scrap
-runt
-plug
 brass
-fortnight
 skating rink
-ogre
 swirl
 cell phone charger
-modern
 chicken coop
-incident
 scanner
 ballpoint pen
 juggler
@@ -1128,7 +730,6 @@ blossom
 wreath
 bleach
 divine
-snag
 freight train
 population
 throb
@@ -1138,39 +739,22 @@ scar tissue
 ladder rung
 musician
 meticulous
-rut
-doom
 midsummer
 traffic jam
-tunic
-scramble
-dress shirt
-scoundrel
 first mate
-dot
-glide
 publisher
-kitchen knife set
-cog
-cuff
 mascot
 scuff mark
 journey
 blueprint
-gem
 sentence
 handwriting
 lecture
 purge
 houseboat
 coast
-coal
-underestimate
 sequins
-cat
-mole
 komodo dragon
-ewe
 snapping turtle
 catfish
 polar bear
@@ -1180,7 +764,6 @@ Canadian goose
 crane
 partridge
 toucan
-worm
 whale
 trout
 baboon
@@ -1188,18 +771,12 @@ stork
 hyena
 panda
 canary
-ape
 skunk
-bear
 dolphin
 dragon
-pony
 kitten
-clam
 rabbit
-bass
 tiger
-ox
 elephant
 sheep
 humpback whale
@@ -1214,22 +791,16 @@ gila monster
 salamander
 lemur
 grizzly
-lark
 eagle
-goat
 goose
 rolly polly
-crab
 reindeer
 parrot
-crow
 bulldog
-deer
 groundhog
 prairie dog
 koala
 meerkat
-dog
 manatee
 armadillo
 earthworm
@@ -1243,32 +814,22 @@ finch
 horse
 alligator
 albatross
-fly
-ant
 bison
 bunny
 cougar
 camel
-rat
 flounder
-pig
 coyote
 penguin
-elk
-mallard
 chick
 boa constrictor
-hawk
 sheep dog
 dinosaur
 zebra
-lion
 leopard
 sea turtle
 bumblebee
-emu
 beaver
-hive
 antelope
 sea lion
 bush baby
@@ -1280,37 +841,26 @@ squirrel
 cheetah
 raven
 capybara
-moth
 human
 tortoise
 rooster
-dove
-duck
 housecat
 moose
-mule
 shrew
 pelican
-yak
 hamster
 wombat
 cricket
-cub
 macaw
-herd
 inchworm
 puppy
 robin
 hedgehog
 chicken
-mink
-calf
 crocodile
-fox
 mouse
 gorilla
 badger
-school of fish
 mosquito
 grasshopper
 swordfish
@@ -1318,16 +868,12 @@ poodle
 caterpillar
 Tasmanian devil
 porcupine
-owl
 cockroach
 snail
 buffalo
 kangaroo
-gnu
-wasp
 barracuda
 giraffe
-hen
 blue whale
 piranha
 seahorse
@@ -1343,37 +889,27 @@ gazelle
 anteater
 chimpanzee
 walrus
-bat
 hornet
 saber-tooth tiger
 parakeet
 squid
 warthog
 chinchilla
-bird
 pigeon
 jellyfish
 guinea pig
 spider
 narwhal
-doe
 donkey
 weasel
-swan
-ram
-joey
 snake
 seagull
-toad
 lobster
 starfish
 llama
-hare
 falcon
 killer whale
 shark
-eel
-bee
 panther
 hippopotamus
 basset hound
@@ -1383,30 +919,20 @@ raccoon
 T-Rex
 rhinoceros
 jackalope
-frog
-cow
-tuna
 stingray
 oyster
-unicorn
-wolf
 hummingbird
 cobra
 water buffalo
 wooly mammoth
 duckling
 ferret
-seal
-boar
-lamb
 hammerhead shark
 python
 iguana
 daddy longlegs
 three-toed sloth
 platypus
-pea
-yam
 mozzarella cheese
 black beans
 fried chicken
@@ -1429,12 +955,10 @@ lasagna
 granola
 shish kabob
 breakfast
-kale
 toaster
 ice cream cone
 jelly
 smoothie
-okra
 pistachio
 Brussels sprouts
 baked Alaska
@@ -1442,51 +966,38 @@ liver
 banana
 marshmallow
 celery
-rice
 tangerine
 Bundt pan
 oven mitt
 poultry
 carrot
-tofu
-jam
-"à la carte"
 Swiss cheese
 apricot
 chicken pot pie
 milkshake
 blackberry
-snickerdoodle
 brownie
 tomato
 basil
-pita
 candy
 chickpea
 egg salad
 refried beans
-ham
 custard
 cornmeal
 lima bean
 salad dressing
 sourdough bread
 sifter
-egg
 caramel
-salt
 sugar cookie
 curry
 grapefruit
-spam
-beet
-pear
 broil
 veggie burger
 salad
 baguette
 catfish
-tempura
 lobster
 pumpkin seeds
 chocolate milk
@@ -1494,15 +1005,10 @@ scrambled eggs
 appetizer
 cinnamon
 lentils
-Boston cream pie
-lamb
 drive-through
 pasta
-beef
 pretzel
 grill
-ratatouille
-wedding cake
 garlic
 doughnuts
 whole milk
@@ -1511,7 +1017,6 @@ almond
 salmon
 wheat bread
 rolls
-"cr\x8Fème brûlée"
 scone
 cabbage
 banana split
@@ -1525,29 +1030,20 @@ sea salt
 nutmeg
 gourd
 sweet potato
-plum
 sun-dried tomatoes
 Burger King
 muffin tin
 meatballs
 peach
 granola bar
-wok
 watermelon
-bake
 birthday cake
 banana bread
 baked beans
-zest
 lemon
-oatmeal raisin cookies
-pork
 Bundt cake
 lettuce
 peanut butter cookies
-kumquat
-KFC
-la carte
 squash
 flour
 grits
@@ -1558,7 +1054,6 @@ tomato soup
 cashew
 cheeseburger
 potato chip
-cake
 hamburger
 grape
 macaroon
@@ -1572,9 +1067,6 @@ cherry
 pepperoni pizza
 toaster oven
 banana pudding
-chow mien
-green onion
-almond extract
 cottage cheese
 broccoli
 guacamole
@@ -1586,57 +1078,32 @@ cheddar cheese
 orange chicken
 baked potatoes
 spatula
-egg timer
-leek
 pancake
 mushroom
-baby carrots
 salt shaker
-potato salad
 apple
 angel food cake
-fork
-melt
 peanut
 coconut
 sloppy joe
-milk
-broth
-walnuts
 blender
 Kool-aid
 cereal
 bagel
 pizza
 whisk
-turnip
-ginger
-garbanzo bean
-fruitcake
 Taco Bell
 napkin
 raisin
 McDonalds
 bread bowl
 tortilla
-date
-taco
-chicken soup
-chicken salad sandwich
-Alfredo sauce
 boiled egg
-rye bread
-corn on the cob
-popcorn shrimp
-honeydew
-all-you-can-eat buffet
-meat
+corn
 asparagus
 turkey
 chocolate cake
-black-eyed pea
 deviled eggs
-freeze
 mustard
 frozen yogurt
 sandwich
@@ -1649,16 +1116,9 @@ fruit smoothie
 s'mores
 popcorn
 muffin
-BLT
 avocado
-Balsamic vinegar
 chicken fried steak
 yogurt
-blanch
-turkey bacon
-green bean casserole
-soda
-zucchini
 jalapeño
 meatloaf
 tater tots
@@ -1668,272 +1128,119 @@ corn flakes
 key lime pie
 tortilla chips
 cookie
-lime
 blueberry
-pinto beans
-parsnip
-potatoes au gratin
-bran muffins
 biscuit
 fried rice
-Bavarian cream
 Twinkies
 cheesecake
 cinnamon rolls
 onion
 chicken
 macaroni and cheese
-papaya
-crepe
 mashed potatoes
 ice cream sundae
-horseradish
 cheese
 french fries
 cauliflower
 orange
 sesame seeds
-kiwi
-tuna
-kidney beans
 corndog
 wooden spoon
-water chestnut
 cucumber
 salsa
 tuna salad
 artichoke
 parmesan cheese
 pumpkin pie
-pecan
 onion rings
-bok choy
-flatbread
-crab
-low-fat
-soup de jour
 grilled cheese
 sushi
 ice cream
-poach
 pineapple
 jellybeans
-vanilla wafer
-cranberry
 frying pan
-fig
-colander
 shrimp
 strawberry
-marinade
 flambé
-skim milk
-dairy
-spinach
 rolling pin
 Pop Tart
-fruit salad
 cupcakes
 buffalo wings
-cornbread
-clementine
 pumpkin
-cantaloupe
 toast
 produce
 apple pie
-egg nog
 carrot cake
-sunflower seeds
 pudding
-paella
 ranch dressing
 potato chips
 bread
-soufflé
-corn
 omelet
-waffles
-Dutch oven
+waffle
 bell pepper
 beef jerky
-white bread
-barley
-egg salad sandwich
-soft pretzel
-noodles
-sweet potatoes
 New York City
 binoculars
 surfboard
-summer
-Florida
-July
-England
-Scotland
-State of Liberty
-the Grand Canyon
-condo
-the Bahamas
-the Sphinx
-the Nile
-Broadway
-lake
-Istanbul
-Greece
-Portugal
-Austria
-Oregon
 river
-Fiji
-Madagascar
-California
-South Dakota
-Barbados
-Switzerland
-Sydney
 Japan
-Rome
 sunscreen
-Asia
 scuba diving
 the Taj Mahal
 the Louvre
 Egyptian Pyramids
 passport
-relax
-Boston
-Buckingham Palace
-Turkey
-San Francisco
-Hong Kong
 the White House
-Honolulu
-Universal Studios
 bicycle
 sleeping bag
 coral reef
 fanny pack
-Tokyo
 beach house
-the Mayan ruins
 lazy river
-Arizona
-map
-Canada
-Paris
-Great Wall of China
 layover
 Six Flags
 Texas
-New Zealand
-Los Angeles
 bird watching
 mountain biking
 the Eiffel Tower
-Luxembourg
 island
 family reunion
 airline
-Colorado
 hiking
 river rafting
-Easter Island
 camera
 scenery
-Bermuda
-Orlando
 Disneyland
-Sacramento
-backpacking
-customs
 Niagara Falls
 rainforest
 sunset
 skiing
 boardwalk
-Galapagos Islands
 theme park
-Italy
 hotel
 the Coliseum
 road trip
 vacation day
-Beijing
-Barcelona
-London
 safari
 camping
 snowboarding
-Mediterranean Sea
 Europe
-Atlantic Ocean
-time off
-money belt
-Delaware
-national park
-Australia
-Ireland
 suitcase
-the Thames
-London Bridge
-Pacific Ocean
-Four Corners
-Belgium
-Mount Rushmore
-Yellowstone
-sightseeing
 sunglasses
-packing
 Washington D.C.
-Aruba
 airplane
-Maine
-Say "cheese"
-party
-sunshine
-honeymoon
 shopping
-Venice
 Stonehenge
-Manhattan Island
-France
-Hawaii
-Antarctica
-Guam
-Egypt
-Vienna
-Mexico
 airport security
-Las Vegas
-tour guide
-Africa
-Carlsbad Caverns
-Brazil
-resort
 bug spray
-Arctic Ocean
 suntan
-the Mississippi River
-Alaska
 sunny weather
-America
-the Golden Gate Bridge
-June
-tourist
+Golden Gate Bridge
 cruise ship
-Mount Everest
 snow cone
 luggage
 swimming pool
-water park
-the Great Barrier Reef
-stroll
-first class
-Spain
-Jamaica
 movies
-Costa Rica
 airport
 kayak
 hang glider
@@ -1943,10 +1250,8 @@ ribbon
 front porch
 necktie
 swing
-coin
 cleaning spray
 bowtie
-ice
 wristwatch
 telephone
 Windex
@@ -1965,18 +1270,14 @@ ladder
 t-shirt
 bicycle
 toothpaste
-box
 washing machine
-mail
 refrigerator
 stairs
 porch swing
 watering can
-crib
 chimney
 sun block
 pencil
-CD
 window
 cell phone
 printer paper
@@ -1990,11 +1291,9 @@ trash can
 magazine
 red wagon
 loveseat
-meal
 bench
 dollar
 bedroom
-iPod
 candle
 shower
 headband
@@ -2008,30 +1307,22 @@ wheel
 yo-yo
 spice rack
 umbrella
-lamp
 eraser
 kitchen
-key
 towel
-yarn
 mitten
 rattle
 living room
 television
 garden hose
 balloon
-weed
-bib
 stain
 sandpaper
 door knob
 hairspray
 bottle
 fake flowers
-robe
 mailbox
-wick
-vest
 blue jeans
 ballpoint pen
 sandbox
@@ -2045,12 +1336,10 @@ hand lotion
 globe
 dog leash
 loose change
-bag
 napkin
 hairbrush
 dustpan
 curtains
-DVDs
 markers
 broom
 batteries
@@ -2063,14 +1352,10 @@ pillowcase
 scissors
 stove
 sunglasses
-doll
 sponge
 bubble
 socks
 glasses
-bike
-iron
-shoe
 picture frame
 bedbug
 sweater
@@ -2083,40 +1368,29 @@ snack
 kitchen knife set
 paperclip
 hot water
-ink
 doorway
 bedtime
 pajamas
-sash
 stapler
 bucket
 picture
 jewelry
 tissue
-door
-bath
 table
 stamp
 laundry basket
-sofa
 snowman
 speakers
 hair dryer
 glue stick
 extension cord
-vase
 driveway
-coat
 skateboard
 cell phone charger
 pants
-book
 spoon
-ring
-cash
 stamps
 printer
-mess
 letter opener
 glass
 camera
@@ -2127,28 +1401,22 @@ wreath
 lipstick
 money
 puzzle piece
-mold
-lace
 duct tape
 magnets
 ceiling fan
 clock
 pogo stick
 doghouse
-block
 light switch
 shirt
 flowers
 lunchbox
-roof
 rocking chair
 doorknob
 toilet paper
 crumb
 chair
-bed
 garage
-rake
 shower curtain
 mini blinds
 pillow
@@ -2159,9 +1427,6 @@ bathroom
 newspaper
 wallet
 laundry detergent
-dress shirt
-jar
-scarf
 stationery
 bathtub
 swimming pool
@@ -2169,52 +1434,38 @@ purse
 ceiling
 garbage
 flashlight
-iPad
 ironing board
 sprinkler
-kite
 pantry
 banister
 chest
-leak
 dress
 grill
-scuff mark
 crayon
-TV
 suitcase
 electrical outlet
 dryer sheets
 dust bunny
 mirror
 banana peel
-baby-sitter
 doorbell
-boot
-desk
 home movies
 drums
 doormat
 brother
 crayons
-tape
 garden
-Sunday shoes
 video camera
 plastic
 Frankenstein
-horror
 candle
 lollipop
 autumn
 jack-o-lantern
 fortune teller
 vampire
-eerie
 apple cider
-spells
 grave
-boo
 gypsy
 Ghostbusters
 trick or treat
@@ -2224,76 +1475,38 @@ hay ride
 skeleton
 ghost
 costume
-spooky
-afraid
 marshmallow
 candy corn
-haunted house
 goblin
-candy
 witch
-spooks
-fall
-Igor
-creepy
-going trick-or-treating
+trick-or-treating
 graveyard
 spider
-black
-corn maze
-ghost story
 chocolate
-Monster Mash
 doorbell
-monster
 werewolf
 orange
-scary movies
-nighttime
-goody bag
-Dracula
 scarecrow
-bats
-frightened
 coffin
 lantern
 zombie
-scary
 secret lab
-dark
 pumpkin
 mad scientist
-chains
-sweets
-pumpkin seeds
 spider web
 snowball fight
-lights
-Christmas break
+christmas lights
 the North Pole
-elves
-sledding
-the Grinch
-Rudolph the Red-Nosed Reindeer
-Little Saint Nick
 cookies
 scarf
-Buddy the Elf
-Santa's sleigh
 eggnog
-Christmas Eve
 gifts
 chestnuts
 Christmas carol
-wassail
-Christmas spirit
-the Little Drummer Boy
 snowflake
-doll
 reindeer
 ice skating
-star
-the Nutcracker
+Nutcracker
 gumdrops
 hot chocolate
 snowman
@@ -2305,144 +1518,71 @@ stocking
 pumpkin pie
 icicle
 mistletoe
-ho ho ho
-shepherds
 angel
-toys
-manger
-snow
-mittens
 cinnamon
 jingle bells
 nativity
 Christmas tree
 Santa Claus
-Santa's workshop
 decorations
 candy cane
 turkey
-soup
-Frosty the Snowman
 wrapping paper
-wise men
 chimney
-sleigh ride
-national holiday
+sleigh
 coleslaw
-American Revolution
 sparklers
 America
 sports
 balloons
-red
 Georgia
-Common Sense
 independence
 potato salad
-republicanism
+republican
 Benjamin Franklin
-taxes
-fair
 summer
-This Land is Your Land
 justice
-God Bless America
 games
-John Adams
-liberty
-stripes
-states
-the Constitution
-stars and stripes
 Boston
-parks
-Yankee Doodle
 South Carolina
 England
-carnival
-red, white, and blue
 baseball
 music
-family reunions
-streamers
-My Country 'Tis of Thee
+streamer
 patriotism
 Boston Tea Party
-inalienable rights
-Patrick Henry
-minutemen
 Maryland
-hot dogs
-James Madison
+hot dog
 congress
 eagle
-united
 New Hampshire
-Thomas Jefferson
 Statue of Liberty
 hamburgers
 Thomas Paine
-America the Beautiful
 speeches
 white
 thirteen colonies
 freedom
-liberty and justice for all
-blue
 ice cream
 Massachusetts
 firecracker
 democracy
-July
 picnic
 Independence Day
 national anthem
-God Bless the U.S.A.
-Alexander Hamilton
-founding fathers
-party
 stars
 Rhode Island
 North Carolina
 the Liberty Bell
-Treaty of Paris
-pride
 fireworks
-the Pledge of Allegiance
-floats
-fun
-George Washington
-Declaration of Independence
 barbeque
-soda
 s'mores
-Delaware
-celebration
-band
 New Jersey
-shows
-block party
-Revolutionary War
 New York
-John Hancock
-Virginia
-anthem
 candy
-colonies
-Betsy Ross
-parade
-Francis Scott Key
-You're a Grand Old Flag
-patriot
-Pennsylvania
-bonfires
-concerts
-pie
+bonfire
+concert
 family
-corn on the cob
-flag
-Star Spangled Banner
-'1776'
 watermelon
 travel
 Connecticut
@@ -2462,36 +1602,17 @@ green bean casserole
 New England
 rolls
 winter squash
-corn
 watching TV
-thanks
-pilgrims
-yams
-Plymouth
 dumplings
-parade floats
 harvest
 turkey
 cooking
 gravy
 pecan pie
-thankful
-baking
-parades
 holiday
 apple cider
-creamed corn
-resting
-travel
-venison
-Macy's Day Parade
-grateful
-gratitude
 cranberry
-pie
-rejoice
 festival
-praise
 stuffing
 mashed potatoes
 survive the winter
@@ -2500,7 +1621,6 @@ apple pie
 table setting
 cornucopia
 blessings
-sweet corn
 setting the table
 cranberry sauce
 football games
@@ -2513,7 +1633,6 @@ television
 bonfire
 toasts
 resolutions
-kiss
 bank holiday
 fireworks
 parade
@@ -2522,196 +1641,122 @@ midnight
 feast
 gifts
 parties
-food
 concerts
 good luck
 twelve chimes
 clock
-traditions
-January
 grapes
 sparklers
-December
 celebration
 speech
 dancing
 ball drop
 Father Time
-I love you
-snow
 kisses
 Romeo
-hugs
 friendship
 dinner
-lace
 sweetheart
 diamond
 mailbox
-love
 heart
 candy
-gift
 chocolate
-dove
 Cupid
 happy
 couples
-pink
-February
 flowers
-rose
-date
 lollipop
 Saint Valentine
 restaurant
 jewelry
 poems
-red
-card
 caterpillar
 blossoms
 flower
 seeds
-bees
 rainbow
 daffodil
-mud
 umbrella
 grasshopper
-dew
 trees
-April
-rain
 spring break
 butterfly
-park
 garden
 jump rope
 pollen
 worms
 duckling
-sun
 wildflowers
-bird
 green
 kites
 bunny
 robin
-frog
 tulips
 bird nest
 chick
 sunshine
-lamb
-ants
 crickets
-pen
 caterpillar
 rocket
 alligator
 pizza
 shirt
-kite
-eyes
 chair
-cup
 jacket
 hippo
-bird
 monster
 bracelet
-coat
 balloon
 dinosaur
-head
-book
 mouse
 smile
 bridge
 blocks
-milk
-eye
-oval
 snowflake
 broom
 cheese
-lion
-lips
 beach
 cloud
-bus
 elephant
 sunglasses
 lemon
-star
 spoon
-boat
 turtle
-drum
-doll
-ant
 motorcycle
-bike
 pencil
 bunk bed
-moon
 inchworm
 slide
-hat
-cat
-tail
 helicopter
 square
 Mickey Mouse
-octopus
-door
 table
-egg
-bell
-nose
 spider
 horse
 finger
 glasses
-jar
-girl
-ear
 lizard
 flower
 snowman
-baby
-car
 bread
 blanket
 apple
 bench
 skateboard
-pig
 ice cream cone
-frog
-feet
 lollipop
 heart
-ears
-bed
 carrot
 person
-boy
 train
 truck
-bug
-legs
-bowl
-lamp
-desk
 purse
 light
 mountain
 snail
 basketball
 orange
-bear
 chicken
 grass
 cookie
@@ -2720,9 +1765,6 @@ ghost
 spider web
 ocean
 monkey
-shoe
-dog
-face
 circle
 water
 butterfly
@@ -2730,56 +1772,35 @@ house
 robot
 mouth
 branch
-worm
 socks
 grapes
-crab
 banana
 computer
-bee
 whale
 seashell
 snake
-sun
 swing
-bat
-pie
 wheel
 bunny
-hand
 cherry
 jellyfish
-tree
 stairs
-duck
-leaf
 dragon
 giraffe
-ball
 pants
-ring
 airplane
 candle
-cow
 cupcake
 football
 hamburger
-bone
-corn
-trip
 cobra
 bottle
 curtains
-soap
 mailman
 banana peel
 railroad
-back
 lipstick
-knee
 broccoli
-face
-tape
 hot dog
 shadow
 lawnmower
@@ -2787,18 +1808,13 @@ table
 trash can
 rainbow
 hippopotamus
-soda
 laundry basket
-city
 match
-hill
 violin
 mailbox
-tire
 pumpkin
 zebra
 shelf
-eel
 beach
 salt and pepper
 ladder
@@ -2807,19 +1823,16 @@ address
 radish
 sea turtle
 dress
-lid
 family
 ladybug
 window
 cheeseburger
 yo-yo
-frog
 whistle
 glove
 magazine
 church
 chameleon
-boot
 tongue
 hospital
 thief
@@ -2829,36 +1842,25 @@ hairbrush
 stork
 computer
 school
-heel
 pogo stick
-tent
 cucumber
-fox
 three-toed sloth
 sprinkler
 garden
 blowfish
-crib
-wing
 brain
-net
-song
 drums
 bagel
-baby
 starfish
 corner
 carpet
 bicycle
 strawberry
 horse
-rug
 puzzle
 snowball
 aircraft
-gate
 sidewalk
-pan
 marshmallow
 bell pepper
 watering can
@@ -2868,96 +1870,64 @@ camera
 forehead
 towel
 surfboard
-coin
 watch
-chin
-key
 blimp
 cowboy
 picture frame
 piano
-lake
 pirate
-box
-paw
 toast
 swimming pool
 silverware
-salt
 tissue
 shovel
-hoof
 dominoes
 roller blading
-base
-rose
 spider web
 hopscotch
 spoon
 elbow
 pinwheel
 french fries
-log
 doorknob
-bag
 attic
 beaver
 unicorn
 seahorse
-scar
 snowflake
 eraser
 jelly
 battery
 easel
-jar
-barn
 bathtub
 paperclip
 photograph
-maid
-ring
 outside
-vase
 electrical outlet
-room
 birthday cake
-map
 coconut
 spool
 chocolate chip cookie
 muffin
-ski
 stapler
 t-shirt
-lock
 braid
 seesaw
-half
 paper
 pizza
-dock
 shoulder
 lunchbox
 spring
 treasure
 queen
-fang
 round
 dragonfly
 newspaper
-mail
-knot
-tusk
 umbrella
 ticket
 lawn mower
 shark
-neck
 toothbrush
-hook
-wax
-mop
 beehive
 forest
 money
@@ -2977,29 +1947,20 @@ circus
 whisk
 dimple
 hummingbird
-nest
 wrench
-fork
 garage
 stump
 pine tree
-saw
 stove
 toaster
-park
 hula hoop
 garbage
 peanut
 daddy longlegs
-hair
-bib
 spare
 light switch
-king
 headband
-America
 nature
-milk
 refrigerator
 mattress
 tennis
@@ -3007,14 +1968,11 @@ popsicle
 stomach
 pajamas
 password
-nail
 stamp
-nut
 palace
 gingerbread man
 dog leash
 front porch
-wood
 mitten
 rhinoceros
 popcorn
@@ -3022,44 +1980,27 @@ teeth
 stingray
 happy
 onion
-wall
-pen
 alarm clock
-door
 crayon
 swing
-maze
 jewelry
-golf
-gift
 bowtie
-fur
 gumball
-pear
 tiger
 peach
 washing machine
 doormat
-desk
 hockey
 crack
-cast
 flashlight
 dustpan
 scissors
 skate
 wallet
-sink
-coal
 brick
-hug
 doghouse
-deep
 pelican
-page
 lightsaber
-toe
-rake
 tulip
 torch
 teapot
@@ -3073,17 +2014,14 @@ pretzel
 candle
 sailboat
 storm
-tank
 volcano
 flute
 ironing board
-clam
 waist
 catfish
 top hat
 skirt
 astronaut
-rain
 button
 dollar
 spaceship
@@ -3092,33 +2030,21 @@ video camera
 penguin
 lemon
 poodle
-hip
-roof
 state
-claw
 clown
 rocking chair
-belt
 mini blinds
 airport
 cheetah
 spine
-pond
-cage
 mouse
-bomb
-ice
-cake
 cockroach
 batteries
-fist
 flamingo
 purse
 lighthouse
 manatee
-iPad
 telephone
-harp
 eagle
 electricity
 lobster
@@ -3132,24 +2058,17 @@ artist
 skunk
 apple pie
 mushroom
-corndog
 smoke
-ship
 grill
-food
 cricket
 pencil
-TV
 rolly polly
 dolphin
-bathroom scale
 bubble
 porcupine
-owl
 stoplight
 chimney
 light bulb
-deer
 platypus
 globe
 tadpole
@@ -3162,35 +2081,25 @@ professor
 barber
 kneel
 orbit
-germ
 darts
 dance
-cape
 beanstalk
 sushi
 baby-sitter
 ping pong
-mime
 Heinz 57
-half
 swamp
 sheep dog
 macaroni
 hurdle
 Internet
-lie
-logo
-rind
 fireman pole
-raft
-wig
 salmon
 pigpen
 letter opener
 cabin
 fireside
 cell phone charger
-dent
 jungle
 dripping
 saddle
@@ -3211,10 +2120,8 @@ chess
 grandpa
 peasant
 cruise
-CD
 drawback
 chestnut
-yolk
 pilot
 season
 bedbug
@@ -3226,24 +2133,19 @@ bobsled
 pharmacist
 shampoo
 swarm
-moth
 sneeze
-deep
 sunburn
 pizza sauce
 houseboat
 password
 dryer sheets
 migrate
-snag
 koala
 catalog
 husband
 darkness
 shower curtain
-rib
 extension cord
-honk
 landscape
 water buffalo
 wooly mammoth
@@ -3251,53 +2153,35 @@ cheerleader
 cloak
 birthday
 nightmare
-fizz
-clog
-myth
-wind
 banister
 post office
 knight
-rim
 think
 bride
 comfy
 hydrogen
 baguette
 vitamin
-lace
 tiptoe
 sweater vest
-pail
 glitter
-plow
 retail
-leak
 pocket
 crust
 mascot
 macho
-hail
 bargain
 time machine
 drain
 vegetarian
 bookend
-ivy
-taxi
-foil
-mast
-gold
 chime
 commercial
 quicksand
-crow's nest
-lap
 diagonal
 juggle
 dorsal
 exercise
-drip
 boa constrictor
 handle
 rubber
@@ -3305,34 +2189,22 @@ speakers
 s'mores
 fiddle
 puppet
-pro
-jazz
 cardboard
 dream
 glue stick
 bonnet
-chef
-runt
 plank
-full
 ditch
-hut
 whisk
 avocado
 zipper
 dizzy
-oar
-mold
 recycle
-wag
-fog
-bald
 ceiling fan
 traffic jam
 firefighter
 picnic
 newsletter
-wax
 shrew
 dentist
 gasoline
@@ -3345,57 +2217,41 @@ laser
 download
 baggage
 bruise
-punk
 sandbox
 hot tub
 shrink ray
-safe
 goblin
 baseboards
 dust bunny
 double
-wobble
 coach
-lung
-zoo
 offstage
-eureka
-zero
 riddle
-soul
 president
 psychologist
 opaque
-acre
 mine car
 landfill
 flutter
 tinting
 expired
 archaeologist
-exponential
-con
-Chick-fil-A
 stowaway
 password
 overture
-Zen
 lyrics
 pride
 translate
 nutmeg
 inertia
-addendum
 neutron
 blunt
 blacksmith
 stockholder
 positive
 gallop
-vision
 observatory
 random
-carat
 ligament
 ice fishing
 fragment
@@ -3404,154 +2260,78 @@ figment
 compromise
 Everglades
 ironic
-jig
 crisp
-interference
 implode
 philosopher
-clue
-telepathy
 drift
 handful
 champion
 intern
 default
 brunette
-slump
-armada
 loiterer
-flotsam
-pomp
 century
-mooch
-freshwater
 pastry
-lichen
 trademark
 infection
 siesta
 parody
-snag
-chaos
-czar
 tournament
-aristocrat
-reimbursement
-hang ten
 blueprint
 stout
-upgrade
-quarantine
-Atlantis
-population
-kilogram
-panic
-brainstorm
-standing ovation
 transpose
-periwinkle
 twang
-inquisition
-protestant
-tutor
-cartography
-rainwater
 coast
-lip
 baseball
 toothbrush
 backpack
 shoulder
 stomp
 drink
-walk
 kangaroo
 basketball
-sad
 dinner
 cheek
-chin
-hair
-feet
 sneeze
 airplane
 ladder
 ice cream cone
 smile
-run
-door
-bite
-doll
-eye
 pillow
 mouth
 jump rope
-ear
-dog
-cut
-eat
 sleep
-draw
-baby
 pants
-bed
 happy
 breakfast
-yawn
-clap
 dance
 bunny
 telephone
 frown
 alligator
 football
-skip
 monkey
 circle
 mosquito
-shoe
-jump
 hopscotch
 point
-big
-car
 shark
-stop
-knee
-toe
-nose
 robot
-ring
 balloon
 pinch
 blanket
-head
 elephant
 chicken
 broom
-book
 elbow
 blink
-ball
 tongue
-hug
-bird
 jumping jack
 scissors
-salt
-back
 turtle
-wave
-tail
-pig
 prayer
 spider
 glasses
-snap
-hand
-hat
-arm
-kick
 camera
 chair
 wrist
@@ -3561,108 +2341,71 @@ salute
 headache
 button
 paddle
-cow
 drums
-cat
 paint
 cell phone
 watch
-sick
 seesaw
-nap
-pull
-song
-wolf
 pajamas
 computer
 waist
 teeth
 ping pong
 bowtie
-face
 chest
-hot
-rib
 sprinkler
 blind
-talk
-gum
 bottle
-unicorn
 twist
 lipstick
 flute
 think
 braid
 Spider Man
-wing
 slide
-tusk
-claw
-roof
 hula hoop
-cage
 popsicle
-toy
 tissue
 forehead
 bicycle
 cello
 alarm clock
-kiss
 shampoo
 skunk
 snowball
 laugh
 shopping cart
 umbrella
-cape
 piano
-beg
 shovel
 seashell
 limbo
-fly
 zipper
-bald
 window
 penguin
 yo-yo
-rain
 whisper
-road
 cheerleader
 giraffe
 earthquake
 lollipop
-fan
 dog leash
 stomach
-bed
 shirt
 Harry Potter
 dress
 Frankenstein
 rhinoceros
-belt
 skateboard
-chop
 purse
 write
-hug
-dig
-paw
-cold
 kneel
-tree
-heel
 butterfly
 surfboard
 stairs
 straw
 snake
 rocking chair
-skin
 dimple
 skirt
 brain
@@ -3672,125 +2415,75 @@ top hat
 Michael Jackson
 tiptoe
 tickle
-bear
 applause
-nod
 earache
-iron
-mop
-grin
-cup
-key
 wheel
 saddle
 pogo stick
-fin
 spoon
 hopscotch
-jog
 puppet
-saw
 wrist
-sock
 hairbrush
 mosquito
 ladder
-golf
 Rocky
 necktie
 fetch
 newspaper
-fang
 pocket
 shower
 slam dunk
-lion
-hip
 fishing pole
 wallet
 mouse
-rose
 whistle
 money
-scar
-boat
 violin
-sit
-wink
 banana peel
-soap
-owl
 gingerbread man
 rainbow
-hook
 softball
 sunburn
 sheet
 president
-bun
 washing machine
 mirror
 match
 artist
 photograph
-gas
-hill
 juggle
-business trip
 swordfish
-old
 dentist
-sand
-full
 quicksand
 huddle
 story
 doghouse
 eraser
-oar
 windmill
-sip
-knot
 bathroom scale
-lung
-mini blinds
 spider web
-gym
 skate
 clock
 refrigerator
-bobsled
-cramp
 nightmare
 mouse trap
-taxi
 Superman
-hose
 cowboy
 chalk
 Michael Jordan
-iPad
 party
 stain
 spill
 volcano
-kite
-video camera
 shadow
-cuff
 pelican
 funny
-deep
 whisk
-Babe Ruth
-cast
-wig
-bark
 ticket
 smell
 hair dryer
 inchworm
-peck
 wrench
 beach
 grill
@@ -3800,70 +2493,32 @@ spine
 pizza
 torch
 floor
-vest
-jar
-wax
-stiff
 chess
 tennis
 Elvis Presley
 Pinocchio
 lawn mower
 stapler
-hurt
-rope
-fog
-honk
 flamingo
 Spock
-net
-fist
-skis
-pet
 evolution
-gratitude
 negotiate
-oil
-lifestyle
-defect
-déjà vu
 crumb
-tachometer
-silhouette
-Olympian
-Beethoven
-weed killer
-dismantle
-space-time continuum
 regret
-Will Smith
 applesauce
 mascot
-alphabetize
 sandbox
 loyalty
 journal
 mine shaft
 game plan
-procrastinate
-pomp
 organize
 shrink ray
-criticize
-standing ovation
-unemployed
-ergonomic
-Zamboni
-explore
-flag
 beanstalk
-a cappella
 comfort zone
-retaliate
 satellite
 shipwreck
 conversation
-corduroy
 application
 teenager
 apathy
@@ -3872,7 +2527,6 @@ aisle
 jet lag
 roundabout
 pendulum
-fizz
 portfolio
 streamline
 advertise

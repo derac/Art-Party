@@ -7,6 +7,7 @@ var _pen = null
 var redraw := false
 var min_draw_dist := 1.0
 var stroke_tools := load("res://Scripts/Utility/douglas-peucker.gd")
+var last_index := 0
 
 # Setting up drawing surface
 func _ready():
@@ -33,6 +34,7 @@ func _gui_input(event):
 	if (event is InputEventMouseButton \
 				and event.button_index == BUTTON_LEFT) \
 				or event is InputEventScreenTouch:
+		last_index = 0
 		if event.pressed:
 			history[-1].append({"position": get_viewport().get_mouse_position(),
 								"speed": 0,
@@ -68,13 +70,17 @@ func _on_draw():
 			for index in range(stroke.size()):
 				draw_brush(stroke, index)
 		redraw = false
-	if history[-1].size() > 0:
-		draw_brush(history[-1], history[-1].size() - 1)
+	if history[-1].size() == 1:
+		draw_brush(history[-1], 0)
+	elif history[-1].size() > 1:
+		for offset in range(1, history[-1].size() - last_index):
+			draw_brush(history[-1], last_index + offset)
+		last_index = history[-1].size() - 1
 	elif history.size() > 1 and history[-2].size() > 0:
 		draw_brush(history[-2], history[-2].size() - 1)
 
 func draw_brush(stroke : Array, index : int) -> void:
-	var speed_factor = 2
+	var speed_factor = 3
 	var base_width = 5
 	var plus_width = 20
 	if index >= 1 and index < stroke.size():

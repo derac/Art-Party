@@ -1,9 +1,9 @@
 extends Control
 
-var my_id
-var my_id_index
-var turn
-var max_turns
+var my_id : int
+var my_id_index : int
+var turn := 0
+var max_turns : int
 var ids = Global.game_state.keys()
 var awaiting_data = false
 var awaiting_end = false
@@ -18,7 +18,6 @@ func _ready():
 	ids.sort()
 	my_id = get_tree().get_network_unique_id()
 	my_id_index = ids.find(my_id)
-	turn = 0
 	max_turns = ids.size() - ids.size() % 2
 	
 	# Generate a new phrase at the start of the game
@@ -79,14 +78,12 @@ func get_card_data():
 			$Drawing.history = cards[-1]
 			$Drawing.redraw()
 			$Title.text = ''
-			$Title.set("selecting_enabled", true)
-			$Title.set("editable", true)
+			$Title.set_mouse_filter(MOUSE_FILTER_STOP)
 		# last card was a title
 		else:
 			$Drawing.history = [[]]
 			$Drawing.redraw()
-			$Title.set("selecting_enabled", false)
-			$Title.set("editable", false)
+			$Title.set_mouse_filter(MOUSE_FILTER_IGNORE)
 			$Title.text = cards[-1]
 			
 		# Re-enable buttons and stuff

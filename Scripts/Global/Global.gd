@@ -32,4 +32,4 @@ func _ready() -> void:
 	OS.set_window_position(Vector2(0, 0))
 	
 	randomize()
-	my_name = Name_Generator.generate(3,7)
+	my_name = Name_Generator.generate(5,8)
