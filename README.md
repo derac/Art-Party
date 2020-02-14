@@ -2,7 +2,7 @@
 
 [Download Godot](https://godotengine.org/download/)
 
-Clone this project and load it in Godot :)
+Clone this project and load it in Godot
 
 # Donate
 
