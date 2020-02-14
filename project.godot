@@ -15,9 +15,16 @@ _global_script_class_icons={
 
 [application]
 
-config/name="SketchGuess"
+config/name="Art Party"
+config/description="A party game about being creative."
 run/main_scene="res://Screens/Setup.tscn"
-config/icon="res://Assets/icon.png"
+boot_splash/bg_color=Color( 0.960784, 0.945098, 0.929412, 1 )
+config/icon="res://Assets/icons/icon_192.png"
+config/windows_native_icon="res://Assets/icons/icon.ico"
+
+[audio]
+
+default_bus_layout="res://Assets/Bus_Layout.tres"
 
 [autoload]
 
