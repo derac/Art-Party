@@ -1,6 +1,3 @@
-# Credit to
-# https://github.com/xsellier/godot-name-generator/blob/master/name-generator.gd
-
 const MIN_LENGTH = 3
 const MAX_LENGTH = 7
 const LETTERS = {
@@ -71,7 +68,7 @@ static func generate(min_length=MIN_LENGTH, max_length=MAX_LENGTH):
 		index += last_letter.length()
 
 	return name.capitalize()
-
+	
 #MIT License
 #
 #Copyright (c) 2017 Xavier Sellier
