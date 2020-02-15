@@ -18,7 +18,7 @@ _global_script_class_icons={
 config/name="Art Party"
 config/description="A party game about being creative."
 run/main_scene="res://Screens/Setup.tscn"
-boot_splash/bg_color=Color( 0.960784, 0.945098, 0.929412, 1 )
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://Assets/Icons/icon_192.png"
 config/windows_native_icon="res://Assets/Icons/icon.ico"
 
