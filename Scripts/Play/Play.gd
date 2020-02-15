@@ -22,7 +22,7 @@ func _ready():
 	
 	# Generate a new phrase at the start of the game
 	var phrases = File.new()
-	phrases.open("res://Assets/phrases.txt", File.READ)
+	phrases.open("res://Assets/Misc/phrases.txt", File.READ)
 	phrases = phrases.get_as_text().split("\n")
 	$Title.text = phrases[randi() % phrases.size()].capitalize()
 	

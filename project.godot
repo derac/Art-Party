@@ -19,12 +19,12 @@ config/name="Art Party"
 config/description="A party game about being creative."
 run/main_scene="res://Screens/Setup.tscn"
 boot_splash/bg_color=Color( 0.960784, 0.945098, 0.929412, 1 )
-config/icon="res://Assets/icons/icon_192.png"
-config/windows_native_icon="res://Assets/icons/icon.ico"
+config/icon="res://Assets/Icons/icon_192.png"
+config/windows_native_icon="res://Assets/Icons/icon.ico"
 
 [audio]
 
-default_bus_layout="res://Assets/Bus_Layout.tres"
+default_bus_layout="res://Assets/Misc/Bus_Layout.tres"
 
 [autoload]
 

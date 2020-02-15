@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon_ipad.png-a862468e53425446f43184ecf2a32c71.stex"
+path="res://.import/icon_120.png-b08f20dcb440753b7963fbaf54b33a28.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icon_ipad.png"
-dest_files=[ "res://.import/icon_ipad.png-a862468e53425446f43184ecf2a32c71.stex" ]
+source_file="res://Assets/Icons/icon_120.png"
+dest_files=[ "res://.import/icon_120.png-b08f20dcb440753b7963fbaf54b33a28.stex" ]
 
 [params]
 

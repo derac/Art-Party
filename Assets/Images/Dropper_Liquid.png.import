@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/radio_unchecked.png-92335e75aff5b1618c3dc53214cba0f4.stex"
+path="res://.import/Dropper_Liquid.png-69a0047f7b9f9d6165bf8c5f6656ed9f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/radio_unchecked.png"
-dest_files=[ "res://.import/radio_unchecked.png-92335e75aff5b1618c3dc53214cba0f4.stex" ]
+source_file="res://Assets/Images/Dropper_Liquid.png"
+dest_files=[ "res://.import/Dropper_Liquid.png-69a0047f7b9f9d6165bf8c5f6656ed9f.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dropper_Liquid.png-ac2dacbe69902391997b5bcdface5f51.stex"
+path="res://.import/Dropper_Empty.png-86e35f55d638810228d819b617b6eb64.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dropper_Liquid.png"
-dest_files=[ "res://.import/Dropper_Liquid.png-ac2dacbe69902391997b5bcdface5f51.stex" ]
+source_file="res://Assets/Images/Dropper_Empty.png"
+dest_files=[ "res://.import/Dropper_Empty.png-86e35f55d638810228d819b617b6eb64.stex" ]
 
 [params]
 

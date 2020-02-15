@@ -1,15 +1,15 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=35 format=2]
 
-[ext_resource path="res://Assets/Dropper_Liquid.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/Dropper_Liquid.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Play/Drawing.gd" type="Script" id=2]
-[ext_resource path="res://VarelaRound-Regular.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Assets/Undo.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Misc/Quicksand-Bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Images/Undo.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Play/Play.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Play/Dropper_Liquid.gd" type="Script" id=6]
 [ext_resource path="res://Scripts/Play/Toggle_Colors.gd" type="Script" id=7]
-[ext_resource path="res://Assets/Dropper_Empty.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Images/send.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Images/Dropper_Empty.png" type="Texture" id=9]
 [ext_resource path="res://Screens/Components/Color_Button.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Assets/send.png" type="Texture" id=11]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 30.0
@@ -292,14 +292,11 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
 
-[sub_resource type="DynamicFontData" id=24]
-font_path = "res://VarelaRound-Regular.ttf"
-
-[sub_resource type="DynamicFont" id=25]
+[sub_resource type="DynamicFont" id=24]
 size = 100
 outline_size = 5
 outline_color = Color( 0.960784, 0.792157, 0.184314, 1 )
-font_data = SubResource( 24 )
+font_data = ExtResource( 3 )
 
 [node name="Play" type="Control"]
 anchor_right = 1.0
@@ -521,7 +518,7 @@ __meta__ = {
 }
 
 [node name="Dropper_Empty" type="Sprite" parent="Color_Picker/Dropper_Liquid"]
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 
 [node name="Undo_Button" type="Button" parent="."]
 margin_left = 200.0
@@ -591,7 +588,7 @@ custom_styles/pressed = SubResource( 22 )
 custom_styles/focus = SubResource( 22 )
 custom_styles/disabled = SubResource( 22 )
 custom_styles/normal = SubResource( 22 )
-icon = ExtResource( 11 )
+icon = ExtResource( 8 )
 align = 0
 __meta__ = {
 "_edit_lock_": true,
@@ -614,7 +611,7 @@ margin_top = 440.0
 margin_right = 1720.0
 margin_bottom = 640.0
 custom_styles/normal = SubResource( 23 )
-custom_fonts/font = SubResource( 25 )
+custom_fonts/font = SubResource( 24 )
 custom_colors/font_color = Color( 0.819608, 0.411765, 0.121569, 1 )
 text = "Waiting for X"
 align = 1
