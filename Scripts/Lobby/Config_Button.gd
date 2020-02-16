@@ -5,8 +5,8 @@ func _ready():
 		if Global.my_ip in interface["addresses"]:
 			for address in interface["addresses"]:
 				if address.find(":") > 0:
-					$Address.text = address
-					break
+					$Address.text = "[%s]:%s" % [address, Game_Server.server_port]
+					return
 
 func _pressed():
 	$Address.set_visible(!$Address.is_visible())

@@ -1,10 +1,13 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=24 format=2]
 
+[ext_resource path="res://Scripts/Setup/By_IP_Button.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Setup/UDP_Players.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Setup/Name_Field.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/Setup/Start_Button.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/Setup/Setup_Screen.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Misc/Quicksand-Bold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Scripts/Setup/Join_Button.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/Setup/Address_Input.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://VarelaRound-Regular.ttf"
@@ -34,8 +37,6 @@ outline_size = 5
 outline_color = Color( 0.960784, 0.792157, 0.184314, 1 )
 font_data = ExtResource( 6 )
 
-[sub_resource type="Theme" id=6]
-
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
 draw_center = false
@@ -51,13 +52,12 @@ corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
 
 [sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
-draw_center = false
+bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
 border_width_left = 20
 border_width_top = 20
 border_width_right = 20
 border_width_bottom = 20
-border_color = Color( 0.6, 0.760784, 0.305882, 1 )
+border_color = Color( 0.372549, 0.580392, 0.282353, 1 )
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
@@ -70,9 +70,77 @@ outline_size = 5
 outline_color = Color( 0.372549, 0.580392, 0.282353, 1 )
 font_data = ExtResource( 6 )
 
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.0392157, 0.0392157, 0.0392157, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.529412, 0.54902, 0.505882, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 90
+outline_size = 5
+outline_color = Color( 0.0392157, 0.0392157, 0.0392157, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.0392157, 0.0392157, 0.0392157, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="DynamicFont" id=14]
+size = 90
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.6, 0.760784, 0.305882, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 90
+outline_size = 5
+outline_color = Color( 0.372549, 0.580392, 0.282353, 1 )
+font_data = ExtResource( 6 )
+
 [node name="Setup" type="Control"]
 script = ExtResource( 5 )
 __meta__ = {
+"_edit_horizontal_guides_": [ 540.0 ],
 "_edit_use_anchors_": false,
 "_edit_vertical_guides_": [ 970.0 ]
 }
@@ -80,7 +148,7 @@ __meta__ = {
 [node name="Name" type="LineEdit" parent="."]
 margin_left = 20.0
 margin_top = 20.0
-margin_right = 1540.0
+margin_right = 1510.0
 margin_bottom = 200.0
 theme = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
@@ -102,12 +170,11 @@ __meta__ = {
 }
 
 [node name="Start_Button" type="Button" parent="."]
-margin_left = 1560.0
+margin_left = 1530.0
 margin_top = 20.0
 margin_right = 1900.0
-margin_bottom = 200.0
+margin_bottom = 530.0
 mouse_default_cursor_shape = 2
-theme = SubResource( 6 )
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 7 )
 custom_styles/focus = SubResource( 8 )
@@ -123,17 +190,97 @@ text = "make"
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true,
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="UDP_Players" type="Control" parent="."]
 margin_left = 20.0
 margin_top = 220.0
-margin_right = 1900.0
+margin_right = 1510.0
 margin_bottom = 1060.0
 script = ExtResource( 2 )
 __meta__ = {
-"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Block" type="ColorRect" parent="."]
+visible = false
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0.0392157, 0.0392157, 0.0392157, 0.588235 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="By_IP" type="Button" parent="."]
+margin_left = 1530.0
+margin_top = 550.0
+margin_right = 1900.0
+margin_bottom = 1060.0
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/focus = SubResource( 12 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color_disabled = Color( 0.529412, 0.54902, 0.505882, 1 )
+custom_colors/font_color = Color( 0.529412, 0.54902, 0.505882, 1 )
+custom_colors/font_color_hover = Color( 0.529412, 0.54902, 0.505882, 1 )
+custom_colors/font_color_pressed = Color( 0.529412, 0.54902, 0.505882, 1 )
+text = "By IP"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Control" parent="By_IP"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Address" type="LineEdit" parent="By_IP/Menu"]
+margin_left = -1470.0
+margin_top = -490.0
+margin_right = 330.0
+margin_bottom = -330.0
+custom_styles/read_only = SubResource( 13 )
+custom_styles/focus = SubResource( 13 )
+custom_styles/normal = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
+custom_colors/selection_color = Color( 0.529412, 0.54902, 0.505882, 0.235294 )
+custom_colors/cursor_color = Color( 0.529412, 0.54902, 0.505882, 0.392157 )
+custom_colors/font_color_selected = Color( 0.184314, 0.168627, 0.419608, 1 )
+custom_colors/font_color = Color( 0.184314, 0.168627, 0.419608, 1 )
+custom_colors/font_color_uneditable = Color( 0.184314, 0.168627, 0.419608, 1 )
+align = 1
+max_length = 255
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Connect" type="Button" parent="By_IP/Menu"]
+margin_left = -810.0
+margin_top = -310.0
+margin_right = -310.0
+margin_bottom = -120.0
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 16 )
+custom_styles/normal = SubResource( 16 )
+custom_fonts/font = SubResource( 15 )
+custom_colors/font_color_disabled = Color( 0.6, 0.760784, 0.305882, 1 )
+custom_colors/font_color = Color( 0.6, 0.760784, 0.305882, 1 )
+custom_colors/font_color_hover = Color( 0.6, 0.760784, 0.305882, 1 )
+custom_colors/font_color_pressed = Color( 0.6, 0.760784, 0.305882, 1 )
+text = "Connect"
+script = ExtResource( 7 )
+__meta__ = {
 "_edit_use_anchors_": false
 }

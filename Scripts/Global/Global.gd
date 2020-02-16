@@ -1,9 +1,8 @@
 extends Node
 
-var Name_Generator := load("res://Scripts/Utility/name-generator.gd")
-
+onready var Name_Generator := load("res://Scripts/Utility/name-generator.gd")
+onready var my_name : String = Name_Generator.generate(5,8)
 var my_ip := ""
-var my_name := ""
 var color := Color("#339db5") setget color_set
 signal color_changed
 # udp_data = {ip: {is_server: bool, last_tick: int, name: ''}}
@@ -32,4 +31,3 @@ func _ready() -> void:
 	OS.set_window_size(OS.get_screen_size())
 	OS.set_window_position(Vector2(0, 0))
 	randomize()
-	my_name = Name_Generator.generate(5,8)
