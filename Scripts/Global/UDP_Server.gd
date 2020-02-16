@@ -28,9 +28,12 @@ func process_udp():
 			if inc_var == "stop_serving":
 				Global.udp_data[inc_ip]["is_server"] = false
 		if (inc_var is Dictionary) and inc_var.has("name")\
-		and inc_var.has("is_server") and inc_var.has("port"):
+								   and inc_var.has("is_server")\
+								   and inc_var.has("port"):
 			inc_var["last_tick"] = OS.get_system_time_msecs()
 			Global.udp_data[inc_ip] = inc_var
+			if !Global.my_ip and inc_ip in IP.get_local_addresses():
+				Global.my_ip = inc_ip
 
 func send_heartbeat():
 	if broadcasting:
