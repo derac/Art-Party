@@ -243,5 +243,8 @@ __meta__ = {
 [node name="Copy_Timer" type="Timer" parent="Config"]
 wait_time = 0.3
 one_shot = true
+
+[node name="HTTPRequest" type="HTTPRequest" parent="Config"]
 [connection signal="timeout" from="Start/Start_Timer" to="Start" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Config/Copy_Timer" to="Config" method="_on_Copy_Timer_timeout"]
+[connection signal="request_completed" from="Config/HTTPRequest" to="Config" method="_on_HTTPRequest_request_completed"]

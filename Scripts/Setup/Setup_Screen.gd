@@ -6,7 +6,3 @@ func _ready():
 	UDP_Broadcast.listening = true
 	UDP_Broadcast.broadcasting = true
 	Sound.change_music("res://Sounds/menu.ogg", 15)
-
-func _exit_tree():
-	UDP_Broadcast.listening = false
-	Global.udp_data = {}

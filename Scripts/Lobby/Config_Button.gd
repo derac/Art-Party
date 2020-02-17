@@ -1,12 +1,7 @@
 extends Button
 
 func _ready():
-	for interface in IP.get_local_interfaces():
-		if Global.my_ip in interface["addresses"]:
-			for address in interface["addresses"]:
-				if address.find(":") > 0:
-					$Address.text = "[%s]:%s" % [Global.my_ip, Game_Server.server_port]
-					return
+	$HTTPRequest.request("http://ipinfo.io/ip")
 
 func _pressed():
 	$Address.set_visible(!$Address.is_visible())
@@ -16,3 +11,6 @@ func _pressed():
 
 func _on_Copy_Timer_timeout():
 	text = "IP"
+
+func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+	$Address.text = "%s:%s" % [body.get_string_from_utf8(), Game_Server.server_port]
