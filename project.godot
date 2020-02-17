@@ -29,7 +29,7 @@ default_bus_layout="res://Assets/Misc/Bus_Layout.tres"
 [autoload]
 
 Global="*res://Scripts/Global/Global.gd"
-UDP_Server="*res://Scripts/Global/UDP_Server.gd"
+UDP_Broadcast="*res://Scripts/Global/UDP_Broadcast.gd"
 Game_Server="*res://Scripts/Global/Game_Server.gd"
 Sound="*res://Scripts/Global/Sound.gd"
 Exit_Menu="*res://Screens/Components/Exit_Menu.tscn"

@@ -37,7 +37,7 @@ outline_size = 5
 outline_color = Color( 0.960784, 0.792157, 0.184314, 1 )
 font_data = ExtResource( 6 )
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
 draw_center = false
 border_width_left = 20
@@ -51,7 +51,7 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
 border_width_left = 20
 border_width_top = 20
@@ -64,13 +64,13 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=8]
 size = 90
 outline_size = 5
 outline_color = Color( 0.372549, 0.580392, 0.282353, 1 )
 font_data = ExtResource( 6 )
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
 border_width_left = 20
 border_width_top = 20
@@ -102,7 +102,7 @@ outline_size = 5
 outline_color = Color( 0.0392157, 0.0392157, 0.0392157, 1 )
 font_data = ExtResource( 6 )
 
-[sub_resource type="StyleBoxFlat" id=13]
+[sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
 border_width_left = 20
 border_width_top = 20
@@ -114,11 +114,11 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=13]
 size = 90
 font_data = ExtResource( 6 )
 
-[sub_resource type="StyleBoxFlat" id=16]
+[sub_resource type="StyleBoxFlat" id=14]
 bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
 border_width_left = 20
 border_width_top = 20
@@ -175,12 +175,12 @@ margin_top = 20.0
 margin_right = 1900.0
 margin_bottom = 530.0
 mouse_default_cursor_shape = 2
-custom_styles/hover = SubResource( 7 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/focus = SubResource( 8 )
-custom_styles/disabled = SubResource( 8 )
-custom_styles/normal = SubResource( 8 )
-custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.6, 0.760784, 0.305882, 1 )
 custom_colors/font_color_hover = Color( 0.6, 0.760784, 0.305882, 1 )
 custom_colors/font_color_pressed = Color( 0.6, 0.760784, 0.305882, 1 )
@@ -218,9 +218,9 @@ margin_top = 550.0
 margin_right = 1900.0
 margin_bottom = 1060.0
 mouse_default_cursor_shape = 2
-custom_styles/hover = SubResource( 12 )
-custom_styles/pressed = SubResource( 12 )
-custom_styles/focus = SubResource( 12 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 9 )
 custom_styles/disabled = SubResource( 10 )
 custom_styles/normal = SubResource( 10 )
 custom_fonts/font = SubResource( 11 )
@@ -247,10 +247,10 @@ margin_left = -1470.0
 margin_top = -490.0
 margin_right = 330.0
 margin_bottom = -330.0
-custom_styles/read_only = SubResource( 13 )
-custom_styles/focus = SubResource( 13 )
-custom_styles/normal = SubResource( 13 )
-custom_fonts/font = SubResource( 14 )
+custom_styles/read_only = SubResource( 12 )
+custom_styles/focus = SubResource( 12 )
+custom_styles/normal = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/selection_color = Color( 0.529412, 0.54902, 0.505882, 0.235294 )
 custom_colors/cursor_color = Color( 0.529412, 0.54902, 0.505882, 0.392157 )
 custom_colors/font_color_selected = Color( 0.184314, 0.168627, 0.419608, 1 )
@@ -269,11 +269,11 @@ margin_top = -310.0
 margin_right = -310.0
 margin_bottom = -120.0
 mouse_default_cursor_shape = 2
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 8 )
-custom_styles/focus = SubResource( 8 )
-custom_styles/disabled = SubResource( 16 )
-custom_styles/normal = SubResource( 16 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 14 )
+custom_styles/normal = SubResource( 14 )
 custom_fonts/font = SubResource( 15 )
 custom_colors/font_color_disabled = Color( 0.6, 0.760784, 0.305882, 1 )
 custom_colors/font_color = Color( 0.6, 0.760784, 0.305882, 1 )

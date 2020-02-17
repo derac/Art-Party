@@ -15,8 +15,8 @@ func _pressed():
 		rpc("start_timer")
 
 remotesync func start_timer():
-	UDP_Server.broadcasting = false
-	UDP_Server.udp.put_var("remove")
+	UDP_Broadcast.broadcasting = false
+	UDP_Broadcast.udp.put_var("remove")
 	Sound.play_sfx("res://Sounds/Buttons/button2.wav")
 	countdown = 3
 	text = String(countdown)

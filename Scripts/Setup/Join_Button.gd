@@ -6,8 +6,8 @@ var address = {}
 func _pressed():
 	if address.has_all(["ip", "port"]):
 		Sound.play_sfx("res://Sounds/Buttons/button1.wav")
-		var err = Game_Server.start_client(address["ip"], int(address["port"]), 3)
+		var err = Game_Server.start_client(address["ip"], int(address["port"]))
 		if err == OK:
-			print("connected to ", address)
-			UDP_Server.broadcasting = false
+			UDP_Broadcast.broadcasting = false
+			UDP_Broadcast.udp.put_var("remove")
 			get_tree().change_scene_to(lobby_scene)
