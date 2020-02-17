@@ -2,7 +2,7 @@ extends Button
 
 var setup_screen := load("res://Screens/Setup.tscn")
 
-func _ready():
+func _ready() -> void:
 	if get_tree().is_network_server() != true:
 		rect_position.y = 20
 		rect_size.y = 1040

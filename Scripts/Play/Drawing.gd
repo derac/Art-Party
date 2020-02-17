@@ -1,36 +1,32 @@
 extends Control
 
-# history format will be an array of arrays, sub arrays are segments from pen
-# down to pen up, so undo will just be a pop and so on
+# Array containing arrays which represent strokes
 var history := [[]]
-var _pen = null
+var _pen := Node2D.new()
 var redraw := false
 var min_draw_dist := 1.0
 var stroke_tools := load("res://Scripts/Utility/douglas-peucker.gd")
 var last_index := 0
 
-# Setting up drawing surface
-func _ready():
-	var viewport = Viewport.new()
-	var rect = get_rect()
+func _ready() -> void:
+	var viewport := Viewport.new()
+	var rect := get_rect()
 	viewport.size = rect.size
 	viewport.usage = Viewport.USAGE_2D
 	
 	viewport.render_target_clear_mode = Viewport.CLEAR_MODE_ONLY_NEXT_FRAME
 	viewport.render_target_v_flip = true
 	
-	_pen = Node2D.new()
 	viewport.add_child(_pen)
 	_pen.connect("draw", self, "_on_draw")
 	add_child(viewport)
 	
-	var rt = viewport.get_texture()
-	var board = TextureRect.new()
+	var rt := viewport.get_texture()
+	var board := TextureRect.new()
 	board.set_texture(rt)
 	add_child(board)
 	
-# Input section
-func _gui_input(event):
+func _gui_input(event) -> void:
 	if (event is InputEventMouseButton \
 				and event.button_index == BUTTON_LEFT) \
 				or event is InputEventScreenTouch:
@@ -52,18 +48,17 @@ func _gui_input(event):
 								"color": Global.color})
 			_pen.update()
 		
-func _on_Undo_Button_button_down():
+func _on_Undo_Button_button_down() -> void:
 	if history.size() > 1:
 		Sound.play_sfx("res://Sounds/Buttons/button1.wav", 0.0, 1.25)
 		history.remove(history.size()-2)
 		redraw()
 
-func redraw():
+func redraw() -> void:
 	redraw = true
 	_pen.update()
 
-# Drawing section
-func _on_draw():
+func _on_draw() -> void:
 	if redraw:
 		_pen.draw_rect(get_rect(), Color("#f5f1ed"))
 		for stroke in history:
@@ -80,15 +75,15 @@ func _on_draw():
 		draw_brush(history[-2], history[-2].size() - 1)
 
 func draw_brush(stroke : Array, index : int) -> void:
-	var speed_factor = 3
-	var base_width = 5
-	var plus_width = 20
+	var speed_factor := 3
+	var base_width := 5
+	var plus_width := 20
 	if index >= 1 and index < stroke.size():
-		var tangent = (stroke[index - 1]["position"] - \
-					   stroke[index]["position"]).tangent()
+		var tangent : Vector2 = (stroke[index - 1]["position"] - \
+								 stroke[index]["position"]).tangent()
 		if tangent == Vector2(0,0):
 			tangent = Vector2(1,1)
-		var width = []
+		var width := []
 		for i in range(2):
 			width.append(stroke[index - i]["speed"])
 			if width[i] > plus_width * speed_factor:
@@ -100,8 +95,8 @@ func draw_brush(stroke : Array, index : int) -> void:
 						 stroke[index]["color"])
 		if index == 1:
 			_pen.draw_circle(stroke[0]["position"],
-						 width[1].length(),
-						 stroke[0]["color"])
+							 width[1].length(),
+							 stroke[0]["color"])
 		var points = PoolVector2Array()
 		points.append(stroke[index]["position"] - width[0])
 		points.append(stroke[index]["position"] + width[0])
@@ -110,6 +105,6 @@ func draw_brush(stroke : Array, index : int) -> void:
 		_pen.draw_polygon(points,PoolColorArray([stroke[index]["color"]]))
 	elif index == 0:
 		_pen.draw_circle(stroke[0]["position"],
-					 base_width,
-					 stroke[0]["color"])
+						 base_width,
+						 stroke[0]["color"])
 

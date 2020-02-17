@@ -13,16 +13,16 @@ signal udp_data_changed
 var game_state := {} setget game_state_set
 signal game_state_changed
 
-func color_set(value):
+func color_set(value : Color) -> void:
 	Sound.play_sfx("res://Sounds/Buttons/on.wav")
 	color = value
 	emit_signal("color_changed")
 
-func udp_data_set(value):
+func udp_data_set(value : Dictionary) -> void:
 	udp_data = value
 	emit_signal("udp_data_changed")
 
-func game_state_set(value):
+func game_state_set(value : Dictionary) -> void:
 	game_state = value
 	emit_signal("game_state_changed")
 

@@ -1,17 +1,17 @@
 extends Button
 
-var countdown
+var countdown : int
 
-func _ready():
+func _ready() -> void:
 	if get_tree().is_network_server() != true:
 		set_visible(false)
 
-func _pressed():
+func _pressed() -> void:
 	if get_tree().is_network_server() == true:
 		Game_Server.peer.set_refuse_new_connections(true)
 		rpc("start_timer")
 
-remotesync func start_timer():
+remotesync func start_timer() -> void:
 	UDP_Broadcast.broadcasting = false
 	UDP_Broadcast.udp.put_var("remove")
 	Sound.play_sfx("res://Sounds/Buttons/button2.wav")
@@ -26,7 +26,7 @@ remotesync func start_timer():
 	get_node("../Back").set_visible(false)
 	get_node("../Config").set_visible(false)
 
-func _on_Timer_timeout():
+func _on_Timer_timeout() -> void:
 	if countdown == 3:
 		Sound.play_sfx("res://Sounds/Buttons/button2.wav", 0.0, 0.75)
 	if countdown == 2:

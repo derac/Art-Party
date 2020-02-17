@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-func _ready():
+func _ready() -> void:
 	get_tree().set_auto_accept_quit(false)
 	get_tree().set_quit_on_go_back(false)
 
@@ -14,7 +14,7 @@ func _input(event) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		toggle_panel()
 
-func toggle_panel():
+func toggle_panel() -> void:
 	if $Panel.is_visible():
 		Sound.play_sfx("res://Sounds/Buttons/off.wav")
 		$Panel.set_visible(false)

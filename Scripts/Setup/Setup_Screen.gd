@@ -1,6 +1,6 @@
 extends Control
 
-func _ready():
+func _ready() -> void:
 	Game_Server.stop_serving()
 	Game_Server.stop_client()
 	UDP_Broadcast.listening = true

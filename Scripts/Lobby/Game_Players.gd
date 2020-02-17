@@ -2,14 +2,14 @@ extends Control
 
 var ready_label = load("res://Screens/Components/Ready_Label.tscn")
 
-func _ready():
+func _ready() -> void:
 	Global.connect("game_state_changed", self, "_on_game_state_changed")
 
-func _on_game_state_changed():
+func _on_game_state_changed() -> void:
 	for child in get_children():
 		child.queue_free()
 	
-	var data = Global.game_state
+	var data := Global.game_state
 	var data_keys : Array = data.keys()
 	var data_size : int = data_keys.size()
 	var dimensions : Vector2

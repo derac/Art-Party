@@ -4,14 +4,11 @@ var my_id : int
 var my_id_index : int
 var turn := 0
 var max_turns : int
-var ids = Global.game_state.keys()
-var awaiting_data = false
-var awaiting_end = false
+var ids := Global.game_state.keys()
+var awaiting_data := false
+var awaiting_end := false
 
-# note: may need to move this logic if I am loading the play screen
-# more than once per game session
 func _ready():
-	#Change music
 	Sound.change_music("res://Sounds/play.ogg", 25)
 	Sound.play_sfx("res://Sounds/Buttons/complete.wav", -6.0, 0.75)
 	
@@ -21,9 +18,9 @@ func _ready():
 	max_turns = ids.size() - ids.size() % 2
 	
 	# Generate a new phrase at the start of the game
-	var phrases = File.new()
-	phrases.open("res://Assets/Misc/phrases.txt", File.READ)
-	phrases = phrases.get_as_text().split("\n")
+	var phrases_file := File.new()
+	phrases_file.open("res://Assets/Misc/phrases.txt", File.READ)
+	var phrases := phrases_file.get_as_text().split("\n")
 	$Title.text = phrases[randi() % phrases.size()].capitalize()
 	
 	# Send initial data

@@ -35,7 +35,7 @@ remote func register_player(player_data : Dictionary) -> void:
 remotesync func start_game() -> void:
 	get_tree().change_scene_to(play_screen)
 
-remotesync func send_data(data, id) -> void:
+remotesync func send_data(data, id : int) -> void:
 	Global.game_state[id]["cards"].append(data)
 	# Trigger signal
 	Global.game_state_set(Global.game_state)

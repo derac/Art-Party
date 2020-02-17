@@ -1,14 +1,14 @@
 extends Button
 
-var upnp = UPNP.new()
-onready var Game_Players = get_node("../Game_Players")
+var upnp := UPNP.new()
+onready var Game_Players := get_node("../Game_Players")
 
-func _ready():
+func _ready() -> void:
 	if get_tree().is_network_server() != true:
 		set_visible(false)
 	Game_Players._on_game_state_changed()
 
-func _pressed():
+func _pressed() -> void:
 	if Global.UPNP_state == "uninitialized":
 		if upnp.discover() == 0:
 			var gateway = upnp.get_gateway()
@@ -36,12 +36,12 @@ func _pressed():
 	text = "copied"
 	$Copy_Timer.start()
 
-func _on_Copy_Timer_timeout():
+func _on_Copy_Timer_timeout() -> void:
 	text = "my IP"
 
-func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+func _on_HTTPRequest_request_completed(result, response_code, headers, body) -> void:
 	set_address(body.get_string_from_utf8())
 
-func set_address(address):
+func set_address(address) -> void:
 	Global.external_ip = address
 	$Address.text = "%s:%s" % [address, Game_Server.port]

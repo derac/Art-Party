@@ -1,8 +1,8 @@
 extends Button
 
-var lobby_scene = load("res://Screens/Lobby.tscn")
+var lobby_scene := load("res://Screens/Lobby.tscn")
 
-func _pressed():
+func _pressed() -> void:
 	Sound.play_sfx("res://Sounds/Buttons/button1.wav")
 	var err : int = Game_Server.start_serving()
 	if err == OK:
