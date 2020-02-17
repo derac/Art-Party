@@ -34,8 +34,6 @@ func update_udp_data(ip, data):
 	if (data is Dictionary) and data.has_all(["name", "is_server", "port"]):
 		data["last_tick"] = OS.get_system_time_msecs()
 		Global.udp_data[ip] = data
-		if !Global.my_ip and ip in IP.get_local_addresses():
-			Global.my_ip = ip
 
 func send_heartbeat():
 	if broadcasting:
