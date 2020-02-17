@@ -4,6 +4,8 @@ var upnp = UPNP.new()
 onready var Game_Players = get_node("../Game_Players")
 
 func _ready():
+	if get_tree().is_network_server() != true:
+		set_visible(false)
 	Game_Players._on_game_state_changed()
 
 func _pressed():

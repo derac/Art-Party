@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Misc/Quicksand-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/Lobby/Back_Button.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Lobby/Game_Players.gd" type="Script" id=3]
-[ext_resource path="res://Scripts/Lobby/Ready_Button.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Lobby/Start_Button.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/Lobby/Config_Button.gd" type="Script" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
