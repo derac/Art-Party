@@ -1,6 +1,7 @@
 extends Node
 
 var is_client := false
+var is_server := false
 var port := (30000 + randi() % 3001)
 var peer := NetworkedMultiplayerENet.new()
 
@@ -42,11 +43,12 @@ remotesync func send_data(data, id : int) -> void:
 
 func start_serving(retries : int = 3) -> int:
 	var err : int
-	if !get_tree().is_network_server():
+	if !is_server:
 		err = peer.create_server(port, 32)
 		if err == OK:
 			Global.game_state[1] = new_data()
 			get_tree().set_network_peer(peer)
+			is_server = true
 			return err
 		elif retries > 0:
 			port = (30000 + randi() % 3001)
@@ -54,23 +56,25 @@ func start_serving(retries : int = 3) -> int:
 	return err
 
 func stop_serving() -> void:
-	if get_tree().is_network_server():
+	if is_server:
 		UDP_Broadcast.udp.put_var("stop_serving")
 		peer.close_connection()
+		is_server = false
 		Global.game_state = {}
 
-func start_client(ip : String, port : int):
+func start_client(ip : String, server_port : int):
 	if is_client == false:
 		get_tree().set_network_peer(null)
-		var err := peer.create_client(ip, port)
+		var err := peer.create_client(ip, server_port)
 		if err == OK:
 			get_tree().set_network_peer(peer)
+			is_client = true
 
 func stop_client() -> void:
 	if is_client == true:
 		peer.close_connection()
-		Global.game_state = {}
 		is_client = false
+		Global.game_state = {}
 
 func new_data() -> Dictionary:
 	return {'name': Global.my_name, 'cards': []}

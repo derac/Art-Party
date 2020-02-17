@@ -21,12 +21,12 @@ const TRANSITION = {
 	'COMPOSE': ['VOYELLE']
 }
 
-static func pick_random_number(max_value, min_value=0):
+static func pick_random_number(max_value : int, min_value := 0) -> int:
 	randomize()
 	
-	return round(randi() % (max_value - min_value) + min_value)
+	return int(round(randi() % (max_value - min_value) + min_value))
 
-static func clone_array(original):
+static func clone_array(original : Array) -> Array:
 	var result = []
 	
 	for item in original:
@@ -34,7 +34,7 @@ static func clone_array(original):
 	
 	return result
 
-static func get_letter(state, last_letter, max_length):
+static func get_letter(state : String, max_length : int) -> Array:
 	var transitions = clone_array(TRANSITION[state])
 	
 	if max_length < 3:
@@ -51,7 +51,7 @@ static func get_letter(state, last_letter, max_length):
 
 	return [state, letters_list[letter_index]]
 
-static func generate(min_length=MIN_LENGTH, max_length=MAX_LENGTH):
+static func generate(min_length := MIN_LENGTH, max_length := MAX_LENGTH) -> String:
 	var length = pick_random_number(max_length, min_length)
 	var name = ''
 	var last_letter = ''
@@ -59,7 +59,7 @@ static func generate(min_length=MIN_LENGTH, max_length=MAX_LENGTH):
 	var state = 'INITIAL'
 
 	while index < length:
-		var obj = get_letter(state, last_letter, length - index)
+		var obj = get_letter(state, length - index)
 		
 		state = obj[0]
 		last_letter = obj[1]

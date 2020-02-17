@@ -3,7 +3,7 @@ extends Button
 var setup_screen := load("res://Screens/Setup.tscn")
 
 func _ready() -> void:
-	if get_tree().is_network_server() != true:
+	if Game_Server.is_server != true:
 		rect_position.y = 20
 		rect_size.y = 1040
 		

@@ -40,7 +40,7 @@ func send_heartbeat() -> void:
 		if OS.get_system_time_msecs() - heartbeat_timer > 500:
 			heartbeat_timer = OS.get_system_time_msecs()
 			udp.put_var({"name": Global.my_name,
-						 "is_server": get_tree().is_network_server(),
+						 "is_server": Game_Server.is_server,
 						 "port": Game_Server.port})
 			remove_inactive()
 

@@ -3,7 +3,7 @@ extends Control
 # Array containing arrays which represent strokes
 var history := [[]]
 var _pen := Node2D.new()
-var redraw := false
+var redraw_next_frame := false
 var min_draw_dist := 1.0
 var stroke_tools := load("res://Scripts/Utility/douglas-peucker.gd")
 var last_index := 0
@@ -55,16 +55,16 @@ func _on_Undo_Button_button_down() -> void:
 		redraw()
 
 func redraw() -> void:
-	redraw = true
+	redraw_next_frame = true
 	_pen.update()
 
 func _on_draw() -> void:
-	if redraw:
+	if redraw_next_frame:
 		_pen.draw_rect(get_rect(), Color("#f5f1ed"))
 		for stroke in history:
 			for index in range(stroke.size()):
 				draw_brush(stroke, index)
-		redraw = false
+		redraw_next_frame = false
 	if history[-1].size() == 1:
 		draw_brush(history[-1], 0)
 	elif history[-1].size() > 1:

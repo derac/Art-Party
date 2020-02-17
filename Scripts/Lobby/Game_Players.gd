@@ -12,8 +12,8 @@ func _on_game_state_changed() -> void:
 	var data := Global.game_state
 	var data_keys : Array = data.keys()
 	var data_size : int = data_keys.size()
-	var dimensions : Vector2
-	var label_pos : Vector2
+	var dimensions := Vector2(0, 0)
+	var label_pos := Vector2(0, 0)
 	
 	var cols := floor(sqrt(data_size))
 	if cols > 0:

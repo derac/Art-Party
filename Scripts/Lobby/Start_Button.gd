@@ -3,11 +3,11 @@ extends Button
 var countdown : int
 
 func _ready() -> void:
-	if get_tree().is_network_server() != true:
+	if Game_Server.is_server != true:
 		set_visible(false)
 
 func _pressed() -> void:
-	if get_tree().is_network_server() == true:
+	if Game_Server.is_server == true:
 		Game_Server.peer.set_refuse_new_connections(true)
 		rpc("start_timer")
 
