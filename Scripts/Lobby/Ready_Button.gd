@@ -4,10 +4,10 @@ var countdown
 
 func _ready():
 	if get_tree().is_network_server() != true:
-		get_node("/root/Lobby_Screen/Back").rect_position = Vector2(1530, 20)
-		get_node("/root/Lobby_Screen/Back").rect_size = Vector2(370, 1040)
-		get_node("/root/Lobby_Screen/Start").set_visible(false)
-		get_node("/root/Lobby_Screen/Config").set_visible(false)
+		get_node("/root/Lobby/Back").rect_position = Vector2(1530, 20)
+		get_node("/root/Lobby/Back").rect_size = Vector2(370, 1040)
+		get_node("/root/Lobby/Start").set_visible(false)
+		get_node("/root/Lobby/Config").set_visible(false)
 
 func _pressed():
 	if get_tree().is_network_server() == true:
@@ -26,8 +26,8 @@ remotesync func start_timer():
 	rect_position = Vector2(1530, 20)
 	rect_size = Vector2(370, 1040)
 	set_disabled(true)
-	get_node("/root/Lobby_Screen/Back").set_visible(false)
-	get_node("/root/Lobby_Screen/Config").set_visible(false)
+	get_node("/root/Lobby/Back").set_visible(false)
+	get_node("/root/Lobby/Config").set_visible(false)
 
 func _on_Timer_timeout():
 	if countdown == 3:

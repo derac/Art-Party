@@ -5,7 +5,6 @@ var server_label := load("res://Screens/Components/Join_Button.tscn")
 
 func _ready():
 	Global.connect("udp_data_changed", self, "_on_udp_data_changed")
-	_on_udp_data_changed()
 
 func _on_udp_data_changed():
 	for child in get_children():

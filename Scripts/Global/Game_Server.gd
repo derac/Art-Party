@@ -1,7 +1,7 @@
 extends Node
 
 var is_client := false
-var server_port := (30000 + randi() % 3001)
+var port := (30000 + randi() % 3001)
 var peer := NetworkedMultiplayerENet.new()
 
 var setup_screen := load("res://Screens/Setup.tscn")
@@ -43,13 +43,13 @@ remotesync func send_data(data, id) -> void:
 func start_serving(retries : int = 3) -> int:
 	var err : int
 	if !get_tree().is_network_server():
-		err = peer.create_server(server_port, 32)
+		err = peer.create_server(port, 32)
 		if err == OK:
 			Global.game_state[1] = new_data()
 			get_tree().set_network_peer(peer)
 			return err
 		elif retries > 0:
-			server_port = (30000 + randi() % 3001)
+			port = (30000 + randi() % 3001)
 			start_serving(retries - 1)
 	return err
 
