@@ -235,9 +235,9 @@ __meta__ = {
 
 [node name="Address" type="LineEdit" parent="By_IP/Menu"]
 margin_left = -1510.0
-margin_top = -330.0
+margin_top = -530.0
 margin_right = -20.0
-margin_bottom = -150.0
+margin_bottom = -350.0
 custom_styles/read_only = SubResource( 12 )
 custom_styles/focus = SubResource( 12 )
 custom_styles/normal = SubResource( 12 )
@@ -249,6 +249,8 @@ custom_colors/font_color = Color( 0.184314, 0.168627, 0.419608, 1 )
 custom_colors/font_color_uneditable = Color( 0.184314, 0.168627, 0.419608, 1 )
 align = 1
 max_length = 255
+placeholder_text = "ip:port"
+placeholder_alpha = 0.4
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
