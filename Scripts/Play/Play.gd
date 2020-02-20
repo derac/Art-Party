@@ -5,8 +5,9 @@ var my_id_index : int
 var turn := 0
 var max_turns : int
 var ids := Global.game_state.keys()
-var awaiting_data := false
+var awaiting_next_card := false
 var awaiting_end := false
+var end_screen = load("res://Screens/End.tscn")
 
 func _ready():
 	Sound.change_music("res://Sounds/play.ogg", 25)
@@ -29,45 +30,42 @@ func _ready():
 	Global.connect("game_state_changed", self, "_on_game_state_changed")
 
 func _on_game_state_changed():
-	if awaiting_data:
-		get_card_data()
+	if awaiting_next_card:
+		get_next_card()
 	if awaiting_end:
 		for id in ids:
-			if Global.game_state[id]["cards"].size() != max_turns + 1:
+			if !(Global.game_state[id]["cards"].size() > max_turns):
 				return
-		get_node("/root/Play/Pause/Waiting_Label").text = "All data sent"
+		get_tree().change_scene_to(end_screen)
+		
 
 func _on_Send_Button_button_down() -> void:
-	# Send data for current card along with the id for that card stack
 	if Global.game_state[ids[my_id_index - turn]]["cards"].size() % 2:
 		Game_Server.rpc("send_data", $Drawing.history, ids[my_id_index - turn])
 	else:
 		Game_Server.rpc("send_data", $Title.text, ids[my_id_index - turn])
-	
-	# Increment turn number
+
 	turn += 1
 	
-	# end game
 	if turn >= max_turns:
 		$Pause.set_visible(true)
 		Sound.play_sfx("res://Sounds/Buttons/complete.wav", -6.0, 0.75)
 		Sound.change_music("res://Sounds/end.ogg", 35, -3.0)
 		get_node("/root/Play/Pause/Waiting_Label").text = "Game Over"
 		awaiting_end = true
-		return
-		
-	awaiting_data = true
-	$Pause.set_visible(true)
-	get_card_data()
-	if awaiting_data:
-		Sound.play_sfx("res://Sounds/Buttons/button1.wav")
-		get_node("/root/Play/Pause/Waiting_Label").text = \
-			"Waiting for " + Global.game_state[ids[my_id_index - 1]]["name"]
+		_on_game_state_changed()
+	else:
+		awaiting_next_card = true
+		$Pause.set_visible(true)
+		get_next_card()
+		if awaiting_next_card:
+			Sound.play_sfx("res://Sounds/Buttons/button1.wav")
+			get_node("/root/Play/Pause/Waiting_Label").text = \
+				"Waiting for " + Global.game_state[ids[my_id_index - turn]]["name"]
 
 
-func get_card_data():
+func get_next_card():
 	var cards = Global.game_state[ids[my_id_index - turn]]["cards"]
-	# If the card we are waiting for is here
 	if cards.size() == turn + 1:
 		Sound.play_sfx("res://Sounds/Buttons/button2.wav")
 		# Last card was a picture
@@ -84,5 +82,5 @@ func get_card_data():
 			$Title.text = cards[-1]
 			
 		# Re-enable buttons and stuff
-		awaiting_data = false
+		awaiting_next_card = false
 		$Pause.set_visible(false)

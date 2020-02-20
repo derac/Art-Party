@@ -1,0 +1,10 @@
+
+# Godot
+.import/
+#export.cfg
+#export_presets.cfg
+
+# Mac OSX
+.DS_Store
+.AppleDouble
+.LSOverride

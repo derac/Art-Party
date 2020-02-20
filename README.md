@@ -1,4 +1,25 @@
-# Setup
+# Rules
+
+1. Start a game with 4 or more players.
+2. Everyone gets a phrase.
+3. Draw a representation of the phrase.
+4. Everyone passes the drawing to the next player.
+5. Guess the phrase the drawing represents.
+6. Everyone passes the phrase to the next player.
+7. Go to 3 and repeate for an even number of turns.
+8. Everyone gets their card stack back.
+
+# Scoring
+
+- 1 point for guessing the correct phrase
+- 1 point for a drawing that leads to a correct guess
+- 1 point to the stack owner if the start and end phrases match
+
+# Play
+
+https://derac.itch.io/artparty
+
+# Develop
 
 [Download Godot](https://godotengine.org/download/)
 
@@ -19,3 +40,5 @@ Music by Stellardrone from [Light Years](https://freemusicarchive.org/music/Stel
 Sounds by [StumpyStrust](https://opengameart.org/content/ui-sounds)
 
 name-generator.gd by [Xavier Sellier](https://github.com/xsellier) under the MIT License
+
+All other art, programming, and design by Derek Olson
