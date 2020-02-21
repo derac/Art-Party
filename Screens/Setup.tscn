@@ -246,7 +246,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Connect" type="Button" parent="By_IP/Menu"]
+[node name="Go" type="Button" parent="By_IP/Menu"]
 margin_top = -530.0
 margin_right = 370.0
 margin_bottom = -20.0

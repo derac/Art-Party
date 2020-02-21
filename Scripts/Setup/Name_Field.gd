@@ -5,9 +5,9 @@ func _ready() -> void:
 	connect("focus_entered", self, "_focus_entered")
 
 func _focus_entered() -> void:
-	Sound.play_sfx("res://Sounds/Buttons/on.wav", -3.0, 0.8)
+	Sound.play_sfx("res://Sounds/Buttons/on.wav", -3.0, 0.75)
 
 func _gui_input(_event : InputEvent) -> void:
 	if Global.my_name != text:
-		Sound.play_sfx("res://Sounds/Buttons/off.wav", -6.0, 0.8)
+		Sound.play_sfx("res://Sounds/Buttons/off.wav", -6.0, 1.5)
 		Global.my_name = text
