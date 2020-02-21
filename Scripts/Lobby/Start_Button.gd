@@ -24,7 +24,7 @@ remotesync func start_timer() -> void:
 	rect_size.y = 1040
 	set_disabled(true)
 	get_node("../Back").set_visible(false)
-	get_node("../Config").set_visible(false)
+	get_node("../My_IP").set_visible(false)
 
 func _on_Timer_timeout() -> void:
 	if countdown == 3:

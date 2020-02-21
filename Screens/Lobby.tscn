@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/Lobby/Back_Button.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Lobby/Game_Players.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/Lobby/Start_Button.gd" type="Script" id=4]
-[ext_resource path="res://Scripts/Lobby/Config_Button.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Lobby/My_IP_Button.gd" type="Script" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
@@ -230,7 +230,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Config" type="Button" parent="."]
+[node name="My_IP" type="Button" parent="."]
 margin_left = 1530.0
 margin_top = 810.0
 margin_right = 1900.0
@@ -254,7 +254,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Address" type="LineEdit" parent="Config"]
+[node name="Address" type="LineEdit" parent="My_IP"]
 visible = false
 margin_left = -1510.0
 margin_top = -790.0
@@ -277,7 +277,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="UPNP_Bad" type="Label" parent="Config/Address"]
+[node name="UPNP_Bad" type="Label" parent="My_IP/Address"]
 margin_top = 200.0
 margin_right = 1490.0
 margin_bottom = 400.0
@@ -291,7 +291,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="UPNP_Good" type="Label" parent="Config/Address"]
+[node name="UPNP_Good" type="Label" parent="My_IP/Address"]
 visible = false
 margin_top = 200.0
 margin_right = 1490.0
@@ -305,11 +305,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Copy_Timer" type="Timer" parent="Config"]
+[node name="Copy_Timer" type="Timer" parent="My_IP"]
 wait_time = 0.5
 one_shot = true
 
-[node name="HTTPRequest" type="HTTPRequest" parent="Config"]
+[node name="HTTPRequest" type="HTTPRequest" parent="My_IP"]
 [connection signal="timeout" from="Start/Start_Timer" to="Start" method="_on_Timer_timeout"]
-[connection signal="timeout" from="Config/Copy_Timer" to="Config" method="_on_Copy_Timer_timeout"]
-[connection signal="request_completed" from="Config/HTTPRequest" to="Config" method="_on_HTTPRequest_request_completed"]
+[connection signal="timeout" from="My_IP/Copy_Timer" to="My_IP" method="_on_Copy_Timer_timeout"]
+[connection signal="request_completed" from="My_IP/HTTPRequest" to="My_IP" method="_on_HTTPRequest_request_completed"]

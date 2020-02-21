@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/Setup/By_IP_Button.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Setup/UDP_Players.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Setup/Name_Field.gd" type="Script" id=3]
-[ext_resource path="res://Scripts/Setup/Start_Button.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Setup/New_Button.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/Setup/Setup_Screen.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Misc/Quicksand-Bold.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Scripts/Setup/Join_Button.gd" type="Script" id=7]
@@ -159,7 +159,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Start_Button" type="Button" parent="."]
+[node name="New" type="Button" parent="."]
 margin_left = 1530.0
 margin_top = 20.0
 margin_right = 1900.0
@@ -176,7 +176,7 @@ custom_colors/font_color_hover = Color( 0.6, 0.760784, 0.305882, 1 )
 custom_colors/font_color_pressed = Color( 0.6, 0.760784, 0.305882, 1 )
 shortcut_in_tooltip = false
 action_mode = 0
-text = "make"
+text = "new"
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true,
