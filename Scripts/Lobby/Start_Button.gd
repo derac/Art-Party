@@ -14,7 +14,7 @@ func _pressed() -> void:
 remotesync func start_timer() -> void:
 	UDP_Broadcast.broadcasting = false
 	UDP_Broadcast.udp.put_var("remove")
-	Sound.play_sfx("res://Sounds/Buttons/button2.wav")
+	Sound.play_sfx("res://Assets/SFX/button2.wav")
 	countdown = 3
 	text = String(countdown)
 	$Start_Timer.start()
@@ -28,9 +28,9 @@ remotesync func start_timer() -> void:
 
 func _on_Timer_timeout() -> void:
 	if countdown == 3:
-		Sound.play_sfx("res://Sounds/Buttons/button2.wav", 0.0, 0.75)
+		Sound.play_sfx("res://Assets/SFX/button2.wav", 0.0, 0.75)
 	if countdown == 2:
-		Sound.play_sfx("res://Sounds/Buttons/button2.wav", 0.0, 0.5)
+		Sound.play_sfx("res://Assets/SFX/button2.wav", 0.0, 0.5)
 	if countdown > 1:
 		countdown -= 1
 		text = String(countdown)

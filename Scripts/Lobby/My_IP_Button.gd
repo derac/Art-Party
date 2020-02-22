@@ -26,11 +26,11 @@ func _pressed() -> void:
 		
 	$Address.set_visible(!$Address.is_visible())
 	if $Address.is_visible():
-		Sound.play_sfx("res://Sounds/Buttons/button2.wav", 0.0, 2)
+		Sound.play_sfx("res://Assets/SFX/button2.wav", 0.0, 2)
 		Game_Players.rect_position.y = 440
 		Game_Players.rect_size.y = 620
 	else:
-		Sound.play_sfx("res://Sounds/Buttons/button2.wav", 0.0, 0.5)
+		Sound.play_sfx("res://Assets/SFX/button2.wav", 0.0, 0.5)
 		Game_Players.rect_position.y = 20
 		Game_Players.rect_size.y = 1040
 	Game_Players._on_game_state_changed()

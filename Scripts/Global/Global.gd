@@ -14,7 +14,7 @@ var game_state := {} setget game_state_set
 signal game_state_changed
 
 func color_set(value : Color) -> void:
-	Sound.play_sfx("res://Sounds/Buttons/on.wav")
+	Sound.play_sfx("res://Assets/SFX/on.wav")
 	color = value
 	emit_signal("color_changed")
 

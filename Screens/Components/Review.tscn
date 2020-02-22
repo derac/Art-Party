@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Play/Canvas.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Misc/Quicksand-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scripts/Review/Review.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Review/Return_Button.gd" type="Script" id=4]
 
 [sub_resource type="StyleBoxFlat" id=20]
 content_margin_left = 0.0
@@ -34,6 +35,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0.960784, 0.945098, 0.929412, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Canvas" type="Control" parent="."]
 margin_right = 1920.0
 margin_bottom = 1080.0
@@ -43,8 +52,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-margin_left = 380.0
+[node name="Title" type="Label" parent="."]
+margin_left = 200.0
 margin_top = 10.0
 margin_right = 1530.0
 margin_bottom = 190.0
@@ -101,7 +110,7 @@ __meta__ = {
 [node name="Return" type="Button" parent="."]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 370.0
+margin_right = 190.0
 margin_bottom = 190.0
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 20 )
@@ -114,7 +123,10 @@ custom_colors/font_color_disabled = Color( 0.184314, 0.168627, 0.419608, 1 )
 custom_colors/font_color = Color( 0.184314, 0.168627, 0.419608, 1 )
 custom_colors/font_color_hover = Color( 0.184314, 0.168627, 0.419608, 1 )
 custom_colors/font_color_pressed = Color( 0.184314, 0.168627, 0.419608, 1 )
-text = "return"
+text = "X"
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Forward" to="." method="_on_Forward_pressed"]

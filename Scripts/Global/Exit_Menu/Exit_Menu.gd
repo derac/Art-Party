@@ -16,8 +16,8 @@ func _input(event) -> void:
 
 func toggle_panel() -> void:
 	if $Panel.is_visible():
-		Sound.play_sfx("res://Sounds/Buttons/off.wav")
+		Sound.play_sfx("res://Assets/SFX/off.wav")
 		$Panel.set_visible(false)
 	else:
-		Sound.play_sfx("res://Sounds/Buttons/on.wav")
+		Sound.play_sfx("res://Assets/SFX/on.wav")
 		$Panel.set_visible(true)

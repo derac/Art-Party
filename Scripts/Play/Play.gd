@@ -10,8 +10,8 @@ var awaiting_end := false
 var end_screen = load("res://Screens/End.tscn")
 
 func _ready():
-	Sound.change_music("res://Sounds/play.ogg", 25)
-	Sound.play_sfx("res://Sounds/Buttons/complete.wav", -6.0, 0.75)
+	Sound.change_music("res://Assets/Music/play.ogg", 25)
+	Sound.play_sfx("res://Assets/SFX/complete.wav", -6.0, 0.75)
 	
 	ids.sort()
 	my_id = get_tree().get_network_unique_id()
@@ -22,7 +22,7 @@ func _ready():
 	var phrases_file := File.new()
 	phrases_file.open("res://Assets/Misc/phrases.txt", File.READ)
 	var phrases := phrases_file.get_as_text().split("\n")
-	$Title.text = phrases[randi() % phrases.size()].capitalize()
+	$Title.text = phrases[randi() % phrases.size()]
 	
 	# Send initial data
 	Game_Server.rpc("send_data", $Title.text, my_id)
@@ -49,8 +49,8 @@ func _on_Send_Button_button_down() -> void:
 	
 	if turn >= max_turns:
 		$Pause.set_visible(true)
-		Sound.play_sfx("res://Sounds/Buttons/complete.wav", -6.0, 0.75)
-		Sound.change_music("res://Sounds/end.ogg", 35, -3.0)
+		Sound.play_sfx("res://Assets/SFX/complete.wav", -6.0, 0.75)
+		Sound.change_music("res://Assets/Music/end.ogg", 35, -3.0)
 		get_node("/root/Play/Pause/Waiting_Label").text = "Game Over"
 		awaiting_end = true
 		_on_game_state_changed()
@@ -59,7 +59,7 @@ func _on_Send_Button_button_down() -> void:
 		$Pause.set_visible(true)
 		get_next_card()
 		if awaiting_next_card:
-			Sound.play_sfx("res://Sounds/Buttons/button1.wav")
+			Sound.play_sfx("res://Assets/SFX/button1.wav")
 			get_node("/root/Play/Pause/Waiting_Label").text = \
 				"Waiting for " + Global.game_state[ids[my_id_index - turn]]["name"]
 
@@ -67,7 +67,7 @@ func _on_Send_Button_button_down() -> void:
 func get_next_card():
 	var cards = Global.game_state[ids[my_id_index - turn]]["cards"]
 	if cards.size() == turn + 1:
-		Sound.play_sfx("res://Sounds/Buttons/button2.wav")
+		Sound.play_sfx("res://Assets/SFX/button2.wav")
 		# Last card was a picture
 		if turn % 2:
 			$Canvas.history = cards[-1]

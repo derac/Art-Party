@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/on.wav-c44e5017a07bcdcd270f94dc58c3077b.sample"
+path="res://.import/button2.wav-e2160eba390e40fc4e94c1bc1f05e9c6.sample"
 
 [deps]
 
-source_file="res://Sounds/Buttons/on.wav"
-dest_files=[ "res://.import/on.wav-c44e5017a07bcdcd270f94dc58c3077b.sample" ]
+source_file="res://Assets/SFX/button2.wav"
+dest_files=[ "res://.import/button2.wav-e2160eba390e40fc4e94c1bc1f05e9c6.sample" ]
 
 [params]
 

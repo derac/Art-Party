@@ -8,7 +8,7 @@ func _ready() -> void:
 
 func _pressed() -> void:
 	if address.has_all(["ip", "port"]):
-		Sound.play_sfx("res://Sounds/Buttons/button1.wav")
+		Sound.play_sfx("res://Assets/SFX/button1.wav")
 		Game_Server.start_client(address["ip"], int(address["port"]))
 
 func _connection_succeeded() -> void:
