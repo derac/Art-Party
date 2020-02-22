@@ -278,9 +278,9 @@ __meta__ = {
 }
 
 [node name="UPNP_Bad" type="Label" parent="My_IP/Address"]
-margin_top = 200.0
+margin_top = 210.0
 margin_right = 1500.0
-margin_bottom = 400.0
+margin_bottom = 410.0
 custom_styles/normal = SubResource( 12 )
 custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -293,9 +293,9 @@ __meta__ = {
 
 [node name="UPNP_Good" type="Label" parent="My_IP/Address"]
 visible = false
-margin_top = 200.0
+margin_top = 210.0
 margin_right = 1500.0
-margin_bottom = 400.0
+margin_bottom = 410.0
 custom_styles/normal = SubResource( 14 )
 custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )

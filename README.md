@@ -11,9 +11,7 @@
 
 # Scoring
 
-- 1 point for guessing the correct phrase
-- 1 point for a drawing that leads to a correct guess
-- 1 point to the stack owner if the start and end phrases match
+- If a guess matches the starting phrase, the guesser, preceding drawer, and card stack owner get 1 point
 
 # Play
 
