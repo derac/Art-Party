@@ -255,7 +255,7 @@ corner_radius_bottom_left = 50
 [sub_resource type="DynamicFont" id=21]
 size = 90
 outline_size = 5
-outline_color = Color( 0.960784, 0.792157, 0.184314, 1 )
+outline_color = Color( 0.184314, 0.168627, 0.419608, 1 )
 font_data = ExtResource( 3 )
 
 [sub_resource type="StyleBoxFlat" id=22]
@@ -565,9 +565,9 @@ custom_styles/normal = SubResource( 20 )
 custom_fonts/font = SubResource( 21 )
 custom_colors/selection_color = Color( 0.2, 0.615686, 0.709804, 0.27451 )
 custom_colors/cursor_color = Color( 0.2, 0.615686, 0.709804, 0.392157 )
-custom_colors/font_color_selected = Color( 0.184314, 0.168627, 0.419608, 1 )
-custom_colors/font_color = Color( 0.184314, 0.168627, 0.419608, 1 )
-custom_colors/font_color_uneditable = Color( 0.184314, 0.168627, 0.419608, 1 )
+custom_colors/font_color_selected = Color( 0.960784, 0.792157, 0.184314, 1 )
+custom_colors/font_color = Color( 0.960784, 0.792157, 0.184314, 1 )
+custom_colors/font_color_uneditable = Color( 0.960784, 0.792157, 0.184314, 1 )
 align = 1
 max_length = 255
 placeholder_alpha = 1.0
