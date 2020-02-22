@@ -43,6 +43,7 @@ custom_colors/font_color_hover = Color( 0.6, 0.760784, 0.305882, 1 )
 custom_colors/font_color_pressed = Color( 0.6, 0.760784, 0.305882, 1 )
 shortcut_in_tooltip = false
 action_mode = 0
+clip_text = true
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

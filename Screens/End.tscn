@@ -43,10 +43,10 @@ __meta__ = {
 }
 
 [node name="Players" type="Control" parent="."]
-margin_left = 20.0
-margin_top = 20.0
+margin_left = 10.0
+margin_top = 10.0
 margin_right = 1510.0
-margin_bottom = 1060.0
+margin_bottom = 1070.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -54,9 +54,9 @@ __meta__ = {
 
 [node name="Menu" type="Button" parent="."]
 margin_left = 1530.0
-margin_top = 20.0
-margin_right = 1900.0
-margin_bottom = 1060.0
+margin_top = 10.0
+margin_right = 1910.0
+margin_bottom = 1070.0
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = SubResource( 4 )

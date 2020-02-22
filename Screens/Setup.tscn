@@ -137,10 +137,10 @@ __meta__ = {
 }
 
 [node name="Name" type="LineEdit" parent="."]
-margin_left = 20.0
-margin_top = 20.0
+margin_left = 10.0
+margin_top = 10.0
 margin_right = 1510.0
-margin_bottom = 200.0
+margin_bottom = 190.0
 custom_styles/focus = SubResource( 1 )
 custom_styles/normal = SubResource( 1 )
 custom_fonts/font = SubResource( 2 )
@@ -155,14 +155,13 @@ placeholder_alpha = 1.0
 caret_blink = true
 script = ExtResource( 3 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="New" type="Button" parent="."]
 margin_left = 1530.0
-margin_top = 20.0
-margin_right = 1900.0
+margin_top = 10.0
+margin_right = 1910.0
 margin_bottom = 530.0
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 3 )
@@ -179,15 +178,14 @@ action_mode = 0
 text = "new"
 script = ExtResource( 4 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="UDP_Players" type="Control" parent="."]
-margin_left = 20.0
-margin_top = 220.0
+margin_left = 10.0
+margin_top = 210.0
 margin_right = 1510.0
-margin_bottom = 1060.0
+margin_bottom = 1070.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -196,8 +194,8 @@ __meta__ = {
 [node name="By_IP" type="Button" parent="."]
 margin_left = 1530.0
 margin_top = 550.0
-margin_right = 1900.0
-margin_bottom = 1060.0
+margin_right = 1910.0
+margin_bottom = 1070.0
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 6 )
 custom_styles/pressed = SubResource( 6 )
@@ -224,10 +222,10 @@ __meta__ = {
 }
 
 [node name="Address" type="LineEdit" parent="By_IP/Controls"]
-margin_left = -1510.0
-margin_top = -530.0
+margin_left = -1520.0
+margin_top = -540.0
 margin_right = -20.0
-margin_bottom = -350.0
+margin_bottom = -360.0
 custom_styles/read_only = SubResource( 9 )
 custom_styles/focus = SubResource( 9 )
 custom_styles/normal = SubResource( 9 )
@@ -247,8 +245,8 @@ __meta__ = {
 }
 
 [node name="Go" type="Button" parent="By_IP/Controls"]
-margin_top = -530.0
-margin_right = 370.0
+margin_top = -540.0
+margin_right = 380.0
 margin_bottom = -20.0
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 4 )

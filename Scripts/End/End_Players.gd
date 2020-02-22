@@ -1,14 +1,37 @@
 extends Control
 
 var review_button = load("res://Screens/Components/Review_Button.tscn")
+# {id: score}
+var scores := {}
+
+func calculate_scores():
+	var player_ids := Global.game_state.keys()
+	player_ids.sort()
+	for id in player_ids:
+		scores[id] = 0
+	for id in player_ids:
+		var id_index = player_ids.find(id)
+		var stack = Global.game_state[id]["cards"]
+		for turn in range(2, stack.size(), 2):
+			if stack[turn] == stack[0]:
+				scores[id] += 1
+				scores[player_ids[id_index - player_ids.size() + turn - 1]] += 1
+				if turn > 2:
+					scores[player_ids[id_index - player_ids.size() + turn - 2]] += 1
+
+class SortByScore:
+	static func sort_descending(a, b):
+		if a[1] > b[1]:
+			return true
+		return false
 
 func _ready() -> void:
-	Global.connect("game_state_changed", self, "_on_game_state_changed")
-	_on_game_state_changed()
-
-func _on_game_state_changed() -> void:
-	for child in get_children():
-		child.queue_free()
+	calculate_scores()
+	
+	var score_array := []
+	for id in scores.keys():
+		score_array.append([id, scores[id]])
+	score_array.sort_custom(SortByScore, "sort_descending")
 	
 	var data := Global.game_state
 	var data_keys : Array = data.keys()
@@ -31,8 +54,8 @@ func _on_game_state_changed() -> void:
 				
 				create_review_button(label_pos,
 									 dimensions,
-									 data[data_keys[col*cols+row]]['name'],
-									 data_keys[col*cols+row])
+									 data[score_array[col*cols+row][0]]['name'],
+									 score_array[col*cols+row][0])
 
 func create_review_button(position : Vector2,\
 						  size : Vector2,\
@@ -43,4 +66,4 @@ func create_review_button(position : Vector2,\
 	instance.set_position(position)
 	instance.set_size(size)
 	instance.player_id = player_id
-	instance.text = "review " + text
+	instance.text = String(scores[player_id]) + " - " + text + "'s cards"

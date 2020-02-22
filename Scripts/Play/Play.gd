@@ -51,7 +51,7 @@ func _on_Send_Button_button_down() -> void:
 		$Pause.set_visible(true)
 		Sound.play_sfx("res://Assets/SFX/complete.wav", -6.0, 0.75)
 		Sound.change_music("res://Assets/Music/end.ogg", 35, -3.0)
-		get_node("/root/Play/Pause/Waiting_Label").text = "Game Over"
+		get_node("/root/Play/Pause/Waiting_Label").text = "waiting for game to end"
 		awaiting_end = true
 		_on_game_state_changed()
 	else:
@@ -61,7 +61,7 @@ func _on_Send_Button_button_down() -> void:
 		if awaiting_next_card:
 			Sound.play_sfx("res://Assets/SFX/button1.wav")
 			get_node("/root/Play/Pause/Waiting_Label").text = \
-				"Waiting for " + Global.game_state[ids[my_id_index - turn]]["name"]
+				"waiting for " + Global.game_state[ids[my_id_index - turn]]["name"]
 
 
 func get_next_card():

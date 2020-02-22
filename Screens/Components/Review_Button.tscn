@@ -28,7 +28,7 @@ outline_color = Color( 0.372549, 0.580392, 0.282353, 1 )
 font_data = ExtResource( 2 )
 
 [node name="Review_Button" type="Button"]
-margin_right = 330.0
+margin_right = 430.0
 margin_bottom = 240.0
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 1 )
@@ -43,6 +43,7 @@ custom_colors/font_color_hover = Color( 0.6, 0.760784, 0.305882, 1 )
 custom_colors/font_color_pressed = Color( 0.6, 0.760784, 0.305882, 1 )
 shortcut_in_tooltip = false
 action_mode = 0
+clip_text = true
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
