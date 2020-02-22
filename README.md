@@ -8,10 +8,7 @@
 6. Everyone passes the phrase to the next player.
 7. Go to 3 and repeate for an even number of turns.
 8. Everyone gets their card stack back.
-
-# Scoring
-
-- If a guess matches the starting phrase, the guesser, preceding drawer, and card stack owner get 1 point
+9. If a guess matches the starting phrase, the guesser, preceding drawer, and card stack owner get 1 point
 
 # Play
 
