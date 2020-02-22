@@ -1,10 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scripts/Lobby/Game_Players.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/End/End.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/End/End_Players.gd" type="Script" id=1]
+[ext_resource path="res://Screens/Components/Review.tscn" type="PackedScene" id=2]
 
 [node name="End" type="Control"]
-script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -18,3 +17,6 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Review" parent="." instance=ExtResource( 2 )]
+visible = false

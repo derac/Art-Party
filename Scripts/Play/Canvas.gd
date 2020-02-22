@@ -47,16 +47,6 @@ func _gui_input(event) -> void:
 								"speed": history[-1][-1]["position"].distance_to(get_viewport().get_mouse_position()),
 								"color": Global.color})
 			_pen.update()
-		
-func _on_Undo_Button_button_down() -> void:
-	if history.size() > 1:
-		Sound.play_sfx("res://Sounds/Buttons/button1.wav", 0.0, 1.25)
-		history.remove(history.size()-2)
-		redraw()
-
-func redraw() -> void:
-	redraw_next_frame = true
-	_pen.update()
 
 func _on_draw() -> void:
 	if redraw_next_frame:
@@ -73,6 +63,15 @@ func _on_draw() -> void:
 		last_index = history[-1].size() - 1
 	elif history.size() > 1 and history[-2].size() > 0:
 		draw_brush(history[-2], history[-2].size() - 1)
+
+func undo() -> void:
+	if history.size() > 1:
+		history.remove(history.size()-2)
+		redraw()
+
+func redraw() -> void:
+	redraw_next_frame = true
+	_pen.update()
 
 func draw_brush(stroke : Array, index : int) -> void:
 	var speed_factor := 3

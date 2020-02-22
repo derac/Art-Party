@@ -41,7 +41,7 @@ func _on_game_state_changed():
 
 func _on_Send_Button_button_down() -> void:
 	if Global.game_state[ids[my_id_index - turn]]["cards"].size() % 2:
-		Game_Server.rpc("send_data", $Drawing.history, ids[my_id_index - turn])
+		Game_Server.rpc("send_data", $Canvas.history, ids[my_id_index - turn])
 	else:
 		Game_Server.rpc("send_data", $Title.text, ids[my_id_index - turn])
 
@@ -70,14 +70,14 @@ func get_next_card():
 		Sound.play_sfx("res://Sounds/Buttons/button2.wav")
 		# Last card was a picture
 		if turn % 2:
-			$Drawing.history = cards[-1]
-			$Drawing.redraw()
+			$Canvas.history = cards[-1]
+			$Canvas.redraw()
 			$Title.text = ''
 			$Title.set_mouse_filter(MOUSE_FILTER_STOP)
 		# last card was a title
 		else:
-			$Drawing.history = [[]]
-			$Drawing.redraw()
+			$Canvas.history = [[]]
+			$Canvas.redraw()
 			$Title.set_mouse_filter(MOUSE_FILTER_IGNORE)
 			$Title.text = cards[-1]
 			

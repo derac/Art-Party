@@ -1,15 +1,15 @@
 [gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Assets/Images/Dropper_Liquid.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/Play/Drawing.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Play/Canvas.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Misc/Quicksand-Bold.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/Images/Undo.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Play/Play.gd" type="Script" id=5]
-[ext_resource path="res://Scripts/Play/Dropper_Liquid.gd" type="Script" id=6]
 [ext_resource path="res://Scripts/Play/Toggle_Colors.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Images/send.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Images/Dropper_Empty.png" type="Texture" id=9]
 [ext_resource path="res://Screens/Components/Color_Button.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scripts/Play/Undo_Button.gd" type="Script" id=11]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 30.0
@@ -308,7 +308,7 @@ __meta__ = {
 "_edit_vertical_guides_": [ 960.0 ]
 }
 
-[node name="Drawing" type="Control" parent="."]
+[node name="Canvas" type="Control" parent="."]
 margin_right = 1920.0
 margin_bottom = 1080.0
 mouse_filter = 1
@@ -508,19 +508,18 @@ custom_styles/focus = SubResource( 15 )
 custom_styles/disabled = SubResource( 15 )
 custom_styles/normal = SubResource( 15 )
 
-[node name="Dropper_Liquid" type="Sprite" parent="Color_Picker"]
+[node name="Liquid" type="Sprite" parent="Color_Picker"]
 self_modulate = Color( 0.2, 0.615686, 0.709804, 1 )
 position = Vector2( 90, 90 )
 texture = ExtResource( 1 )
-script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Dropper_Empty" type="Sprite" parent="Color_Picker/Dropper_Liquid"]
+[node name="Dropper" type="Sprite" parent="Color_Picker/Liquid"]
 texture = ExtResource( 9 )
 
-[node name="Undo_Button" type="Button" parent="."]
+[node name="Undo" type="Button" parent="."]
 margin_left = 200.0
 margin_top = 10.0
 margin_right = 380.0
@@ -536,6 +535,7 @@ shortcut_in_tooltip = false
 action_mode = 0
 shortcut = SubResource( 18 )
 icon = ExtResource( 4 )
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -619,5 +619,4 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="button_down" from="Undo_Button" to="Drawing" method="_on_Undo_Button_button_down"]
 [connection signal="button_down" from="Send_Button" to="." method="_on_Send_Button_button_down"]

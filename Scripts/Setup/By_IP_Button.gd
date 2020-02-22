@@ -20,4 +20,4 @@ func _pressed() -> void:
 			Name.rect_position.y = 220
 			UDP_Players._on_udp_data_changed()
 		text = "cancel"
-	$Menu.set_visible(!$Menu.is_visible())
+	$Controls.set_visible(!$Controls.is_visible())

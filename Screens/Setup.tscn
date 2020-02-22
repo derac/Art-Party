@@ -215,7 +215,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Menu" type="Control" parent="By_IP"]
+[node name="Controls" type="Control" parent="By_IP"]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
@@ -223,7 +223,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Address" type="LineEdit" parent="By_IP/Menu"]
+[node name="Address" type="LineEdit" parent="By_IP/Controls"]
 margin_left = -1510.0
 margin_top = -530.0
 margin_right = -20.0
@@ -246,7 +246,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Go" type="Button" parent="By_IP/Menu"]
+[node name="Go" type="Button" parent="By_IP/Controls"]
 margin_top = -530.0
 margin_right = 370.0
 margin_bottom = -20.0
