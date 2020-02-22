@@ -67,7 +67,7 @@ static func generate(min_length := MIN_LENGTH, max_length := MAX_LENGTH) -> Stri
 		name += last_letter
 		index += last_letter.length()
 
-	return name.capitalize()
+	return name
 	
 #MIT License
 #

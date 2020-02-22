@@ -43,4 +43,4 @@ func create_review_button(position : Vector2,\
 	instance.set_position(position)
 	instance.set_size(size)
 	instance.player_id = player_id
-	instance.text = text
+	instance.text = "review " + text

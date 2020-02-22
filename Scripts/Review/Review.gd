@@ -10,6 +10,7 @@ func set_player_id(value : int):
 
 func set_display_turn(value : int):
 	display_turn = value
+	$Turn.text = String(value)
 	update_display()
 
 func _on_Back_pressed():

@@ -52,23 +52,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title" type="Label" parent="."]
-margin_left = 200.0
-margin_top = 10.0
-margin_right = 1530.0
-margin_bottom = 190.0
-custom_styles/normal = SubResource( 20 )
-custom_fonts/font = SubResource( 21 )
-custom_colors/font_color = Color( 0.184314, 0.168627, 0.419608, 1 )
-custom_colors/font_color_shadow = Color( 0.184314, 0.168627, 0.419608, 1 )
-text = "Title"
-align = 1
-valign = 1
-
 [node name="Back" type="Button" parent="."]
-margin_left = 1540.0
+margin_left = 1580.0
 margin_top = 10.0
-margin_right = 1720.0
+margin_right = 1740.0
 margin_bottom = 190.0
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 20 )
@@ -81,13 +68,45 @@ custom_colors/font_color_disabled = Color( 0.184314, 0.168627, 0.419608, 1 )
 custom_colors/font_color = Color( 0.184314, 0.168627, 0.419608, 1 )
 custom_colors/font_color_hover = Color( 0.184314, 0.168627, 0.419608, 1 )
 custom_colors/font_color_pressed = Color( 0.184314, 0.168627, 0.419608, 1 )
-text = "<-"
+text = "<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Turn" type="Label" parent="."]
+margin_left = 180.0
+margin_top = 10.0
+margin_right = 340.0
+margin_bottom = 190.0
+custom_styles/normal = SubResource( 20 )
+custom_fonts/font = SubResource( 21 )
+custom_colors/font_color = Color( 0.184314, 0.168627, 0.419608, 1 )
+custom_colors/font_color_shadow = Color( 0.184314, 0.168627, 0.419608, 1 )
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_left = 350.0
+margin_top = 10.0
+margin_right = 1570.0
+margin_bottom = 190.0
+custom_styles/normal = SubResource( 20 )
+custom_fonts/font = SubResource( 21 )
+custom_colors/font_color = Color( 0.184314, 0.168627, 0.419608, 1 )
+custom_colors/font_color_shadow = Color( 0.184314, 0.168627, 0.419608, 1 )
+text = "Title"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Forward" type="Button" parent="."]
-margin_left = 1730.0
+margin_left = 1750.0
 margin_top = 10.0
 margin_right = 1910.0
 margin_bottom = 190.0
@@ -102,7 +121,7 @@ custom_colors/font_color_disabled = Color( 0.184314, 0.168627, 0.419608, 1 )
 custom_colors/font_color = Color( 0.184314, 0.168627, 0.419608, 1 )
 custom_colors/font_color_hover = Color( 0.184314, 0.168627, 0.419608, 1 )
 custom_colors/font_color_pressed = Color( 0.184314, 0.168627, 0.419608, 1 )
-text = "->"
+text = ">"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -110,7 +129,7 @@ __meta__ = {
 [node name="Return" type="Button" parent="."]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 190.0
+margin_right = 170.0
 margin_bottom = 190.0
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 20 )

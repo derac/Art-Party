@@ -42,7 +42,7 @@ func create_player_label(position : Vector2,\
 	name = player_data['name']
 	if player_data['is_server']:
 		instance = server_label.instance()
-		name = "Join " + name
+		name = "join " + name
 	else:
 		instance = player_label.instance()
 	add_child(instance)
