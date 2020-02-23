@@ -1,10 +1,10 @@
 extends Control
 
-var review_button = load("res://Screens/Components/Review_Button.tscn")
+var review_button := load("res://Screens/Components/Review_Button.tscn")
 # {id: score}
 var scores := {}
 
-func calculate_scores():
+func calculate_scores() -> void:
 	var player_ids := Global.game_state.keys()
 	player_ids.sort()
 	for id in player_ids:
@@ -21,7 +21,7 @@ func calculate_scores():
 					scores[player_ids[id_index - player_ids.size() + turn - 2]] += 1
 
 class SortByScore:
-	static func sort_descending(a, b):
+	static func sort_descending(a, b) -> bool:
 		if a[1] > b[1]:
 			return true
 		return false

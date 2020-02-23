@@ -10,20 +10,16 @@ var last_index := 0
 
 func _ready() -> void:
 	var viewport := Viewport.new()
-	var rect := get_rect()
-	viewport.size = rect.size
+	var render_target := viewport.get_texture()
+	var board := TextureRect.new()
+	viewport.size = get_rect().size
 	viewport.usage = Viewport.USAGE_2D
-	
 	viewport.render_target_clear_mode = Viewport.CLEAR_MODE_ONLY_NEXT_FRAME
 	viewport.render_target_v_flip = true
-	
 	viewport.add_child(_pen)
 	_pen.connect("draw", self, "_on_draw")
 	add_child(viewport)
-	
-	var rt := viewport.get_texture()
-	var board := TextureRect.new()
-	board.set_texture(rt)
+	board.set_texture(render_target)
 	add_child(board)
 	
 func _gui_input(event) -> void:
@@ -55,14 +51,10 @@ func _on_draw() -> void:
 			for index in range(stroke.size()):
 				draw_brush(stroke, index)
 		redraw_next_frame = false
-	if history[-1].size() == 1:
-		draw_brush(history[-1], 0)
-	elif history[-1].size() > 1:
-		for offset in range(1, history[-1].size() - last_index):
+	if history[-1].size() > 0:
+		for offset in range(0, history[-1].size() - last_index):
 			draw_brush(history[-1], last_index + offset)
 		last_index = history[-1].size() - 1
-	elif history.size() > 1 and history[-2].size() > 0:
-		draw_brush(history[-2], history[-2].size() - 1)
 
 func undo() -> void:
 	if history.size() > 1:
