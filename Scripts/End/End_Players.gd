@@ -13,7 +13,8 @@ func calculate_scores():
 		var id_index = player_ids.find(id)
 		var stack = Global.game_state[id]["cards"]
 		for turn in range(2, stack.size(), 2):
-			if stack[turn] == stack[0]:
+			if stack[turn].length() > 3 and (stack[turn] in stack[0] or\
+											 stack[0] in stack[turn]):
 				scores[id] += 1
 				scores[player_ids[id_index - player_ids.size() + turn - 1]] += 1
 				if turn > 2:

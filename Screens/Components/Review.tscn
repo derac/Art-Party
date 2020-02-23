@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/Images/left_arrow.png" type="Texture" id=6]
 
 [sub_resource type="StyleBoxFlat" id=9]
-content_margin_left = 20.0
+content_margin_left = 28.0
 content_margin_right = 0.0
 content_margin_top = 0.0
 content_margin_bottom = 0.0
@@ -83,9 +83,9 @@ __meta__ = {
 }
 
 [node name="Back" type="Button" parent="."]
-margin_left = 1580.0
+margin_left = 1540.0
 margin_top = 10.0
-margin_right = 1740.0
+margin_right = 1720.0
 margin_bottom = 190.0
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 9 )
@@ -104,9 +104,9 @@ __meta__ = {
 }
 
 [node name="Turn" type="Label" parent="."]
-margin_left = 180.0
+margin_left = 200.0
 margin_top = 10.0
-margin_right = 340.0
+margin_right = 380.0
 margin_bottom = 190.0
 custom_styles/normal = SubResource( 1 )
 custom_fonts/font = SubResource( 2 )
@@ -120,9 +120,9 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="."]
-margin_left = 350.0
+margin_left = 390.0
 margin_top = 10.0
-margin_right = 1570.0
+margin_right = 1530.0
 margin_bottom = 190.0
 custom_styles/normal = SubResource( 1 )
 custom_fonts/font = SubResource( 3 )
@@ -137,7 +137,7 @@ __meta__ = {
 }
 
 [node name="Forward" type="Button" parent="."]
-margin_left = 1750.0
+margin_left = 1730.0
 margin_top = 10.0
 margin_right = 1910.0
 margin_bottom = 190.0
@@ -160,7 +160,7 @@ __meta__ = {
 [node name="Return" type="Button" parent="."]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 170.0
+margin_right = 190.0
 margin_bottom = 190.0
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 1 )
