@@ -61,7 +61,7 @@ func _on_Send_Button_button_down() -> void:
 		if awaiting_next_card:
 			Sound.play_sfx("res://Assets/SFX/button1.wav")
 			get_node("/root/Play/Pause/Waiting_Label").text = \
-				"waiting for " + Global.game_state[ids[my_id_index - turn]]["name"]
+				"waiting for " + Global.game_state[ids[my_id_index - 1]]["name"]
 
 
 func get_next_card():

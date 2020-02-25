@@ -34,6 +34,4 @@ Music by Stellardrone from [Light Years](https://freemusicarchive.org/music/Stel
 
 Sounds by [StumpyStrust](https://opengameart.org/content/ui-sounds)
 
-name-generator.gd by [Xavier Sellier](https://github.com/xsellier) under the MIT License
-
 All other art, programming, and design by Derek Olson

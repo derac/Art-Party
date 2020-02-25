@@ -18,12 +18,20 @@ func _player_connected(id : int) -> void:
 	rpc_id(id, "register_player", new_data())
 
 func _player_disconnected(id : int) -> void:
-	Global.game_state.erase(id)
-	# Trigger setter
-	Global.game_state_set(Global.game_state)
+	match get_tree().get_current_scene().get_name():
+		"Lobby":
+			Global.game_state.erase(id)
+			# Trigger setter
+			Global.game_state_set(Global.game_state)
+		"Play":
+			pass
 
 func _server_disconnected() -> void:
-	get_tree().change_scene_to(setup_screen)
+	match get_tree().get_current_scene().get_name():
+		"Lobby":
+			get_tree().change_scene_to(setup_screen)
+		"Play":
+			get_tree().change_scene_to(setup_screen)
 
 func _connection_succeeded() -> void:
 	Global.game_state[peer.get_unique_id()] = new_data()

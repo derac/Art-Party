@@ -1,9 +1,5 @@
 extends CanvasLayer
 
-func _ready() -> void:
-	get_tree().set_auto_accept_quit(false)
-	get_tree().set_quit_on_go_back(false)
-
 func _notification(what) -> void:
 	if (what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST or \
 		what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST):

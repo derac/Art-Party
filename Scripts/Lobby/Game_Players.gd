@@ -4,6 +4,7 @@ var ready_label = load("res://Screens/Components/Ready_Label.tscn")
 
 func _ready() -> void:
 	Global.connect("game_state_changed", self, "_on_game_state_changed")
+	_on_game_state_changed()
 
 func _on_game_state_changed() -> void:
 	for child in get_children():

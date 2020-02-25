@@ -1,6 +1,6 @@
 extends Node
 
-var my_name : String
+var my_name : String = "enter name"
 var external_ip := ""
 var UPNP_state := "uninitialized"
 # udp_data = {ip: {is_server: bool, last_tick: int, name: ''}}

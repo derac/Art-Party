@@ -6,23 +6,9 @@ onready var Game_Players := get_node("../Game_Players")
 func _ready() -> void:
 	if Game_Server.is_server != true:
 		set_visible(false)
-	Game_Players._on_game_state_changed()
 
 func _pressed() -> void:
-	if Global.UPNP_state == "uninitialized":
-		if upnp.discover() == 0:
-			var gateway = upnp.get_gateway()
-			if gateway.is_valid_gateway() and gateway.add_port_mapping(Game_Server.port) == 0:
-				Global.external_ip = gateway.query_external_address()
-				Global.UPNP_state = "succeeded"
-	if Global.UPNP_state == "succeeded":
-		$Address/UPNP_Bad.set_visible(false)
-		$Address/UPNP_Good.set_visible(true)
-	if Global.external_ip == "":
-		Global.UPNP_state = "failed"
-		$HTTPRequest.request("http://ipinfo.io/ip")
-	else:
-		set_address(Global.external_ip)
+	try_UPNP()
 		
 	$Address.set_visible(!$Address.is_visible())
 	if $Address.is_visible():
@@ -50,3 +36,19 @@ func _on_HTTPRequest_request_completed(_result: int,
 func set_address(address) -> void:
 	Global.external_ip = address
 	$Address.text = "%s:%s" % [address, Game_Server.port]
+
+func try_UPNP() -> void:
+	if Global.UPNP_state == "uninitialized":
+		if upnp.discover() == 0:
+			var gateway = upnp.get_gateway()
+			if gateway.is_valid_gateway() and gateway.add_port_mapping(Game_Server.port) == 0:
+				Global.external_ip = gateway.query_external_address()
+				Global.UPNP_state = "succeeded"
+	if Global.UPNP_state == "succeeded":
+		$Address/UPNP_Bad.set_visible(false)
+		$Address/UPNP_Good.set_visible(true)
+	if Global.external_ip == "":
+		Global.UPNP_state = "failed"
+		$HTTPRequest.request("http://ipinfo.io/ip")
+	else:
+		set_address(Global.external_ip)

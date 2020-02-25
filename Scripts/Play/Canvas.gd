@@ -55,6 +55,8 @@ func _on_draw() -> void:
 		for offset in range(0, history[-1].size() - last_index):
 			draw_brush(history[-1], last_index + offset)
 		last_index = history[-1].size() - 1
+	if history.size() > 1:
+		draw_brush(history[-2], history[-2].size() - 1)
 
 func undo() -> void:
 	if history.size() > 1:
