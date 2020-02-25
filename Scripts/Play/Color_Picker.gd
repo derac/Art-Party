@@ -1,7 +1,6 @@
 extends Button
 
-func _ready() -> void:
-	$Liquid.set_self_modulate(Global.color)
+var color := Color("#339db5")
 
 func _pressed() -> void:
 	if $Colors.is_visible():

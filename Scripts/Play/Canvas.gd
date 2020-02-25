@@ -30,7 +30,7 @@ func _gui_input(event) -> void:
 		if event.pressed:
 			history[-1].append({"position": get_viewport().get_mouse_position(),
 								"speed": 0,
-								"color": Global.color})
+								"color": get_node('../Color_Picker').color})
 			_pen.update()
 		elif history[-1].size() > 0:
 			history.append([])
@@ -41,7 +41,7 @@ func _gui_input(event) -> void:
 		if history[-1][-1]["position"].distance_to(get_viewport().get_mouse_position()) > min_draw_dist:
 			history[-1].append({"position": get_viewport().get_mouse_position(),
 								"speed": history[-1][-1]["position"].distance_to(get_viewport().get_mouse_position()),
-								"color": Global.color})
+								"color": get_node('../Color_Picker').color})
 			_pen.update()
 
 func _on_draw() -> void:
