@@ -15,6 +15,7 @@ func _ready():
 	
 	ids.sort()
 	my_id = get_tree().get_network_unique_id()
+	print("My id is: ", my_id)
 	my_id_index = ids.find(my_id)
 	max_turns = ids.size() - ids.size() % 2
 	

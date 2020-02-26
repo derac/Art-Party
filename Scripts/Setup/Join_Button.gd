@@ -7,8 +7,7 @@ func _ready() -> void:
 	Game_Server.peer.connect("connection_succeeded", self, "_connection_succeeded")
 
 func _pressed() -> void:
-	if address.has_all(["ip", "port"]) and Global.my_name != "enter name"\
-									   and Global.my_name.length():
+	if address.has_all(["ip", "port"]) and Global.my_name.length():
 		Game_Server.start_client(address["ip"], int(address["port"]))
 	else:
 		Sound.play_sfx("res://Assets/SFX/off.wav", -3.0, 0.8)

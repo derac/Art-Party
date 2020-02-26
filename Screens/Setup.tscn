@@ -176,11 +176,20 @@ custom_colors/font_color_hover = Color( 0.6, 0.760784, 0.305882, 1 )
 custom_colors/font_color_pressed = Color( 0.6, 0.760784, 0.305882, 1 )
 shortcut_in_tooltip = false
 action_mode = 0
-text = "new"
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="new game" type="Label" parent="New"]
+margin_right = 380.0
+margin_bottom = 520.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.6, 0.760784, 0.305882, 1 )
+text = "new
+game"
+align = 1
+valign = 1
 
 [node name="UDP_Players" type="Control" parent="."]
 margin_left = 10.0

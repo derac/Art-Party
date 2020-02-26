@@ -39,15 +39,17 @@ func create_player_label(position : Vector2,\
 						 player_data : Dictionary,
 						 player_ip : String) -> void:
 	var instance
-	name = player_data['name']
+	var player_name = player_data['name']
+	if !player_name:
+		player_name = "anonymous"
 	if player_data['is_server']:
 		instance = server_label.instance()
-		name = "join " + name
+		player_name = "join " + player_name
 	else:
 		instance = player_label.instance()
 	add_child(instance)
 	instance.set_position(position)
 	instance.set_size(size)
-	instance.text = name
+	instance.text = player_name
 	if player_data['is_server']:
 		instance.address = {'ip': player_ip, 'port': player_data['port']}
