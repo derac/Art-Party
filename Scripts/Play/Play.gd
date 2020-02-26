@@ -18,9 +18,9 @@ func _ready():
 	my_id_index = ids.find(my_id)
 	max_turns = ids.size() - ids.size() % 2
 	
-	print("My id is: ", my_id)
-	print("My name is: ", Global.my_name)
-	print("My id index is: ", my_id_index)
+	print("id: ", my_id)
+	print("name: ", Global.my_name)
+	print("id index: ", my_id_index)
 	
 	# Generate a new phrase at the start of the game
 	var phrases_file := File.new()

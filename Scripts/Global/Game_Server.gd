@@ -9,6 +9,8 @@ var setup_screen := load("res://Screens/Setup.tscn")
 var play_screen := load("res://Screens/Play.tscn")
 
 func _ready() -> void:
+	print(pause_mode)
+	
 	get_tree().connect("network_peer_connected", self, "_player_connected")
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
 	get_tree().connect("server_disconnected", self, "_server_disconnected")
@@ -24,7 +26,8 @@ func _player_disconnected(id : int) -> void:
 			# Trigger setter
 			Global.game_state_set(Global.game_state)
 		"Play":
-			pass
+			print("player disconnected: ", id)
+			#get_tree().change_scene_to(setup_screen)
 
 func _server_disconnected() -> void:
 	match get_tree().get_current_scene().get_name():
