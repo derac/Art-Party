@@ -15,9 +15,12 @@ func _ready():
 	
 	ids.sort()
 	my_id = get_tree().get_network_unique_id()
-	print("My id is: ", my_id)
 	my_id_index = ids.find(my_id)
 	max_turns = ids.size() - ids.size() % 2
+	
+	print("My id is: ", my_id)
+	print("My name is: ", Global.my_name)
+	print("My id index is: ", my_id_index)
 	
 	# Generate a new phrase at the start of the game
 	var phrases_file := File.new()
@@ -40,11 +43,19 @@ func _on_game_state_changed():
 		get_tree().change_scene_to(end_screen)
 		
 
-func _on_Send_Button_button_down() -> void:
+func _on_Send_button_down():
 	if Global.game_state[ids[my_id_index - turn]]["cards"].size() % 2:
-		Game_Server.rpc("send_data", $Canvas.history, ids[my_id_index - turn])
+		if $Canvas.history.size() > 1:
+			Game_Server.rpc("send_data", $Canvas.history, ids[my_id_index - turn])
+		else:
+			Sound.play_sfx("res://Assets/SFX/off.wav", -3.0, 0.8)
+			return
 	else:
-		Game_Server.rpc("send_data", $Title.text, ids[my_id_index - turn])
+		if $Title.text:
+			Game_Server.rpc("send_data", $Title.text, ids[my_id_index - turn])
+		else:
+			Sound.play_sfx("res://Assets/SFX/off.wav", -3.0, 0.8)
+			return
 
 	turn += 1
 	
