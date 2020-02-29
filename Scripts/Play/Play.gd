@@ -32,6 +32,7 @@ func _ready():
 	Game_Server.rpc("send_data", $Title.text, my_id)
 
 	Global.connect("game_state_changed", self, "_on_game_state_changed")
+	$Game_Timer.connect("game_timer_expired", self, "_on_game_timer_expired")
 
 func _on_game_state_changed():
 	if awaiting_next_card:
@@ -42,6 +43,18 @@ func _on_game_state_changed():
 				return
 		get_tree().change_scene_to(end_screen)
 		
+func _on_game_timer_expired():
+	if $Canvas.history.size() <= 1:
+		$Canvas.history = [[{"position": Vector2(960, 540),
+								"speed": 100,
+								"color": Color(0,0,0,1)}],
+							[{"position": Vector2(960, 540),
+								"speed": 100,
+								"color": Color(0,0,0,1)}]]
+	if $Title.text == "":
+		$Title.text = Global.my_name + " timed out"
+		
+	_on_Send_button_down()
 
 func _on_Send_button_down():
 	if Global.game_state[ids[my_id_index - turn]]["cards"].size() % 2:

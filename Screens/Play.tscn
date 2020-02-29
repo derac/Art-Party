@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Assets/Images/Dropper_Liquid.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Play/Canvas.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Images/Undo.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Play/Play.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Play/Color_Picker.gd" type="Script" id=6]
+[ext_resource path="res://Screens/Game_Timer.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Images/send.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Images/Dropper_Empty.png" type="Texture" id=9]
 [ext_resource path="res://Screens/Components/Color_Button.tscn" type="PackedScene" id=10]
@@ -270,9 +271,32 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
 [sub_resource type="DynamicFont" id=21]
-size = 90
+size = 100
 outline_size = 5
 outline_color = Color( 0.184314, 0.168627, 0.419608, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=29]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.960784, 0.792157, 0.184314, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 100
+outline_size = 5
+outline_color = Color( 0.960784, 0.792157, 0.184314, 1 )
 font_data = ExtResource( 3 )
 
 [sub_resource type="StyleBoxFlat" id=22]
@@ -331,12 +355,6 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
-
-[sub_resource type="DynamicFont" id=24]
-size = 100
-outline_size = 5
-outline_color = Color( 0.960784, 0.792157, 0.184314, 1 )
-font_data = ExtResource( 3 )
 
 [node name="Play" type="Control"]
 anchor_right = 1.0
@@ -584,7 +602,7 @@ __meta__ = {
 [node name="Title_Mask" type="Panel" parent="."]
 margin_left = 390.0
 margin_top = 10.0
-margin_right = 1640.0
+margin_right = 1350.0
 margin_bottom = 190.0
 custom_styles/panel = SubResource( 19 )
 __meta__ = {
@@ -595,7 +613,7 @@ __meta__ = {
 [node name="Title" type="LineEdit" parent="."]
 margin_left = 390.0
 margin_top = 10.0
-margin_right = 1640.0
+margin_right = 1350.0
 margin_bottom = 190.0
 mouse_filter = 2
 mouse_default_cursor_shape = 0
@@ -617,6 +635,27 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="Game_Timer" type="Label" parent="."]
+margin_left = 1360.0
+margin_top = 10.0
+margin_right = 1640.0
+margin_bottom = 190.0
+custom_styles/normal = SubResource( 29 )
+custom_fonts/font = SubResource( 24 )
+custom_colors/font_color = Color( 0.819608, 0.411765, 0.121569, 1 )
+text = "0:00"
+align = 1
+valign = 1
+clip_text = true
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Countdown" type="Timer" parent="Game_Timer"]
+autostart = true
 
 [node name="Send" type="Button" parent="."]
 margin_left = 1650.0
@@ -661,4 +700,5 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="timeout" from="Game_Timer/Countdown" to="Game_Timer" method="_on_Countdown_timeout"]
 [connection signal="button_down" from="Send" to="." method="_on_Send_button_down"]
