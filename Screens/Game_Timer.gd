@@ -1,6 +1,6 @@
 extends Label
 
-var time_left = 2
+var time_left = 90
 
 signal game_timer_expired
 

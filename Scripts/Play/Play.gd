@@ -109,3 +109,4 @@ func get_next_card():
 		# Re-enable buttons and stuff
 		awaiting_next_card = false
 		$Pause.set_visible(false)
+		$Game_Timer.reset()
