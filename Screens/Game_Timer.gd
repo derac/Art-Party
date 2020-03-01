@@ -1,7 +1,6 @@
 extends Label
 
 var time_left = 90
-
 signal game_timer_expired
 
 func _ready():
@@ -20,7 +19,6 @@ func _on_Countdown_timeout():
 		$Countdown.stop()
 
 func stop() -> void:
-	text = "1:30"
 	$Countdown.stop()
 
 func reset() -> void:

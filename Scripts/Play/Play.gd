@@ -56,14 +56,14 @@ func _on_game_timer_expired():
 func _on_Send_button_down():
 	if Global.game_state[ids[my_id_index - turn]]["cards"].size() % 2:
 		if $Canvas.history.size() > 1:
-			print(my_id, " : ", Global.my_name, " - Sending card for ", Global.game_state[ids[my_id_index - turn]]["name"])
+			print(my_id, ": ", "Sending card for ", Global.game_state[ids[my_id_index - turn]]["name"], " - ", $Title.text)
 			Game_Server.rpc("send_data", $Canvas.history, ids[my_id_index - turn])
 		else:
 			Sound.play_sfx("res://Assets/SFX/off.wav", -3.0, 0.8)
 			return
 	else:
 		if $Title.text:
-			print(my_id, " : ", Global.my_name, " - Sending card for ", Global.game_state[ids[my_id_index - turn]]["name"])
+			print(my_id, ": ", "Sending card for ", Global.game_state[ids[my_id_index - turn]]["name"], " - ", $Title.text)
 			Game_Server.rpc("send_data", $Title.text, ids[my_id_index - turn])
 		else:
 			Sound.play_sfx("res://Assets/SFX/off.wav", -3.0, 0.8)
@@ -86,7 +86,7 @@ func _on_Send_button_down():
 		get_next_card()
 		if awaiting_next_card:
 			Sound.play_sfx("res://Assets/SFX/button1.wav")
-			update_waiting_label()
+			$Game_Timer.stop()
 
 func get_next_card():
 	var cards = Global.game_state[ids[my_id_index - turn]]["cards"]
@@ -97,12 +97,16 @@ func get_next_card():
 			$Canvas.history = cards[-1]
 			$Canvas.redraw()
 			$Title.text = ''
+			$Title.set_editable(true)
 			$Title.set_mouse_filter(MOUSE_FILTER_STOP)
+			$Canvas.set_mouse_filter(MOUSE_FILTER_IGNORE)
 		# last card was a title
 		else:
 			$Canvas.history = [[]]
 			$Canvas.redraw()
 			$Title.set_mouse_filter(MOUSE_FILTER_IGNORE)
+			$Canvas.set_mouse_filter(MOUSE_FILTER_STOP)
+			$Title.set_editable(false)
 			$Title.text = cards[-1]
 			
 		# Re-enable buttons and stuff
