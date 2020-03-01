@@ -44,14 +44,11 @@ func _on_game_state_changed():
 		get_tree().change_scene_to(end_screen)
 		
 func _on_game_timer_expired():
-	if $Canvas.history.size() <= 1:
-		$Canvas.history = [[{"position": Vector2(960, 540),
-								"speed": 100,
-								"color": Color(0,0,0,1)}],
-							[{"position": Vector2(960, 540),
-								"speed": 100,
-								"color": Color(0,0,0,1)}]]
-	if $Title.text == "":
+	if Global.game_state[ids[my_id_index - turn]]["cards"].size() % 2:
+		if $Canvas.history.size() <= 1:
+			$Canvas.history = [[{"color": Color(1,1,1,1), "position": Vector2(980, 512), "speed":0}], []]
+			$Canvas.redraw()
+	elif not $Title.text:
 		$Title.text = Global.my_name + " timed out"
 		
 	_on_Send_button_down()
@@ -59,12 +56,14 @@ func _on_game_timer_expired():
 func _on_Send_button_down():
 	if Global.game_state[ids[my_id_index - turn]]["cards"].size() % 2:
 		if $Canvas.history.size() > 1:
+			print(my_id, " : ", Global.my_name, " - Sending card for ", Global.game_state[ids[my_id_index - turn]]["name"])
 			Game_Server.rpc("send_data", $Canvas.history, ids[my_id_index - turn])
 		else:
 			Sound.play_sfx("res://Assets/SFX/off.wav", -3.0, 0.8)
 			return
 	else:
 		if $Title.text:
+			print(my_id, " : ", Global.my_name, " - Sending card for ", Global.game_state[ids[my_id_index - turn]]["name"])
 			Game_Server.rpc("send_data", $Title.text, ids[my_id_index - turn])
 		else:
 			Sound.play_sfx("res://Assets/SFX/off.wav", -3.0, 0.8)
@@ -77,17 +76,17 @@ func _on_Send_button_down():
 		Sound.play_sfx("res://Assets/SFX/complete.wav", -6.0, 0.75)
 		Sound.change_music("res://Assets/Music/end.ogg", 35, -3.0)
 		get_node("/root/Play/Pause/Waiting_Label").text = "waiting for game to end"
+		$Game_Timer.stop()
 		awaiting_end = true
 		_on_game_state_changed()
 	else:
+		print(my_id, " : ", Global.my_name, " - Awaiting the stack of ", Global.game_state[ids[my_id_index - turn]]["name"])
 		awaiting_next_card = true
 		$Pause.set_visible(true)
 		get_next_card()
 		if awaiting_next_card:
 			Sound.play_sfx("res://Assets/SFX/button1.wav")
-			get_node("/root/Play/Pause/Waiting_Label").text = \
-				"waiting for " + Global.game_state[ids[my_id_index - 1]]["name"]
-
+			update_waiting_label()
 
 func get_next_card():
 	var cards = Global.game_state[ids[my_id_index - turn]]["cards"]
@@ -110,3 +109,9 @@ func get_next_card():
 		awaiting_next_card = false
 		$Pause.set_visible(false)
 		$Game_Timer.reset()
+	else:
+		update_waiting_label()
+
+func update_waiting_label() -> void:
+	var player_offset : int = Global.game_state[ids[my_id_index - turn]]["cards"].size() - 1
+	$Pause/Waiting_Label.text = "waiting for " + Global.game_state[ids[(my_id_index - turn + player_offset) % ids.size()]]["name"]

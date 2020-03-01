@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Play/Canvas.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Misc/Quicksand-Bold.ttf" type="DynamicFontData" id=2]
@@ -24,12 +24,29 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
 [sub_resource type="DynamicFont" id=2]
-size = 90
+size = 70
 outline_size = 5
 outline_color = Color( 0.184314, 0.168627, 0.419608, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.960784, 0.792157, 0.184314, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
 content_margin_left = 0.0
 content_margin_right = 0.0
 content_margin_top = 0.0
@@ -45,13 +62,13 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="DynamicFont" id=4]
-size = 90
+[sub_resource type="DynamicFont" id=5]
+size = 70
 outline_size = 5
 outline_color = Color( 0.184314, 0.168627, 0.419608, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 size = 90
 outline_size = 5
 outline_color = Color( 0.184314, 0.168627, 0.419608, 1 )
@@ -106,7 +123,7 @@ __meta__ = {
 [node name="Turn" type="Label" parent="."]
 margin_left = 200.0
 margin_top = 10.0
-margin_right = 380.0
+margin_right = 860.0
 margin_bottom = 190.0
 custom_styles/normal = SubResource( 3 )
 custom_fonts/font = SubResource( 2 )
@@ -120,12 +137,12 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="."]
-margin_left = 390.0
+margin_left = 870.0
 margin_top = 10.0
 margin_right = 1530.0
 margin_bottom = 190.0
-custom_styles/normal = SubResource( 3 )
-custom_fonts/font = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.960784, 0.792157, 0.184314, 1 )
 custom_colors/font_color_shadow = Color( 0.960784, 0.792157, 0.184314, 1 )
 text = "title"
@@ -163,12 +180,12 @@ margin_top = 10.0
 margin_right = 190.0
 margin_bottom = 190.0
 mouse_default_cursor_shape = 2
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 3 )
-custom_styles/normal = SubResource( 3 )
-custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0.960784, 0.792157, 0.184314, 1 )
 custom_colors/font_color = Color( 0.960784, 0.792157, 0.184314, 1 )
 custom_colors/font_color_hover = Color( 0.960784, 0.792157, 0.184314, 1 )
