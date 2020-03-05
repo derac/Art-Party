@@ -4,7 +4,7 @@
 
 Clone this project and load it in Godot
 
-## Gamplay
+## Rules
 1. Start with 4+ players.
 2. Take a word.
 3. If player number is odd, pass it clockwise.
