@@ -305,6 +305,7 @@ custom_colors/font_color_hover = Color( 0.529412, 0.54902, 0.505882, 1 )
 custom_colors/font_color_pressed = Color( 0.529412, 0.54902, 0.505882, 1 )
 script = ExtResource( 1 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
