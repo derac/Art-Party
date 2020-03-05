@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Assets/Images/Dropper_Liquid.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/3_Play/Canvas.gd" type="Script" id=2]
@@ -25,10 +25,10 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id=1]
-content_margin_left = 30.0
-content_margin_right = 30.0
-content_margin_top = 20.0
-content_margin_bottom = 20.0
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
 bg_color = Color( 1, 0.945098, 0.909804, 1 )
 border_width_left = 20
 border_width_top = 20
@@ -42,33 +42,16 @@ corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
 
 [sub_resource type="StyleBoxFlat" id=2]
-content_margin_left = 30.0
-content_margin_right = 30.0
-content_margin_top = 20.0
-content_margin_bottom = 20.0
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
 bg_color = Color( 1, 0.945098, 0.909804, 1 )
 border_width_left = 20
 border_width_top = 20
 border_width_right = 20
 border_width_bottom = 20
 border_color = Color( 0.113725, 0.168627, 0.32549, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
-
-[sub_resource type="StyleBoxFlat" id=17]
-content_margin_left = 30.0
-content_margin_right = 30.0
-content_margin_top = 20.0
-content_margin_bottom = 20.0
-bg_color = Color( 1, 0.945098, 0.909804, 1 )
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color( 0.176471, 0.384314, 0.588235, 1 )
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
@@ -411,11 +394,7 @@ __meta__ = {
 [node name="Liquid" type="Sprite" parent="Controls/Color_Picker"]
 self_modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 80, 80 )
-scale = Vector2( 0.833333, 0.833333 )
 texture = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Dropper" type="Sprite" parent="Controls/Color_Picker/Liquid"]
 texture = ExtResource( 9 )
@@ -429,15 +408,14 @@ hint_tooltip = "Ctrl+Z"
 focus_mode = 0
 mouse_default_cursor_shape = 2
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 17 )
-custom_styles/pressed = SubResource( 17 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 1 )
 custom_styles/disabled = SubResource( 2 )
 custom_styles/normal = SubResource( 2 )
 shortcut_in_tooltip = false
 action_mode = 0
 shortcut = SubResource( 19 )
 icon = ExtResource( 4 )
-expand_icon = true
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -460,7 +438,7 @@ margin_bottom = 160.0
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 custom_styles/read_only = SubResource( 2 )
-custom_styles/focus = SubResource( 17 )
+custom_styles/focus = SubResource( 1 )
 custom_styles/normal = SubResource( 2 )
 custom_fonts/font = SubResource( 5 )
 custom_colors/selection_color = Color( 0.160784, 0.678431, 1, 0.235294 )
@@ -506,14 +484,13 @@ rect_min_size = Vector2( 260, 0 )
 focus_mode = 0
 mouse_default_cursor_shape = 2
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 17 )
-custom_styles/pressed = SubResource( 17 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 1 )
 custom_styles/disabled = SubResource( 2 )
 custom_styles/normal = SubResource( 2 )
 shortcut = SubResource( 28 )
 icon = ExtResource( 8 )
 align = 0
-expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

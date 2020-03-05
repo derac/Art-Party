@@ -7,9 +7,6 @@
 [ext_resource path="res://Assets/Images/radio_unchecked.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Images/radio_checked.png" type="Texture" id=6]
 
-
-
-
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
 border_width_left = 20

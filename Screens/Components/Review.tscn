@@ -7,45 +7,6 @@
 [ext_resource path="res://Assets/Images/right_arrow.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Images/left_arrow.png" type="Texture" id=6]
 
-[sub_resource type="StyleBoxFlat" id=1]
-content_margin_left = 28.0
-content_margin_right = 0.0
-content_margin_top = 0.0
-content_margin_bottom = 0.0
-bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color( 0.2, 0.615686, 0.709804, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="DynamicFont" id=2]
-size = 70
-outline_size = 5
-outline_color = Color( 0.184314, 0.168627, 0.419608, 1 )
-font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxFlat" id=3]
-content_margin_left = 0.0
-content_margin_right = 0.0
-content_margin_top = 0.0
-content_margin_bottom = 0.0
-bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color( 0.960784, 0.792157, 0.184314, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
-
 [sub_resource type="StyleBoxFlat" id=4]
 content_margin_left = 0.0
 content_margin_right = 0.0
@@ -62,14 +23,54 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="DynamicFont" id=5]
-size = 70
-outline_size = 5
-outline_color = Color( 0.184314, 0.168627, 0.419608, 1 )
-font_data = ExtResource( 2 )
+[sub_resource type="StyleBoxFlat" id=2]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+bg_color = Color( 1, 0.945098, 0.909804, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.113725, 0.168627, 0.32549, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
 
 [sub_resource type="DynamicFont" id=6]
-size = 90
+size = 70
+outline_size = 5
+outline_color = Color( 0.113725, 0.168627, 0.32549, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=23]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+bg_color = Color( 1, 0.945098, 0.909804, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 1, 0.639216, 0, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 70
+outline_size = 5
+outline_color = Color( 1, 0.639216, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 70
 outline_size = 5
 outline_color = Color( 0.184314, 0.168627, 0.419608, 1 )
 font_data = ExtResource( 2 )
@@ -85,7 +86,7 @@ __meta__ = {
 [node name="Background" type="ColorRect" parent="."]
 margin_right = 1920.0
 margin_bottom = 1080.0
-color = Color( 0.960784, 0.945098, 0.929412, 1 )
+color = Color( 1, 0.945098, 0.909804, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -99,18 +100,83 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Back" type="Button" parent="."]
-margin_left = 1540.0
+[node name="Controls" type="HBoxContainer" parent="."]
+margin_left = 10.0
 margin_top = 10.0
-margin_right = 1720.0
-margin_bottom = 190.0
+margin_right = 1910.0
+margin_bottom = 170.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Return" type="Button" parent="Controls"]
+margin_right = 160.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 0 )
 mouse_default_cursor_shape = 2
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
-custom_fonts/font = SubResource( 2 )
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color_disabled = Color( 1, 0.92549, 0.152941, 1 )
+custom_colors/font_color = Color( 1, 0.92549, 0.152941, 1 )
+custom_colors/font_color_hover = Color( 1, 0.92549, 0.152941, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.92549, 0.152941, 1 )
+text = "X"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Turn" type="Label" parent="Controls"]
+margin_left = 170.0
+margin_right = 860.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/normal = SubResource( 23 )
+custom_fonts/font = SubResource( 24 )
+custom_colors/font_color = Color( 1, 0.92549, 0.152941, 1 )
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Controls"]
+margin_left = 870.0
+margin_right = 1560.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0.92549, 0.152941, 1 )
+custom_colors/font_color_shadow = Color( 1, 0.92549, 0.152941, 1 )
+text = "title"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="Controls"]
+margin_left = 1570.0
+margin_right = 1730.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 0 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color_disabled = Color( 0.960784, 0.792157, 0.184314, 1 )
 custom_colors/font_color = Color( 0.960784, 0.792157, 0.184314, 1 )
 custom_colors/font_color_hover = Color( 0.960784, 0.792157, 0.184314, 1 )
@@ -120,51 +186,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Turn" type="Label" parent="."]
-margin_left = 200.0
-margin_top = 10.0
-margin_right = 860.0
-margin_bottom = 190.0
-custom_styles/normal = SubResource( 3 )
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0.960784, 0.792157, 0.184314, 1 )
-custom_colors/font_color_shadow = Color( 0.960784, 0.792157, 0.184314, 1 )
-text = "1"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Title" type="Label" parent="."]
-margin_left = 870.0
-margin_top = 10.0
-margin_right = 1530.0
-margin_bottom = 190.0
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0.960784, 0.792157, 0.184314, 1 )
-custom_colors/font_color_shadow = Color( 0.960784, 0.792157, 0.184314, 1 )
-text = "title"
-align = 1
-valign = 1
-clip_text = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Forward" type="Button" parent="."]
-margin_left = 1730.0
-margin_top = 10.0
-margin_right = 1910.0
-margin_bottom = 190.0
+[node name="Forward" type="Button" parent="Controls"]
+margin_left = 1740.0
+margin_right = 1900.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 0 )
 mouse_default_cursor_shape = 2
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
-custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color_disabled = Color( 0.960784, 0.792157, 0.184314, 1 )
 custom_colors/font_color = Color( 0.960784, 0.792157, 0.184314, 1 )
 custom_colors/font_color_hover = Color( 0.960784, 0.792157, 0.184314, 1 )
@@ -173,27 +205,5 @@ icon = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Return" type="Button" parent="."]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 190.0
-margin_bottom = 190.0
-mouse_default_cursor_shape = 2
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/focus = SubResource( 4 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color_disabled = Color( 0.960784, 0.792157, 0.184314, 1 )
-custom_colors/font_color = Color( 0.960784, 0.792157, 0.184314, 1 )
-custom_colors/font_color_hover = Color( 0.960784, 0.792157, 0.184314, 1 )
-custom_colors/font_color_pressed = Color( 0.960784, 0.792157, 0.184314, 1 )
-text = "X"
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
-[connection signal="pressed" from="Forward" to="." method="_on_Forward_pressed"]
+[connection signal="pressed" from="Controls/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Controls/Forward" to="." method="_on_Forward_pressed"]
