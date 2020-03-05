@@ -1,32 +1,25 @@
-# Rules
-
-1. Start a game with 4 or more players.
-2. Everyone gets a phrase.
-3. Draw a representation of the phrase.
-4. Everyone passes the drawing to the next player.
-5. Guess the phrase the drawing represents.
-6. Everyone passes the phrase to the next player.
-7. Go to 3 and repeat for an even number of turns.
-8. Everyone gets their card stack back.
-9. If a guess matches the starting phrase, the guesser, preceding drawer, and card stack owner get 1 point.
-
-# Play
-
-https://derac.itch.io/artparty
-
-# Develop
+## Develop
 
 [Download Godot](https://godotengine.org/download/)
 
 Clone this project and load it in Godot
 
-# Donate
+## Gamplay
+1. Start with 4+ players.
+2. Take a phrase.
+3. If there are an odd number of players, pass it clockwise.
+4. Draw the phrase.
+5. Pass the drawing clockwise.
+6. Guess what the drawing is.
+7. Pass the phrase clockwise
+8. Goto (3.) and repeat.
+9. When the phrase from (1.) returns to you, score the card.
 
-https://paypal.me/deracoslon
+#### Scoring
+If a guess matches the starting phrase, every player who previously touched the card gets a point.
 
-ty :)
 
-# Attribution
+## Attribution
 
 Icon made by Freepik from [flaticon.com](https://www.flaticon.com)
 
@@ -34,4 +27,8 @@ Music by Stellardrone from [Light Years](https://freemusicarchive.org/music/Stel
 
 Sounds by [StumpyStrust](https://opengameart.org/content/ui-sounds)
 
-All other art, programming, and design by Derek Olson
+All other art, programming, and design by Derek Olson under MIT
+
+## Buy and support
+
+https://derac.itch.io/artparty
