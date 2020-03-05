@@ -1,4 +1,4 @@
-extends Control
+extends Stretch_Grid
 
 var review_button := load("res://Screens/Components/Review_Button.tscn")
 # {id: score}
@@ -34,37 +34,13 @@ func _ready() -> void:
 		score_array.append([id, scores[id]])
 	score_array.sort_custom(SortByScore, "sort_descending")
 	
-	var data := Global.game_state
-	var data_keys : Array = data.keys()
-	var data_size : int = data_keys.size()
-	var dimensions := Vector2(0, 0)
-	var label_pos := Vector2(0, 0)
-	
-	var cols := floor(sqrt(data_size))
-	if cols > 0:
-		dimensions.x = (rect_size.x - (20 * (cols - 1))) / cols
-		
-		for col in range(cols):
-			label_pos.x = col * (dimensions.x + 20)
-			var rows = cols + floor((data_size / cols) - cols)
-			if col == (cols - 1):
-				rows += (data_size - cols * rows)
-			dimensions.y = (rect_size.y - 20 * (rows - 1)) / rows
-			for row in rows:
-				label_pos.y = row * (dimensions.y + 20)
-				
-				create_review_button(label_pos,
-									 dimensions,
-									 data[score_array[col*cols+row][0]]['name'],
-									 score_array[col*cols+row][0])
+	for i in score_array.size():
+		create_review_button(Global.game_state[score_array[i][0]]['name'],
+							 score_array[i][0])
 
-func create_review_button(position : Vector2,\
-						  size : Vector2,\
-						  text : String,\
+func create_review_button(text : String,\
 						  player_id: int) -> void:
 	var instance = review_button.instance()
 	add_child(instance)
-	instance.set_position(position)
-	instance.set_size(size)
 	instance.player_id = player_id
 	instance.text = String(scores[player_id]) + " - " + text + "'s cards"

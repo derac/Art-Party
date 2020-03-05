@@ -1,13 +1,13 @@
 [gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/Setup/By_IP_Button.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/Setup/UDP_Players.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Setup/Name_Field.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/Setup/New_Button.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/Setup/Setup.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Misc/Quicksand-Bold.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Scripts/Setup/Join_Button.gd" type="Script" id=7]
 [ext_resource path="res://Scripts/Setup/Address_Input.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/Setup/UDP_Players.gd" type="Script" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
@@ -204,12 +204,12 @@ lobby"
 align = 1
 valign = 1
 
-[node name="UDP_Players" type="Control" parent="."]
+[node name="UDP_Players" type="Container" parent="."]
 margin_left = 10.0
 margin_top = 210.0
 margin_right = 1510.0
 margin_bottom = 1070.0
-script = ExtResource( 2 )
+script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

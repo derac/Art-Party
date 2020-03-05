@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Scripts/End/End_Players.gd" type="Script" id=1]
 [ext_resource path="res://Screens/Components/Review.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Misc/Quicksand-Bold.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Scripts/End/Menu_Button.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/End/Review_Players.gd" type="Script" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
@@ -42,12 +42,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Players" type="Control" parent="."]
+[node name="Review_Players" type="Container" parent="."]
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 1510.0
 margin_bottom = 1070.0
-script = ExtResource( 1 )
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
