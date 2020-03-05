@@ -20,11 +20,11 @@ If a guess matches the starting word, every player who previously touched the ca
 
 ## Attribution
 
-- Icon made by Freepik from [flaticon.com](https://www.flaticon.com)
+- [Icon](https://www.flaticon.com/free-icon/palette_2492988) made by Freepik from [flaticon.com](https://www.flaticon.com)
 
-- Music by Stellardrone from [Light Years](https://freemusicarchive.org/music/Stellardrone/Light_Years_1227) under [CC 3.0](https://creativecommons.org/licenses/by/3.0/)
+- Music: [Light Years](https://freemusicarchive.org/music/Stellardrone/Light_Years_1227) by Stellardrone under [CC 3.0](https://creativecommons.org/licenses/by/3.0/)
 
-- Sounds by [StumpyStrust](https://opengameart.org/content/ui-sounds)
+- SFX by [StumpyStrust](https://opengameart.org/content/ui-sounds)
 
 - All other art, programming, and design by Derek Olson under MIT
 
