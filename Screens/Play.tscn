@@ -519,6 +519,7 @@ __meta__ = {
 }
 
 [node name="Pause" type="ColorRect" parent="."]
+visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 color = Color( 0.760784, 0.764706, 0.780392, 0.392157 )
