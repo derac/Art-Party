@@ -165,7 +165,8 @@ __meta__ = {
 [node name="Address" type="LineEdit" parent="Information"]
 visible = false
 margin_right = 1556.0
-margin_bottom = 153.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 0, 160 )
 custom_styles/read_only = SubResource( 1 )
 custom_styles/focus = SubResource( 1 )
 custom_styles/normal = SubResource( 1 )
@@ -186,7 +187,8 @@ __meta__ = {
 
 [node name="Name" type="LineEdit" parent="Information"]
 margin_right = 1520.0
-margin_bottom = 153.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 0, 160 )
 size_flags_horizontal = 3
 custom_styles/focus = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
@@ -207,7 +209,7 @@ __meta__ = {
 }
 
 [node name="UDP_Players" type="Container" parent="Information"]
-margin_top = 173.0
+margin_top = 180.0
 margin_right = 1520.0
 margin_bottom = 1060.0
 size_flags_horizontal = 3

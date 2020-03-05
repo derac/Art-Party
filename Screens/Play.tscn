@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Assets/Images/Dropper_Liquid.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/3_Play/Canvas.gd" type="Script" id=2]
@@ -46,169 +46,13 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
 
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.670588, 0.160784, 0.160784, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 0.184314, 0.168627, 0.419608, 1 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.2, 0.615686, 0.709804, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 0.184314, 0.168627, 0.419608, 1 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.6, 0.760784, 0.305882, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 0.184314, 0.168627, 0.419608, 1 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.529412, 0.54902, 0.505882, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 0.184314, 0.168627, 0.419608, 1 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.819608, 0.411765, 0.121569, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 0.184314, 0.168627, 0.419608, 1 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
 [sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 0.0392157, 0.0392157, 0.0392157, 1 )
+bg_color = Color( 1, 1, 1, 1 )
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color( 0.184314, 0.168627, 0.419608, 1 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0.184314, 0.168627, 0.419608, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 0.184314, 0.168627, 0.419608, 1 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id=10]
-bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 0.184314, 0.168627, 0.419608, 1 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id=11]
-bg_color = Color( 0.611765, 0.447059, 0.282353, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 0.184314, 0.168627, 0.419608, 1 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id=12]
-bg_color = Color( 0.372549, 0.580392, 0.282353, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 0.184314, 0.168627, 0.419608, 1 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id=13]
-bg_color = Color( 0.176471, 0.384314, 0.588235, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 0.184314, 0.168627, 0.419608, 1 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id=14]
-bg_color = Color( 0.960784, 0.792157, 0.184314, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 0.184314, 0.168627, 0.419608, 1 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id=15]
-bg_color = Color( 0.941176, 0.741176, 0.541176, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 0.184314, 0.168627, 0.419608, 1 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id=16]
-bg_color = Color( 1, 0.752941, 0.796078, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 0.184314, 0.168627, 0.419608, 1 )
+border_color = Color( 0, 0, 0, 1 )
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -258,7 +102,7 @@ corner_radius_bottom_left = 50
 content_margin_left = 0.0
 content_margin_right = 0.0
 content_margin_top = 0.0
-content_margin_bottom = 0.0
+content_margin_bottom = 15.0
 bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
 border_width_left = 20
 border_width_top = 20
@@ -379,8 +223,8 @@ __meta__ = {
 [node name="Color_Picker" type="Button" parent="."]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 190.0
-margin_bottom = 190.0
+margin_right = 170.0
+margin_bottom = 170.0
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 1 )
@@ -395,180 +239,236 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Colors" type="Control" parent="Color_Picker"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Colors" type="GridContainer" parent="Color_Picker"]
+margin_top = 170.0
+margin_right = 340.0
+margin_bottom = 510.0
+custom_constants/vseparation = 5
+custom_constants/hseparation = 5
+columns = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="#ab2929" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
-margin_top = 400.0
-margin_right = 100.0
-margin_bottom = 500.0
+[node name="000000" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_right = 81.0
+margin_bottom = 81.0
 rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 3 )
-custom_styles/normal = SubResource( 3 )
-
-[node name="#339db5" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
-margin_left = 210.0
-margin_top = 295.0
-margin_right = 310.0
-margin_bottom = 395.0
-rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/focus = SubResource( 4 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 4 )
-
-[node name="#99c24e" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
-margin_left = 105.0
-margin_top = 505.0
-margin_right = 205.0
-margin_bottom = 605.0
-rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/focus = SubResource( 5 )
-custom_styles/disabled = SubResource( 5 )
-custom_styles/normal = SubResource( 5 )
-
-[node name="#878c81" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
-margin_left = 105.0
-margin_top = 190.0
-margin_right = 205.0
-margin_bottom = 290.0
-rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 6 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
-
-[node name="#d1691f" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
-margin_left = 105.0
-margin_top = 400.0
-margin_right = 205.0
-margin_bottom = 500.0
-rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 7 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/focus = SubResource( 7 )
-custom_styles/disabled = SubResource( 7 )
-custom_styles/normal = SubResource( 7 )
-
-[node name="#0a0a0a" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
-margin_top = 190.0
-margin_right = 100.0
-margin_bottom = 290.0
-rect_pivot_offset = Vector2( 30, 70 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_styles/hover = SubResource( 8 )
 custom_styles/pressed = SubResource( 8 )
 custom_styles/focus = SubResource( 8 )
 custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 8 )
 
-[node name="#2f2b6b" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
-margin_top = 295.0
-margin_right = 100.0
-margin_bottom = 395.0
+[node name="1D2B53" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_left = 86.0
+margin_right = 167.0
+margin_bottom = 81.0
 rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 9 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = SubResource( 9 )
-custom_styles/disabled = SubResource( 9 )
-custom_styles/normal = SubResource( 9 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
 
-[node name="#f5f1ed" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
-margin_left = 210.0
-margin_top = 190.0
-margin_right = 310.0
-margin_bottom = 290.0
+[node name="7E2553" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_left = 172.0
+margin_right = 253.0
+margin_bottom = 81.0
 rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 10 )
-custom_styles/pressed = SubResource( 10 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/disabled = SubResource( 10 )
-custom_styles/normal = SubResource( 10 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
 
-[node name="#9c7248" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
-margin_top = 610.0
-margin_right = 100.0
-margin_bottom = 710.0
+[node name="008751" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_left = 258.0
+margin_right = 339.0
+margin_bottom = 81.0
 rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 11 )
-custom_styles/pressed = SubResource( 11 )
-custom_styles/focus = SubResource( 11 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 11 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
 
-[node name="#5f9448" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
-margin_top = 505.0
-margin_right = 100.0
-margin_bottom = 605.0
+[node name="AB5236" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_top = 86.0
+margin_right = 81.0
+margin_bottom = 167.0
 rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 12 )
-custom_styles/pressed = SubResource( 12 )
-custom_styles/focus = SubResource( 12 )
-custom_styles/disabled = SubResource( 12 )
-custom_styles/normal = SubResource( 12 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
 
-[node name="#2d6296" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
-margin_left = 105.0
-margin_top = 295.0
-margin_right = 205.0
-margin_bottom = 395.0
+[node name="5F574F" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_left = 86.0
+margin_top = 86.0
+margin_right = 167.0
+margin_bottom = 167.0
 rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 13 )
-custom_styles/pressed = SubResource( 13 )
-custom_styles/focus = SubResource( 13 )
-custom_styles/disabled = SubResource( 13 )
-custom_styles/normal = SubResource( 13 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
 
-[node name="#f5ca2f" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
-margin_left = 210.0
-margin_top = 400.0
-margin_right = 310.0
-margin_bottom = 500.0
+[node name="C2C3C7" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_left = 172.0
+margin_top = 86.0
+margin_right = 253.0
+margin_bottom = 167.0
 rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 14 )
-custom_styles/pressed = SubResource( 14 )
-custom_styles/focus = SubResource( 14 )
-custom_styles/disabled = SubResource( 14 )
-custom_styles/normal = SubResource( 14 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
 
-[node name="#f0bd8a" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
-margin_left = 105.0
-margin_top = 610.0
-margin_right = 205.0
-margin_bottom = 710.0
+[node name="FFF1E8" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_left = 258.0
+margin_top = 86.0
+margin_right = 339.0
+margin_bottom = 167.0
 rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/focus = SubResource( 15 )
-custom_styles/disabled = SubResource( 15 )
-custom_styles/normal = SubResource( 15 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
 
-[node name="#ffc0cb" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
-margin_left = 315.0
-margin_top = 190.0
-margin_right = 415.0
-margin_bottom = 290.0
+[node name="FF004D" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_top = 172.0
+margin_right = 81.0
+margin_bottom = 253.0
 rect_pivot_offset = Vector2( 30, 70 )
-custom_styles/hover = SubResource( 16 )
-custom_styles/pressed = SubResource( 16 )
-custom_styles/focus = SubResource( 16 )
-custom_styles/disabled = SubResource( 16 )
-custom_styles/normal = SubResource( 16 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
+
+[node name="FFA300" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_left = 86.0
+margin_top = 172.0
+margin_right = 167.0
+margin_bottom = 253.0
+rect_pivot_offset = Vector2( 30, 70 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
+
+[node name="FFEC27" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_left = 172.0
+margin_top = 172.0
+margin_right = 253.0
+margin_bottom = 253.0
+rect_pivot_offset = Vector2( 30, 70 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
+
+[node name="00E436" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_left = 258.0
+margin_top = 172.0
+margin_right = 339.0
+margin_bottom = 253.0
+rect_pivot_offset = Vector2( 30, 70 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
+
+[node name="29ADFF" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_top = 258.0
+margin_right = 81.0
+margin_bottom = 339.0
+rect_pivot_offset = Vector2( 30, 70 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
+
+[node name="83769C" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_left = 86.0
+margin_top = 258.0
+margin_right = 167.0
+margin_bottom = 339.0
+rect_pivot_offset = Vector2( 30, 70 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
+
+[node name="FF77A8" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_left = 172.0
+margin_top = 258.0
+margin_right = 253.0
+margin_bottom = 339.0
+rect_pivot_offset = Vector2( 30, 70 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
+
+[node name="FFCCAA" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+margin_left = 258.0
+margin_top = 258.0
+margin_right = 339.0
+margin_bottom = 339.0
+rect_pivot_offset = Vector2( 30, 70 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
 
 [node name="Liquid" type="Sprite" parent="Color_Picker"]
 self_modulate = Color( 0.2, 0.615686, 0.709804, 1 )
-position = Vector2( 90, 90 )
+position = Vector2( 80, 80 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -581,7 +481,7 @@ texture = ExtResource( 9 )
 margin_left = 200.0
 margin_top = 10.0
 margin_right = 380.0
-margin_bottom = 190.0
+margin_bottom = 170.0
 hint_tooltip = "Ctrl+Z"
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 17 )
@@ -595,7 +495,6 @@ shortcut = SubResource( 19 )
 icon = ExtResource( 4 )
 script = ExtResource( 11 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -603,10 +502,9 @@ __meta__ = {
 margin_left = 390.0
 margin_top = 10.0
 margin_right = 1350.0
-margin_bottom = 190.0
+margin_bottom = 170.0
 custom_styles/panel = SubResource( 20 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -614,7 +512,7 @@ __meta__ = {
 margin_left = 390.0
 margin_top = 10.0
 margin_right = 1350.0
-margin_bottom = 190.0
+margin_bottom = 170.0
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 custom_styles/read_only = SubResource( 21 )
@@ -640,7 +538,7 @@ __meta__ = {
 margin_left = 1360.0
 margin_top = 10.0
 margin_right = 1640.0
-margin_bottom = 190.0
+margin_bottom = 170.0
 custom_styles/normal = SubResource( 23 )
 custom_fonts/font = SubResource( 24 )
 custom_colors/font_color = Color( 0.819608, 0.411765, 0.121569, 1 )
@@ -650,7 +548,6 @@ valign = 1
 clip_text = true
 script = ExtResource( 7 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -661,7 +558,7 @@ autostart = true
 margin_left = 1650.0
 margin_top = 10.0
 margin_right = 1910.0
-margin_bottom = 190.0
+margin_bottom = 170.0
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 25 )
 custom_styles/pressed = SubResource( 25 )
@@ -672,7 +569,6 @@ shortcut = SubResource( 28 )
 icon = ExtResource( 8 )
 align = 0
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 

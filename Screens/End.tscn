@@ -45,7 +45,7 @@ __meta__ = {
 [node name="Review_Players" type="Container" parent="."]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 1510.0
+margin_right = 1530.0
 margin_bottom = 1070.0
 script = ExtResource( 5 )
 __meta__ = {
@@ -53,7 +53,7 @@ __meta__ = {
 }
 
 [node name="Menu" type="Button" parent="."]
-margin_left = 1530.0
+margin_left = 1550.0
 margin_top = 10.0
 margin_right = 1910.0
 margin_bottom = 1070.0

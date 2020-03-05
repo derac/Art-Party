@@ -22,6 +22,7 @@ If a guess matches the starting word, every player who previously touched the ca
 - [Icon](https://www.flaticon.com/free-icon/palette_2492988): Freepik from flaticon.com
 - [Soundtrack](https://freemusicarchive.org/music/Stellardrone/Light_Years_1227): Light Years by Stellardrone under [CC 3.0](https://creativecommons.org/licenses/by/3.0/)
 - [SFX](https://opengameart.org/content/ui-sounds): StumpyStrust
+- [Color Palette](https://lospec.com/palette-list/pico-8): PICO-8
 - All other art, programming, and design by Derek Olson under MIT
 
 ## Buy and support

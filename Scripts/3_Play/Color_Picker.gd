@@ -1,6 +1,10 @@
 extends Button
 
-var color := Color("#339db5")
+var color := Color("#339db5") setget set_color
+
+func set_color(value : Color) -> void:
+	color = value
+	$Liquid.set_self_modulate(color)
 
 func _pressed() -> void:
 	if $Colors.is_visible():
