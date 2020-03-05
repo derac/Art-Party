@@ -1,9 +1,9 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Scripts/Play/Canvas.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/3_Play/Canvas.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Misc/Quicksand-Bold.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Scripts/End/Review/Review.gd" type="Script" id=3]
-[ext_resource path="res://Scripts/End/Review/Return_Button.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/4_End/Review/Review.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/4_End/Review/Return_Button.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Images/right_arrow.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Images/left_arrow.png" type="Texture" id=6]
 
