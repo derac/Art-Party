@@ -20,8 +20,6 @@ remotesync func start_timer() -> void:
 	$Start_Timer.start()
 	set_visible(true)
 	grab_click_focus()
-	rect_position.y = 10
-	rect_size.y = 1060
 	set_disabled(true)
 	get_node("../Back").set_visible(false)
 	get_node("../My_IP").set_visible(false)

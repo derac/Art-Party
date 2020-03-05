@@ -6,104 +6,6 @@
 [ext_resource path="res://Scripts/Lobby/My_IP_Button.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Lobby/Game_Players.gd" type="Script" id=6]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
-draw_center = false
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color( 0.372549, 0.580392, 0.282353, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
-draw_center = false
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color( 0.6, 0.760784, 0.305882, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 90
-outline_size = 5
-outline_color = Color( 0.372549, 0.580392, 0.282353, 1 )
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
-draw_center = false
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color( 0.819608, 0.411765, 0.121569, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
-draw_center = false
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color( 0.960784, 0.792157, 0.184314, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="DynamicFont" id=6]
-size = 90
-outline_size = 5
-outline_color = Color( 0.819608, 0.411765, 0.121569, 1 )
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
-draw_center = false
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color( 0.0392157, 0.0392157, 0.0392157, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
-draw_center = false
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color( 0.529412, 0.54902, 0.505882, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="DynamicFont" id=9]
-size = 90
-outline_size = 5
-outline_color = Color( 0.0392157, 0.0392157, 0.0392157, 1 )
-font_data = ExtResource( 1 )
-
 [sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
 border_width_left = 20
@@ -157,109 +59,128 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[node name="Lobby" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = -1920.0
-margin_bottom = -1080.0
-rect_pivot_offset = Vector2( 1260, 310 )
-__meta__ = {
-"_edit_horizontal_guides_": [ 540.0 ],
-"_edit_use_anchors_": false,
-"_edit_vertical_guides_": [ 970.0 ]
-}
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
+draw_center = false
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.372549, 0.580392, 0.282353, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
 
-[node name="Game_Players" type="Container" parent="."]
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
+draw_center = false
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.6, 0.760784, 0.305882, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 90
+outline_size = 5
+outline_color = Color( 0.372549, 0.580392, 0.282353, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
+draw_center = false
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.0392157, 0.0392157, 0.0392157, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
+draw_center = false
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.529412, 0.54902, 0.505882, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="DynamicFont" id=9]
+size = 90
+outline_size = 5
+outline_color = Color( 0.0392157, 0.0392157, 0.0392157, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
+draw_center = false
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.819608, 0.411765, 0.121569, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
+draw_center = false
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.960784, 0.792157, 0.184314, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="DynamicFont" id=6]
+size = 90
+outline_size = 5
+outline_color = Color( 0.819608, 0.411765, 0.121569, 1 )
+font_data = ExtResource( 1 )
+
+[node name="Lobby" type="HBoxContainer"]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 1510.0
-margin_bottom = 1070.0
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Start" type="Button" parent="."]
-margin_left = 1530.0
-margin_top = 10.0
-margin_right = 1910.0
-margin_bottom = 460.0
-rect_pivot_offset = Vector2( 450, 210 )
-mouse_default_cursor_shape = 2
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color_disabled = Color( 0.6, 0.760784, 0.305882, 1 )
-custom_colors/font_color = Color( 0.6, 0.760784, 0.305882, 1 )
-custom_colors/font_color_hover = Color( 0.6, 0.760784, 0.305882, 1 )
-custom_colors/font_color_pressed = Color( 0.6, 0.760784, 0.305882, 1 )
-action_mode = 0
-text = "start"
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Start_Timer" type="Timer" parent="Start"]
-one_shot = true
-
-[node name="Back" type="Button" parent="."]
-margin_left = 1530.0
-margin_top = 480.0
-margin_right = 1910.0
-margin_bottom = 790.0
-rect_pivot_offset = Vector2( 450, 210 )
-mouse_default_cursor_shape = 2
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/focus = SubResource( 4 )
-custom_styles/disabled = SubResource( 5 )
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color_disabled = Color( 0.960784, 0.792157, 0.184314, 1 )
-custom_colors/font_color = Color( 0.960784, 0.792157, 0.184314, 1 )
-custom_colors/font_color_hover = Color( 0.960784, 0.792157, 0.184314, 1 )
-custom_colors/font_color_pressed = Color( 0.960784, 0.792157, 0.184314, 1 )
-action_mode = 0
-text = "back"
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="My_IP" type="Button" parent="."]
-margin_left = 1530.0
-margin_top = 810.0
 margin_right = 1910.0
 margin_bottom = 1070.0
-rect_pivot_offset = Vector2( 450, 210 )
-mouse_default_cursor_shape = 2
-custom_styles/hover = SubResource( 7 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/focus = SubResource( 7 )
-custom_styles/disabled = SubResource( 8 )
-custom_styles/normal = SubResource( 8 )
-custom_fonts/font = SubResource( 9 )
-custom_colors/font_color_disabled = Color( 0.529412, 0.54902, 0.505882, 1 )
-custom_colors/font_color = Color( 0.529412, 0.54902, 0.505882, 1 )
-custom_colors/font_color_hover = Color( 0.529412, 0.54902, 0.505882, 1 )
-custom_colors/font_color_pressed = Color( 0.529412, 0.54902, 0.505882, 1 )
-action_mode = 0
-text = "my IP"
-script = ExtResource( 5 )
+custom_constants/separation = 20
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Address" type="LineEdit" parent="My_IP"]
+[node name="Information" type="VBoxContainer" parent="."]
+margin_right = 1520.0
+margin_bottom = 1060.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Address" type="LineEdit" parent="Information"]
 visible = false
-margin_left = -1520.0
-margin_top = -800.0
-margin_right = -20.0
-margin_bottom = -610.0
+margin_right = 1500.0
+margin_bottom = 153.0
 custom_styles/read_only = SubResource( 10 )
 custom_styles/focus = SubResource( 10 )
 custom_styles/normal = SubResource( 10 )
@@ -277,10 +198,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="UPNP_Bad" type="Label" parent="My_IP/Address"]
-margin_top = 210.0
+[node name="UPNP_Bad" type="Label" parent="Information"]
+visible = false
+margin_top = 173.0
 margin_right = 1500.0
-margin_bottom = 410.0
+margin_bottom = 366.0
 custom_styles/normal = SubResource( 12 )
 custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -291,7 +213,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="UPNP_Good" type="Label" parent="My_IP/Address"]
+[node name="UPNP_Good" type="Label" parent="Information"]
 visible = false
 margin_top = 210.0
 margin_right = 1500.0
@@ -305,11 +227,111 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Copy_Timer" type="Timer" parent="My_IP"]
+[node name="Game_Players" type="Container" parent="Information"]
+margin_right = 1520.0
+margin_bottom = 1060.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Controls" type="VBoxContainer" parent="."]
+margin_left = 1540.0
+margin_right = 1900.0
+margin_bottom = 1060.0
+rect_min_size = Vector2( 360, 0 )
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="Button" parent="Controls"]
+margin_right = 360.0
+margin_bottom = 437.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_pivot_offset = Vector2( 450, 210 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0.6, 0.760784, 0.305882, 1 )
+custom_colors/font_color = Color( 0.6, 0.760784, 0.305882, 1 )
+custom_colors/font_color_hover = Color( 0.6, 0.760784, 0.305882, 1 )
+custom_colors/font_color_pressed = Color( 0.6, 0.760784, 0.305882, 1 )
+action_mode = 0
+text = "start"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start_Timer" type="Timer" parent="Controls/Start"]
+one_shot = true
+
+[node name="My_IP" type="Button" parent="Controls"]
+margin_top = 457.0
+margin_right = 360.0
+margin_bottom = 748.0
+rect_pivot_offset = Vector2( 450, 210 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color_disabled = Color( 0.529412, 0.54902, 0.505882, 1 )
+custom_colors/font_color = Color( 0.529412, 0.54902, 0.505882, 1 )
+custom_colors/font_color_hover = Color( 0.529412, 0.54902, 0.505882, 1 )
+custom_colors/font_color_pressed = Color( 0.529412, 0.54902, 0.505882, 1 )
+action_mode = 0
+text = "my IP"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Copy_Timer" type="Timer" parent="Controls/My_IP"]
 wait_time = 0.5
 one_shot = true
 
-[node name="HTTPRequest" type="HTTPRequest" parent="My_IP"]
-[connection signal="timeout" from="Start/Start_Timer" to="Start" method="_on_Timer_timeout"]
-[connection signal="timeout" from="My_IP/Copy_Timer" to="My_IP" method="_on_Copy_Timer_timeout"]
-[connection signal="request_completed" from="My_IP/HTTPRequest" to="My_IP" method="_on_HTTPRequest_request_completed"]
+[node name="HTTPRequest" type="HTTPRequest" parent="Controls/My_IP"]
+
+[node name="Back" type="Button" parent="Controls"]
+margin_top = 768.0
+margin_right = 360.0
+margin_bottom = 1060.0
+rect_pivot_offset = Vector2( 450, 210 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color_disabled = Color( 0.960784, 0.792157, 0.184314, 1 )
+custom_colors/font_color = Color( 0.960784, 0.792157, 0.184314, 1 )
+custom_colors/font_color_hover = Color( 0.960784, 0.792157, 0.184314, 1 )
+custom_colors/font_color_pressed = Color( 0.960784, 0.792157, 0.184314, 1 )
+action_mode = 0
+text = "back"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="timeout" from="Controls/Start/Start_Timer" to="Controls/Start" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Controls/My_IP/Copy_Timer" to="Controls/My_IP" method="_on_Copy_Timer_timeout"]
+[connection signal="request_completed" from="Controls/My_IP/HTTPRequest" to="Controls/My_IP" method="_on_HTTPRequest_request_completed"]

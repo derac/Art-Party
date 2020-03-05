@@ -1,23 +1,16 @@
 extends Button
 
-onready var UDP_Players := get_node("../UDP_Players")
-onready var Name := get_node("../Name")
+#onready var UDP_Players := get_node("../UDP_Players")
+onready var Controls := [get_node("/root/Setup/Information/Address"),
+						 get_node("/root/Setup/Controls/Go"),
+						 get_node("/root/Setup/Controls/New")]
 
 func _pressed() -> void:
 	if $By_IP_label.text == "cancel":
 		Sound.play_sfx("res://Assets/SFX/button2.wav", 0.0, 0.5)
-		if UDP_Players:
-			UDP_Players.rect_position.y = 210
-			UDP_Players.rect_size.y = 860
-			Name.rect_position.y = 10
-			UDP_Players._on_udp_data_changed()
 		$By_IP_label.text = "join\nby IP"
 	else:
 		Sound.play_sfx("res://Assets/SFX/button2.wav", 0.0, 2)
-		if UDP_Players:
-			UDP_Players.rect_position.y = 410
-			UDP_Players.rect_size.y = 660
-			Name.rect_position.y = 210
-			UDP_Players._on_udp_data_changed()
 		$By_IP_label.text = "cancel"
-	$Controls.set_visible(!$Controls.is_visible())
+	for control in Controls:
+		control.set_visible(!control.is_visible())

@@ -6,7 +6,6 @@ func _notification(what):
 	if (what==NOTIFICATION_SORT_CHILDREN):
 		# Must re-sort the children
 		var children = get_children()
-		print(children)
 		var children_len = children.size()
 		
 		var child_iter = 0
