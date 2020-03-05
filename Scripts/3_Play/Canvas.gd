@@ -10,6 +10,7 @@ var redraw_next_frame := false
 var min_draw_dist := 1.0
 var stroke_tools := load("res://Scripts/Utility/douglas-peucker.gd")
 var last_index := 0
+onready var Color_Picker = get_node("/root/Play/Controls/Color_Picker")
 
 func _ready() -> void:
 	var render_target := viewport.get_texture()
@@ -46,7 +47,7 @@ func _gui_input(event) -> void:
 		if event.pressed:
 			history[-1].append({"position": get_viewport().get_mouse_position(),
 								"speed": 0,
-								"color": get_node('../Color_Picker').color})
+								"color": Color_Picker.color})
 			_pen2.update()
 		elif history[-1].size() > 0:
 			history.append([])
@@ -56,7 +57,7 @@ func _gui_input(event) -> void:
 		if history[-1][-1]["position"].distance_to(get_viewport().get_mouse_position()) > min_draw_dist:
 			history[-1].append({"position": get_viewport().get_mouse_position(),
 								"speed": history[-1][-1]["position"].distance_to(get_viewport().get_mouse_position()),
-								"color": get_node('../Color_Picker').color})
+								"color": Color_Picker.color})
 			_pen2.update()
 
 func _on_draw() -> void:

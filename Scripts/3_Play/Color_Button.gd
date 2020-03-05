@@ -1,6 +1,6 @@
 extends Button
 
-onready var color_picker = get_node('../../../Color_Picker')
+onready var color_picker = get_node('/root/Play/Controls/Color_Picker')
 onready var color = Color(name)
 
 func _ready() -> void:

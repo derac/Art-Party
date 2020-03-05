@@ -10,12 +10,13 @@
 [ext_resource path="res://Scripts/1_Setup/UDP_Players.gd" type="Script" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
+bg_color = Color( 1, 0.945098, 0.909804, 1 )
+draw_center = false
 border_width_left = 20
 border_width_top = 20
 border_width_right = 20
 border_width_bottom = 20
-border_color = Color( 0.0392157, 0.0392157, 0.0392157, 1 )
+border_color = Color( 0, 0, 0, 1 )
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
@@ -32,7 +33,7 @@ border_width_left = 20
 border_width_top = 20
 border_width_right = 20
 border_width_bottom = 20
-border_color = Color( 0.176471, 0.384314, 0.588235, 1 )
+border_color = Color( 0.113725, 0.168627, 0.32549, 1 )
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
@@ -45,7 +46,7 @@ border_width_left = 20
 border_width_top = 20
 border_width_right = 20
 border_width_bottom = 20
-border_color = Color( 0.0156863, 0.690196, 0.847059, 1 )
+border_color = Color( 0.160784, 0.678431, 1, 1 )
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
@@ -54,39 +55,7 @@ corner_radius_bottom_left = 50
 [sub_resource type="DynamicFont" id=5]
 size = 90
 outline_size = 5
-outline_color = Color( 0.184314, 0.168627, 0.419608, 1 )
-font_data = ExtResource( 6 )
-
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color( 0.6, 0.760784, 0.305882, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
-
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color( 0.6, 0.760784, 0.305882, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
-
-[sub_resource type="DynamicFont" id=8]
-size = 90
-outline_size = 5
-outline_color = Color( 0.372549, 0.580392, 0.282353, 1 )
+outline_color = Color( 0.113725, 0.168627, 0.32549, 1 )
 font_data = ExtResource( 6 )
 
 [sub_resource type="StyleBoxFlat" id=9]
@@ -96,49 +65,89 @@ border_width_left = 20
 border_width_top = 20
 border_width_right = 20
 border_width_bottom = 20
-border_color = Color( 0.372549, 0.580392, 0.282353, 1 )
+border_color = Color( 0, 0.894118, 0.211765, 1 )
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
+draw_center = false
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0, 0.529412, 0.317647, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 90
+outline_size = 5
+outline_color = Color( 0, 0.529412, 0.317647, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
+draw_center = false
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0, 0.529412, 0.317647, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 90
 outline_size = 5
-outline_color = Color( 0.372549, 0.580392, 0.282353, 1 )
+outline_color = Color( 0, 0.529412, 0.317647, 1 )
 font_data = ExtResource( 6 )
 
 [sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
+draw_center = false
 border_width_left = 20
 border_width_top = 20
 border_width_right = 20
 border_width_bottom = 20
-border_color = Color( 0.0392157, 0.0392157, 0.0392157, 1 )
+border_color = Color( 0.760784, 0.764706, 0.780392, 1 )
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=18]
 bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
+draw_center = false
 border_width_left = 20
 border_width_top = 20
 border_width_right = 20
 border_width_bottom = 20
-border_color = Color( 0.529412, 0.54902, 0.505882, 1 )
+border_color = Color( 0, 0, 0, 1 )
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=19]
 size = 90
 outline_size = 5
-outline_color = Color( 0.0392157, 0.0392157, 0.0392157, 1 )
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 6 )
 
 [node name="Setup" type="HBoxContainer"]
@@ -164,18 +173,17 @@ __meta__ = {
 
 [node name="Address" type="LineEdit" parent="Information"]
 visible = false
-margin_right = 1556.0
+margin_right = 1520.0
 margin_bottom = 160.0
 rect_min_size = Vector2( 0, 160 )
-custom_styles/read_only = SubResource( 1 )
 custom_styles/focus = SubResource( 1 )
 custom_styles/normal = SubResource( 1 )
 custom_fonts/font = SubResource( 2 )
-custom_colors/selection_color = Color( 0.529412, 0.54902, 0.505882, 0.235294 )
-custom_colors/cursor_color = Color( 0.529412, 0.54902, 0.505882, 0.392157 )
-custom_colors/font_color_selected = Color( 0.184314, 0.168627, 0.419608, 1 )
-custom_colors/font_color = Color( 0.184314, 0.168627, 0.419608, 1 )
-custom_colors/font_color_uneditable = Color( 0.184314, 0.168627, 0.419608, 1 )
+custom_colors/selection_color = Color( 0.760784, 0.764706, 0.780392, 0.235294 )
+custom_colors/cursor_color = Color( 0.760784, 0.764706, 0.780392, 0.392157 )
+custom_colors/font_color_selected = Color( 0.113725, 0.168627, 0.32549, 1 )
+custom_colors/font_color = Color( 0.113725, 0.168627, 0.32549, 1 )
+custom_colors/font_color_uneditable = Color( 0.113725, 0.168627, 0.32549, 1 )
 align = 1
 max_length = 255
 placeholder_text = "ip:port"
@@ -193,11 +201,11 @@ size_flags_horizontal = 3
 custom_styles/focus = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
-custom_colors/selection_color = Color( 0.2, 0.615686, 0.709804, 0.27451 )
-custom_colors/cursor_color = Color( 0.2, 0.615686, 0.709804, 0.392157 )
+custom_colors/selection_color = Color( 0.160784, 0.678431, 1, 0.235294 )
+custom_colors/cursor_color = Color( 0.160784, 0.678431, 1, 0.392157 )
 custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
-custom_colors/font_color_selected = Color( 0.960784, 0.792157, 0.184314, 1 )
-custom_colors/font_color = Color( 0.960784, 0.792157, 0.184314, 1 )
+custom_colors/font_color_selected = Color( 1, 0.92549, 0.152941, 1 )
+custom_colors/font_color = Color( 1, 0.92549, 0.152941, 1 )
 align = 1
 max_length = 12
 placeholder_text = "enter name"
@@ -232,21 +240,21 @@ __meta__ = {
 
 [node name="Go" type="Button" parent="Controls"]
 visible = false
-margin_right = 340.0
-margin_bottom = 153.0
+margin_right = 360.0
+margin_bottom = 340.0
+focus_mode = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 6 )
-custom_styles/disabled = SubResource( 7 )
-custom_styles/normal = SubResource( 7 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/disabled = SubResource( 15 )
+custom_styles/normal = SubResource( 15 )
 custom_fonts/font = SubResource( 8 )
-custom_colors/font_color_disabled = Color( 0.6, 0.760784, 0.305882, 1 )
-custom_colors/font_color = Color( 0.6, 0.760784, 0.305882, 1 )
-custom_colors/font_color_hover = Color( 0.6, 0.760784, 0.305882, 1 )
-custom_colors/font_color_pressed = Color( 0.6, 0.760784, 0.305882, 1 )
+custom_colors/font_color_disabled = Color( 0, 0.894118, 0.211765, 1 )
+custom_colors/font_color = Color( 0, 0.894118, 0.211765, 1 )
+custom_colors/font_color_hover = Color( 0, 0.894118, 0.211765, 1 )
+custom_colors/font_color_pressed = Color( 0, 0.894118, 0.211765, 1 )
 text = "go"
 script = ExtResource( 7 )
 __meta__ = {
@@ -256,18 +264,14 @@ __meta__ = {
 [node name="New" type="Button" parent="Controls"]
 margin_right = 360.0
 margin_bottom = 520.0
+focus_mode = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 9 )
 custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = SubResource( 9 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 10 )
-custom_colors/font_color = Color( 0.6, 0.760784, 0.305882, 1 )
-custom_colors/font_color_hover = Color( 0.6, 0.760784, 0.305882, 1 )
-custom_colors/font_color_pressed = Color( 0.6, 0.760784, 0.305882, 1 )
+custom_styles/disabled = SubResource( 16 )
+custom_styles/normal = SubResource( 16 )
 shortcut_in_tooltip = false
 action_mode = 0
 script = ExtResource( 4 )
@@ -279,7 +283,7 @@ __meta__ = {
 margin_right = 360.0
 margin_bottom = 520.0
 custom_fonts/font = SubResource( 10 )
-custom_colors/font_color = Color( 0.6, 0.760784, 0.305882, 1 )
+custom_colors/font_color = Color( 0, 0.894118, 0.211765, 1 )
 text = "new
 lobby"
 align = 1
@@ -292,19 +296,14 @@ __meta__ = {
 margin_top = 540.0
 margin_right = 360.0
 margin_bottom = 1060.0
+focus_mode = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 11 )
 custom_styles/pressed = SubResource( 11 )
-custom_styles/focus = SubResource( 11 )
-custom_styles/disabled = SubResource( 12 )
-custom_styles/normal = SubResource( 12 )
-custom_fonts/font = SubResource( 13 )
-custom_colors/font_color_disabled = Color( 0.529412, 0.54902, 0.505882, 1 )
-custom_colors/font_color = Color( 0.529412, 0.54902, 0.505882, 1 )
-custom_colors/font_color_hover = Color( 0.529412, 0.54902, 0.505882, 1 )
-custom_colors/font_color_pressed = Color( 0.529412, 0.54902, 0.505882, 1 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 18 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true,
@@ -314,8 +313,8 @@ __meta__ = {
 [node name="By_IP_label" type="Label" parent="Controls/By_IP"]
 margin_right = 360.0
 margin_bottom = 520.0
-custom_fonts/font = SubResource( 13 )
-custom_colors/font_color = Color( 0.529412, 0.54902, 0.505882, 1 )
+custom_fonts/font = SubResource( 19 )
+custom_colors/font_color = Color( 0.760784, 0.764706, 0.780392, 1 )
 text = "join
 by IP"
 align = 1

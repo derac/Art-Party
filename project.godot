@@ -67,5 +67,5 @@ ui_undo={
 
 [rendering]
 
-environment/default_clear_color=Color( 0.960784, 0.945098, 0.929412, 1 )
+environment/default_clear_color=Color( 1, 0.945098, 0.909804, 1 )
 quality/dynamic_fonts/use_oversampling=false

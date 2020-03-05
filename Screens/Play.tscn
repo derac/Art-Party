@@ -12,17 +12,30 @@
 [ext_resource path="res://Screens/Components/Color_Button.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scripts/3_Play/Undo_Button.gd" type="Script" id=11]
 
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 30.0
 content_margin_right = 30.0
 content_margin_top = 20.0
 content_margin_bottom = 20.0
 bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
+draw_center = false
 border_width_left = 20
 border_width_top = 20
 border_width_right = 20
 border_width_bottom = 20
-border_color = Color( 0.176471, 0.384314, 0.588235, 1 )
+border_color = Color( 0.513726, 0.462745, 0.611765, 1 )
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
@@ -35,28 +48,17 @@ content_margin_right = 30.0
 content_margin_top = 20.0
 content_margin_bottom = 20.0
 bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
+draw_center = false
 border_width_left = 20
 border_width_top = 20
 border_width_right = 20
 border_width_bottom = 20
-border_color = Color( 0.2, 0.615686, 0.709804, 1 )
+border_color = Color( 0.113725, 0.168627, 0.32549, 1 )
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
-
-[sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 1, 1, 1, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 0, 0, 0, 1 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id=17]
 content_margin_left = 30.0
@@ -102,7 +104,7 @@ corner_radius_bottom_left = 50
 content_margin_left = 0.0
 content_margin_right = 0.0
 content_margin_top = 0.0
-content_margin_bottom = 15.0
+content_margin_bottom = 0.0
 bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
 border_width_left = 20
 border_width_top = 20
@@ -115,7 +117,7 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
 [sub_resource type="DynamicFont" id=22]
-size = 100
+size = 90
 outline_size = 5
 outline_color = Color( 0.184314, 0.168627, 0.419608, 1 )
 font_data = ExtResource( 3 )
@@ -205,7 +207,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 5 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false,
 "_edit_vertical_guides_": [ 960.0 ]
 }
@@ -216,33 +217,15 @@ margin_bottom = 1080.0
 mouse_filter = 1
 script = ExtResource( 2 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Color_Picker" type="Button" parent="."]
+[node name="Colors" type="GridContainer" parent="."]
+visible = false
 margin_left = 10.0
-margin_top = 10.0
-margin_right = 170.0
-margin_bottom = 170.0
-mouse_default_cursor_shape = 2
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 2 )
-custom_styles/normal = SubResource( 2 )
-action_mode = 0
-expand_icon = true
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Colors" type="GridContainer" parent="Color_Picker"]
-margin_top = 170.0
-margin_right = 340.0
-margin_bottom = 510.0
+margin_top = 180.0
+margin_right = 350.0
+margin_bottom = 520.0
 custom_constants/vseparation = 5
 custom_constants/hseparation = 5
 columns = 4
@@ -250,7 +233,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="000000" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+[node name="000000" parent="Colors" instance=ExtResource( 10 )]
 margin_right = 81.0
 margin_bottom = 81.0
 rect_pivot_offset = Vector2( 30, 70 )
@@ -262,7 +245,7 @@ custom_styles/focus = SubResource( 8 )
 custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 8 )
 
-[node name="1D2B53" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+[node name="1D2B53" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 86.0
 margin_right = 167.0
 margin_bottom = 81.0
@@ -275,7 +258,7 @@ custom_styles/focus = SubResource( 8 )
 custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 8 )
 
-[node name="7E2553" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+[node name="7E2553" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 172.0
 margin_right = 253.0
 margin_bottom = 81.0
@@ -288,7 +271,7 @@ custom_styles/focus = SubResource( 8 )
 custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 8 )
 
-[node name="008751" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+[node name="008751" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 258.0
 margin_right = 339.0
 margin_bottom = 81.0
@@ -301,7 +284,7 @@ custom_styles/focus = SubResource( 8 )
 custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 8 )
 
-[node name="AB5236" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+[node name="AB5236" parent="Colors" instance=ExtResource( 10 )]
 margin_top = 86.0
 margin_right = 81.0
 margin_bottom = 167.0
@@ -314,7 +297,7 @@ custom_styles/focus = SubResource( 8 )
 custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 8 )
 
-[node name="5F574F" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+[node name="5F574F" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 86.0
 margin_top = 86.0
 margin_right = 167.0
@@ -328,7 +311,7 @@ custom_styles/focus = SubResource( 8 )
 custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 8 )
 
-[node name="C2C3C7" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+[node name="C2C3C7" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 172.0
 margin_top = 86.0
 margin_right = 253.0
@@ -342,7 +325,7 @@ custom_styles/focus = SubResource( 8 )
 custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 8 )
 
-[node name="FFF1E8" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+[node name="FFF1E8" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 258.0
 margin_top = 86.0
 margin_right = 339.0
@@ -356,7 +339,7 @@ custom_styles/focus = SubResource( 8 )
 custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 8 )
 
-[node name="FF004D" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+[node name="FF004D" parent="Colors" instance=ExtResource( 10 )]
 margin_top = 172.0
 margin_right = 81.0
 margin_bottom = 253.0
@@ -369,7 +352,7 @@ custom_styles/focus = SubResource( 8 )
 custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 8 )
 
-[node name="FFA300" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+[node name="FFA300" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 86.0
 margin_top = 172.0
 margin_right = 167.0
@@ -383,7 +366,7 @@ custom_styles/focus = SubResource( 8 )
 custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 8 )
 
-[node name="FFEC27" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+[node name="FFEC27" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 172.0
 margin_top = 172.0
 margin_right = 253.0
@@ -397,7 +380,7 @@ custom_styles/focus = SubResource( 8 )
 custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 8 )
 
-[node name="00E436" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+[node name="00E436" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 258.0
 margin_top = 172.0
 margin_right = 339.0
@@ -411,7 +394,7 @@ custom_styles/focus = SubResource( 8 )
 custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 8 )
 
-[node name="29ADFF" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+[node name="29ADFF" parent="Colors" instance=ExtResource( 10 )]
 margin_top = 258.0
 margin_right = 81.0
 margin_bottom = 339.0
@@ -424,7 +407,7 @@ custom_styles/focus = SubResource( 8 )
 custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 8 )
 
-[node name="83769C" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+[node name="83769C" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 86.0
 margin_top = 258.0
 margin_right = 167.0
@@ -438,7 +421,7 @@ custom_styles/focus = SubResource( 8 )
 custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 8 )
 
-[node name="FF77A8" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+[node name="FF77A8" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 172.0
 margin_top = 258.0
 margin_right = 253.0
@@ -452,7 +435,7 @@ custom_styles/focus = SubResource( 8 )
 custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 8 )
 
-[node name="FFCCAA" parent="Color_Picker/Colors" instance=ExtResource( 10 )]
+[node name="FFCCAA" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 258.0
 margin_top = 258.0
 margin_right = 339.0
@@ -466,24 +449,54 @@ custom_styles/focus = SubResource( 8 )
 custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 8 )
 
-[node name="Liquid" type="Sprite" parent="Color_Picker"]
-self_modulate = Color( 0.2, 0.615686, 0.709804, 1 )
+[node name="Controls" type="HBoxContainer" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1910.0
+margin_bottom = 170.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Color_Picker" type="Button" parent="Controls"]
+margin_right = 160.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 0 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+action_mode = 0
+expand_icon = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Liquid" type="Sprite" parent="Controls/Color_Picker"]
+self_modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 80, 80 )
+scale = Vector2( 0.833333, 0.833333 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Dropper" type="Sprite" parent="Color_Picker/Liquid"]
+[node name="Dropper" type="Sprite" parent="Controls/Color_Picker/Liquid"]
 texture = ExtResource( 9 )
 
-[node name="Undo" type="Button" parent="."]
-margin_left = 200.0
-margin_top = 10.0
-margin_right = 380.0
-margin_bottom = 170.0
+[node name="Undo" type="Button" parent="Controls"]
+margin_left = 170.0
+margin_right = 330.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 0 )
 hint_tooltip = "Ctrl+Z"
 mouse_default_cursor_shape = 2
+size_flags_vertical = 3
 custom_styles/hover = SubResource( 17 )
 custom_styles/pressed = SubResource( 17 )
 custom_styles/focus = SubResource( 17 )
@@ -493,26 +506,26 @@ shortcut_in_tooltip = false
 action_mode = 0
 shortcut = SubResource( 19 )
 icon = ExtResource( 4 )
+expand_icon = true
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title_Mask" type="Panel" parent="."]
-margin_left = 390.0
-margin_top = 10.0
-margin_right = 1350.0
-margin_bottom = 170.0
+[node name="Title_Mask" type="Panel" parent="Controls"]
+margin_left = 340.0
+margin_right = 1340.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_styles/panel = SubResource( 20 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title" type="LineEdit" parent="."]
-margin_left = 390.0
-margin_top = 10.0
-margin_right = 1350.0
-margin_bottom = 170.0
+[node name="Title" type="LineEdit" parent="Controls/Title_Mask"]
+margin_right = 1000.0
+margin_bottom = 160.0
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 custom_styles/read_only = SubResource( 21 )
@@ -530,15 +543,15 @@ placeholder_text = "guess word"
 placeholder_alpha = 1.0
 caret_blink = true
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Game_Timer" type="Label" parent="."]
-margin_left = 1360.0
-margin_top = 10.0
-margin_right = 1640.0
-margin_bottom = 170.0
+[node name="Game_Timer" type="Label" parent="Controls"]
+margin_left = 1350.0
+margin_right = 1630.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 280, 0 )
+size_flags_vertical = 3
 custom_styles/normal = SubResource( 23 )
 custom_fonts/font = SubResource( 24 )
 custom_colors/font_color = Color( 0.819608, 0.411765, 0.121569, 1 )
@@ -551,15 +564,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Countdown" type="Timer" parent="Game_Timer"]
+[node name="Countdown" type="Timer" parent="Controls/Game_Timer"]
 autostart = true
 
-[node name="Send" type="Button" parent="."]
-margin_left = 1650.0
-margin_top = 10.0
-margin_right = 1910.0
-margin_bottom = 170.0
+[node name="Send" type="Button" parent="Controls"]
+margin_left = 1640.0
+margin_right = 1900.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 260, 0 )
 mouse_default_cursor_shape = 2
+size_flags_vertical = 3
 custom_styles/hover = SubResource( 25 )
 custom_styles/pressed = SubResource( 25 )
 custom_styles/focus = SubResource( 25 )
@@ -568,6 +582,7 @@ custom_styles/normal = SubResource( 26 )
 shortcut = SubResource( 28 )
 icon = ExtResource( 8 )
 align = 0
+expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -578,7 +593,6 @@ margin_right = 1920.0
 margin_bottom = 1080.0
 color = Color( 0.529412, 0.54902, 0.505882, 0.392157 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -596,5 +610,5 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="timeout" from="Game_Timer/Countdown" to="Game_Timer" method="_on_Countdown_timeout"]
-[connection signal="button_down" from="Send" to="." method="_on_Send_button_down"]
+[connection signal="timeout" from="Controls/Game_Timer/Countdown" to="Controls/Game_Timer" method="_on_Countdown_timeout"]
+[connection signal="button_down" from="Controls/Send" to="." method="_on_Send_button_down"]
