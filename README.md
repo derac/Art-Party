@@ -1,8 +1,7 @@
 ## Develop
 
-[Download Godot](https://godotengine.org/download/)
-
-Clone this project and load it in Godot
+1. [Download Godot](https://godotengine.org/download/) and start it
+2. Download this project and load it in Godot
 
 ## Rules
 1. Start with 4+ players.
@@ -21,13 +20,11 @@ If a guess matches the starting word, every player who previously touched the ca
 ## Attribution
 
 - [Icon](https://www.flaticon.com/free-icon/palette_2492988) made by Freepik from [flaticon.com](https://www.flaticon.com)
-
 - Music: [Light Years](https://freemusicarchive.org/music/Stellardrone/Light_Years_1227) by Stellardrone under [CC 3.0](https://creativecommons.org/licenses/by/3.0/)
-
 - SFX by [StumpyStrust](https://opengameart.org/content/ui-sounds)
-
 - All other art, programming, and design by Derek Olson under MIT
 
 ## Buy and support
 
-https://derac.itch.io/artparty
+https://derac.itch.io/artparty  
+https://paypal.me/deracoslon
