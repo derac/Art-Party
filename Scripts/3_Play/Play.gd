@@ -2,6 +2,7 @@ extends Control
 
 var my_id : int
 var my_id_index : int
+var current_stack_id : int
 var ids := Global.game_state.keys()
 
 var turn := 0
@@ -13,16 +14,15 @@ onready var end_screen := preload("res://Screens/End.tscn")
 onready var Title := $Controls/Title_Mask/Title
 
 func _ready():
+	$my_name_test.text = Global.my_name
+	
 	Sound.change_music("res://Assets/Music/play.ogg", 25)
 	Sound.play_sfx("res://Assets/SFX/complete.wav", -6.0, 0.75)
 	
 	ids.sort()
 	my_id = get_tree().get_network_unique_id()
 	my_id_index = ids.find(my_id)
-	
-	print("id: ", my_id)
-	print("name: ", Global.my_name)
-	print("id index: ", my_id_index)
+	current_stack_id = my_id
 	
 	var words_file := File.new()
 	words_file.open("res://Assets/Misc/words.txt", File.READ)
@@ -42,34 +42,33 @@ func _on_game_state_changed():
 		get_tree().change_scene_to(end_screen)
 		
 func _on_Game_Timer_expired():
-	if Global.game_state[ids[my_id_index - turn]]["cards"].size() % 2:
+	if Global.game_state[current_stack_id]["cards"].size() % 2:
 		if $Canvas.history.size() <= 1:
 			var history_file := File.new()
 			history_file.open("res://Assets/Misc/AFK_History.txt", File.READ)
 			$Canvas.history = history_file.get_var()
 			$Canvas.redraw()
 	elif not Title.text:
-		Title.text = "I am AFK LOL"
+		Title.text = "I am AFK :|"
 		
 	_on_Send_button_down()
 
 func _on_Send_button_down():
-	if Global.game_state[ids[my_id_index - turn]]["cards"].size() % 2:
+	if Global.game_state[current_stack_id]["cards"].size() % 2:
 		if $Canvas.history.size() > 1:
-			print(my_id, ": ", "Sending card for ", Global.game_state[ids[my_id_index - turn]]["name"], " - ", Title.text)
-			Game_Server.rpc("send_data", $Canvas.history, ids[my_id_index - turn])
+			Game_Server.rpc("send_data", $Canvas.history, current_stack_id)
 		else:
 			Sound.play_sfx("res://Assets/SFX/off.wav", -3.0, 0.8)
 			return
 	else:
 		if Title.text:
-			print(my_id, ": ", "Sending card for ", Global.game_state[ids[my_id_index - turn]]["name"], " - ", Title.text)
-			Game_Server.rpc("send_data", Title.text, ids[my_id_index - turn])
+			Game_Server.rpc("send_data", Title.text, current_stack_id)
 		else:
 			Sound.play_sfx("res://Assets/SFX/off.wav", -3.0, 0.8)
 			return
 
 	turn += 1
+	current_stack_id = ids[my_id_index - turn]
 	
 	if turn >= max_turns:
 		$Pause.set_visible(true)
@@ -80,7 +79,6 @@ func _on_Send_button_down():
 		awaiting_end = true
 		_on_game_state_changed()
 	else:
-		print(my_id, " : ", Global.my_name, " - Awaiting the stack of ", Global.game_state[ids[my_id_index - turn]]["name"])
 		awaiting_next_card = true
 		$Pause.set_visible(true)
 		get_next_card()
@@ -89,10 +87,9 @@ func _on_Send_button_down():
 			$Controls/Game_Timer.stop()
 
 func get_next_card():
-	var cards = Global.game_state[ids[my_id_index - turn]]["cards"]
+	var cards = Global.game_state[current_stack_id]["cards"]
 	if cards.size() == turn + 1:
 		Sound.play_sfx("res://Assets/SFX/button2.wav")
-		# Last card was a picture
 		if turn % 2:
 			$Canvas.history = cards[-1]
 			$Canvas.redraw()
@@ -100,7 +97,6 @@ func get_next_card():
 			Title.set_editable(true)
 			Title.set_mouse_filter(MOUSE_FILTER_STOP)
 			$Canvas.set_mouse_filter(MOUSE_FILTER_IGNORE)
-		# last card was a title
 		else:
 			$Canvas.history = [[]]
 			$Canvas.redraw()
@@ -109,7 +105,6 @@ func get_next_card():
 			Title.set_editable(false)
 			Title.text = cards[-1]
 			
-		# Re-enable buttons and stuff
 		awaiting_next_card = false
 		$Pause.set_visible(false)
 		$Controls/Game_Timer.reset()
@@ -117,5 +112,5 @@ func get_next_card():
 		update_waiting_label()
 
 func update_waiting_label() -> void:
-	var player_offset : int = Global.game_state[ids[my_id_index - turn]]["cards"].size() - 1
+	var player_offset : int = Global.game_state[current_stack_id]["cards"].size() - 1
 	$Pause/Waiting_Label.text = "waiting for " + Global.game_state[ids[(my_id_index - turn + player_offset) % ids.size()]]["name"]

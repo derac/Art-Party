@@ -12,6 +12,29 @@
 [ext_resource path="res://Screens/Components/Color_Button.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scripts/3_Play/Undo_Button.gd" type="Script" id=11]
 
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+bg_color = Color( 1, 0.945098, 0.909804, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.513726, 0.462745, 0.611765, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 90
+outline_size = 5
+outline_color = Color( 0.113725, 0.168627, 0.32549, 1 )
+font_data = ExtResource( 3 )
+
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 1, 1, 1 )
 border_width_left = 3
@@ -41,23 +64,6 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
 
-[sub_resource type="StyleBoxFlat" id=3]
-content_margin_left = 0.0
-content_margin_right = 0.0
-content_margin_top = 0.0
-content_margin_bottom = 0.0
-bg_color = Color( 1, 0.945098, 0.909804, 1 )
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color( 0.513726, 0.462745, 0.611765, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
-
 [sub_resource type="InputEventAction" id=4]
 action = "ui_undo"
 pressed = true
@@ -80,12 +86,6 @@ corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
-
-[sub_resource type="DynamicFont" id=7]
-size = 90
-outline_size = 5
-outline_color = Color( 0.113725, 0.168627, 0.32549, 1 )
-font_data = ExtResource( 3 )
 
 [sub_resource type="StyleBoxFlat" id=8]
 content_margin_left = 0.0
@@ -123,6 +123,33 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false,
 "_edit_vertical_guides_": [ 960.0 ]
+}
+
+[node name="my_name_test" type="LineEdit" parent="."]
+visible = false
+margin_left = 10.0
+margin_top = 900.0
+margin_right = 710.0
+margin_bottom = 1070.0
+focus_mode = 0
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+custom_styles/read_only = SubResource( 3 )
+custom_fonts/font = SubResource( 7 )
+custom_colors/selection_color = Color( 0.160784, 0.678431, 1, 0.235294 )
+custom_colors/cursor_color = Color( 0.160784, 0.678431, 1, 0.392157 )
+custom_colors/font_color_selected = Color( 1, 0.92549, 0.152941, 1 )
+custom_colors/font_color = Color( 1, 0.92549, 0.152941, 1 )
+custom_colors/font_color_uneditable = Color( 1, 0.92549, 0.152941, 1 )
+text = "name"
+align = 1
+max_length = 255
+editable = false
+selecting_enabled = false
+placeholder_alpha = 1.0
+caret_blink = true
+__meta__ = {
+"_edit_use_anchors_": false
 }
 
 [node name="Canvas" type="Control" parent="."]

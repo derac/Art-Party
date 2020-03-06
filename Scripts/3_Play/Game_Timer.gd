@@ -1,6 +1,6 @@
 extends Label
 
-const MAX_TIME = 2
+const MAX_TIME = 90
 var time_left := MAX_TIME
 signal game_timer_expired
 
