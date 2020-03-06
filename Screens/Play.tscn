@@ -518,5 +518,6 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="game_timer_expired" from="Controls/Game_Timer" to="." method="_on_Game_Timer_expired"]
 [connection signal="timeout" from="Controls/Game_Timer/Countdown" to="Controls/Game_Timer" method="_on_Countdown_timeout"]
 [connection signal="button_down" from="Controls/Send" to="." method="_on_Send_button_down"]

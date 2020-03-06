@@ -31,7 +31,6 @@ func _ready():
 	Game_Server.rpc("send_data", Title.text, my_id)
 
 	Global.connect("game_state_changed", self, "_on_game_state_changed")
-	$Controls/Game_Timer.connect("game_timer_expired", self, "_on_game_timer_expired")
 
 func _on_game_state_changed():
 	if awaiting_next_card:
@@ -42,13 +41,15 @@ func _on_game_state_changed():
 				return
 		get_tree().change_scene_to(end_screen)
 		
-func _on_game_timer_expired():
+func _on_Game_Timer_expired():
 	if Global.game_state[ids[my_id_index - turn]]["cards"].size() % 2:
 		if $Canvas.history.size() <= 1:
-			$Canvas.history = [[{"color": Color(1,1,1,1), "position": Vector2(980, 512), "speed":0}], []]
+			var history_file := File.new()
+			history_file.open("res://Assets/Misc/AFK_History.txt", File.READ)
+			$Canvas.history = history_file.get_var()
 			$Canvas.redraw()
 	elif not Title.text:
-		Title.text = Global.my_name + " timed out"
+		Title.text = "I am AFK LOL"
 		
 	_on_Send_button_down()
 
