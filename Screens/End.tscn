@@ -5,7 +5,7 @@
 [ext_resource path="res://Scripts/4_End/Menu_Button.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/4_End/Review_Players.gd" type="Script" id=5]
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
 draw_center = false
 border_width_left = 20
@@ -18,7 +18,7 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="StyleBoxFlat" id=13]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
 draw_center = false
 border_width_left = 20
@@ -31,7 +31,7 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=3]
 size = 90
 outline_size = 5
 outline_color = Color( 1, 0.639216, 0, 1 )
@@ -59,11 +59,11 @@ margin_right = 1910.0
 margin_bottom = 1070.0
 focus_mode = 0
 mouse_default_cursor_shape = 2
-custom_styles/hover = SubResource( 12 )
-custom_styles/pressed = SubResource( 12 )
-custom_styles/disabled = SubResource( 13 )
-custom_styles/normal = SubResource( 13 )
-custom_fonts/font = SubResource( 14 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_disabled = Color( 1, 0.92549, 0.152941, 1 )
 custom_colors/font_color = Color( 1, 0.92549, 0.152941, 1 )
 custom_colors/font_color_hover = Color( 1, 0.92549, 0.152941, 1 )

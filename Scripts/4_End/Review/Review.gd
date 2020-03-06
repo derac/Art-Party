@@ -24,12 +24,12 @@ func _on_Forward_pressed() -> void:
 
 func update_display(turn : int) -> void:
 	display_turn = turn
-	$Turn.text = String(turn) + ". " + Global.game_state[ids[(player_id_index + turn - 1) % ids.size()]]["name"]
+	$Controls/Turn.text = String(turn) + ". " + Global.game_state[ids[(player_id_index + turn - 1) % ids.size()]]["name"]
 	if turn % 2:
-		$Title.text = Global.game_state[player_id]["cards"][turn - 1]
+		$Controls/Title.text = Global.game_state[player_id]["cards"][turn - 1]
 		$Canvas.history = Global.game_state[player_id]["cards"][turn]
 		$Canvas.redraw()
 	else:
-		$Title.text = Global.game_state[player_id]["cards"][turn]
+		$Controls/Title.text = Global.game_state[player_id]["cards"][turn]
 		$Canvas.history = Global.game_state[player_id]["cards"][turn - 1]
 		$Canvas.redraw()

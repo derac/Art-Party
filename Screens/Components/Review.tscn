@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/Images/right_arrow.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Images/left_arrow.png" type="Texture" id=6]
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 0.0
 content_margin_right = 0.0
 content_margin_top = 0.0
@@ -40,13 +40,13 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=3]
 size = 70
 outline_size = 5
 outline_color = Color( 0.113725, 0.168627, 0.32549, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=23]
+[sub_resource type="StyleBoxFlat" id=4]
 content_margin_left = 0.0
 content_margin_right = 0.0
 content_margin_top = 0.0
@@ -63,13 +63,13 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
 
-[sub_resource type="DynamicFont" id=24]
+[sub_resource type="DynamicFont" id=5]
 size = 70
 outline_size = 5
 outline_color = Color( 1, 0.639216, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=6]
 size = 70
 outline_size = 5
 outline_color = Color( 0.184314, 0.168627, 0.419608, 1 )
@@ -116,11 +116,11 @@ margin_bottom = 160.0
 rect_min_size = Vector2( 160, 0 )
 mouse_default_cursor_shape = 2
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/disabled = SubResource( 4 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/disabled = SubResource( 1 )
 custom_styles/normal = SubResource( 2 )
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_disabled = Color( 1, 0.92549, 0.152941, 1 )
 custom_colors/font_color = Color( 1, 0.92549, 0.152941, 1 )
 custom_colors/font_color_hover = Color( 1, 0.92549, 0.152941, 1 )
@@ -137,8 +137,8 @@ margin_right = 860.0
 margin_bottom = 160.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/normal = SubResource( 23 )
-custom_fonts/font = SubResource( 24 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 0.92549, 0.152941, 1 )
 text = "1"
 align = 1
@@ -154,7 +154,7 @@ margin_bottom = 160.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/normal = SubResource( 2 )
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 0.92549, 0.152941, 1 )
 custom_colors/font_color_shadow = Color( 1, 0.92549, 0.152941, 1 )
 text = "title"
@@ -172,11 +172,11 @@ margin_bottom = 160.0
 rect_min_size = Vector2( 160, 0 )
 focus_mode = 0
 mouse_default_cursor_shape = 2
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 4 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 1 )
 custom_styles/disabled = SubResource( 2 )
 custom_styles/normal = SubResource( 2 )
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0.960784, 0.792157, 0.184314, 1 )
 custom_colors/font_color = Color( 0.960784, 0.792157, 0.184314, 1 )
 custom_colors/font_color_hover = Color( 0.960784, 0.792157, 0.184314, 1 )
@@ -192,11 +192,11 @@ margin_right = 1900.0
 margin_bottom = 160.0
 rect_min_size = Vector2( 160, 0 )
 mouse_default_cursor_shape = 2
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 4 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 1 )
 custom_styles/disabled = SubResource( 2 )
 custom_styles/normal = SubResource( 2 )
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0.960784, 0.792157, 0.184314, 1 )
 custom_colors/font_color = Color( 0.960784, 0.792157, 0.184314, 1 )
 custom_colors/font_color_hover = Color( 0.960784, 0.792157, 0.184314, 1 )
