@@ -50,23 +50,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Review_Players" type="Container" parent="."]
+[node name="Layout" type="HBoxContainer" parent="."]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 1530.0
+margin_right = 1910.0
 margin_bottom = 1070.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Review_Players" type="Container" parent="Layout"]
+margin_right = 1520.0
+margin_bottom = 1060.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Menu" type="Button" parent="."]
-margin_left = 1550.0
-margin_top = 10.0
-margin_right = 1910.0
-margin_bottom = 1070.0
+[node name="Menu" type="Button" parent="Layout"]
+margin_left = 1540.0
+margin_right = 1900.0
+margin_bottom = 1060.0
+rect_min_size = Vector2( 360, 0 )
 focus_mode = 0
 mouse_default_cursor_shape = 2
+size_flags_vertical = 3
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 1 )
 custom_styles/disabled = SubResource( 2 )
