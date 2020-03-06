@@ -2,41 +2,27 @@ extends Control
 
 # Array containing arrays which represent strokes
 var history := [[]]
-var viewport := Viewport.new()
-var _pen := Node2D.new()
-var viewport2 := Viewport.new()
-var _pen2 := Node2D.new()
+var viewports := [Viewport.new(), Viewport.new()]
+var pens := [Node2D.new(), Node2D.new()]
 var redraw_next_frame := false
 var min_draw_dist := 1.0
 var stroke_tools := load("res://Scripts/Utility/douglas-peucker.gd")
 var last_index := 0
 
 func _ready() -> void:
-	var render_target := viewport.get_texture()
-	var board := TextureRect.new()
-	viewport.size = get_rect().size
-	viewport.usage = Viewport.USAGE_2D
-	viewport.render_target_clear_mode = Viewport.CLEAR_MODE_ONLY_NEXT_FRAME
-	viewport.render_target_v_flip = true
-	viewport.transparent_bg = true
-	viewport.add_child(_pen)
-	_pen.connect("draw", self, "_on_draw")
-	add_child(viewport)
-	board.set_texture(render_target)
-	add_child(board)
-	
-	var render_target2 := viewport2.get_texture()
-	var board2 := TextureRect.new()
-	viewport2.size = get_rect().size
-	viewport2.usage = Viewport.USAGE_2D
-	viewport2.render_target_clear_mode = Viewport.CLEAR_MODE_ONLY_NEXT_FRAME
-	viewport2.render_target_v_flip = true
-	viewport2.transparent_bg = true
-	viewport2.add_child(_pen2)
-	_pen2.connect("draw", self, "_on_draw2")
-	add_child(viewport2)
-	board2.set_texture(render_target2)
-	add_child(board2)
+	var callback_names = ["_draw_picture", "_draw_current_stroke"]
+	for i in range(2):
+		viewports[i].size = get_rect().size
+		viewports[i].usage = Viewport.USAGE_2D
+		viewports[i].render_target_clear_mode = Viewport.CLEAR_MODE_ONLY_NEXT_FRAME
+		viewports[i].render_target_v_flip = true
+		viewports[i].transparent_bg = true
+		viewports[i].add_child(pens[i])
+		var board := TextureRect.new()
+		board.set_texture(viewports[i].get_texture())
+		add_child(viewports[i])
+		add_child(board)
+		pens[i].connect("draw", self, callback_names[i])
 	
 func _gui_input(event) -> void:
 	var Color_Picker = get_node("/root/Play/Controls/Color_Picker")
@@ -48,38 +34,36 @@ func _gui_input(event) -> void:
 			history[-1].append({"position": get_viewport().get_mouse_position(),
 								"speed": 0,
 								"color": Color_Picker.color})
-			_pen2.update()
+			pens[1].update()
 		elif history[-1].size() > 0:
 			history.append([])
 			history[-2] = stroke_tools.simplify_stroke(history[-2], 1.0 / 3)
-			_pen.update()
+			viewports[1].render_target_clear_mode = Viewport.CLEAR_MODE_ONLY_NEXT_FRAME
+			pens[1].update()
+			pens[0].update()
 	elif event is InputEventMouseMotion and history[-1].size():
 		if history[-1][-1]["position"].distance_to(get_viewport().get_mouse_position()) > min_draw_dist:
 			history[-1].append({"position": get_viewport().get_mouse_position(),
 								"speed": history[-1][-1]["position"].distance_to(get_viewport().get_mouse_position()),
 								"color": Color_Picker.color})
-			_pen2.update()
+			pens[1].update()
 
-func _on_draw() -> void:
-	if history.size() > 1:
-		viewport2.render_target_clear_mode = Viewport.CLEAR_MODE_ONLY_NEXT_FRAME
-		_pen2.update()
-		for index in range(history[-2].size()):
-			draw_brush(history[-2], index, _pen)
+func _draw_picture() -> void:
 	if redraw_next_frame:
-		viewport.render_target_clear_mode = Viewport.CLEAR_MODE_ONLY_NEXT_FRAME
+		viewports[0].render_target_clear_mode = Viewport.CLEAR_MODE_ONLY_NEXT_FRAME
 		for stroke in history:
 			for index in range(stroke.size()):
-				draw_brush(stroke, index, _pen)
+				draw_brush(stroke, index, pens[0])
 		redraw_next_frame = false
+	elif history.size() > 1:
+		for index in range(history[-2].size()):
+			draw_brush(history[-2], index, pens[0])
 
-func _on_draw2() -> void:
+func _draw_current_stroke() -> void:
 	if history[-1].size() > 1:
 		for offset in range(0, history[-1].size() - last_index):
-			draw_brush(history[-1], last_index + offset, _pen2)
+			draw_brush(history[-1], last_index + offset, pens[1])
 		last_index = history[-1].size() - 1
-	else:
-		_pen2.draw_rect(get_rect(),Color(0,0,0,0))
 
 func undo() -> void:
 	if history.size() > 1:
@@ -88,7 +72,7 @@ func undo() -> void:
 
 func redraw() -> void:
 	redraw_next_frame = true
-	_pen.update()
+	pens[0].update()
 
 func draw_brush(stroke : Array, index : int, pen : Node2D) -> void:
 	var speed_factor := 3
