@@ -2,11 +2,13 @@ extends Control
 
 var my_id : int
 var my_id_index : int
-var turn := 0
-var max_turns : int
 var ids := Global.game_state.keys()
+
+var turn := 0
+var max_turns : int = ids.size() - ids.size() % 2
 var awaiting_next_card := false
 var awaiting_end := false
+
 onready var end_screen := preload("res://Screens/End.tscn")
 onready var Title := $Controls/Title_Mask/Title
 
@@ -17,19 +19,15 @@ func _ready():
 	ids.sort()
 	my_id = get_tree().get_network_unique_id()
 	my_id_index = ids.find(my_id)
-	max_turns = ids.size() - ids.size() % 2
 	
 	print("id: ", my_id)
 	print("name: ", Global.my_name)
 	print("id index: ", my_id_index)
 	
-	# Generate a new phrase at the start of the game
-	var phrases_file := File.new()
-	phrases_file.open("res://Assets/Misc/phrases.txt", File.READ)
-	var phrases := phrases_file.get_as_text().split("\n")
-	Title.text = phrases[randi() % phrases.size()]
-	
-	# Send initial data
+	var words_file := File.new()
+	words_file.open("res://Assets/Misc/words.txt", File.READ)
+	var words := words_file.get_as_text().split("\n")
+	Title.text = words[randi() % words.size()]
 	Game_Server.rpc("send_data", Title.text, my_id)
 
 	Global.connect("game_state_changed", self, "_on_game_state_changed")
@@ -87,7 +85,7 @@ func _on_Send_button_down():
 		get_next_card()
 		if awaiting_next_card:
 			Sound.play_sfx("res://Assets/SFX/button1.wav")
-			$Game_Timer.stop()
+			$Controls/Game_Timer.stop()
 
 func get_next_card():
 	var cards = Global.game_state[ids[my_id_index - turn]]["cards"]

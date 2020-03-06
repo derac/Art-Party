@@ -37,7 +37,7 @@ func update_udp_data(ip, data) -> void:
 
 func send_heartbeat() -> void:
 	if broadcasting:
-		if OS.get_system_time_msecs() - heartbeat_timer > 500:
+		if OS.get_system_time_msecs() - heartbeat_timer > 100:
 			heartbeat_timer = OS.get_system_time_msecs()
 			udp.put_var({"name": Global.my_name,
 						 "is_server": Game_Server.is_server,
@@ -47,7 +47,7 @@ func send_heartbeat() -> void:
 func remove_inactive() -> void:
 	if listening:
 		for ip in Global.udp_data.keys():
-			if heartbeat_timer - Global.udp_data[ip]["last_tick"] > 5000:
+			if heartbeat_timer - Global.udp_data[ip]["last_tick"] > 1000:
 				Global.udp_data.erase(ip)
 				# Trigger setter for signaling
 				Global.udp_data_set(Global.udp_data)

@@ -47,8 +47,10 @@ remote func register_player(player_data : Dictionary) -> void:
 remotesync func start_game() -> void:
 	get_tree().change_scene_to(play_screen)
 
-remotesync func send_data(data, id : int) -> void:
-	Global.game_state[id]["cards"].append(data)
+remotesync func send_data(data, cards_id : int) -> void:
+	var sender_id = get_tree().get_rpc_sender_id()
+	Global.game_state[cards_id]["cards"].append(data)
+	Global.game_state[cards_id]["played_by"].append(sender_id)
 	# Trigger signal
 	Global.game_state_set(Global.game_state)
 
@@ -88,4 +90,4 @@ func stop_client() -> void:
 		Global.game_state = {}
 
 func new_data() -> Dictionary:
-	return {'name': Global.my_name, 'cards': []}
+	return {'name': Global.my_name, 'cards': [], 'played_by': []}

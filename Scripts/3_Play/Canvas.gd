@@ -27,8 +27,8 @@ func _ready() -> void:
 func _gui_input(event) -> void:
 	var Color_Picker = get_node("/root/Play/Controls/Color_Picker")
 	if (event is InputEventMouseButton \
-				and event.button_index == BUTTON_LEFT) \
-				or event is InputEventScreenTouch:
+			and event.button_index == BUTTON_LEFT) \
+			or event is InputEventScreenTouch:
 		last_index = 0
 		if event.pressed:
 			history[-1].append({"position": get_viewport().get_mouse_position(),
@@ -44,8 +44,8 @@ func _gui_input(event) -> void:
 	elif event is InputEventMouseMotion and history[-1].size():
 		if history[-1][-1]["position"].distance_to(get_viewport().get_mouse_position()) > min_draw_dist:
 			history[-1].append({"position": get_viewport().get_mouse_position(),
-								"speed": history[-1][-1]["position"].distance_to(get_viewport().get_mouse_position()),
-								"color": Color_Picker.color})
+					"speed": history[-1][-1]["position"].distance_to(get_viewport().get_mouse_position()),
+					"color": Color_Picker.color})
 			pens[1].update()
 
 func _draw_picture() -> void:

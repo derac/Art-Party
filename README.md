@@ -6,13 +6,12 @@
 ## Rules
 1. Start with 4+ players.
 2. Take a word.
-3. If player number is odd, pass it clockwise.
-4. Draw the word.
-5. Pass the drawing clockwise.
-6. Guess what the drawing is.
-7. Pass the guess clockwise
-8. Goto (3.) and repeat.
-9. When the word from (1.) returns to you, review all cards.
+3. Draw the word.
+4. Pass the drawing clockwise.
+5. Guess what the drawing is.
+6. Pass the guess clockwise
+7. Goto (3.) and repeat.
+8. When the word from (1.) returns to you, review all cards.
 
 _**Scoring** -
 If a guess matches the starting word, every player who previously touched the card gets a point._

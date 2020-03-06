@@ -3,10 +3,10 @@ extends Node
 var my_name : String = ""
 var external_ip := ""
 var UPNP_state := "uninitialized"
-# udp_data = {ip: {is_server: bool, last_tick: int, name: ''}}
+# udp_data = {"PLAYER_IP": {"is_server": bool, "last_tick": int, "name": ''}}
 var udp_data := {} setget udp_data_set
 signal udp_data_changed
-# game_state = {network_id: {name: '', cards: []}}
+# game_state = {int network_id: {"name": '', "cards": [], "played_by": []}}
 var game_state := {} setget game_state_set
 signal game_state_changed
 

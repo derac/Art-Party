@@ -22,6 +22,12 @@ func _on_Forward_pressed() -> void:
 		Sound.play_sfx("res://Assets/SFX/button1.wav", -3.0, 2.0)
 		update_display(display_turn + 1)
 
+func _on_Return_pressed():
+	Sound.play_sfx("res://Assets/SFX/button2.wav", -3.0, 0.5)
+	visible = false
+	$Canvas.history = [[]]
+	$Canvas.redraw()
+	
 func update_display(turn : int) -> void:
 	display_turn = turn
 	$Controls/Turn.text = String(turn) + ". " + Global.game_state[ids[(player_id_index + turn - 1) % ids.size()]]["name"]
@@ -33,3 +39,6 @@ func update_display(turn : int) -> void:
 		$Controls/Title.text = Global.game_state[player_id]["cards"][turn]
 		$Canvas.history = Global.game_state[player_id]["cards"][turn - 1]
 		$Canvas.redraw()
+
+
+
