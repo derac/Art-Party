@@ -6,19 +6,27 @@
 [ext_resource path="res://Scripts/4_End/Review_Players.gd" type="Script" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
 bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
 draw_center = false
 border_width_left = 20
 border_width_top = 20
 border_width_right = 20
 border_width_bottom = 20
-border_color = Color( 1, 0.639216, 0, 1 )
+border_color = Color( 1, 0, 0.301961, 1 )
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id=2]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
 bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
 draw_center = false
 border_width_left = 20
@@ -34,7 +42,7 @@ corner_radius_bottom_left = 50
 [sub_resource type="DynamicFont" id=3]
 size = 90
 outline_size = 5
-outline_color = Color( 1, 0.639216, 0, 1 )
+outline_color = Color( 1, 0, 0.301961, 1 )
 font_data = ExtResource( 3 )
 
 [node name="End" type="Control"]

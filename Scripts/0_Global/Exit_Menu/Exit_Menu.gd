@@ -14,6 +14,12 @@ func toggle_panel() -> void:
 	if $Panel.is_visible():
 		Sound.play_sfx("res://Assets/SFX/off.wav")
 		$Panel.set_visible(false)
+		$Panel/Menu/Exit_Button.set_visible(false)
+		$Panel/Menu/Menu_Button.set_visible(false)
 	else:
 		Sound.play_sfx("res://Assets/SFX/on.wav")
+		if get_tree().get_current_scene().get_name() != "Setup":
+			$Panel/Menu/Menu_Button.set_visible(true)
+		else:
+			$Panel/Menu/Exit_Button.set_visible(true)
 		$Panel.set_visible(true)
