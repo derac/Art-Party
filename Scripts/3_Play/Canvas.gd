@@ -6,8 +6,9 @@ var viewports := [Viewport.new(), Viewport.new()]
 var pens := [Node2D.new(), Node2D.new()]
 var redraw_next_frame := false
 var min_draw_dist := 1.0
-var stroke_tools := load("res://Scripts/Utility/douglas-peucker.gd")
 var last_index := 0
+
+const simplify_stroke = preload("res://Scripts/Utility/simplify_stoke.gd")
 
 func _ready() -> void:
 	var callback_names = ["_draw_picture", "_draw_current_stroke"]
@@ -37,7 +38,7 @@ func _gui_input(event) -> void:
 			pens[1].update()
 		elif history[-1].size() > 0:
 			history.append([])
-			history[-2] = stroke_tools.simplify_stroke(history[-2], 1.0 / 3)
+			history[-2] = simplify_stroke.simplify(history[-2], 1.0 / 3)
 			viewports[1].render_target_clear_mode = Viewport.CLEAR_MODE_ONLY_NEXT_FRAME
 			pens[1].update()
 			pens[0].update()

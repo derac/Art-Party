@@ -1,5 +1,5 @@
 # Injest the stroke format we are using in Canvas.gd
-static func simplify_stroke(stroke : Array, epsilon : float) -> Array:
+static func simplify(stroke : Array, epsilon : float) -> Array:
 	var pos_hist := []
 	var speed_hist := []
 	for pos in stroke:

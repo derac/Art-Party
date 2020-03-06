@@ -10,7 +10,7 @@ func _ready() -> void:
 func set_mute(is_muted: bool) -> void:
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), is_muted)
 
-func change_music(music_file, seek_to := 0, volume := 0.0) -> void:
+func change_music(music_file, volume := 0.0, seek_to := 0) -> void:
 	if now_playing != music_file:
 		now_playing = music_file
 		music_player.stream = load(music_file)

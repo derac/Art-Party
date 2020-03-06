@@ -16,7 +16,7 @@ onready var Title := $Controls/Title_Mask/Title
 func _ready():
 	$my_name_test.text = Global.my_name
 	
-	Sound.change_music("res://Assets/Music/play.ogg", 25)
+	Sound.change_music("res://Assets/Music/play.ogg", 0, 25)
 	Sound.play_sfx("res://Assets/SFX/complete.wav", -6.0, 0.75)
 	
 	ids.sort()
@@ -58,13 +58,13 @@ func _on_Send_button_down():
 		if $Canvas.history.size() > 1:
 			Game_Server.rpc("send_data", $Canvas.history, current_stack_id)
 		else:
-			Sound.play_sfx("res://Assets/SFX/off.wav", -3.0, 0.8)
+			Sound.play_sfx("res://Assets/SFX/off.wav", -3, 0.8)
 			return
 	else:
 		if Title.text:
 			Game_Server.rpc("send_data", Title.text, current_stack_id)
 		else:
-			Sound.play_sfx("res://Assets/SFX/off.wav", -3.0, 0.8)
+			Sound.play_sfx("res://Assets/SFX/off.wav", -3, 0.8)
 			return
 
 	turn += 1
@@ -72,8 +72,8 @@ func _on_Send_button_down():
 	
 	if turn >= max_turns:
 		$Pause.set_visible(true)
-		Sound.play_sfx("res://Assets/SFX/complete.wav", -6.0, 0.75)
-		Sound.change_music("res://Assets/Music/end.ogg", 35, -3.0)
+		Sound.play_sfx("res://Assets/SFX/complete.wav", -6, 0.75)
+		Sound.change_music("res://Assets/Music/end.ogg", -6, 35)
 		get_node("/root/Play/Pause/Waiting_Label").text = "waiting for game to end"
 		$Controls/Game_Timer.stop()
 		awaiting_end = true
