@@ -4,8 +4,7 @@
 
 ## Play
 1. [Download the game](https://derac.itch.io/artparty)
-2. Click on a player in your local network to join their lobby
-3. Otherwise, enter the IP of the player you want to connect to
+2. Automatically discover and join players on the local network or join by IP.
 
 ## Rules
 1. Start with 4+ players.
