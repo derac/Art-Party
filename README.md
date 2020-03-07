@@ -4,7 +4,7 @@
 
 ## Play
 1. [Download the game](https://derac.itch.io/artparty).
-2. Automatically discover and join players on the local network or join by IP.
+2. Automatically discover players on the local network or join by IP.
 
 ## Rules
 1. Start with 4+ players.
