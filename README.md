@@ -1,9 +1,9 @@
 ## Develop
-1. [Download Godot](https://godotengine.org/download/) and start it
-2. Download this project and load it in Godot
+1. [Download Godot](https://godotengine.org/download/) and start it.
+2. Download this project and load it in Godot.
 
 ## Play
-1. [Download the game](https://derac.itch.io/artparty)
+1. [Download the game](https://derac.itch.io/artparty).
 2. Automatically discover and join players on the local network or join by IP.
 
 ## Rules
