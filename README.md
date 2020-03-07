@@ -25,7 +25,3 @@ If a guess matches the starting word, every player who previously touched the ca
 - [SFX](https://opengameart.org/content/ui-sounds): StumpyStrust
 - [Color Palette](https://lospec.com/palette-list/pico-8): PICO-8
 - All other art, programming, and design by Derek Olson under MIT
-
-## Buy and support
-https://derac.itch.io/artparty  
-https://paypal.me/deracoslon
