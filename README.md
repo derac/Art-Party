@@ -1,6 +1,6 @@
 ## Develop
-1. [Download Godot](https://godotengine.org/download/) and start it.
-2. Download this project and load it in Godot.
+1. [Download Godot](https://godotengine.org/download/) and run it.
+2. Download this project and load it fromm the project finder.
 
 ## Play
 1. [Download the game](https://derac.itch.io/artparty).
