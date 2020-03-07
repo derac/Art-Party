@@ -12,7 +12,6 @@ func _on_udp_data_changed() -> void:
 
 	for player in Global.udp_data.keys():
 		create_player_label(Global.udp_data[player], player)
-		
 
 func create_player_label(player_data : Dictionary,
 						 player_ip : String) -> void:

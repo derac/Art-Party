@@ -12,7 +12,7 @@
 [ext_resource path="res://Screens/Components/Color_Button.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scripts/3_Play/Undo_Button.gd" type="Script" id=11]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 0.0
 content_margin_right = 0.0
 content_margin_top = 0.0
@@ -29,13 +29,13 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=2]
 size = 90
 outline_size = 5
 outline_color = Color( 0.113725, 0.168627, 0.32549, 1 )
 font_data = ExtResource( 3 )
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 1, 1, 1, 1 )
 border_width_left = 3
 border_width_top = 3
@@ -47,7 +47,7 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=4]
 content_margin_left = 0.0
 content_margin_right = 0.0
 content_margin_top = 0.0
@@ -64,14 +64,14 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
 
-[sub_resource type="InputEventAction" id=4]
+[sub_resource type="InputEventAction" id=5]
 action = "ui_undo"
 pressed = true
 
-[sub_resource type="ShortCut" id=5]
-shortcut = SubResource( 4 )
+[sub_resource type="ShortCut" id=6]
+shortcut = SubResource( 5 )
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=7]
 content_margin_left = 0.0
 content_margin_right = 0.0
 content_margin_top = 0.0
@@ -134,8 +134,8 @@ margin_bottom = 1070.0
 focus_mode = 0
 mouse_filter = 2
 mouse_default_cursor_shape = 0
-custom_styles/read_only = SubResource( 3 )
-custom_fonts/font = SubResource( 7 )
+custom_styles/read_only = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/selection_color = Color( 0.160784, 0.678431, 1, 0.235294 )
 custom_colors/cursor_color = Color( 0.160784, 0.678431, 1, 0.392157 )
 custom_colors/font_color_selected = Color( 1, 0.92549, 0.152941, 1 )
@@ -180,11 +180,11 @@ margin_bottom = 81.0
 rect_pivot_offset = Vector2( 30, 70 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
 
 [node name="1D2B53" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 86.0
@@ -193,11 +193,11 @@ margin_bottom = 81.0
 rect_pivot_offset = Vector2( 30, 70 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
 
 [node name="7E2553" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 172.0
@@ -206,11 +206,11 @@ margin_bottom = 81.0
 rect_pivot_offset = Vector2( 30, 70 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
 
 [node name="008751" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 258.0
@@ -219,11 +219,11 @@ margin_bottom = 81.0
 rect_pivot_offset = Vector2( 30, 70 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
 
 [node name="AB5236" parent="Colors" instance=ExtResource( 10 )]
 margin_top = 86.0
@@ -232,11 +232,11 @@ margin_bottom = 167.0
 rect_pivot_offset = Vector2( 30, 70 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
 
 [node name="5F574F" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 86.0
@@ -246,11 +246,11 @@ margin_bottom = 167.0
 rect_pivot_offset = Vector2( 30, 70 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
 
 [node name="C2C3C7" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 172.0
@@ -260,11 +260,11 @@ margin_bottom = 167.0
 rect_pivot_offset = Vector2( 30, 70 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
 
 [node name="FFF1E8" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 258.0
@@ -274,11 +274,11 @@ margin_bottom = 167.0
 rect_pivot_offset = Vector2( 30, 70 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
 
 [node name="FF004D" parent="Colors" instance=ExtResource( 10 )]
 margin_top = 172.0
@@ -287,11 +287,11 @@ margin_bottom = 253.0
 rect_pivot_offset = Vector2( 30, 70 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
 
 [node name="FFA300" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 86.0
@@ -301,11 +301,11 @@ margin_bottom = 253.0
 rect_pivot_offset = Vector2( 30, 70 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
 
 [node name="FFEC27" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 172.0
@@ -315,11 +315,11 @@ margin_bottom = 253.0
 rect_pivot_offset = Vector2( 30, 70 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
 
 [node name="00E436" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 258.0
@@ -329,11 +329,11 @@ margin_bottom = 253.0
 rect_pivot_offset = Vector2( 30, 70 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
 
 [node name="29ADFF" parent="Colors" instance=ExtResource( 10 )]
 margin_top = 258.0
@@ -342,11 +342,11 @@ margin_bottom = 339.0
 rect_pivot_offset = Vector2( 30, 70 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
 
 [node name="83769C" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 86.0
@@ -356,11 +356,11 @@ margin_bottom = 339.0
 rect_pivot_offset = Vector2( 30, 70 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
 
 [node name="FF77A8" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 172.0
@@ -370,11 +370,11 @@ margin_bottom = 339.0
 rect_pivot_offset = Vector2( 30, 70 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
 
 [node name="FFCCAA" parent="Colors" instance=ExtResource( 10 )]
 margin_left = 258.0
@@ -384,11 +384,11 @@ margin_bottom = 339.0
 rect_pivot_offset = Vector2( 30, 70 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
 
 [node name="Controls" type="HBoxContainer" parent="."]
 margin_left = 10.0
@@ -407,10 +407,10 @@ rect_min_size = Vector2( 160, 0 )
 focus_mode = 0
 mouse_default_cursor_shape = 2
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/disabled = SubResource( 3 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
 action_mode = 0
 expand_icon = true
 script = ExtResource( 6 )
@@ -435,13 +435,13 @@ hint_tooltip = "Ctrl+Z"
 focus_mode = 0
 mouse_default_cursor_shape = 2
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/disabled = SubResource( 3 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
 shortcut_in_tooltip = false
 action_mode = 0
-shortcut = SubResource( 5 )
+shortcut = SubResource( 6 )
 icon = ExtResource( 4 )
 script = ExtResource( 11 )
 __meta__ = {
@@ -454,7 +454,7 @@ margin_right = 1340.0
 margin_bottom = 160.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/panel = SubResource( 6 )
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -464,10 +464,10 @@ margin_right = 1000.0
 margin_bottom = 160.0
 mouse_filter = 2
 mouse_default_cursor_shape = 0
-custom_styles/read_only = SubResource( 3 )
-custom_styles/focus = SubResource( 2 )
-custom_styles/normal = SubResource( 3 )
-custom_fonts/font = SubResource( 7 )
+custom_styles/read_only = SubResource( 1 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/selection_color = Color( 0.160784, 0.678431, 1, 0.235294 )
 custom_colors/cursor_color = Color( 0.160784, 0.678431, 1, 0.392157 )
 custom_colors/font_color_selected = Color( 1, 0.92549, 0.152941, 1 )
@@ -511,10 +511,10 @@ rect_min_size = Vector2( 260, 0 )
 focus_mode = 0
 mouse_default_cursor_shape = 2
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/disabled = SubResource( 3 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
 shortcut = SubResource( 11 )
 icon = ExtResource( 8 )
 align = 0
