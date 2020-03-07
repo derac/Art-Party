@@ -1,3 +1,5 @@
+<img src="https://github.com/der-ac/Art-Party/blob/master/Assets/Icons/icon_120.png" />
+
 <img src="https://img.itch.zone/aW1hZ2UvNTY4NDU4LzMwNzIwMTEucG5n/347x500/5%2FZ6QT.png" width="40%" height="40%" /> <img src="https://img.itch.zone/aW1hZ2UvNTY4NDU4LzMwNzE3OTQucG5n/794x1000/9FRk4O.png" width="40%"  height="40%" />
 
 ## Develop
@@ -27,3 +29,5 @@ If a guess matches the starting word, every player who previously touched the ca
 - [SFX](https://opengameart.org/content/ui-sounds): StumpyStrust
 - [Color Palette](https://lospec.com/palette-list/pico-8): PICO-8
 - All other art, programming, and design by Derek Olson under MIT
+
+<img src="https://raw.githubusercontent.com/der-ac/Art-Party/master/Assets/Icons/icon_120.png" />
