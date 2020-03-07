@@ -9,4 +9,4 @@ func _pressed() -> void:
 		if err == OK:
 			get_tree().change_scene_to(lobby_scene)
 	else:
-		Sound.play_sfx("res://Assets/SFX/off.wav", -3.0, 0.8)
+		Sound.play_sfx("res://Assets/SFX/bad.wav", -3, .75)

@@ -31,11 +31,11 @@ func update_display(turn : int) -> void:
 	display_turn = turn
 	var played_by = Global.game_state[player_id]["played_by"][turn]
 	if scores[played_by]:
-		Sound.play_sfx("res://Assets/SFX/good.wav", 3)
+		Sound.play_sfx("res://Assets/SFX/good.wav")
 		$Controls/Points.text = "+" + String(scores[played_by])
 		$Controls/Points.set_visible(true)
 	else:
-		Sound.play_sfx("res://Assets/SFX/bad.wav")
+		Sound.play_sfx("res://Assets/SFX/bad.wav", -3, .75)
 		$Controls/Points.set_visible(false)
 	$Controls/Turn.text = String(turn) + ". " + Global.game_state[played_by]["name"]
 

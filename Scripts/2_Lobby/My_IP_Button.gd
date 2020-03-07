@@ -46,8 +46,10 @@ func try_UPNP() -> void:
 				Global.external_ip = gateway.query_external_address()
 				Global.UPNP_state = "succeeded"
 	if Global.UPNP_state == "succeeded":
+		Sound.play_sfx("res://Assets/SFX/good.wav")
 		UPNP_Good.set_visible(true)
 	if Global.UPNP_state == "failed":
+		Sound.play_sfx("res://Assets/SFX/bad.wav", -3, .75)
 		UPNP_Bad.set_visible(true)
 	if Global.external_ip == "":
 		UPNP_Bad.set_visible(true)

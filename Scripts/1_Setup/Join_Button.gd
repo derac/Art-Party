@@ -10,7 +10,7 @@ func _pressed() -> void:
 	if address.has_all(["ip", "port"]) and Global.my_name.length():
 		Game_Server.start_client(address["ip"], int(address["port"]))
 	else:
-		Sound.play_sfx("res://Assets/SFX/off.wav", -3.0, 0.8)
+		Sound.play_sfx("res://Assets/SFX/bad.wav", -3, .75)
 
 func _connection_succeeded() -> void:
 	Sound.play_sfx("res://Assets/SFX/button1.wav")
