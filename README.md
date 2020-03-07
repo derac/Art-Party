@@ -5,7 +5,7 @@
 2. Download this project and load it from the project finder.
 
 ## Play
-1. [Download the game](https://derac.itch.io/artparty).
+1. [Download the game](https://derac.itch.io/artparty) and run it.
 2. Automatically discover players on the local network or join by IP.
 
 ## Rules
