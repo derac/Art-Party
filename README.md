@@ -1,3 +1,5 @@
+<img src="https://img.itch.zone/aW1hZ2UvNTY4NDU4LzMwNzE3OTQucG5n/794x1000/9FRk4O.png" width="50%" height="50%" />
+
 ## Develop
 1. [Download Godot](https://godotengine.org/download/) and run it.
 2. Download this project and load it from the project finder.
