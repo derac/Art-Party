@@ -1,6 +1,6 @@
 extends Button
 
-onready var Setup_Screen = preload("res://Screens/Setup.tscn")
+const Setup_Screen = preload("res://Screens/Setup.tscn")
 
 func _pressed() -> void:
 	Sound.play_sfx("res://Assets/SFX/button1.wav", 0.0, 0.5)

@@ -1,7 +1,7 @@
 extends Stretch_Grid
 
-var review_button := load("res://Screens/Components/Review_Button.tscn")
-var score_game := load("res://Scripts/Utility/score_game.gd")
+const review_button = preload("res://Screens/Components/Review_Button.tscn")
+const score_game = preload("res://Scripts/Utility/score_game.gd")
 
 class Sort_ID_Score_Pairs:
 	static func sort_by_score_descending(a, b) -> bool:

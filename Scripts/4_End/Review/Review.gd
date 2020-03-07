@@ -3,7 +3,7 @@ extends Control
 var player_id : int setget set_player_id
 var display_turn := 1
 
-var score_game := load("res://Scripts/Utility/score_game.gd")
+const score_game = preload("res://Scripts/Utility/score_game.gd")
 
 func set_player_id(value : int) -> void:
 	display_turn = 1
@@ -34,11 +34,11 @@ func update_display(turn : int) -> void:
 	$Controls/Turn.text = String(turn) + ". " + Global.game_state[played_by]["name"]
 
 	if turn % 2:
-		$Controls/Title.text = Global.game_state[player_id]["cards"][turn - 1]
+		$Controls/Word.text = Global.game_state[player_id]["cards"][turn - 1]
 		$Canvas.history = Global.game_state[player_id]["cards"][turn]
 		$Canvas.redraw()
 	else:
-		$Controls/Title.text = Global.game_state[player_id]["cards"][turn]
+		$Controls/Word.text = Global.game_state[player_id]["cards"][turn]
 		$Canvas.history = Global.game_state[player_id]["cards"][turn - 1]
 		$Canvas.redraw()
 

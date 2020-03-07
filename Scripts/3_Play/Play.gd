@@ -10,7 +10,7 @@ var max_turns : int = ids.size() - ids.size() % 2
 var awaiting_next_card := false
 var awaiting_end := false
 
-onready var end_screen := preload("res://Screens/End.tscn")
+const end_screen := preload("res://Screens/End.tscn")
 onready var Title := $Controls/Title_Mask/Title
 
 func _ready():

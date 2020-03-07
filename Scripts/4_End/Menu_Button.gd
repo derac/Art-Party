@@ -1,6 +1,6 @@
 extends Button
 
-var setup_screen := load("res://Screens/Setup.tscn")
+const setup_screen = preload("res://Screens/Setup.tscn")
 		
 func _pressed() -> void:
 	Sound.play_sfx("res://Assets/SFX/button1.wav", 0.0, 0.75)

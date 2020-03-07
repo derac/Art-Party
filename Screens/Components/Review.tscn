@@ -164,7 +164,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title" type="Label" parent="Controls"]
+[node name="Word" type="Label" parent="Controls"]
 margin_left = 870.0
 margin_right = 1560.0
 margin_bottom = 160.0
