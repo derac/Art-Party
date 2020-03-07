@@ -173,6 +173,7 @@ __meta__ = {
 }
 
 [node name="Points" type="Label" parent="Controls"]
+visible = false
 margin_left = 170.0
 margin_right = 330.0
 margin_bottom = 160.0
@@ -191,8 +192,8 @@ __meta__ = {
 }
 
 [node name="Turn" type="Label" parent="Controls"]
-margin_left = 340.0
-margin_right = 945.0
+margin_left = 170.0
+margin_right = 860.0
 margin_bottom = 160.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -207,7 +208,7 @@ __meta__ = {
 }
 
 [node name="Word" type="Label" parent="Controls"]
-margin_left = 955.0
+margin_left = 870.0
 margin_right = 1560.0
 margin_bottom = 160.0
 size_flags_horizontal = 7
