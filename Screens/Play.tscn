@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/Images/Dropper_Empty.png" type="Texture" id=9]
 [ext_resource path="res://Screens/Components/Color_Button.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scripts/3_Play/Undo_Button.gd" type="Script" id=11]
+[ext_resource path="res://Screens/Styles/Game_Timer.tres" type="StyleBox" id=12]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 0.0
@@ -87,34 +88,17 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="StyleBoxFlat" id=8]
-content_margin_left = 0.0
-content_margin_right = 0.0
-content_margin_top = 0.0
-content_margin_bottom = 0.0
-bg_color = Color( 1, 0.945098, 0.909804, 1 )
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color( 1, 0.639216, 0, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
-
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=8]
 size = 90
 outline_size = 5
 outline_color = Color( 1, 0.639216, 0, 1 )
 font_data = ExtResource( 3 )
 
-[sub_resource type="InputEventAction" id=10]
+[sub_resource type="InputEventAction" id=9]
 action = "ui_accept"
 
-[sub_resource type="ShortCut" id=11]
-shortcut = SubResource( 10 )
+[sub_resource type="ShortCut" id=10]
+shortcut = SubResource( 9 )
 
 [node name="Play" type="Control"]
 anchor_right = 1.0
@@ -488,8 +472,8 @@ margin_right = 1630.0
 margin_bottom = 160.0
 rect_min_size = Vector2( 280, 0 )
 size_flags_vertical = 3
-custom_styles/normal = SubResource( 8 )
-custom_fonts/font = SubResource( 9 )
+custom_styles/normal = ExtResource( 12 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 1, 0.92549, 0.152941, 1 )
 text = "0:00"
 align = 1
@@ -515,7 +499,7 @@ custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = SubResource( 4 )
 custom_styles/disabled = SubResource( 1 )
 custom_styles/normal = SubResource( 1 )
-shortcut = SubResource( 11 )
+shortcut = SubResource( 10 )
 icon = ExtResource( 8 )
 align = 0
 __meta__ = {
@@ -536,8 +520,8 @@ margin_left = 200.0
 margin_top = 460.0
 margin_right = 1720.0
 margin_bottom = 620.0
-custom_styles/normal = SubResource( 8 )
-custom_fonts/font = SubResource( 9 )
+custom_styles/normal = ExtResource( 12 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 1, 0.92549, 0.152941, 1 )
 text = "Waiting for X"
 align = 1

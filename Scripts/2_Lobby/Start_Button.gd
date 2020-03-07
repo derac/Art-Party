@@ -16,6 +16,8 @@ remotesync func start_timer() -> void:
 	UDP_Broadcast.udp.put_var("remove")
 	Sound.play_sfx("res://Assets/SFX/button2.wav")
 	countdown = 3
+	if OS.is_debug_build():
+		countdown = 1
 	text = String(countdown)
 	$Start_Timer.start()
 	set_visible(true)

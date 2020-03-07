@@ -46,9 +46,7 @@ func _on_game_state_changed():
 func _on_Game_Timer_expired():
 	if Global.game_state[current_stack_id]["cards"].size() % 2:
 		if $Canvas.history.size() <= 1:
-			var history_file := File.new()
-			history_file.open("res://Assets/Misc/AFK_History.txt", File.READ)
-			$Canvas.history = history_file.get_var()
+			$Canvas.history = [[{"speed": 0, "position": Vector2(960, 540), "color":Color("#000000")}],[]]
 			$Canvas.redraw()
 	elif not Title.text:
 		Title.text = "I am AFK :|"

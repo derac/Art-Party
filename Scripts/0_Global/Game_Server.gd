@@ -28,10 +28,7 @@ func _player_disconnected(id : int) -> void:
 			#get_tree().change_scene_to(setup_screen)
 
 func _server_disconnected() -> void:
-	match get_tree().get_current_scene().get_name():
-		"Lobby":
-			get_tree().change_scene_to(setup_screen)
-		"Play":
+	if get_tree().get_current_scene().get_name() != "End":
 			get_tree().change_scene_to(setup_screen)
 
 func _connection_succeeded() -> void:

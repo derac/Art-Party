@@ -5,8 +5,8 @@ var display_turn := 1
 var scores := {}
 
 const score_game = preload("res://Scripts/Utility/score_game.gd")
-const Turn_Is_Canvas_stylebox = preload("res://Screens/Components/Turn_Is_Canvas.tres")
-const Word_stylebox = preload("res://Screens/Components/Review_Word.tres")
+const Turn_Is_Canvas_stylebox = preload("res://Screens/Styles/Turn_Is_Canvas.tres")
+const Word_stylebox = preload("res://Screens/Styles/Review_Word.tres")
 
 func set_player_id(value : int) -> void:
 	player_id = value

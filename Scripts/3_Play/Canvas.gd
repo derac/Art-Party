@@ -45,8 +45,8 @@ func _gui_input(event) -> void:
 	elif event is InputEventMouseMotion and history[-1].size():
 		if history[-1][-1]["position"].distance_to(get_viewport().get_mouse_position()) > min_draw_dist:
 			history[-1].append({"position": get_viewport().get_mouse_position(),
-					"speed": history[-1][-1]["position"].distance_to(get_viewport().get_mouse_position()),
-					"color": Color_Picker.color})
+								"speed": history[-1][-1]["position"].distance_to(get_viewport().get_mouse_position()),
+								"color": Color_Picker.color})
 			pens[1].update()
 
 func _draw_picture() -> void:

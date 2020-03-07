@@ -3,11 +3,11 @@
 [ext_resource path="res://Scripts/3_Play/Canvas.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Misc/Quicksand-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scripts/4_End/Review/Review.gd" type="Script" id=3]
-[ext_resource path="res://Screens/Components/Turn_Is_Canvas.tres" type="StyleBox" id=4]
+[ext_resource path="res://Screens/Styles/Turn_Is_Canvas.tres" type="StyleBox" id=4]
 [ext_resource path="res://Assets/Images/right_arrow.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Images/left_arrow.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Images/Close.png" type="Texture" id=7]
-[ext_resource path="res://Screens/Components/Review_Word.tres" type="StyleBox" id=8]
+[ext_resource path="res://Screens/Styles/Review_Word.tres" type="StyleBox" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 0.0
@@ -185,7 +185,6 @@ __meta__ = {
 }
 
 [node name="Points" type="Label" parent="Controls"]
-visible = false
 margin_left = 170.0
 margin_right = 330.0
 margin_bottom = 160.0
@@ -204,8 +203,8 @@ __meta__ = {
 }
 
 [node name="Turn" type="Label" parent="Controls"]
-margin_left = 170.0
-margin_right = 860.0
+margin_left = 340.0
+margin_right = 945.0
 margin_bottom = 160.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -220,7 +219,7 @@ __meta__ = {
 }
 
 [node name="Word" type="Label" parent="Controls"]
-margin_left = 870.0
+margin_left = 955.0
 margin_right = 1560.0
 margin_bottom = 160.0
 size_flags_horizontal = 7
