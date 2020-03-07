@@ -2,6 +2,11 @@
 1. [Download Godot](https://godotengine.org/download/) and start it
 2. Download this project and load it in Godot
 
+## Play
+1. [Download the game](https://derac.itch.io/artparty)
+2. Click on a player in your local network to join their lobby
+3. Otherwise, enter the IP of the player you want to connect to
+
 ## Rules
 1. Start with 4+ players.
 2. Take a word.
