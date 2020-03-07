@@ -1,5 +1,3 @@
-<img src="https://github.com/der-ac/Art-Party/blob/master/Assets/Icons/icon_120.png" />
-
 <img src="https://img.itch.zone/aW1hZ2UvNTY4NDU4LzMwNzIwMTEucG5n/347x500/5%2FZ6QT.png" width="40%" height="40%" /> <img src="https://img.itch.zone/aW1hZ2UvNTY4NDU4LzMwNzE3OTQucG5n/794x1000/9FRk4O.png" width="40%"  height="40%" />
 
 ## Develop
