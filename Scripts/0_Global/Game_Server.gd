@@ -9,8 +9,6 @@ var setup_screen := load("res://Screens/Setup.tscn")
 var play_screen := load("res://Screens/Play.tscn")
 
 func _ready() -> void:
-	print(pause_mode)
-	
 	get_tree().connect("network_peer_connected", self, "_player_connected")
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
 	get_tree().connect("server_disconnected", self, "_server_disconnected")
