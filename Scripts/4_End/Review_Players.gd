@@ -19,12 +19,14 @@ func _ready() -> void:
 	for i in score_array.size():
 		create_review_button(Global.game_state[score_array[i][0]]['name'],
 							 score_array[i][0],
-							 scores[score_array[i][0]])
+							 scores[score_array[i][0]],
+							 i + 1)
 
 func create_review_button(player_name : String,
-						  player_id: int,
-						  score: int) -> void:
+						  player_id : int,
+						  score : int,
+						  place : int) -> void:
 	var instance = review_button.instance()
 	add_child(instance)
 	instance.player_id = player_id
-	instance.text = String(score) + " - " + player_name
+	instance.text = String(place) + ". " + player_name + ", " + String(score) + "!"
