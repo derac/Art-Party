@@ -113,4 +113,5 @@ func get_next_card():
 
 func update_waiting_label() -> void:
 	var player_offset : int = Global.game_state[current_stack_id]["cards"].size() - 1
-	$Pause/Waiting_Label.text = "waiting for " + Global.game_state[ids[(my_id_index - turn + player_offset) % ids.size()]]["name"]
+	var player_name : String = Global.game_state[ids[(my_id_index - turn + player_offset) % ids.size()]]["name"]
+	$Pause/Waiting_Label.text = "waiting for " + player_name

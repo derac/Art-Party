@@ -1,14 +1,13 @@
 extends Control
 
 var player_id : int setget set_player_id
-var ids := Global.game_state.keys()
-var player_id_index : int
 var display_turn := 1
+
+var score_game := load("res://Scripts/Utility/score_game.gd")
 
 func set_player_id(value : int) -> void:
 	display_turn = 1
 	player_id = value
-	player_id_index = ids.find(player_id)
 	update_display(display_turn)
 	Sound.play_sfx("res://Assets/SFX/button2.wav", 0, 1.5)	
 	visible = true
@@ -31,7 +30,9 @@ func _on_Return_pressed():
 	
 func update_display(turn : int) -> void:
 	display_turn = turn
-	$Controls/Turn.text = String(turn) + ". " + Global.game_state[ids[(player_id_index + turn - 1) % ids.size()]]["name"]
+	var played_by = Global.game_state[player_id]["played_by"][turn]
+	$Controls/Turn.text = String(turn) + ". " + Global.game_state[played_by]["name"]
+
 	if turn % 2:
 		$Controls/Title.text = Global.game_state[player_id]["cards"][turn - 1]
 		$Canvas.history = Global.game_state[player_id]["cards"][turn]
