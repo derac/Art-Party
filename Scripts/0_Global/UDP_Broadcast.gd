@@ -3,6 +3,7 @@ extends Node
 var udp := PacketPeerUDP.new()
 const PORT = 23572
 var heartbeat_timer := OS.get_system_time_msecs()
+var player_ticks := {}
 var listening := true
 var broadcasting := true
 
@@ -32,8 +33,9 @@ func run_command(ip, data) -> void:
 
 func update_udp_data(ip, data) -> void:
 	if (data is Dictionary) and data.has_all(["name", "is_server", "port"]):
-		data["last_tick"] = OS.get_system_time_msecs()
-		Global.udp_data[ip] = data
+		player_ticks[ip] = OS.get_system_time_msecs()
+		if not Global.udp_data.has(ip) or Global.udp_data[ip].hash() != data.hash():
+			Global.udp_data[ip] = data
 
 func send_heartbeat() -> void:
 	if broadcasting:
@@ -47,7 +49,7 @@ func send_heartbeat() -> void:
 func remove_inactive() -> void:
 	if listening:
 		for ip in Global.udp_data.keys():
-			if heartbeat_timer - Global.udp_data[ip]["last_tick"] > 1000:
+			if heartbeat_timer - player_ticks[ip] > 1000:
 				Global.udp_data.erase(ip)
 				# Trigger setter for signaling
 				Global.udp_data_set(Global.udp_data)

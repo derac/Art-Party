@@ -3,7 +3,7 @@ extends Node
 var my_name : String = ""
 var external_ip := ""
 var UPNP_state := "uninitialized"
-# udp_data = {"PLAYER_IP": {"is_server": bool, "last_tick": int, "name": ''}}
+# udp_data = {"PLAYER_IP": {"is_server": bool, "name": ''}}
 var udp_data := {} setget udp_data_set
 signal udp_data_changed
 # game_state = {int network_id: {"name": '', "cards": [], "played_by": []}}
