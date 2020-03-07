@@ -1,7 +1,7 @@
 
 # Godot
 .import/
-
+**/*.import
 #export_presets.cfg
 
 # Mac OSX
