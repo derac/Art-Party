@@ -8,7 +8,7 @@ const stylebox = preload("res://Screens/Styles/Game_Timer.tres")
 
 func _ready():
 	if OS.is_debug_build():
-		time_left = 10
+		time_left = 60
 	
 	stylebox.set_border_color(Color("#FFA300"))
 	text = time_format(time_left)
@@ -34,6 +34,6 @@ func reset() -> void:
 	$Countdown.start()
 
 static func time_format(time : int) -> String:
-	var minutes = time / 60
+	var minutes = floor(time / 60)
 	var seconds = time % 60
 	return "%01d:%02d" % [minutes, seconds]
