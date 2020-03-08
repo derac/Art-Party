@@ -20,15 +20,15 @@ static func douglas_peucker(point_list : Array, speed_list : Array, epsilon : fl
 	var index := 0
 	var smax := 0
 	var sindex := 0
-	var end := point_list.size()
-	for i in range(1, end - 1):
+	var end := point_list.size() - 1
+	for i in range(1, end):
 		var d = perpendicular_distance(point_list[i],
 									   point_list[0],
-									   point_list[end - 1])
+									   point_list[end])
 		if (d > dmax):
 			index = i
 			dmax = d
-		var smaller_end = speed_list[0] if speed_list[0] < speed_list[end - 1] else speed_list[end - 1]
+		var smaller_end = speed_list[0] if speed_list[0] < speed_list[end] else speed_list[end]
 		if speed_list[i] - smaller_end > smax:
 			sindex = i
 			smax = speed_list[i] - smaller_end
@@ -37,15 +37,15 @@ static func douglas_peucker(point_list : Array, speed_list : Array, epsilon : fl
 	if dmax > epsilon:
 		return (douglas_peucker(point_list.slice(0, index - 1),
 								speed_list.slice(0, index - 1), epsilon) +
-				douglas_peucker(point_list.slice(index, end - 1),
-								speed_list.slice(index, end - 1),epsilon))
+				douglas_peucker(point_list.slice(index, end),
+								speed_list.slice(index, end),epsilon))
 	elif smax > 10.0:
 		return (douglas_peucker(point_list.slice(0, sindex - 1),
 								speed_list.slice(0, sindex - 1), epsilon) +
-				douglas_peucker(point_list.slice(sindex, end - 1),
-								speed_list.slice(sindex, end - 1),epsilon))
+				douglas_peucker(point_list.slice(sindex, end),
+								speed_list.slice(sindex, end),epsilon))
 	else:
-		return [point_list[0], point_list[end - 1]]
+		return [point_list[0], point_list[end]]
 
 static func perpendicular_distance(p_test : Vector2, p1 : Vector2, p2 : Vector2) -> float:
 	var two_times_area := abs((p2.y - p1.y) * p_test.x - (p2.x - p1.x) * 

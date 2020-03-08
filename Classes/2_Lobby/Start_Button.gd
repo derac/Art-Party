@@ -7,9 +7,12 @@ func _ready() -> void:
 		set_visible(false)
 
 func _pressed() -> void:
-	if Game_Server.is_server == true:
+	var min_players = 1 if OS.is_debug_build() else 4
+	if Game_Server.is_server == true and Global.game_state.size() >= min_players:
 		Game_Server.peer.set_refuse_new_connections(true)
 		rpc("start_timer")
+	else:
+		Sound.play_sfx("res://Assets/SFX/bad.wav", -3, .75)
 
 remotesync func start_timer() -> void:
 	UDP_Broadcast.broadcasting = false
