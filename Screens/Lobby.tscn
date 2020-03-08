@@ -209,9 +209,9 @@ __meta__ = {
 
 [node name="UPNP_Bad" type="Label" parent="Information"]
 visible = false
-margin_top = 179.0
+margin_top = 180.0
 margin_right = 1520.0
-margin_bottom = 379.0
+margin_bottom = 380.0
 rect_min_size = Vector2( 0, 200 )
 custom_styles/normal = SubResource( 3 )
 custom_fonts/font = SubResource( 4 )
@@ -225,9 +225,9 @@ __meta__ = {
 
 [node name="UPNP_Good" type="Label" parent="Information"]
 visible = false
-margin_top = 399.0
+margin_top = 180.0
 margin_right = 1520.0
-margin_bottom = 599.0
+margin_bottom = 380.0
 rect_min_size = Vector2( 0, 200 )
 custom_styles/normal = SubResource( 5 )
 custom_fonts/font = SubResource( 4 )
@@ -238,7 +238,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Need_Players" type="Label" parent="Information"]
+margin_top = -1.0
+margin_right = 1520.0
+margin_bottom = 119.0
+rect_min_size = Vector2( 0, 120 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Need 3 more players to start."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Game_Players" type="Container" parent="Information"]
+margin_top = 140.0
 margin_right = 1520.0
 margin_bottom = 1060.0
 size_flags_horizontal = 3
