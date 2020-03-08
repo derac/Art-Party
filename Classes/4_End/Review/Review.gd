@@ -36,20 +36,17 @@ func update_display(turn : int) -> void:
 	
 	if scores[played_by]:
 		Turn_Is_Canvas_stylebox.set_border_color(Color("#008751"))
-		
 		Sound.play_sfx("res://Assets/SFX/good.wav")
 		$Controls/Points.text = "+" + String(scores[played_by])
 		$Controls/Points.set_visible(true)
 	else:
 		Turn_Is_Canvas_stylebox.set_border_color(Color("#FF004D"))
-		
 		Sound.play_sfx("res://Assets/SFX/bad.wav", -3, .75)
 		$Controls/Points.set_visible(false)
 	
 	if turn % 2:
 		Word_stylebox.set_border_color(Color("#83769C"))
 		$Turn_Is_Canvas.visible = true
-		
 		$Canvas.history = Global.game_state[player_id]["cards"][turn]
 		$Canvas.redraw()
 		$Controls/Word.text = Global.game_state[player_id]["cards"][turn - 1]

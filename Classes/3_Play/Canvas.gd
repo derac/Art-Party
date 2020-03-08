@@ -35,19 +35,19 @@ func _gui_input(event) -> void:
 			history[-1].append({"position": get_viewport().get_mouse_position(),
 								"speed": 0,
 								"color": Color_Picker.color})
-			pens[1].update()
+			pens[1].update() # _draw_current_stroke
 		elif history[-1].size() > 0:
 			history.append([])
 			history[-2] = simplify_stroke.simplify(history[-2], 1.0 / 3)
 			viewports[1].render_target_clear_mode = Viewport.CLEAR_MODE_ONLY_NEXT_FRAME
-			pens[1].update()
-			pens[0].update()
+			pens[1].update() # _draw_current_stroke
+			pens[0].update() # _draw_picture
 	elif event is InputEventMouseMotion and history[-1].size():
 		if history[-1][-1]["position"].distance_to(get_viewport().get_mouse_position()) > min_draw_dist:
 			history[-1].append({"position": get_viewport().get_mouse_position(),
 								"speed": history[-1][-1]["position"].distance_to(get_viewport().get_mouse_position()),
 								"color": Color_Picker.color})
-			pens[1].update()
+			pens[1].update() # _draw_current_stroke
 
 func _draw_picture() -> void:
 	if redraw_next_frame:
@@ -68,6 +68,7 @@ func _draw_current_stroke() -> void:
 
 func undo() -> void:
 	if history.size() > 1:
+		Sound.play_sfx("res://Assets/SFX/button1.wav", 0.0, 1.25)
 		history.remove(history.size()-2)
 		redraw()
 
@@ -108,4 +109,3 @@ func draw_brush(stroke : Array, index : int, pen : Node2D) -> void:
 		pen.draw_circle(stroke[0]["position"],
 						 base_width,
 						 stroke[0]["color"])
-

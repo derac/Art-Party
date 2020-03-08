@@ -8,7 +8,7 @@ const stylebox = preload("res://Screens/Styles/Game_Timer.tres")
 
 func _ready():
 	if OS.is_debug_build():
-		time_left = 3
+		time_left = 30
 	
 	stylebox.set_border_color(Color("#FFA300"))
 	text = time_format(time_left)
