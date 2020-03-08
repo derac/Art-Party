@@ -2,7 +2,6 @@ extends Stretch_Grid
 
 var player_label := load("res://Screens/Components/Player_Label.tscn")
 var server_label := load("res://Screens/Components/Join_Button.tscn")
-var data_size := Global.udp_data.keys().size()
 
 func _ready() -> void:
 	Global.connect("udp_data_changed", self, "_on_udp_data_changed")
