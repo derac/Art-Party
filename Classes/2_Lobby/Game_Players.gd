@@ -13,7 +13,10 @@ func _on_game_state_changed() -> void:
 	
 	var player_num := Global.game_state.size()
 	if player_num < 4:
-		Need_Players.text = "Need " + String(4 - player_num) + " more players to start."
+		if OS.is_debug_build():
+			Need_Players.text = "Debug build, less than 4 players allowed."
+		else:
+			Need_Players.text = "Need " + String(4 - player_num) + " more players to start."
 		Need_Players.set_visible(true)
 	else:
 		Need_Players.set_visible(false)

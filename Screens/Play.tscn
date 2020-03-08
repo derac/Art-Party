@@ -111,8 +111,8 @@ __meta__ = {
 [node name="my_name_test" type="LineEdit" parent="."]
 visible = false
 margin_left = 10.0
-margin_top = 900.0
-margin_right = 710.0
+margin_top = 940.0
+margin_right = 760.0
 margin_bottom = 1070.0
 focus_mode = 0
 mouse_filter = 2
@@ -124,10 +124,11 @@ custom_colors/cursor_color = Color( 0.160784, 0.678431, 1, 0.392157 )
 custom_colors/font_color_selected = Color( 1, 0.92549, 0.152941, 1 )
 custom_colors/font_color = Color( 1, 0.92549, 0.152941, 1 )
 custom_colors/font_color_uneditable = Color( 1, 0.92549, 0.152941, 1 )
-text = "name"
+text = "name debug"
 align = 1
 max_length = 255
 editable = false
+expand_to_text_length = true
 selecting_enabled = false
 placeholder_alpha = 1.0
 caret_blink = true
@@ -407,7 +408,8 @@ self_modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 80, 80 )
 texture = ExtResource( 1 )
 
-[node name="Dropper" type="Sprite" parent="Controls/Color_Picker/Liquid"]
+[node name="Dropper" type="Sprite" parent="Controls/Color_Picker"]
+position = Vector2( 80, 80 )
 texture = ExtResource( 9 )
 
 [node name="Undo" type="Button" parent="Controls"]
