@@ -11,13 +11,10 @@ func _ready() -> void:
 		set_visible(false)
 
 func _pressed() -> void:
-	try_UPNP()
-	
 	Address.set_visible(!Address.is_visible())
 	if Address.is_visible():
-		Sound.play_sfx("res://Assets/SFX/button2.wav", 0.0, 2)
+		try_UPNP()
 	else:
-		Sound.play_sfx("res://Assets/SFX/button2.wav", 0.0, 0.5)
 		UPNP_Bad.set_visible(false)
 		UPNP_Good.set_visible(false)
 	Game_Players._on_game_state_changed()
@@ -48,12 +45,12 @@ func try_UPNP() -> void:
 	if Global.UPNP_state == "succeeded":
 		Sound.play_sfx("res://Assets/SFX/good.wav")
 		UPNP_Good.set_visible(true)
-	if Global.UPNP_state == "failed":
-		Sound.play_sfx("res://Assets/SFX/bad.wav", -3, .75)
-		UPNP_Bad.set_visible(true)
 	if Global.external_ip == "":
 		UPNP_Bad.set_visible(true)
 		Global.UPNP_state = "failed"
 		$HTTPRequest.request("http://ipinfo.io/ip")
+	if Global.UPNP_state == "failed":
+		Sound.play_sfx("res://Assets/SFX/bad.wav", -3, .75)
+		UPNP_Bad.set_visible(true)
 	else:
 		set_address(Global.external_ip)

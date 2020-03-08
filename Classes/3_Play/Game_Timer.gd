@@ -8,7 +8,7 @@ const stylebox = preload("res://Screens/Styles/Game_Timer.tres")
 
 func _ready():
 	if OS.is_debug_build():
-		time_left = 30
+		time_left = 10
 	
 	stylebox.set_border_color(Color("#FFA300"))
 	text = time_format(time_left)
@@ -23,7 +23,7 @@ func _on_Countdown_timeout():
 	elif time_left <= 10:
 		if time_left == 3:
 			stylebox.set_border_color(Color("#FF004D"))
-		Sound.play_sfx("res://Assets/SFX/button1.wav", 0.0, 10 / time_left)
+		Sound.play_sfx("res://Assets/SFX/button1.wav", 0.0, 10.0 / time_left)
 
 func stop() -> void:
 	$Countdown.stop()
