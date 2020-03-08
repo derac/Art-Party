@@ -4,7 +4,7 @@ var player_id : int setget set_player_id
 var display_turn := 1
 var scores := {}
 
-const score_game = preload("res://Scripts/Utility/score_game.gd")
+const score_game = preload("res://Classes/Utility/score_game.gd")
 const Turn_Is_Canvas_stylebox = preload("res://Screens/Styles/Turn_Is_Canvas.tres")
 const Word_stylebox = preload("res://Screens/Styles/Review_Word.tres")
 

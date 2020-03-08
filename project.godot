@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Container",
 "class": "Stretch_Grid",
 "language": "GDScript",
-"path": "res://Scripts/Utility/Stretch_Grid.gd"
+"path": "res://Classes/Utility/Stretch_Grid.gd"
 } ]
 _global_script_class_icons={
 "Stretch_Grid": ""
@@ -37,10 +37,10 @@ default_bus_layout="res://Assets/Misc/Bus_Layout.tres"
 
 [autoload]
 
-Global="*res://Scripts/0_Global/Global.gd"
-UDP_Broadcast="*res://Scripts/0_Global/UDP_Broadcast.gd"
-Game_Server="*res://Scripts/0_Global/Game_Server.gd"
-Sound="*res://Scripts/0_Global/Sound.gd"
+Global="*res://Classes/0_Global/Global.gd"
+UDP_Broadcast="*res://Classes/0_Global/UDP_Broadcast.gd"
+Game_Server="*res://Classes/0_Global/Game_Server.gd"
+Sound="*res://Classes/0_Global/Sound.gd"
 Exit_Menu="*res://Screens/Components/Exit_Menu.tscn"
 
 [display]

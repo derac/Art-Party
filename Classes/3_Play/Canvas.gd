@@ -8,7 +8,7 @@ var redraw_next_frame := false
 var min_draw_dist := 1.0
 var last_index := 0
 
-const simplify_stroke = preload("res://Scripts/Utility/simplify_stoke.gd")
+const simplify_stroke = preload("res://Classes/Utility/simplify_stoke.gd")
 
 func _ready() -> void:
 	var callback_names = ["_draw_picture", "_draw_current_stroke"]
