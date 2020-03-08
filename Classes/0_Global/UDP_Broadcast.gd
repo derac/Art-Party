@@ -8,7 +8,6 @@ var listening := true
 var broadcasting := true
 
 func _ready() -> void:
-	# Broadcasting setup
 	udp.set_broadcast_enabled(true) # Needed for broadcasting on Android
 	udp.set_dest_address("255.255.255.255", PORT)
 	udp.listen(PORT)
@@ -19,7 +18,6 @@ func _process(_delta) -> void:
 		var ip = udp.get_packet_ip()
 		run_command(ip, data)
 		update_udp_data(ip, data)
-		
 	send_heartbeat()
 
 func run_command(ip, data) -> void:
