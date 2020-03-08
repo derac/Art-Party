@@ -19,6 +19,19 @@ func game_state_set(value : Dictionary) -> void:
 	emit_signal("game_state_changed")
 
 func _ready() -> void:
+	Input.set_custom_mouse_cursor(load("res://Assets/Images/mouse_press.png"),
+								  Input.CURSOR_POINTING_HAND,
+								  Vector2(36,33))
+	Input.set_custom_mouse_cursor(load("res://Assets/Images/mouse.png"),
+								  Input.CURSOR_ARROW,
+								  Vector2(36,33))
+	Input.set_custom_mouse_cursor(load("res://Assets/Images/mouse_paint.png"),
+								  Input.CURSOR_CROSS,
+								  Vector2(36,33))
+	Input.set_custom_mouse_cursor(load("res://Assets/Images/mouse_text.png"),
+								  Input.CURSOR_IBEAM,
+								  Vector2(36,33))
+	
 	OS.set_borderless_window(true)
 	OS.set_window_maximized(true)
 	OS.set_window_size(OS.get_screen_size())

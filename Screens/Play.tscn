@@ -139,6 +139,7 @@ __meta__ = {
 margin_right = 1920.0
 margin_bottom = 1080.0
 mouse_filter = 1
+mouse_default_cursor_shape = 3
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -445,7 +446,6 @@ __meta__ = {
 margin_right = 1000.0
 margin_bottom = 160.0
 mouse_filter = 2
-mouse_default_cursor_shape = 0
 custom_styles/read_only = SubResource( 1 )
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 1 )

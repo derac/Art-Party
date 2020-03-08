@@ -75,14 +75,14 @@ outline_color = Color( 0, 0.529412, 0.317647, 1 )
 extra_spacing_char = 5
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=6]
 size = 70
 outline_size = 5
 outline_color = Color( 0.113725, 0.168627, 0.32549, 1 )
 font_data = ExtResource( 2 )
 fallback/0 = ExtResource( 9 )
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=7]
 content_margin_left = 0.0
 content_margin_right = 0.0
 content_margin_top = 0.0
@@ -98,7 +98,7 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=8]
 content_margin_left = 0.0
 content_margin_right = 0.0
 content_margin_top = 0.0
@@ -212,7 +212,7 @@ margin_bottom = 160.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/normal = ExtResource( 10 )
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 0.92549, 0.152941, 1 )
 text = "turn player"
 align = 1
@@ -228,7 +228,7 @@ margin_bottom = 160.0
 size_flags_horizontal = 7
 size_flags_vertical = 7
 custom_styles/normal = ExtResource( 8 )
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 0.92549, 0.152941, 1 )
 custom_colors/font_color_shadow = Color( 1, 0.92549, 0.152941, 1 )
 text = "word"
@@ -245,10 +245,10 @@ margin_bottom = 160.0
 rect_min_size = Vector2( 160, 0 )
 focus_mode = 0
 mouse_default_cursor_shape = 2
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 8 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
 custom_fonts/font = SubResource( 9 )
 custom_colors/font_color_disabled = Color( 0.960784, 0.792157, 0.184314, 1 )
 custom_colors/font_color = Color( 0.960784, 0.792157, 0.184314, 1 )
@@ -266,10 +266,10 @@ margin_bottom = 160.0
 rect_min_size = Vector2( 160, 0 )
 focus_mode = 0
 mouse_default_cursor_shape = 2
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 8 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
 custom_fonts/font = SubResource( 9 )
 custom_colors/font_color_disabled = Color( 0.960784, 0.792157, 0.184314, 1 )
 custom_colors/font_color = Color( 0.960784, 0.792157, 0.184314, 1 )
