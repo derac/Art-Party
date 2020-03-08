@@ -1,6 +1,6 @@
 extends CheckBox
 
-var mute_file = File.new()
+var mute_file := File.new()
 
 func _ready() -> void:
 	mute_file.open("user://mute_state.txt", File.READ)

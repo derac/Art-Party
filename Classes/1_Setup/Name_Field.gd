@@ -1,6 +1,6 @@
 extends LineEdit
 
-var name_file = File.new()
+var name_file := File.new()
 
 func _ready() -> void:
 	name_file.open("user://player_name.txt", File.READ)

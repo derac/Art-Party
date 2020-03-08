@@ -1,7 +1,7 @@
 extends LineEdit
 
 var address := ''
-var address_file = File.new()
+var address_file := File.new()
 onready var Go = get_node("/root/Setup/Controls/Go")
 
 func _ready() -> void:

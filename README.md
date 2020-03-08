@@ -1,8 +1,8 @@
-<img src="https://img.itch.zone/aW1hZ2UvNTY4NDU4LzMwNzIwMTEucG5n/347x500/5%2FZ6QT.png" width="40%" height="40%" /> <img src="https://img.itch.zone/aW1hZ2UvNTY4NDU4LzMwNzE3OTQucG5n/794x1000/9FRk4O.png" width="40%"  height="40%" />
+<img src="https://img.itch.zone/aW1hZ2UvNTY4NDU4LzMwNzgwMTkucG5n/original/oALiUq.png" width="40%" height="40%" /> <img src="https://img.itch.zone/aW1hZ2UvNTY4NDU4LzMwNzgwMTgucG5n/original/1Rljmq.png" width="40%"  height="40%" />
 
 ## Develop 📁
 1. [Download Godot](https://godotengine.org/download/) and run it.
-2. Download this project and load project.godot from the project finder.
+2. Download this project and load project.godot from the project finder.S
 
 ## Play 🎲
 1. [Download the game](https://derac.itch.io/artparty) and run it.
