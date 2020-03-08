@@ -7,6 +7,7 @@ var scores := {}
 const score_game = preload("res://Classes/Utility/score_game.gd")
 const Turn_Is_Canvas_stylebox = preload("res://Screens/Styles/Turn_Is_Canvas.tres")
 const Word_stylebox = preload("res://Screens/Styles/Review_Word.tres")
+const Turn_stylebox = preload("res://Screens/Styles/Review_Turn.tres")
 
 func set_player_id(value : int) -> void:
 	player_id = value
@@ -35,21 +36,23 @@ func update_display(turn : int) -> void:
 	$Controls/Turn.text = String(turn) + ". " + Global.game_state[played_by]["name"]
 	
 	if scores[played_by]:
-		Turn_Is_Canvas_stylebox.set_border_color(Color("#008751"))
 		Sound.play_sfx("res://Assets/SFX/good.wav")
+		Turn_Is_Canvas_stylebox.set_border_color(Color("#008751"))
+		Turn_stylebox.set_border_color(Color("#008751"))
 		$Controls/Points.text = "+" + String(scores[played_by])
 		$Controls/Points.set_visible(true)
 	else:
-		Turn_Is_Canvas_stylebox.set_border_color(Color("#FF004D"))
 		Sound.play_sfx("res://Assets/SFX/bad.wav", -3, .75)
+		Turn_Is_Canvas_stylebox.set_border_color(Color("#FF004D"))
+		Turn_stylebox.set_border_color(Color("#FF004D"))
 		$Controls/Points.set_visible(false)
 	
 	if turn % 2:
 		Word_stylebox.set_border_color(Color("#83769C"))
 		$Turn_Is_Canvas.visible = true
+		$Controls/Word.text = Global.game_state[player_id]["cards"][turn - 1]
 		$Canvas.history = Global.game_state[player_id]["cards"][turn]
 		$Canvas.redraw()
-		$Controls/Word.text = Global.game_state[player_id]["cards"][turn - 1]
 	else:
 		if scores[played_by]:
 			Word_stylebox.set_border_color(Color("#008751"))
