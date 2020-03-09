@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Classes/3_Play/Color_Button.gd" type="Script" id=1]
 
-
 [node name="Color_Button" type="Button"]
 margin_right = 110.0
 margin_bottom = 110.0
