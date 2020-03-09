@@ -29,3 +29,5 @@ func toggle() -> void:
 		else:
 			$Menu/Quit_Button.set_visible(true)
 		visible = true
+	# Forces mouse to update >_>
+	get_viewport().warp_mouse(get_viewport().get_mouse_position())
