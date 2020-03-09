@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Classes/3_Play/Canvas.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Misc/Quicksand-Bold.ttf" type="DynamicFontData" id=2]
@@ -120,6 +120,20 @@ size = 70
 outline_size = 5
 outline_color = Color( 0.184314, 0.168627, 0.419608, 1 )
 font_data = ExtResource( 2 )
+
+[sub_resource type="InputEventAction" id=10]
+action = "ui_left"
+pressed = true
+
+[sub_resource type="ShortCut" id=11]
+shortcut = SubResource( 10 )
+
+[sub_resource type="InputEventAction" id=12]
+action = "ui_right"
+pressed = true
+
+[sub_resource type="ShortCut" id=13]
+shortcut = SubResource( 12 )
 
 [node name="Review" type="Control"]
 anchor_right = 1.0
@@ -254,6 +268,7 @@ custom_colors/font_color_disabled = Color( 0.960784, 0.792157, 0.184314, 1 )
 custom_colors/font_color = Color( 0.960784, 0.792157, 0.184314, 1 )
 custom_colors/font_color_hover = Color( 0.960784, 0.792157, 0.184314, 1 )
 custom_colors/font_color_pressed = Color( 0.960784, 0.792157, 0.184314, 1 )
+shortcut = SubResource( 11 )
 icon = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -275,6 +290,7 @@ custom_colors/font_color_disabled = Color( 0.960784, 0.792157, 0.184314, 1 )
 custom_colors/font_color = Color( 0.960784, 0.792157, 0.184314, 1 )
 custom_colors/font_color_hover = Color( 0.960784, 0.792157, 0.184314, 1 )
 custom_colors/font_color_pressed = Color( 0.960784, 0.792157, 0.184314, 1 )
+shortcut = SubResource( 13 )
 icon = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
