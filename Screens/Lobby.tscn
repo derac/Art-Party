@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Assets/Misc/Quicksand-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Classes/2_Lobby/Back_Button.gd" type="Script" id=2]
+[ext_resource path="res://Screens/Styles/Start_Hover.tres" type="StyleBox" id=3]
 [ext_resource path="res://Classes/2_Lobby/Start_Button.gd" type="Script" id=4]
 [ext_resource path="res://Classes/2_Lobby/My_IP_Button.gd" type="Script" id=5]
 [ext_resource path="res://Classes/2_Lobby/Game_Players.gd" type="Script" id=6]
@@ -23,7 +24,7 @@ corner_radius_bottom_left = 50
 size = 90
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=15]
 content_margin_left = 40.0
 content_margin_right = 40.0
 content_margin_top = 20.0
@@ -62,19 +63,22 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 40.0
+content_margin_right = 40.0
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
 draw_center = false
 border_width_left = 20
 border_width_top = 20
 border_width_right = 20
 border_width_bottom = 20
-border_color = Color( 0, 0.529412, 0.317647, 1 )
+border_color = Color( 1, 0.639216, 0, 1 )
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
-shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
 
 [sub_resource type="StyleBoxFlat" id=7]
 content_margin_left = 0.0
@@ -209,11 +213,10 @@ __meta__ = {
 
 [node name="UPNP_Bad" type="Label" parent="Information"]
 visible = false
-margin_top = 180.0
 margin_right = 1520.0
-margin_bottom = 380.0
+margin_bottom = 200.0
 rect_min_size = Vector2( 0, 200 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/normal = SubResource( 15 )
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Could not forward port with UPNP.
@@ -239,9 +242,8 @@ __meta__ = {
 }
 
 [node name="Need_Players" type="Label" parent="Information"]
-margin_top = -1.0
 margin_right = 1520.0
-margin_bottom = 119.0
+margin_bottom = 120.0
 rect_min_size = Vector2( 0, 120 )
 custom_styles/normal = SubResource( 3 )
 custom_fonts/font = SubResource( 4 )
@@ -284,8 +286,8 @@ mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.5
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 6 )
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 3 )
 custom_styles/disabled = SubResource( 7 )
 custom_styles/normal = SubResource( 7 )
 custom_fonts/font = SubResource( 8 )

@@ -14,10 +14,11 @@ func _pressed() -> void:
 	Address.set_visible(!Address.is_visible())
 	if Address.is_visible():
 		try_UPNP()
+		
 	else:
 		UPNP_Bad.set_visible(false)
 		UPNP_Good.set_visible(false)
-	Game_Players._on_game_state_changed()
+	Game_Players.refresh()
 	OS.set_clipboard(Address.text)
 	text = "copied"
 	$Copy_Timer.start()
@@ -40,17 +41,14 @@ func try_UPNP() -> void:
 		if upnp.discover() == 0:
 			var gateway = upnp.get_gateway()
 			if gateway.is_valid_gateway() and gateway.add_port_mapping(Game_Server.port) == 0:
-				Global.external_ip = gateway.query_external_address()
+				set_address(gateway.query_external_address())
 				Global.UPNP_state = "succeeded"
+		if Global.external_ip == "":
+			Global.UPNP_state = "failed"
+			$HTTPRequest.request("http://ipinfo.io/ip")
 	if Global.UPNP_state == "succeeded":
-		Sound.play_sfx("res://Assets/SFX/good.wav")
+		Sound.play_sfx("res://Assets/SFX/good.wav", -5)
 		UPNP_Good.set_visible(true)
-	if Global.external_ip == "":
-		UPNP_Bad.set_visible(true)
-		Global.UPNP_state = "failed"
-		$HTTPRequest.request("http://ipinfo.io/ip")
 	if Global.UPNP_state == "failed":
-		Sound.play_sfx("res://Assets/SFX/bad.wav", -3, .75)
+		Sound.play_sfx("res://Assets/SFX/bad.wav", -10, .75)
 		UPNP_Bad.set_visible(true)
-	else:
-		set_address(Global.external_ip)
