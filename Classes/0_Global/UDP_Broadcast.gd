@@ -6,11 +6,16 @@ var heartbeat_timer := OS.get_system_time_msecs()
 var player_ticks := {}
 var listening := true
 var broadcasting := true
+var err
 
 func _ready() -> void:
 	udp.set_broadcast_enabled(true) # Needed for broadcasting on Android
-	udp.set_dest_address("255.255.255.255", PORT)
-	udp.listen(PORT)
+	err = udp.set_dest_address("255.255.255.255", PORT)
+	if err:
+		print("Failed to broadcast on UDP 255.255.255.255:" + String(PORT))
+	err = udp.listen(PORT)
+	if err:
+		print("Failed to listen on UDP port " + String(PORT))
 
 func _process(_delta) -> void:
 	if listening and udp.get_available_packet_count() > 0:
@@ -23,7 +28,8 @@ func _process(_delta) -> void:
 func run_command(ip, data) -> void:
 	if data is String and Global.udp_data.has(ip):
 		if data == "remove":
-			Global.udp_data.erase(ip)
+			if not Global.udp_data.erase(ip):
+				print("Tried to remove %s from udp_data, but it doesn't exist." % ip)
 			# Trigger setter for signaling
 			Global.udp_data_set(Global.udp_data)
 		if data == "stop_serving":
@@ -39,18 +45,22 @@ func send_heartbeat() -> void:
 	if broadcasting:
 		if OS.get_system_time_msecs() - heartbeat_timer > 100:
 			heartbeat_timer = OS.get_system_time_msecs()
-			udp.put_var({"name": Global.my_name,
-						 "is_server": Game_Server.is_server,
-						 "port": Game_Server.port})
+			err = udp.put_var({"name": Global.my_name,
+							   "is_server": Game_Server.is_server,
+							   "port": Game_Server.port})
+			if err:
+				print("Failed to send current broadcast data.")
 			remove_inactive()
 
 func remove_inactive() -> void:
 	if listening:
 		for ip in Global.udp_data.keys():
 			if heartbeat_timer - player_ticks[ip] > 1000:
-				Global.udp_data.erase(ip)
+				if not Global.udp_data.erase(ip):
+					print("Tried to remove %s from udp_data, but it doesn't exist." % ip)
 				# Trigger setter for signaling
-				Global.udp_data_set(Global.udp_data)
+				else:
+					Global.udp_data_set(Global.udp_data)
 
 func _exit_tree() -> void:
 	udp.close()

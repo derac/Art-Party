@@ -1,5 +1,6 @@
 extends Node
 
+var err
 var is_client := false
 var is_server := false
 var port := (30000 + randi() % 3001)
@@ -9,7 +10,7 @@ var setup_screen := load("res://Screens/Setup.tscn")
 var play_screen := load("res://Screens/Play.tscn")
 
 func _ready() -> void:
-	get_tree().connect("network_peer_connected", self, "_player_connected")
+	err = get_tree().connect("network_peer_connected", self, "_player_connected")
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
 	get_tree().connect("server_disconnected", self, "_server_disconnected")
 	peer.connect("connection_succeeded", self, "_connection_succeeded")
