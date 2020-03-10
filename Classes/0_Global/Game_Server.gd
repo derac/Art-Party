@@ -1,6 +1,6 @@
 extends Node
 
-var err
+var error : int
 var is_client := false
 var is_server := false
 var port := (30000 + randi() % 3001)
@@ -10,7 +10,7 @@ var setup_screen := load("res://Screens/Setup.tscn")
 var play_screen := load("res://Screens/Play.tscn")
 
 func _ready() -> void:
-	err = get_tree().connect("network_peer_connected", self, "_player_connected")
+	get_tree().connect("network_peer_connected", self, "_player_connected")
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
 	get_tree().connect("server_disconnected", self, "_server_disconnected")
 	peer.connect("connection_succeeded", self, "_connection_succeeded")
@@ -51,18 +51,19 @@ remotesync func send_data(data, cards_id : int) -> void:
 	Global.game_state_set(Global.game_state)
 
 func start_serving(retries : int = 3) -> int:
-	var err : int
+	error = 1
 	if !is_server:
-		err = peer.create_server(port, 32)
-		if err == OK:
+		error = peer.create_server(port, 64)
+		if not error:
 			Global.game_state[1] = new_data()
 			get_tree().set_network_peer(peer)
 			is_server = true
-			return err
+			return error
 		elif retries > 0:
+			print("Failed to start server at UDP port %s." % String(port))
 			port = (30000 + randi() % 3001)
 			start_serving(retries - 1)
-	return err
+	return error
 
 func stop_serving() -> void:
 	if is_server:
@@ -74,10 +75,12 @@ func stop_serving() -> void:
 func start_client(ip : String, server_port : int):
 	if is_client == false:
 		get_tree().set_network_peer(null)
-		var err := peer.create_client(ip, server_port)
-		if err == OK:
+		error = peer.create_client(ip, server_port)
+		if not error:
 			get_tree().set_network_peer(peer)
 			is_client = true
+		else:
+			print("Could not start game client at %s:%s." % [ip, String(server_port)])
 
 func stop_client() -> void:
 	if is_client == true:

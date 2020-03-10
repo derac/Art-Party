@@ -7,7 +7,6 @@ func _ready() -> void:
 	Global.connect("udp_data_changed", self, "_on_udp_data_changed")
 	
 func _on_udp_data_changed() -> void:
-	print(Global.udp_data)
 	for child in get_children():
 		child.queue_free()
 	

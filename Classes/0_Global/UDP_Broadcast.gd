@@ -13,9 +13,13 @@ func _ready() -> void:
 	err = udp.set_dest_address("255.255.255.255", PORT)
 	if err:
 		print("Failed to broadcast on UDP 255.255.255.255:" + String(PORT))
+	elif OS.is_debug_build():
+		print("Broadcasting on UDP 255.255.255.255:" + String(PORT))
 	err = udp.listen(PORT)
 	if err:
 		print("Failed to listen on UDP port " + String(PORT))
+	elif OS.is_debug_build():
+		print("Listening on UDP port " + String(PORT))
 
 func _process(_delta) -> void:
 	if listening and udp.get_available_packet_count() > 0:
@@ -43,7 +47,7 @@ func update_udp_data(ip, data) -> void:
 
 func send_heartbeat() -> void:
 	if broadcasting:
-		if OS.get_system_time_msecs() - heartbeat_timer > 100:
+		if OS.get_system_time_msecs() - heartbeat_timer > 250:
 			heartbeat_timer = OS.get_system_time_msecs()
 			err = udp.put_var({"name": Global.my_name,
 							   "is_server": Game_Server.is_server,
