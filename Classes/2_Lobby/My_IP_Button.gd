@@ -12,7 +12,7 @@ func _pressed() -> void:
 	if Global.external_ip == "":
 		$HTTPRequest.request("http://ipinfo.io/ip")
 	else:
-		set_address(Global.external_ip)
+		Address.set_address(Global.external_ip)
 	UPNP_Message.set_visible(!UPNP_Message.is_visible())
 	Address.set_visible(!Address.is_visible())
 	if Address.is_visible():
@@ -31,9 +31,4 @@ func _on_HTTPRequest_request_completed(_result: int,
 									   _response_code: int,
 									   _headers: PoolStringArray,
 									   body: PoolByteArray) -> void:
-	set_address(body.get_string_from_utf8())
-
-func set_address(address) -> void:
-	Global.external_ip = address
-	Address.text = "%s:%s" % [address, Game_Server.port]
-
+	Address.set_address(body.get_string_from_utf8())
