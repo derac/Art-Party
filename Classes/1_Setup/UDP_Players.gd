@@ -9,7 +9,11 @@ func _ready() -> void:
 func _on_udp_data_changed() -> void:
 	for child in get_children():
 		child.queue_free()
-
+	
+	for player in Global.udp_data.keys():
+		create_player_label(Global.udp_data[player], player)
+		
+	# Test Data
 #	var udp_data = {"1": {"is_server": true, "name": "derek", "ip": "1", "port": "1"},
 #				   "2": {"is_server": false, "name": "bob"},
 #				   "3": {"is_server": false, "name": "race"},
@@ -17,9 +21,6 @@ func _on_udp_data_changed() -> void:
 #				   "5": {"is_server": false, "name": "cody"},}
 #	for player in udp_data.keys():
 #		create_player_label(udp_data[player], player)
-	
-	for player in Global.udp_data.keys():
-		create_player_label(Global.udp_data[player], player)
 
 func create_player_label(player_data : Dictionary,
 						 player_ip : String) -> void:
