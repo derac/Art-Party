@@ -7,7 +7,6 @@ var port := (30000 + randi() % 3001)
 var peer := NetworkedMultiplayerENet.new()
 
 var setup_screen := load("res://Screens/Setup.tscn")
-var play_screen := load("res://Screens/Play.tscn")
 
 func _ready() -> void:
 	get_tree().connect("network_peer_connected", self, "_player_connected")
@@ -43,11 +42,6 @@ func _connection_succeeded() -> void:
 remote func register_player(player_data : Dictionary) -> void:
 	var id = get_tree().get_rpc_sender_id()
 	Global.game_state[id] = player_data
-
-remotesync func start_game() -> void:
-	error = get_tree().change_scene_to(play_screen)
-	if error:
-		print("Failed to change scene to play_screen")
 
 remotesync func send_data(data, cards_id : int) -> void:
 	var sender_id = get_tree().get_rpc_sender_id()

@@ -1,6 +1,7 @@
 extends Button
 
 var countdown : int
+var play_screen := load("res://Screens/Play.tscn")
 
 func _ready() -> void:
 	if Game_Server.is_server != true:
@@ -22,10 +23,10 @@ remotesync func start_timer() -> void:
 	if OS.is_debug_build():
 		countdown = 1
 	text = String(countdown)
-	$Start_Timer.start()
-	set_visible(true)
+	visible = true
+	disabled = true
 	grab_click_focus()
-	set_disabled(true)
+	$Start_Timer.start()
 	get_node("../Back").set_visible(false)
 	get_node("../My_IP").set_visible(false)
 
@@ -39,4 +40,9 @@ func _on_Timer_timeout() -> void:
 		text = String(countdown)
 		$Start_Timer.start()
 	else:
-		Game_Server.start_game()
+		start_game()
+
+func start_game() -> void:
+	var error: int = get_tree().change_scene_to(play_screen)
+	if error:
+		print("Failed to change scene to play_screen")
