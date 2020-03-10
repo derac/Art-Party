@@ -22,7 +22,7 @@ func refresh() -> void:
 			Start_Hover_stylebox.set_border_color(Color("#008751"))
 			Need_Players.text = "Debug build, less than 4 players allowed."
 		else:
-			Need_Players.text = "Need " + String(4 - player_num) + " more players to start."
+			Need_Players.text = "Need %s more players to start." % String(4 - player_num)
 		Need_Players.set_visible(true)
 	else:
 		Start_Hover_stylebox.set_border_color(Color("#008751"))

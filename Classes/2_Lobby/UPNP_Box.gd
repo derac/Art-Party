@@ -16,6 +16,7 @@ func initialize_UPNP() -> void:
 			Global.UPNP_state = "success"
 			Sound.play_sfx("res://Assets/SFX/good.wav", -5)
 	if not Global.UPNP_state == "success":
+		print("UPNP failed to forward game server UDP port %s." % String(Game_Server.port))
 		Global.UPNP_state = "failed"
 		Sound.play_sfx("res://Assets/SFX/bad.wav", -5, .75)
 	set_UPNP_Message()

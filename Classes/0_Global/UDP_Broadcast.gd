@@ -12,14 +12,14 @@ func _ready() -> void:
 	udp.set_broadcast_enabled(true) # Needed for broadcasting on Android
 	error = udp.set_dest_address("255.255.255.255", PORT)
 	if error:
-		print("Failed to broadcast on UDP 255.255.255.255:" + String(PORT))
+		print("Failed to broadcast on UDP 255.255.255.255:%s" % String(PORT))
 	elif OS.is_debug_build():
-		print("Broadcasting on UDP 255.255.255.255:" + String(PORT))
+		print("Broadcasting on UDP 255.255.255.255:%s" % String(PORT))
 	error = udp.listen(PORT)
 	if error:
-		print("Failed to listen on UDP port " + String(PORT))
+		print("Failed to listen on UDP port %s." % String(PORT))
 	elif OS.is_debug_build():
-		print("Listening on UDP port " + String(PORT))
+		print("Listening on UDP port %s." % String(PORT))
 
 func _process(_delta) -> void:
 	if listening and udp.get_available_packet_count() > 0:
@@ -69,12 +69,12 @@ func remove_inactive() -> void:
 func remove_self() -> void:
 	error = udp.put_var("remove")
 	if error:
-		print("Failed to broadcast remove command")
+		print("Failed to broadcast remove command.")
 
 func stop_serving() -> void:
 	error = udp.put_var("stop_serving")
 	if error:
-		print("Failed to broadcast stop_serving command")
+		print("Failed to broadcast stop_serving command.")
 
 func _exit_tree() -> void:
 	udp.close()

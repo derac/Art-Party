@@ -29,7 +29,7 @@ func create_player_label(player_data : Dictionary,
 		player_name = "anonymous"
 	if player_data['is_server']:
 		instance = server_label.instance()
-		player_name = "join " + player_name
+		player_name = "join %s" % player_name
 	else:
 		instance = player_label.instance()
 	add_child(instance)

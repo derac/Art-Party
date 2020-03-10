@@ -29,4 +29,4 @@ func create_review_button(player_name : String,
 	var instance = review_button.instance()
 	add_child(instance)
 	instance.player_id = player_id
-	instance.text = String(place) + ". " + player_name + ", " + String(score) + "!"
+	instance.text = "%s. %s, %s!" % [String(place), player_name, String(score)]
