@@ -16,9 +16,9 @@ func _pressed() -> void:
 	UPNP_Message.set_visible(!UPNP_Message.is_visible())
 	Address.set_visible(!Address.is_visible())
 	if Address.is_visible():
-		Sound.play_sfx("res://Assets/SFX/on.wav", -10, .75)
+		Sound.play_sfx("res://Assets/SFX/on.wav", -3, .5)
 	else:
-		Sound.play_sfx("res://Assets/SFX/off.wav", -10, .75)
+		Sound.play_sfx("res://Assets/SFX/on.wav", -3, .5)
 		
 	Game_Players.refresh()
 	text = "copied"

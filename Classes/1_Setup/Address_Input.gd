@@ -13,7 +13,7 @@ func _ready() -> void:
 	connect("focus_entered", self, "_focus_entered")
 
 func _focus_entered() -> void:
-	Sound.play_sfx("res://Assets/SFX/on.wav", -3.0, 0.5)
+	Sound.play_sfx("res://Assets/SFX/off.wav", -6.0, 2.0)
 
 func _gui_input(_event : InputEvent) -> void:
 	if address != text:

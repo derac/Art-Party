@@ -7,10 +7,10 @@ onready var Controls := [get_node("/root/Setup/Information/Address"),
 
 func _pressed() -> void:
 	if $By_IP_label.text == "cancel":
-		Sound.play_sfx("res://Assets/SFX/button2.wav", 0.0, 0.5)
+		Sound.play_sfx("res://Assets/SFX/on.wav", -3, .5)
 		$By_IP_label.text = "join\nby IP"
 	else:
-		Sound.play_sfx("res://Assets/SFX/button2.wav", 0.0, 2)
+		Sound.play_sfx("res://Assets/SFX/on.wav", -3, .5)
 		$By_IP_label.text = "cancel"
 	for control in Controls:
 		control.set_visible(!control.is_visible())
