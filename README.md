@@ -28,4 +28,4 @@ If a guess matches the starting word, every player who previously touched the ca
 - [Color Palette](https://lospec.com/palette-list/pico-8): PICO-8
 - All other art, programming, and design by Derek Olson under MIT
 
-<img src="https://raw.githubusercontent.com/der-ac/Art-Party/master/Assets/Icons/icon_120.png" />
+<img src="https://github.com/derac/Art-Party/blob/master/Assets/Icons/icon_192.png" />
