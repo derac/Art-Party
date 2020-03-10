@@ -1,4 +1,4 @@
-<img src="https://img.itch.zone/aW1hZ2UvNTY4NDU4LzMwNzgwMTkucG5n/original/oALiUq.png" width="40%" height="40%" /> <img src="https://img.itch.zone/aW1hZ2UvNTY4NDU4LzMwNzgwMTgucG5n/original/1Rljmq.png" width="40%"  height="40%" />
+<img src="https://img.itch.zone/aW1hZ2UvNTY4NDU4LzMwODM2MzYucG5n/794x1000/G49EOR.png" width="40%" height="40%" /> <img src="https://img.itch.zone/aW1hZ2UvNTY4NDU4LzMwNzgwMTgucG5n/original/1Rljmq.png" width="40%"  height="40%" />
 
 ## Develop 📁
 1. [Download Godot](https://godotengine.org/download/) and run it.
