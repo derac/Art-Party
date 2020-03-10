@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Assets/Misc/Quicksand-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Classes/2_Lobby/Back_Button.gd" type="Script" id=2]
@@ -6,6 +6,10 @@
 [ext_resource path="res://Classes/2_Lobby/Start_Button.gd" type="Script" id=4]
 [ext_resource path="res://Classes/2_Lobby/My_IP_Button.gd" type="Script" id=5]
 [ext_resource path="res://Classes/2_Lobby/Game_Players.gd" type="Script" id=6]
+[ext_resource path="res://Classes/2_Lobby/UPNP_Button.gd" type="Script" id=7]
+[ext_resource path="res://Screens/Styles/UPNP_Message.tres" type="StyleBox" id=8]
+[ext_resource path="res://Classes/2_Lobby/UPNP_Box.gd" type="Script" id=9]
+[ext_resource path="res://Classes/2_Lobby/Address.gd" type="Script" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
@@ -24,34 +28,8 @@ corner_radius_bottom_left = 50
 size = 90
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=15]
-content_margin_left = 40.0
-content_margin_right = 40.0
-content_margin_top = 20.0
-content_margin_bottom = 20.0
-bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
-draw_center = false
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color( 1, 0, 0.301961, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="DynamicFont" id=4]
-size = 60
-outline_color = Color( 0.0392157, 0.0392157, 0.0392157, 1 )
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxFlat" id=5]
-content_margin_left = 40.0
-content_margin_right = 40.0
-content_margin_top = 20.0
-content_margin_bottom = 20.0
-bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.882353, 0.882353, 0.87451, 1 )
 draw_center = false
 border_width_left = 20
 border_width_top = 20
@@ -62,25 +40,9 @@ corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
+shadow_color = Color( 0.952941, 0.843137, 0.329412, 1 )
 
-[sub_resource type="StyleBoxFlat" id=3]
-content_margin_left = 40.0
-content_margin_right = 40.0
-content_margin_top = 20.0
-content_margin_bottom = 20.0
-bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
-draw_center = false
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color( 1, 0.639216, 0, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=4]
 content_margin_left = 0.0
 content_margin_right = 0.0
 content_margin_top = 0.0
@@ -97,6 +59,34 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_color = Color( 0.952941, 0.843137, 0.329412, 0 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
+outline_size = 5
+outline_color = Color( 0, 0.529412, 0.317647, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 60
+outline_color = Color( 0.0392157, 0.0392157, 0.0392157, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+content_margin_left = 40.0
+content_margin_right = 40.0
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+bg_color = Color( 0.960784, 0.945098, 0.929412, 1 )
+draw_center = false
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 1, 0.639216, 0, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [sub_resource type="DynamicFont" id=8]
 size = 90
@@ -207,35 +197,56 @@ custom_colors/font_color_uneditable = Color( 0.113725, 0.168627, 0.32549, 1 )
 align = 1
 max_length = 255
 editable = false
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="UPNP_Bad" type="Label" parent="Information"]
-visible = false
-margin_right = 1520.0
-margin_bottom = 200.0
-rect_min_size = Vector2( 0, 200 )
-custom_styles/normal = SubResource( 15 )
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Could not forward port with UPNP.
-Please forward UDP ports 30000-33000."
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="UPNP_Good" type="Label" parent="Information"]
+[node name="UPNP" type="HBoxContainer" parent="Information"]
 visible = false
 margin_top = 180.0
 margin_right = 1520.0
 margin_bottom = 380.0
 rect_min_size = Vector2( 0, 200 )
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 4 )
+size_flags_horizontal = 3
+custom_constants/separation = 20
+script = ExtResource( 9 )
+
+[node name="UPNP_Button" type="Button" parent="Information/UPNP"]
+margin_right = 200.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+rect_pivot_offset = Vector2( 450, 210 )
+mouse_default_cursor_shape = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_disabled = Color( 0, 0.894118, 0.211765, 1 )
+custom_colors/font_color = Color( 0, 0.894118, 0.211765, 1 )
+custom_colors/font_color_hover = Color( 0, 0.894118, 0.211765, 1 )
+custom_colors/font_color_pressed = Color( 0, 0.894118, 0.211765, 1 )
+action_mode = 0
+text = "UPNP"
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UPNP_Message" type="Label" parent="Information/UPNP"]
+margin_left = 220.0
+margin_top = -1.0
+margin_right = 1520.0
+margin_bottom = 199.0
+rect_min_size = Vector2( 0, 200 )
+size_flags_horizontal = 3
+custom_styles/normal = ExtResource( 8 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Port forwarded with UPNP. If connection does not work, forward UDP ports 30000-33000."
+text = "Forward UDP ports 30000-33000 with UPNP or manually. "
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -245,8 +256,8 @@ __meta__ = {
 margin_right = 1520.0
 margin_bottom = 120.0
 rect_min_size = Vector2( 0, 120 )
-custom_styles/normal = SubResource( 3 )
-custom_fonts/font = SubResource( 4 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Need 3 more players to start."
 autowrap = true
@@ -288,8 +299,8 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 1.5
 custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 3 )
-custom_styles/disabled = SubResource( 7 )
-custom_styles/normal = SubResource( 7 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 8 )
 custom_colors/font_color_disabled = Color( 0, 0.894118, 0.211765, 1 )
 custom_colors/font_color = Color( 0, 0.894118, 0.211765, 1 )
