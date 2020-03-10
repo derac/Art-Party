@@ -16,7 +16,7 @@ func _pressed() -> void:
 
 remotesync func start_timer() -> void:
 	UDP_Broadcast.broadcasting = false
-	UDP_Broadcast.udp.put_var("remove")
+	UDP_Broadcast.remove_self()
 	Sound.play_sfx("res://Assets/SFX/button2.wav")
 	countdown = 3
 	if OS.is_debug_build():

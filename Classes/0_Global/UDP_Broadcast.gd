@@ -1,22 +1,22 @@
 extends Node
 
+var error : int
 var udp := PacketPeerUDP.new()
 const PORT = 23572
 var heartbeat_timer := OS.get_system_time_msecs()
 var player_ticks := {}
 var listening := true
 var broadcasting := true
-var err
 
 func _ready() -> void:
 	udp.set_broadcast_enabled(true) # Needed for broadcasting on Android
-	err = udp.set_dest_address("255.255.255.255", PORT)
-	if err:
+	error = udp.set_dest_address("255.255.255.255", PORT)
+	if error:
 		print("Failed to broadcast on UDP 255.255.255.255:" + String(PORT))
 	elif OS.is_debug_build():
 		print("Broadcasting on UDP 255.255.255.255:" + String(PORT))
-	err = udp.listen(PORT)
-	if err:
+	error = udp.listen(PORT)
+	if error:
 		print("Failed to listen on UDP port " + String(PORT))
 	elif OS.is_debug_build():
 		print("Listening on UDP port " + String(PORT))
@@ -49,10 +49,10 @@ func send_heartbeat() -> void:
 	if broadcasting:
 		if OS.get_system_time_msecs() - heartbeat_timer > 250:
 			heartbeat_timer = OS.get_system_time_msecs()
-			err = udp.put_var({"name": Global.my_name,
+			error = udp.put_var({"name": Global.my_name,
 							   "is_server": Game_Server.is_server,
 							   "port": Game_Server.port})
-			if err:
+			if error:
 				print("Failed to send current broadcast data.")
 			remove_inactive()
 
@@ -65,6 +65,16 @@ func remove_inactive() -> void:
 				# Trigger setter for signaling
 				else:
 					Global.udp_data_set(Global.udp_data)
+
+func remove_self() -> void:
+	error = udp.put_var("remove")
+	if error:
+		print("Failed to broadcast remove command")
+
+func stop_serving() -> void:
+	error = udp.put_var("stop_serving")
+	if error:
+		print("Failed to broadcast stop_serving command")
 
 func _exit_tree() -> void:
 	udp.close()

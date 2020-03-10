@@ -1,11 +1,14 @@
 extends LineEdit
 
+var error : int
 var address := ''
 var address_file := File.new()
 onready var Go = get_node("/root/Setup/Controls/Go")
 
 func _ready() -> void:
-	address_file.open("user://address.txt", File.READ)
+	error = address_file.open("user://address.txt", File.READ)
+	if error:
+		print("Failed to open user://address.txt")
 	text = address_file.get_as_text()
 	address = text
 	address_file.close()
@@ -19,7 +22,9 @@ func _gui_input(_event : InputEvent) -> void:
 	if address != text:
 		Sound.play_sfx("res://Assets/SFX/off.wav", -6.0, 2.0)
 		address = text
-		address_file.open("user://address.txt", File.WRITE)
+		error = address_file.open("user://address.txt", File.WRITE)
+		if error:
+			print("Failed to open user://address.txt")
 		address_file.store_string(text)
 		address_file.close()
 		set_Go_Button(address)

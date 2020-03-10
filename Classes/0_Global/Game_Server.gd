@@ -21,16 +21,20 @@ func _player_connected(id : int) -> void:
 func _player_disconnected(id : int) -> void:
 	match get_tree().get_current_scene().get_name():
 		"Lobby":
-			Global.game_state.erase(id)
-			# Trigger setter
-			Global.game_state_set(Global.game_state)
+			if not Global.game_state.erase(id):
+				print("Tried to remove %s from Global.game_state, but it doesn't exist." % id)
+			else:
+				# Trigger setter
+				Global.game_state_set(Global.game_state)
 		"Play":
 			print("player disconnected: ", id)
 			#get_tree().change_scene_to(setup_screen)
 
 func _server_disconnected() -> void:
 	if get_tree().get_current_scene().get_name() != "End":
-			get_tree().change_scene_to(setup_screen)
+		error = get_tree().change_scene_to(setup_screen)
+		if error:
+			print("Failed to change scene to setup_screen")
 
 func _connection_succeeded() -> void:
 	Global.game_state[peer.get_unique_id()] = new_data()
@@ -41,7 +45,9 @@ remote func register_player(player_data : Dictionary) -> void:
 	Global.game_state[id] = player_data
 
 remotesync func start_game() -> void:
-	get_tree().change_scene_to(play_screen)
+	error = get_tree().change_scene_to(play_screen)
+	if error:
+		print("Failed to change scene to play_screen")
 
 remotesync func send_data(data, cards_id : int) -> void:
 	var sender_id = get_tree().get_rpc_sender_id()
@@ -62,12 +68,12 @@ func start_serving(retries : int = 3) -> int:
 		elif retries > 0:
 			print("Failed to start server at UDP port %s." % String(port))
 			port = (30000 + randi() % 3001)
-			start_serving(retries - 1)
+			return start_serving(retries - 1)
 	return error
 
 func stop_serving() -> void:
 	if is_server:
-		UDP_Broadcast.udp.put_var("stop_serving")
+		UDP_Broadcast.stop_serving()
 		peer.close_connection()
 		is_server = false
 		Global.game_state = {}

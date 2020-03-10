@@ -41,7 +41,7 @@ Global="*res://Classes/0_Global/Global.gd"
 UDP_Broadcast="*res://Classes/0_Global/UDP_Broadcast.gd"
 Game_Server="*res://Classes/0_Global/Game_Server.gd"
 Sound="*res://Classes/0_Global/Sound.gd"
-Exit_Menu="*res://Screens/Components/Exit_Menu.tscn"
+Exit_Menu="*res://Screens/Exit_Menu.tscn"
 
 [display]
 

@@ -1,5 +1,5 @@
 extends Button
 
 func _pressed() -> void:
-	UDP_Broadcast.udp.put_var("remove")
+	UDP_Broadcast.remove_self()
 	get_tree().quit()

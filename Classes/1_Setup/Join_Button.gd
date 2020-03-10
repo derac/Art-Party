@@ -15,5 +15,8 @@ func _pressed() -> void:
 func _connection_succeeded() -> void:
 	Sound.play_sfx("res://Assets/SFX/button1.wav")
 	UDP_Broadcast.broadcasting = false
-	UDP_Broadcast.udp.put_var("remove")
-	get_tree().change_scene_to(lobby_scene)
+	UDP_Broadcast.remove_self()
+	var error : int = get_tree().change_scene_to(lobby_scene)
+	if error:
+		print("Failed to change scene to lobby_scene")
+	

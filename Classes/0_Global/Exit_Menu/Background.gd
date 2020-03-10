@@ -31,3 +31,7 @@ func toggle() -> void:
 		visible = true
 	# Forces mouse to update >_>
 	get_viewport().warp_mouse(get_viewport().get_mouse_position())
+
+func _on_Menu_Button_pressed():
+	$Menu/Quit_Button.set_visible(true)
+	$Menu/Menu_Button.set_visible(false)
