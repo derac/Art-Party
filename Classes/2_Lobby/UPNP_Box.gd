@@ -17,7 +17,7 @@ func initialize_UPNP() -> void:
 			Sound.play_sfx("res://Assets/SFX/good.wav", -5)
 	if not Global.UPNP_state == "success":
 		Global.UPNP_state = "failed"
-		Sound.play_sfx("res://Assets/SFX/bad.wav", -10, .75)
+		Sound.play_sfx("res://Assets/SFX/bad.wav", -5, .75)
 	set_UPNP_Message()
 
 func set_UPNP_Message() -> void:
