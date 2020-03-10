@@ -13,13 +13,9 @@ func _ready() -> void:
 	error = udp.set_dest_address("255.255.255.255", PORT)
 	if error:
 		print("Failed to broadcast on UDP 255.255.255.255:%s" % String(PORT))
-	elif OS.is_debug_build():
-		print("Broadcasting on UDP 255.255.255.255:%s" % String(PORT))
 	error = udp.listen(PORT)
 	if error:
 		print("Failed to listen on UDP port %s." % String(PORT))
-	elif OS.is_debug_build():
-		print("Listening on UDP port %s." % String(PORT))
 
 func _process(_delta) -> void:
 	if listening and udp.get_available_packet_count() > 0:

@@ -6,6 +6,7 @@ func set_address(address) -> void:
 	OS.set_clipboard(text)
 
 func _pressed() -> void:
+	Sound.play_sfx("res://Assets/SFX/good.wav", 0.0, 2.0)
 	text = "copied"
 	$Copy_Timer.start()
 

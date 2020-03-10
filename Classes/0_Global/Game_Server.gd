@@ -26,7 +26,7 @@ func _player_disconnected(id : int) -> void:
 				# Trigger setter
 				Global.game_state_set(Global.game_state)
 		"Play":
-			print("player disconnected: ", id)
+			print("player disconnected: %s" % id)
 			#get_tree().change_scene_to(setup_screen)
 
 func _server_disconnected() -> void:

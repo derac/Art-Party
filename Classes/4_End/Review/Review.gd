@@ -33,13 +33,13 @@ func _on_Return_pressed():
 func update_display(turn : int) -> void:
 	display_turn = turn
 	var played_by = Global.game_state[player_id]["played_by"][turn]
-	$Controls/Turn.text = String(turn) + ". " + Global.game_state[played_by]["name"]
+	$Controls/Turn.text = "%s. %s" % [String(turn), Global.game_state[played_by]["name"]]
 	
 	if scores[played_by]:
 		Sound.play_sfx("res://Assets/SFX/good.wav")
 		Turn_Is_Canvas_stylebox.set_border_color(Color("#008751"))
 		Turn_stylebox.set_border_color(Color("#008751"))
-		$Controls/Points.text = "+" + String(scores[played_by])
+		$Controls/Points.text = "+%s" % String(scores[played_by])
 		$Controls/Points.set_visible(true)
 	else:
 		Sound.play_sfx("res://Assets/SFX/bad.wav", -3, .75)
