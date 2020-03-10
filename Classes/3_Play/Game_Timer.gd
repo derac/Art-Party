@@ -34,6 +34,6 @@ func reset() -> void:
 	$Countdown.start()
 
 static func time_format(time : int) -> String:
-	var minutes = floor(time / 60)
+	var minutes = time / 60
 	var seconds = time % 60
 	return "%01d:%02d" % [minutes, seconds]
