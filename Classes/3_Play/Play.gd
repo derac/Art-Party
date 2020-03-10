@@ -15,8 +15,8 @@ onready var Title := $Controls/Title_Mask/Title
 
 func _ready():
 	if OS.is_debug_build():
-		$my_name_test.set_visible(true)
-		$my_name_test.text = Global.my_name
+		$Name_Debug.set_visible(true)
+		$Name_Debug.text = Global.my_name
 	
 	Sound.change_music("res://Assets/Music/play.ogg", 0, 25)
 	Sound.play_sfx("res://Assets/SFX/complete.wav", -6, .75)

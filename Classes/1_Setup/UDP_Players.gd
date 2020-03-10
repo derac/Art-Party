@@ -14,8 +14,7 @@ func _on_udp_data_changed() -> void:
 		create_player_label(Global.udp_data[player], player)
 		
 	# Test Data
-#	var udp_data = {"1": {"is_server": true, "name": "derek", "ip": "1", "port": "1"},
-#				   "2": {"is_server": false, "name": "bob"},
+#	var udp_data = {"1": {"is_server": true, "name": "bob", "ip": "1", "port": "1"},
 #				   "3": {"is_server": false, "name": "race"},
 #				   "4": {"is_server": false, "name": "jeff"},
 #				   "5": {"is_server": false, "name": "cody"},}

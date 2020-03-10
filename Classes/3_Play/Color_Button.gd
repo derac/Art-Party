@@ -9,4 +9,4 @@ func _ready() -> void:
 func _pressed() -> void:
 	Sound.play_sfx("res://Assets/SFX/on.wav")
 	color_picker.color = color
-	get_parent().set_visible(false)
+	get_parent().get_parent().set_visible(false)

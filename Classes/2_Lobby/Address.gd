@@ -6,7 +6,6 @@ func set_address(address) -> void:
 	OS.set_clipboard(text)
 
 func _pressed() -> void:
-	print("pressed")
 	text = "copied"
 	$Copy_Timer.start()
 
