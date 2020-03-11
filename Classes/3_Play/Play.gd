@@ -38,7 +38,6 @@ func _ready():
 	Global.connect("game_state_changed", self, "_on_game_state_changed")
 
 func _on_game_state_changed():
-	print(Global.game_state)
 	if awaiting_next_card:
 		get_next_card()
 	if awaiting_end:
