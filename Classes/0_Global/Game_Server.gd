@@ -17,7 +17,7 @@ func _ready() -> void:
 	peer.connect("connection_succeeded", self, "_connection_succeeded")
 
 func _player_connected(id : int) -> void:
-	rpc_id(id, "register_player", new_data())
+	rpc_id(id, "register_player", new_data(), OS.get_unique_id())
 
 func _player_disconnected(id : int) -> void:
 	match get_tree().get_current_scene().get_name():
@@ -39,17 +39,16 @@ func _server_disconnected() -> void:
 			print("Failed to change scene to setup_screen")
 
 func _connection_succeeded() -> void:
-	Global.game_state[peer.get_unique_id()] = new_data()
+	Global.game_state[OS.get_unique_id()] = new_data()
 	is_client = true
 	
-remote func register_player(player_data : Dictionary) -> void:
-	var id = get_tree().get_rpc_sender_id()
-	Global.game_state[id] = player_data
+remote func register_player(player_data : Dictionary,
+							player_id : String) -> void:
+	Global.game_state[player_id] = player_data
 
-remotesync func send_data(data, cards_id : int) -> void:
-	var sender_id = get_tree().get_rpc_sender_id()
-	Global.game_state[cards_id]["cards"].append(data)
-	Global.game_state[cards_id]["played_by"].append(sender_id)
+remotesync func send_data(card_data, stack_id : String, sender_id : String) -> void:
+	Global.game_state[stack_id]["cards"].append(card_data)
+	Global.game_state[stack_id]["played_by"].append(sender_id)
 	# Trigger signal
 	Global.game_state_set(Global.game_state)
 
@@ -58,7 +57,7 @@ func start_serving(retries : int = 3) -> int:
 	if !is_server:
 		error = peer.create_server(port, 64)
 		if not error:
-			Global.game_state[1] = new_data()
+			Global.game_state[OS.get_unique_id()] = new_data()
 			get_tree().set_network_peer(peer)
 			is_server = true
 			return error

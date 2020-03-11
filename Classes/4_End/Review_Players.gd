@@ -23,7 +23,7 @@ func _ready() -> void:
 							 i + 1)
 
 func create_review_button(player_name : String,
-						  player_id : int,
+						  player_id : String,
 						  score : int,
 						  place : int) -> void:
 	var instance = review_button.instance()

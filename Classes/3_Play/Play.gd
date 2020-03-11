@@ -1,9 +1,9 @@
 extends Control
 
 var error : int
-var my_id : int
+var current_stack_id : String
+var my_id : String
 var my_id_index : int
-var current_stack_id : int
 var ids := Global.game_state.keys()
 
 var turn := 0
@@ -23,7 +23,7 @@ func _ready():
 	Sound.play_sfx("res://Assets/SFX/complete.wav", -8, .75)
 	
 	ids.sort()
-	my_id = get_tree().get_network_unique_id()
+	my_id = OS.get_unique_id()
 	my_id_index = ids.find(my_id)
 	current_stack_id = my_id
 	
@@ -33,7 +33,7 @@ func _ready():
 		print("Failed to open res://Assets/Misc/words.txt")
 	var words := words_file.get_as_text().split("\n")
 	Title.text = words[randi() % words.size()]
-	Game_Server.rpc("send_data", Title.text, my_id)
+	Game_Server.rpc("send_data", Title.text, my_id, my_id)
 
 	Global.connect("game_state_changed", self, "_on_game_state_changed")
 
@@ -61,13 +61,13 @@ func _on_Game_Timer_expired():
 func _on_Send_button_down():
 	if Global.game_state[current_stack_id]["cards"].size() % 2:
 		if $Canvas.history.size() > 1:
-			Game_Server.rpc("send_data", $Canvas.history, current_stack_id)
+			Game_Server.rpc("send_data", $Canvas.history, current_stack_id, my_id)
 		else:
 			Sound.play_sfx("res://Assets/SFX/off.wav", -3, .8)
 			return
 	else:
 		if Title.text:
-			Game_Server.rpc("send_data", Title.text, current_stack_id)
+			Game_Server.rpc("send_data", Title.text, current_stack_id, my_id)
 		else:
 			Sound.play_sfx("res://Assets/SFX/off.wav", -3, .8)
 			return

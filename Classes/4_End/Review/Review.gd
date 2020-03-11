@@ -1,6 +1,6 @@
 extends Control
 
-var player_id : int setget set_player_id
+var player_id : String setget set_player_id
 var display_turn := 1
 var scores := {}
 
@@ -9,7 +9,7 @@ const Turn_Is_Canvas_stylebox = preload("res://Screens/Styles/Turn_Is_Canvas.tre
 const Word_stylebox = preload("res://Screens/Styles/Review_Word.tres")
 const Turn_stylebox = preload("res://Screens/Styles/Review_Turn.tres")
 
-func set_player_id(value : int) -> void:
+func set_player_id(value : String) -> void:
 	player_id = value
 	scores = score_game.calculate_stack(Global.game_state, player_id)
 	display_turn = 1

@@ -14,7 +14,7 @@ static func calculate_scores(game_state : Dictionary) -> Dictionary:
 	
 	return scores
 
-static func calculate_stack(game_state : Dictionary, stack_id : int) -> Dictionary:
+static func calculate_stack(game_state : Dictionary, stack_id : String) -> Dictionary:
 	var player_ids := game_state.keys()
 	var scores := {}
 	

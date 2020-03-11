@@ -6,7 +6,7 @@ var UPNP_state := "uninitialized"
 # udp_data = {"PLAYER_IP": {"is_server": bool, "name": ''}}
 var udp_data := {} setget udp_data_set
 signal udp_data_changed
-# game_state = {int network_id: {"name": '', "cards": [], "played_by": []}}
+# game_state = {"UNIQUE_ID": {"name": '', "cards": [], "played_by": []}}
 var game_state := {} setget game_state_set
 signal game_state_changed
 
