@@ -34,10 +34,11 @@ func _ready():
 	var words := words_file.get_as_text().split("\n")
 	Title.text = words[randi() % words.size()]
 	Game_Server.rpc("send_data", Title.text, my_id, my_id)
-
+	
 	Global.connect("game_state_changed", self, "_on_game_state_changed")
 
 func _on_game_state_changed():
+	print(Global.game_state)
 	if awaiting_next_card:
 		get_next_card()
 	if awaiting_end:

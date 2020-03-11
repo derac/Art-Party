@@ -1,14 +1,15 @@
 extends Node
 
 var error : int
-var disconnected_players := []
-
-var is_client := false
-var is_server := false
-var port := (30000 + randi() % 3001)
 var peer := NetworkedMultiplayerENet.new()
+var is_client := false
+var server_address := {}
+var is_server := false
+var disconnected_players := []
+var port := (30000 + randi() % 3001)
 
 var setup_screen := load("res://Screens/Setup.tscn")
+var play_screen := load("res://Screens/Play.tscn")
 
 func _ready() -> void:
 	get_tree().connect("network_peer_connected", self, "_player_connected")
@@ -16,32 +17,68 @@ func _ready() -> void:
 	get_tree().connect("server_disconnected", self, "_server_disconnected")
 	peer.connect("connection_succeeded", self, "_connection_succeeded")
 
-func _player_connected(id : int) -> void:
-	rpc_id(id, "register_player", new_data(), OS.get_unique_id())
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_FOCUS_IN:
+		if is_client:
+			peer.close_connection()
+			var error : int = Game_Server.start_client(server_address["ip"], int(server_address["port"]))
+			if error:
+				print("Could not start game client at %s:%s." % [server_address["ip"], int(server_address["port"])])
 
-func _player_disconnected(id : int) -> void:
+func _player_connected(net_id : int) -> void:
+	if OS.get_unique_id() in Global.game_state:
+		rpc_id(net_id, "register_player", Global.game_state[OS.get_unique_id()], OS.get_unique_id())
+	else:
+		rpc_id(net_id, "register_player", new_data(), OS.get_unique_id())
+
+func _player_disconnected(net_id : int) -> void:
 	match get_tree().get_current_scene().get_name():
 		"Lobby":
-			if not Global.game_state.erase(id):
-				print("Tried to remove %s from Global.game_state, but it doesn't exist." % id)
+			if not Global.game_state.erase(net_id_to_uuid(net_id)):
+				print("Tried to remove %s from Global.game_state, but it doesn't exist." % net_id)
 			else:
 				# Trigger setter
 				Global.game_state_set(Global.game_state)
 		"Play":
-			disconnected_players.append(id)
-			print("disconnected_players: %s" % String(disconnected_players))
+			if is_server:
+				peer.set_refuse_new_connections(false)
+				UDP_Broadcast.broadcasting = true
+				disconnected_players.append(net_id_to_uuid(net_id))
+				print("disconnected_players: %s" % String(disconnected_players))
 
 func _server_disconnected() -> void:
 	if get_tree().get_current_scene().get_name() != "End":
 		print("server disconnected.")
-		error = get_tree().change_scene_to(setup_screen)
-		if error:
-			print("Failed to change scene to setup_screen")
+		go_to_setup()
 
 func _connection_succeeded() -> void:
-	Global.game_state[OS.get_unique_id()] = new_data()
+	rpc_id(1, "get_local_data", OS.get_unique_id())
 	is_client = true
-	
+
+remote func get_local_data(uuid: String) -> void:
+	print("player connected: %s" % uuid)
+	var net_id = get_tree().get_rpc_sender_id()
+	if disconnected_players.size():
+		if uuid in disconnected_players:
+			disconnected_players.erase(uuid)
+		else:
+			rpc_id(net_id, "kick")
+			return
+	if not disconnected_players.size():
+		peer.set_refuse_new_connections(true)
+		UDP_Broadcast.broadcasting = false
+	if uuid in Global.game_state:
+		Global.game_state[uuid]["net_id"] = net_id
+		rpc_id(net_id, "set_local_data", Global.game_state[uuid])
+	else:
+		rpc_id(net_id, "set_local_data", null)
+
+remote func set_local_data(data : Dictionary) -> void:
+	if data:
+		Global.game_state[OS.get_unique_id()] = data
+	else:
+		Global.game_state[OS.get_unique_id()] = new_data()
+
 remote func register_player(player_data : Dictionary,
 							player_id : String) -> void:
 	Global.game_state[player_id] = player_data
@@ -51,6 +88,9 @@ remotesync func send_data(card_data, stack_id : String, sender_id : String) -> v
 	Global.game_state[stack_id]["played_by"].append(sender_id)
 	# Trigger signal
 	Global.game_state_set(Global.game_state)
+
+remote func kick() -> void:
+	go_to_setup()
 
 func start_serving(retries : int = 3) -> int:
 	error = 1
@@ -68,27 +108,34 @@ func start_serving(retries : int = 3) -> int:
 	return error
 
 func stop_serving() -> void:
-	if is_server:
-		UDP_Broadcast.stop_serving()
-		peer.close_connection()
-		is_server = false
-		Global.game_state = {}
+	UDP_Broadcast.stop_serving()
+	peer.close_connection()
+	is_server = false
+	Global.game_state = {}
 
-func start_client(ip : String, server_port : int):
-	if is_client == false:
-		get_tree().set_network_peer(null)
-		error = peer.create_client(ip, server_port)
-		if not error:
-			get_tree().set_network_peer(peer)
-			is_client = true
-		else:
-			print("Could not start game client at %s:%s." % [ip, String(server_port)])
+func start_client(ip : String, server_port : int) -> int:
+	get_tree().set_network_peer(null)
+	error = peer.create_client(ip, server_port)
+	if not error:
+		get_tree().set_network_peer(peer)
+		is_client = true
+	return error
 
 func stop_client() -> void:
-	if is_client == true:
-		peer.close_connection()
-		is_client = false
-		Global.game_state = {}
+	peer.close_connection()
+	is_client = false
+	Global.game_state = {}
+
+func go_to_setup():
+	error = get_tree().change_scene_to(setup_screen)
+	if error:
+		print("Failed to change scene to setup_screen")
+		
+func net_id_to_uuid(net_id : int) -> String:
+	for uuid in Global.game_state:
+		if net_id == Global.game_state[uuid]["net_id"]:
+			return uuid
+	return ""
 
 func new_data() -> Dictionary:
-	return {'name': Global.my_name, 'cards': [], 'played_by': []}
+	return {'name': Global.my_name, 'net_id': get_tree().get_network_unique_id(), 'cards': [], 'played_by': []}

@@ -12,7 +12,7 @@ func _ready() -> void:
 	text = address_file.get_as_text()
 	address = text
 	address_file.close()
-	
+	set_Go_Button(address)
 	connect("focus_entered", self, "_focus_entered")
 
 func _focus_entered() -> void:
