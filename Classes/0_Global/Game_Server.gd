@@ -18,6 +18,9 @@ func _ready() -> void:
 	peer.connect("connection_succeeded", self, "_connection_succeeded")
 
 func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT:
+		if get_tree().get_current_scene().get_name() == "Lobby":
+			go_to_setup()
 	if what == MainLoop.NOTIFICATION_WM_FOCUS_IN:
 		if is_client:
 			peer.close_connection()
