@@ -9,7 +9,8 @@ func _ready() -> void:
 	Global.my_name = text
 	name_file.close()
 	
-	connect("focus_entered", self, "_focus_entered")
+	Log.if_error(connect("focus_entered", self, "_focus_entered"),
+				 'Failed: connect("focus_entered", self, "_focus_entered")')
 
 func _focus_entered() -> void:
 	Sound.play_sfx("res://Assets/SFX/off.wav", -6.0, 1.0)

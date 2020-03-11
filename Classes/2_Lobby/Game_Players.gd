@@ -5,7 +5,8 @@ const Start_Hover_stylebox = preload("res://Screens/Styles/Start_Hover.tres")
 onready var Need_Players := get_node("../Need_Players")
 
 func _ready() -> void:
-	Global.connect("game_state_changed", self, "_on_game_state_changed")
+	Log.if_error(Global.connect("game_state_changed", self, "_on_game_state_changed"),
+				 'Failed: Global.connect("game_state_changed", self, "_on_game_state_changed")')
 	_on_game_state_changed()
 
 func _on_game_state_changed() -> void:

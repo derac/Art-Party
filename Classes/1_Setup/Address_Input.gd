@@ -11,7 +11,8 @@ func _ready() -> void:
 	address = text
 	address_file.close()
 	set_Go_Button(address)
-	connect("focus_entered", self, "_focus_entered")
+	Log.if_error(connect("focus_entered", self, "_focus_entered"),
+				 'Failed: connect("focus_entered", self, "_focus_entered")')
 
 func _focus_entered() -> void:
 	Sound.play_sfx("res://Assets/SFX/off.wav", -6.0, 2.0)

@@ -33,7 +33,8 @@ func _ready():
 	Title.text = words[randi() % words.size()]
 	Game_Server.rpc("send_data", Title.text, my_id, my_id)
 	
-	Global.connect("game_state_changed", self, "_on_game_state_changed")
+	Log.if_error(Global.connect("game_state_changed", self, "_on_game_state_changed"),
+				 'Failed: Global.connect("game_state_changed", self, "_on_game_state_changed")')
 
 func _on_game_state_changed():
 	if awaiting_next_card:

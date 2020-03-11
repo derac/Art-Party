@@ -26,4 +26,5 @@ func play_sfx(sound_file, volume := 0.0, pitch_scale := 1.0) -> void:
 	sfx_player.volume_db = volume
 	sfx_player.set_pitch_scale(pitch_scale)
 	sfx_player.play()
-	sfx_player.connect("finished", sfx_player, "queue_free")
+	Log.if_error(sfx_player.connect("finished", sfx_player, "queue_free"),
+				 'Failed: sfx_player.connect("finished", sfx_player, "queue_free")')

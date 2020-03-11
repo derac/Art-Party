@@ -12,10 +12,14 @@ var setup_screen := load("res://Screens/Setup.tscn")
 var play_screen := load("res://Screens/Play.tscn")
 
 func _ready() -> void:
-	get_tree().connect("network_peer_connected", self, "_player_connected")
-	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
-	get_tree().connect("server_disconnected", self, "_server_disconnected")
-	peer.connect("connection_succeeded", self, "_connection_succeeded")
+	Log.if_error(get_tree().connect("network_peer_connected", self, "_player_connected"),
+				 'Failed: get_tree().connect("network_peer_connected", self, "_player_connected")')
+	Log.if_error(get_tree().connect("network_peer_disconnected", self, "_player_disconnected"),
+				 'Failed: get_tree().connect("network_peer_disconnected", self, "_player_disconnected")')
+	Log.if_error(get_tree().connect("server_disconnected", self, "_server_disconnected"),
+				 'Failed: get_tree().connect("server_disconnected", self, "_server_disconnected")')
+	Log.if_error(peer.connect("connection_succeeded", self, "_connection_succeeded"),
+				 'Failed: peer.connect("connection_succeeded", self, "_connection_succeeded")')
 
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT:# and OS.get_name() in ["Android", "Blackberry 10", "iOS"]:
