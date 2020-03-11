@@ -1,6 +1,5 @@
 extends Control
 
-var error : int
 var current_stack_id : String
 var my_id : String
 var my_id_index : int
@@ -28,9 +27,8 @@ func _ready():
 	current_stack_id = my_id
 	
 	var words_file := File.new()
-	error = words_file.open("res://Assets/Misc/words.txt", File.READ)
-	if error:
-		print("Failed to open res://Assets/Misc/words.txt")
+	Log.if_error(words_file.open("res://Assets/Misc/words.txt", File.READ),
+				 "Failed to open res://Assets/Misc/words.txt")
 	var words := words_file.get_as_text().split("\n")
 	Title.text = words[randi() % words.size()]
 	Game_Server.rpc("send_data", Title.text, my_id, my_id)
@@ -44,9 +42,8 @@ func _on_game_state_changed():
 		for id in ids:
 			if !(Global.game_state[id]["cards"].size() > max_turns):
 				return
-		error = get_tree().change_scene_to(end_screen)
-		if error:
-			print("Failed to change scene to end_screen")
+		Log.if_error(get_tree().change_scene_to(end_screen),
+					 "Failed to change scene to end_screen")
 		
 func _on_Game_Timer_expired():
 	if Global.game_state[current_stack_id]["cards"].size() % 2:

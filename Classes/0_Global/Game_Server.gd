@@ -18,15 +18,14 @@ func _ready() -> void:
 	peer.connect("connection_succeeded", self, "_connection_succeeded")
 
 func _notification(what):
-	if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT:
+	if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT:# and OS.get_name() in ["Android", "Blackberry 10", "iOS"]:
 		if get_tree().get_current_scene().get_name() == "Lobby":
 			go_to_setup()
 	if what == MainLoop.NOTIFICATION_WM_FOCUS_IN:
 		if is_client:
 			peer.close_connection()
-			var error : int = Game_Server.start_client(server_address["ip"], int(server_address["port"]))
-			if error:
-				print("Could not start game client at %s:%s." % [server_address["ip"], int(server_address["port"])])
+			Log.if_error(Game_Server.start_client(server_address["ip"], int(server_address["port"])),
+						 "Could not start game client at %s:%s." % [server_address["ip"], server_address["port"]])
 
 func _player_connected(net_id : int) -> void:
 	if OS.get_unique_id() in Global.game_state:
@@ -98,14 +97,14 @@ remote func kick() -> void:
 func start_serving(retries : int = 3) -> int:
 	error = 1
 	if !is_server:
-		error = peer.create_server(port, 64)
+		error = Log.if_error(peer.create_server(port, 64),
+							 "Failed to start server at UDP port %s." % String(port))
 		if not error:
 			Global.game_state[OS.get_unique_id()] = new_data()
 			get_tree().set_network_peer(peer)
 			is_server = true
 			return error
 		elif retries > 0:
-			print("Failed to start server at UDP port %s." % String(port))
 			port = (30000 + randi() % 3001)
 			return start_serving(retries - 1)
 	return error
@@ -132,9 +131,8 @@ func stop_client() -> void:
 	Global.game_state = {}
 
 func go_to_setup():
-	error = get_tree().change_scene_to(setup_screen)
-	if error:
-		print("Failed to change scene to setup_screen")
+	Log.if_error(get_tree().change_scene_to(setup_screen),
+				 "Failed to change scene to setup_screen")
 		
 func net_id_to_uuid(net_id : int) -> String:
 	for uuid in Global.game_state:

@@ -16,8 +16,8 @@ func _pressed() -> void:
 		Sound.play_sfx("res://Assets/SFX/bad.wav", -3, .75)
 
 remotesync func start_timer() -> void:
+	UDP_Broadcast.request_removal()
 	UDP_Broadcast.broadcasting = false
-	UDP_Broadcast.remove_self()
 	Sound.play_sfx("res://Assets/SFX/button2.wav")
 	countdown = 3
 	if OS.is_debug_build():
@@ -43,6 +43,5 @@ func _on_Timer_timeout() -> void:
 		start_game()
 
 func start_game() -> void:
-	var error: int = get_tree().change_scene_to(play_screen)
-	if error:
-		print("Failed to change scene to play_screen")
+	Log.if_error(get_tree().change_scene_to(play_screen),
+				 "Failed to change scene to play_screen")
