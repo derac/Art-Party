@@ -91,4 +91,4 @@ func stop_client() -> void:
 		Global.game_state = {}
 
 func new_data() -> Dictionary:
-	return {'name': Global.my_name, 'peer_id': peer.get_unique_id(), 'cards': [], 'played_by': []}
+	return {'name': Global.my_name, 'cards': [], 'played_by': []}
