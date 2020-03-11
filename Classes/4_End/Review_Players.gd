@@ -10,6 +10,7 @@ class Sort_ID_Score_Pairs:
 		return false
 
 func _ready() -> void:
+	OS.hide_virtual_keyboard()
 	var scores : Dictionary = score_game.calculate_scores(Global.game_state)
 	var score_array := []
 	for id in scores.keys():

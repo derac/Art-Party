@@ -5,7 +5,8 @@ var upnp := UPNP.new()
 const UPNP_Message_stylebox = preload("res://Screens/Styles/UPNP_Message.tres")
 onready var Address = get_node("/root/Lobby/Information/Address")
 
-func _enter_tree():
+func _ready():
+	OS.hide_virtual_keyboard()
 	set_UPNP_Message()
 
 func initialize_UPNP() -> void:

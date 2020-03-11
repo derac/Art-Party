@@ -14,6 +14,8 @@ const end_screen := preload("res://Screens/End.tscn")
 onready var Title := $Controls/Title_Mask/Title
 
 func _ready():
+	OS.hide_virtual_keyboard()
+	
 	if OS.is_debug_build():
 		$Name_Debug.set_visible(true)
 		$Name_Debug.text = Global.my_name

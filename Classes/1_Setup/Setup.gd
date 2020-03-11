@@ -1,6 +1,7 @@
 extends Control
 
 func _ready() -> void:
+	OS.hide_virtual_keyboard()
 	Game_Server.stop_serving()
 	Game_Server.stop_client()
 	UDP_Broadcast.listening = true
