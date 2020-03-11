@@ -14,8 +14,6 @@ const end_screen := preload("res://Screens/End.tscn")
 onready var Title := $Controls/Title_Mask/Title
 
 func _ready():
-	OS.hide_virtual_keyboard()
-	
 	if OS.is_debug_build():
 		$Name_Debug.set_visible(true)
 		$Name_Debug.text = Global.my_name
@@ -67,6 +65,7 @@ func _on_Send_button_down():
 			return
 	else:
 		if Title.text:
+			OS.hide_virtual_keyboard()
 			Game_Server.rpc("send_data", Title.text, current_stack_id, my_id)
 		else:
 			Sound.play_sfx("res://Assets/SFX/off.wav", -3, .8)
