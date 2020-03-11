@@ -16,24 +16,19 @@ func _ready() -> void:
 	get_tree().connect("server_disconnected", self, "_server_disconnected")
 	peer.connect("connection_succeeded", self, "_connection_succeeded")
 
-func _player_connected(net_id : int) -> void:
-	rpc_id(net_id, "register_player", new_data(), OS.get_unique_id())
+func _player_connected(id : int) -> void:
+	rpc_id(id, "register_player", new_data(), OS.get_unique_id())
 
-func _player_disconnected(net_id : int) -> void:
+func _player_disconnected(id : int) -> void:
 	match get_tree().get_current_scene().get_name():
 		"Lobby":
-			for uuid in Global.game_state.keys():
-				if Global.game_state[uuid]["peer_id"] == net_id:
-					if not Global.game_state.erase(uuid):
-						print("Tried to remove %s from Global.game_state, but it doesn't exist." % uuid)
-					else:
-						# Trigger setter
-						Global.game_state_set(Global.game_state)
-					break
+			if not Global.game_state.erase(id):
+				print("Tried to remove %s from Global.game_state, but it doesn't exist." % id)
+			else:
+				# Trigger setter
+				Global.game_state_set(Global.game_state)
 		"Play":
-			for uuid in Global.game_state.keys():
-				if Global.game_state[uuid]["peer_id"] == net_id:
-					disconnected_players.append(uuid)
+			disconnected_players.append(id)
 			print("disconnected_players: %s" % String(disconnected_players))
 
 func _server_disconnected() -> void:
