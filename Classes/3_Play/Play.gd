@@ -20,7 +20,7 @@ func _ready():
 		$Name_Debug.text = Global.my_name
 	
 	Sound.change_music("res://Assets/Music/play.ogg", 0, 25)
-	Sound.play_sfx("res://Assets/SFX/complete.wav", -6, .75)
+	Sound.play_sfx("res://Assets/SFX/complete.wav", -8, .75)
 	
 	ids.sort()
 	my_id = get_tree().get_network_unique_id()
@@ -77,8 +77,8 @@ func _on_Send_button_down():
 	
 	if turn >= max_turns:
 		$Pause.set_visible(true)
-		Sound.play_sfx("res://Assets/SFX/complete.wav", -6, .75)
-		Sound.change_music("res://Assets/Music/end.ogg", -8, 35)
+		Sound.play_sfx("res://Assets/SFX/complete.wav", -8, .75)
+		Sound.change_music("res://Assets/Music/end.ogg", -5, 35)
 		get_node("/root/Play/Pause/Waiting_Label").text = "waiting for game to end"
 		$Controls/Game_Timer.stop()
 		awaiting_end = true

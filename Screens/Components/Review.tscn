@@ -162,8 +162,9 @@ __meta__ = {
 }
 
 [node name="Canvas" type="Control" parent="."]
+margin_top = -2.15845
 margin_right = 1920.0
-margin_bottom = 1080.0
+margin_bottom = 1077.84
 mouse_filter = 2
 script = ExtResource( 1 )
 __meta__ = {

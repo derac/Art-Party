@@ -1,6 +1,8 @@
 extends Node
 
 var error : int
+var disconnected_players := []
+
 var is_client := false
 var is_server := false
 var port := (30000 + randi() % 3001)
@@ -26,11 +28,12 @@ func _player_disconnected(id : int) -> void:
 				# Trigger setter
 				Global.game_state_set(Global.game_state)
 		"Play":
-			print("player disconnected: %s" % id)
-			#get_tree().change_scene_to(setup_screen)
+			disconnected_players.append(id)
+			print("disconnected_players: %s" % String(disconnected_players))
 
 func _server_disconnected() -> void:
 	if get_tree().get_current_scene().get_name() != "End":
+		print("server disconnected.")
 		error = get_tree().change_scene_to(setup_screen)
 		if error:
 			print("Failed to change scene to setup_screen")
