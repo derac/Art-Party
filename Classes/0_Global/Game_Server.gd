@@ -109,7 +109,8 @@ func start_serving(retries : int = 3) -> int:
 
 func stop_serving() -> void:
 	UDP_Broadcast.stop_serving()
-	peer.close_connection()
+	if peer.get_connection_status() != 0:
+		peer.close_connection()
 	is_server = false
 	Global.game_state = {}
 
@@ -122,7 +123,8 @@ func start_client(ip : String, server_port : int) -> int:
 	return error
 
 func stop_client() -> void:
-	peer.close_connection()
+	if peer.get_connection_status() != 0:
+		peer.close_connection()
 	is_client = false
 	Global.game_state = {}
 
