@@ -104,9 +104,9 @@ func start_serving(retries : int = 3) -> int:
 		error = Log.if_error(peer.create_server(port, 64),
 							 "Failed to start server at UDP port %s." % String(port))
 		if not error:
+			is_server = true
 			Global.game_state[OS.get_unique_id()] = new_data()
 			get_tree().set_network_peer(peer)
-			is_server = true
 			return error
 		elif retries > 0:
 			port = (30000 + randi() % 3001)
@@ -145,4 +145,9 @@ func net_id_to_uuid(net_id : int) -> String:
 	return ""
 
 func new_data() -> Dictionary:
-	return {'name': Global.my_name, 'net_id': get_tree().get_network_unique_id(), 'cards': [], 'played_by': []}
+	var net_id : int
+	if is_server:
+		net_id = 1
+	else:
+		net_id = get_tree().get_network_unique_id()
+	return {'name': Global.my_name, 'net_id': net_id, 'cards': [], 'played_by': []}
