@@ -22,11 +22,14 @@ func _player_connected(id : int) -> void:
 func _player_disconnected(id : int) -> void:
 	match get_tree().get_current_scene().get_name():
 		"Lobby":
-			if not Global.game_state.erase(id):
-				print("Tried to remove %s from Global.game_state, but it doesn't exist." % id)
-			else:
-				# Trigger setter
-				Global.game_state_set(Global.game_state)
+			for key in Global.game_state.keys():
+				if Global.game_state[key]["peer_id"] == id:
+					if not Global.game_state.erase(key):
+						print("Tried to remove %s from Global.game_state, but it doesn't exist." % key)
+					else:
+						# Trigger setter
+						Global.game_state_set(Global.game_state)
+					break
 		"Play":
 			disconnected_players.append(id)
 			print("disconnected_players: %s" % String(disconnected_players))
@@ -91,4 +94,4 @@ func stop_client() -> void:
 		Global.game_state = {}
 
 func new_data() -> Dictionary:
-	return {'name': Global.my_name, 'cards': [], 'played_by': []}
+	return {'name': Global.my_name, 'peer_id': peer.get_unique_id(), 'cards': [], 'played_by': []}
