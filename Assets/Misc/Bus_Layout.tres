@@ -5,6 +5,7 @@ resource_name = "Compressor"
 
 [sub_resource type="AudioEffectReverb" id=2]
 resource_name = "Reverb"
+damping = 0.72
 
 [resource]
 bus/0/volume_db = -5.04538
