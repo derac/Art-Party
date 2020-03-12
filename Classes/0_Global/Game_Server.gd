@@ -22,7 +22,7 @@ func _ready() -> void:
 				 'Failed: peer.connect("connection_succeeded", self, "_connection_succeeded")')
 
 func _notification(what):
-	if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT:# and OS.get_name() in ["Android", "Blackberry 10", "iOS"]:
+	if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT and OS.get_name() in ["Android", "Blackberry 10", "iOS"]:
 		if get_tree().get_current_scene().get_name() == "Lobby":
 			go_to_setup()
 	if what == MainLoop.NOTIFICATION_WM_FOCUS_IN:

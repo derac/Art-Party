@@ -12,7 +12,7 @@ func _ready():
 func initialize_UPNP() -> void:
 	if upnp.discover() == UPNP.UPNP_RESULT_SUCCESS:
 		var gateway = upnp.get_gateway()
-		if gateway.is_valid_gateway() and gateway.add_port_mapping(Game_Server.port) == 0:
+		if gateway.is_valid_gateway() and not gateway.add_port_mapping(Game_Server.port):
 			Address.set_address(gateway.query_external_address())
 			Global.UPNP_state = "success"
 			Sound.play_sfx("res://Assets/SFX/good.wav", -5)
