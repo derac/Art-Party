@@ -93,7 +93,7 @@ custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0.513726, 0.462745, 0.611765, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-text = "Mute"
+text = "mute"
 align = 1
 script = ExtResource( 1 )
 __meta__ = {
@@ -117,7 +117,7 @@ custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 1, 0, 0.301961, 1 )
 custom_colors/font_color_pressed = Color( 1, 0, 0.301961, 1 )
-text = "Exit"
+text = "exit"
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -140,7 +140,7 @@ custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 1, 0, 0.301961, 1 )
 custom_colors/font_color_pressed = Color( 1, 0, 0.301961, 1 )
-text = "Menu"
+text = "menu"
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
