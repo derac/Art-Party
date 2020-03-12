@@ -36,7 +36,5 @@ func _ready() -> void:
 	OS.set_window_maximized(true)
 	OS.set_window_size(OS.get_screen_size())
 	OS.set_window_position(Vector2(0, 0))
-#	if OS.get_name() in ["Android", "Blackberry 10", "iOS"]:
-#		AudioServer.set_bus_effect_enabled(AudioServer.get_bus_index("SFX"), AudioServer.get_bus_effect(),false)
 	randomize()
 	
