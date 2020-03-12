@@ -22,9 +22,7 @@ func _pressed() -> void:
 		
 	Game_Players.refresh()
 	text = "copied"
-	$Copy_Timer.start()
-
-func _on_Copy_Timer_timeout() -> void:
+	yield(get_tree().create_timer(.5), "timeout")
 	text = "my IP"
 
 func _on_HTTPRequest_request_completed(_result: int, 

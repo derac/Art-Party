@@ -8,7 +8,5 @@ func set_address(address) -> void:
 func _pressed() -> void:
 	Sound.play_sfx("res://Assets/SFX/good.wav", 0.0, 2.0)
 	text = "copied"
-	$Copy_Timer.start()
-
-func _on_Copy_Timer_timeout():
+	yield(get_tree().create_timer(.5), "timeout")
 	set_address(Global.external_ip)

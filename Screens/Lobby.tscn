@@ -187,10 +187,6 @@ custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 text = "test"
 script = ExtResource( 10 )
 
-[node name="Copy_Timer" type="Timer" parent="Information/Address"]
-wait_time = 0.5
-one_shot = true
-
 [node name="UPNP" type="HBoxContainer" parent="Information"]
 visible = false
 margin_top = 181.0
@@ -328,10 +324,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Copy_Timer" type="Timer" parent="Controls/My_IP"]
-wait_time = 0.5
-one_shot = true
-
 [node name="HTTPRequest" type="HTTPRequest" parent="Controls/My_IP"]
 
 [node name="Back" type="Button" parent="Controls"]
@@ -358,7 +350,5 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="timeout" from="Information/Address/Copy_Timer" to="Information/Address" method="_on_Copy_Timer_timeout"]
 [connection signal="timeout" from="Controls/Start/Start_Timer" to="Controls/Start" method="_on_Timer_timeout"]
-[connection signal="timeout" from="Controls/My_IP/Copy_Timer" to="Controls/My_IP" method="_on_Copy_Timer_timeout"]
 [connection signal="request_completed" from="Controls/My_IP/HTTPRequest" to="Controls/My_IP" method="_on_HTTPRequest_request_completed"]

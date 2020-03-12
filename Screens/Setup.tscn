@@ -344,8 +344,3 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Copy_Timer" type="Timer" parent="Controls/Share"]
-wait_time = 0.5
-one_shot = true
-[connection signal="timeout" from="Controls/Share/Copy_Timer" to="Controls/Share" method="_on_Copy_Timer_timeout"]

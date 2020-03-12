@@ -30,7 +30,17 @@ func refresh() -> void:
 		Need_Players.set_visible(false)
 	
 	for player in Global.game_state.keys():
-		create_ready_label(Global.game_state[player]['name'])
+		create_ready_label(Global.game_state[player]["name"])
+	
+#	if OS.is_debug_build():
+#		var udp_data = {"1": {"name": "bob"},
+#						"3": {"name": "race"},
+#						"4": {"name": "jeff"},
+#						"5": {"name": "cody"},
+#						"6": {"name": "elise"},
+#						"7": {"name": "matt"},}
+#		for player in udp_data.keys():
+#			create_ready_label(udp_data[player]["name"])
 
 func create_ready_label(text : String) -> void:
 	var instance = ready_label.instance()
