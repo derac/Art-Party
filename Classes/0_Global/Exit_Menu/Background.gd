@@ -25,6 +25,13 @@ func toggle() -> void:
 	else:
 		Sound.play_sfx("res://Assets/SFX/on.wav")
 		if get_tree().get_current_scene().get_name() != "Setup":
+			if get_tree().get_current_scene().get_name() in ["Play", "Lobby"] \
+					and not Game_Server.is_server:
+				$Menu/Menu_Button.text = "no"
+				$Menu/Menu_Button.set_disabled(true)
+			else:
+				$Menu/Menu_Button.text = "menu"
+				$Menu/Menu_Button.set_disabled(false)
 			$Menu/Menu_Button.set_visible(true)
 		else:
 			$Menu/Quit_Button.set_visible(true)
