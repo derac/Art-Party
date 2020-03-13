@@ -13,11 +13,11 @@ func _ready() -> void:
 				 'Failed: connect("focus_entered", self, "_focus_entered")')
 
 func _focus_entered() -> void:
-	Sound.play_sfx("res://Assets/SFX/off.wav", -6.0, 1.0)
+	Sound.play_sfx("res://Assets/SFX/off.wav", -8.0, 1.0)
 
 func _gui_input(_event : InputEvent) -> void:
 	if Global.my_name != text:
-		Sound.play_sfx("res://Assets/SFX/off.wav", -6.0, 1.0)
+		Sound.play_sfx("res://Assets/SFX/off.wav", -8.0, 1.0)
 		Global.my_name = text
 		Log.if_error(name_file.open("user://player_name.txt", File.WRITE),
 									"Failed to open user://player_name.txt")
