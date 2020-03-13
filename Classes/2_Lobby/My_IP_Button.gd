@@ -5,7 +5,7 @@ onready var Address = get_node("/root/Lobby/Information/Address")
 onready var UPNP_Message = get_node("/root/Lobby/Information/UPNP")
 
 func _ready() -> void:
-	if Game_Server.is_server != true:
+	if not Game_Server.is_server:
 		set_visible(false)
 
 func _pressed() -> void:

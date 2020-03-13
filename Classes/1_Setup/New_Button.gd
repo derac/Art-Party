@@ -10,4 +10,4 @@ func _pressed() -> void:
 			Log.if_error(get_tree().change_scene_to(lobby_scene),
 						 "Failed to change scene to lobby_scene")
 	else:
-		Sound.play_sfx("res://Assets/SFX/bad.wav", -3, .75)
+		Sound.play_sfx("res://Assets/SFX/bad.wav", -5, .75)

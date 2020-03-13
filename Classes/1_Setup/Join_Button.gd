@@ -11,7 +11,7 @@ func _pressed() -> void:
 		Log.if_error(Game_Server.start_client(address["ip"], int(address["port"])),
 					 "Could not start game client at %s:%s." % [address["ip"], int(address["port"])])
 	else:
-		Sound.play_sfx("res://Assets/SFX/bad.wav", -3, .75)
+		Sound.play_sfx("res://Assets/SFX/bad.wav", -5, .75)
 
 func _connection_succeeded() -> void:
 	Game_Server.server_address = address

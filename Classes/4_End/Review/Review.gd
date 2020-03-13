@@ -42,7 +42,7 @@ func update_display(turn : int) -> void:
 		$Controls/Points.text = "+%s" % String(scores[played_by])
 		$Controls/Points.set_visible(true)
 	else:
-		Sound.play_sfx("res://Assets/SFX/bad.wav", -3, .75)
+		Sound.play_sfx("res://Assets/SFX/bad.wav", -5, .75)
 		Turn_Is_Canvas_stylebox.set_border_color(Color("#FF004D"))
 		Turn_stylebox.set_border_color(Color("#FF004D"))
 		$Controls/Points.set_visible(false)
