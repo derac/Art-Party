@@ -1,14 +1,15 @@
 extends Button
 
 var countdown : int
+var current_players : int
 var play_screen := load("res://Screens/Play.tscn")
-var min_players = 1 if OS.is_debug_build() else 4
 
 func _ready() -> void:
 	if not Game_Server.is_server:
 		set_visible(false)
 
 func _pressed() -> void:
+	var min_players = 1 if OS.is_debug_build() else 4
 	if Game_Server.is_server and Global.game_state.size() >= min_players:
 		Game_Server.peer.set_refuse_new_connections(true)
 		rpc("start_timer")
@@ -19,6 +20,7 @@ remotesync func start_timer() -> void:
 	UDP_Broadcast.request_removal()
 	UDP_Broadcast.broadcasting = false
 	Sound.play_sfx("res://Assets/SFX/button2.wav")
+	current_players = Global.game_state.size()
 	countdown = 3
 	if OS.is_debug_build():
 		countdown = 1
@@ -31,7 +33,7 @@ remotesync func start_timer() -> void:
 	get_node("../My_IP").set_visible(false)
 
 func _on_Timer_timeout() -> void:
-	if Global.game_state.size() >= min_players:
+	if Global.game_state.size() == current_players:
 		if countdown == 3:
 			Sound.play_sfx("res://Assets/SFX/button2.wav", 0.0, 0.75)
 		if countdown == 2:
@@ -45,14 +47,14 @@ func _on_Timer_timeout() -> void:
 	else:
 		Sound.play_sfx("res://Assets/SFX/bad.wav", -5, .75)
 		$Start_Timer.stop()
-		text = "start"
 		get_node("../Back").set_visible(true)
-		UDP_Broadcast.broadcasting = true
 		if Game_Server.is_server:
+			UDP_Broadcast.broadcasting = true
 			get_node("../My_IP").set_visible(true)
 			disabled = false
 		else:
 			visible = false
+		text = "start"
 		
 
 func start_game() -> void:
