@@ -70,9 +70,9 @@ remote func get_local_data(uuid: String) -> void:
 		else:
 			rpc_id(net_id, "kick")
 			return
-	if not disconnected_players.size():
-		peer.set_refuse_new_connections(true)
-		UDP_Broadcast.broadcasting = false
+		if not disconnected_players.size():
+			peer.set_refuse_new_connections(true)
+			UDP_Broadcast.broadcasting = false
 	if uuid in Global.game_state:
 		Global.game_state[uuid]["net_id"] = net_id
 		rpc_id(net_id, "set_local_data", Global.game_state[uuid])
