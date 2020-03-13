@@ -15,11 +15,11 @@ func _ready() -> void:
 				 'Failed: connect("focus_entered", self, "_focus_entered")')
 
 func _focus_entered() -> void:
-	Sound.play_sfx("res://Assets/SFX/off.wav", -6.0, 2.0)
+	Sound.play_sfx("res://Assets/SFX/off.wav", -8.0, 2.0)
 
 func _gui_input(_event : InputEvent) -> void:
 	if address != text:
-		Sound.play_sfx("res://Assets/SFX/off.wav", -6.0, 2.0)
+		Sound.play_sfx("res://Assets/SFX/off.wav", -8.0, 2.0)
 		address = text
 		Log.if_error(address_file.open("user://address.txt", File.WRITE),
 					 "Failed to open user://address.txt")
