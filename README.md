@@ -2,7 +2,7 @@
 
 ## Develop 📁
 1. [Download Godot](https://godotengine.org/download/) and run it.
-2. Download this project and load project.godot from the project finder.S
+2. Download this project and load project.godot from the project finder.
 
 ## Play 🎲
 1. [Download the game](https://derac.itch.io/artparty) and run it.
