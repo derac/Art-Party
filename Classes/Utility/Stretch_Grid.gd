@@ -4,7 +4,6 @@ class_name Stretch_Grid
 
 func _notification(what):
 	if (what==NOTIFICATION_SORT_CHILDREN):
-		# Must re-sort the children
 		var children = get_children()
 		var children_len = children.size()
 		
