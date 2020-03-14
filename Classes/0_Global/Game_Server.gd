@@ -26,7 +26,7 @@ func _notification(what):
 		if get_tree().get_current_scene().get_name() == "Lobby":
 			go_to_setup()
 	if what == MainLoop.NOTIFICATION_WM_FOCUS_IN:
-		if is_client:
+		if is_client and server_address.has_all(["ip", "port"]):
 			peer.close_connection()
 			Log.if_error(Game_Server.start_client(server_address["ip"], int(server_address["port"])),
 						 "Could not start game client at %s:%s." % [server_address["ip"], server_address["port"]])
