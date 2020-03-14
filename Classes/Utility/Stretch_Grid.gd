@@ -27,7 +27,3 @@ func _notification(what):
 					children[child_iter].rect_size = child_size
 					children[child_iter].set_position(child_pos)
 					child_iter += 1
-
-func set_some_setting():
-	# Some setting changed, ask for children re-sort
-	queue_sort()
