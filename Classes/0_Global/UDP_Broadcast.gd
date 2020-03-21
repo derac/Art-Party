@@ -4,15 +4,13 @@ var udp := PacketPeerUDP.new()
 const PORT = 23572
 var heartbeat_timer := OS.get_system_time_msecs()
 var player_ticks := {}
-var listening := true
-var broadcasting := true
+var listening : bool
+var broadcasting : bool
 
 func _ready() -> void:
 	udp.set_broadcast_enabled(true) # Needed for broadcasting on Android
-	Log.if_error(udp.set_dest_address("255.255.255.255", PORT),
-				 "Failed to broadcast on UDP 255.255.255.255:%s" % String(PORT))
-	Log.if_error(udp.listen(PORT),
-				 "Failed to listen on UDP port %s." % String(PORT))
+	start_listening()
+	start_broadcasting()
 
 func _process(_delta) -> void:
 	if listening and udp.get_available_packet_count() > 0:
@@ -61,6 +59,17 @@ func remove_player(ip : String) -> void:
 func request_removal() -> void:
 	Log.if_error(udp.put_var("remove"),
 				 "Failed to broadcast remove command.")
+				
+func start_listening():
+	if udp.is_listening():
+		listening = true
+	else:
+		listening = not Log.if_error(udp.listen(PORT),
+									 "Failed to listen on UDP port %s." % String(PORT))
+	
+func start_broadcasting():
+	broadcasting = not Log.if_error(udp.set_dest_address("255.255.255.255", PORT),
+									"Failed to broadcast on UDP 255.255.255.255:%s" % String(PORT))
 
 func stop_serving() -> void:
 	Log.if_error(udp.put_var("stop_serving"),

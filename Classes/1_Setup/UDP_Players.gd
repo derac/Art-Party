@@ -2,16 +2,23 @@ extends Stretch_Grid
 
 var player_label := load("res://Screens/Components/Player_Label.tscn")
 var server_label := load("res://Screens/Components/Join_Button.tscn")
+var error_label := load("res://Screens/Components/Error.tscn")
 
 func _ready() -> void:
 	Log.if_error(Global.connect("udp_data_changed", self, "_on_udp_data_changed"),
 				 'Failed: Global.connect("udp_data_changed", self, "_on_udp_data_changed")')
-	
+	if not UDP_Broadcast.broadcasting:
+		var instance
+		instance = error_label.instance()
+		instance.text = "broadcasting failed"
+		add_child(instance)
+		
 func _on_udp_data_changed() -> void:
-	for child in get_children():
-		child.queue_free()
-	for player in Global.udp_data.keys():
-		create_player_label(Global.udp_data[player], player)
+	if UDP_Broadcast.broadcasting:
+		for child in get_children():
+			child.queue_free()
+		for player in Global.udp_data.keys():
+			create_player_label(Global.udp_data[player], player)
 #	if OS.is_debug_build():
 #		var udp_data = {"1": {"is_server": false, "name": "bob"},
 #					   "3": {"is_server": false, "name": "race"},

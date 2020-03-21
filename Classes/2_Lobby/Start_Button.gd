@@ -49,7 +49,7 @@ func _on_Timer_timeout() -> void:
 		$Start_Timer.stop()
 		get_node("../Back").set_visible(true)
 		if Game_Server.is_server:
-			UDP_Broadcast.broadcasting = true
+			UDP_Broadcast.start_broadcasting()
 			get_node("../My_IP").set_visible(true)
 			disabled = false
 		else:

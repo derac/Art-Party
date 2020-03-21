@@ -7,7 +7,7 @@ onready var Go = get_node("/root/Setup/Controls/Go")
 func _ready() -> void:
 	Log.if_error(address_file.open("user://address.txt", File.READ),
 				 "Failed to open user://address.txt")
-	text = address_file.get_as_text()
+	text = address_file.get_as_text().strip_edges()
 	address = text
 	address_file.close()
 	set_Go_Button(address)
@@ -31,4 +31,6 @@ func set_Go_Button(value : String) -> void:
 	if value.find(":") > 0:
 		var address_array = value.rsplit(":", true, 1)
 		Go.address["ip"] = address_array[0]
+		print(Go.address["ip"])
 		Go.address["port"] = address_array[1]
+		print(Go.address["port"])

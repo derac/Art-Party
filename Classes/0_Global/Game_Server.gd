@@ -22,16 +22,16 @@ func _ready() -> void:
 				 'Failed: peer.connect("connection_succeeded", self, "_connection_succeeded")')
 
 func _notification(what):
-	if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT and OS.get_name() in ["Android", "Blackberry 10", "iOS"]:
-		if get_tree().get_current_scene().get_name() == "Lobby":
-			go_to_setup()
-	if what == MainLoop.NOTIFICATION_WM_FOCUS_IN:
-		if is_client and server_address.has_all(["ip", "port"]) and \
-				OS.get_name() in ["Android", "Blackberry 10", "iOS"] and \
-				get_tree().get_current_scene().get_name() == "Play":
-			peer.close_connection()
-			Log.if_error(Game_Server.start_client(server_address["ip"], int(server_address["port"])),
-						 "Could not start game client at %s:%s." % [server_address["ip"], server_address["port"]])
+	if OS.get_name() in ["Android", "Blackberry 10", "iOS"]:
+		if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT:
+			if get_tree().get_current_scene().get_name() == "Lobby":
+				go_to_setup()
+		if what == MainLoop.NOTIFICATION_WM_FOCUS_IN:
+			if is_client and server_address.has_all(["ip", "port"]) and \
+					get_tree().get_current_scene().get_name() == "Play":
+				peer.close_connection()
+				Log.if_error(Game_Server.start_client(server_address["ip"], int(server_address["port"])),
+							 "Could not start game client at %s:%s." % [server_address["ip"], server_address["port"]])
 
 func _player_connected(net_id : int) -> void:
 	if OS.get_unique_id() in Global.game_state:
