@@ -30,8 +30,7 @@ func _notification(what):
 			if is_client and server_address.has_all(["ip", "port"]) and \
 					get_tree().get_current_scene().get_name() == "Play":
 				peer.close_connection()
-				Log.if_error(Game_Server.start_client(server_address["ip"], int(server_address["port"])),
-							 "Could not start game client at %s:%s." % [server_address["ip"], server_address["port"]])
+				Game_Server.start_client(server_address["ip"], int(server_address["port"]))
 
 func _player_connected(net_id : int) -> void:
 	if OS.get_unique_id() in Global.game_state:
@@ -101,19 +100,17 @@ remote func kick() -> void:
 	go_to_setup()
 
 func start_serving(retries : int = 3) -> int:
-	error = 1
 	if !is_server:
-		error = Log.if_error(peer.create_server(port, 64),
-							 "Failed to start server at UDP port %s." % String(port))
-		if not error:
+		if not Log.if_error(peer.create_server(port, 64),
+							"Failed to start server at UDP port %s." % String(port)):
 			is_server = true
 			Global.game_state[OS.get_unique_id()] = new_data()
 			get_tree().set_network_peer(peer)
-			return error
+			return 0
 		elif retries > 0:
 			port = (30000 + randi() % 3001)
 			return start_serving(retries - 1)
-	return error
+	return 1
 
 func stop_serving() -> void:
 	Broadcast.stop_serving()
@@ -122,13 +119,12 @@ func stop_serving() -> void:
 	is_server = false
 	Global.game_state = {}
 
-func start_client(ip : String, server_port : int) -> int:
+func start_client(ip : String, server_port : int) -> void:
 	get_tree().set_network_peer(null)
-	error = peer.create_client(ip, server_port)
-	if not error:
+	if not Log.if_error(peer.create_client(ip, server_port),
+						"Failed to start game client at %s:%s" % [ip, server_port]):
 		get_tree().set_network_peer(peer)
 		is_client = true
-	return error
 
 func stop_client() -> void:
 	if peer.get_connection_status() != 0:
