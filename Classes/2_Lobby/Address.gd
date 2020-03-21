@@ -1,7 +1,7 @@
 extends Button
 
-func set_address(address) -> void:
-	Global.external_ip = address
+func set_address(address : String) -> void:
+	Global.external_ip = address.strip_edges()
 	text = "%s:%s" % [address, Game_Server.port]
 	OS.set_clipboard(text)
 
