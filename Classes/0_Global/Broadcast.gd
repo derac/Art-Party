@@ -4,13 +4,14 @@ var udp := PacketPeerUDP.new()
 const PORT = 23572
 var heartbeat_timer := OS.get_system_time_msecs()
 var player_ticks := {}
-var listening : bool
-var broadcasting : bool
+var listening := false
+var broadcasting := false setget set_broadcasting
+signal broadcasting_changed
 
 func _ready() -> void:
 	udp.set_broadcast_enabled(true) # Needed for broadcasting on Android
 	start_listening()
-	start_broadcasting()
+	set_broadcasting(true)
 
 func _process(_delta) -> void:
 	if listening and udp.get_available_packet_count() > 0:
@@ -37,10 +38,10 @@ func send_heartbeat() -> void:
 	if broadcasting:
 		if OS.get_system_time_msecs() - heartbeat_timer > 250:
 			heartbeat_timer = OS.get_system_time_msecs()
-			Log.if_error(udp.put_var({"name": Global.my_name,
-									  "is_server": Game_Server.is_server,
-									  "port": Game_Server.port}),
-						 "Failed to send current broadcast data.")
+			set_broadcasting(not Log.if_error(udp.put_var({"name": Global.my_name,
+											  "is_server": Game_Server.is_server,
+											  "port": Game_Server.port}),
+											  "Failed to send current broadcast data."))
 			remove_inactive()
 
 func remove_inactive() -> void:
@@ -67,9 +68,16 @@ func start_listening():
 		listening = not Log.if_error(udp.listen(PORT),
 									 "Failed to listen on UDP port %s." % String(PORT))
 	
-func start_broadcasting():
-	broadcasting = not Log.if_error(udp.set_dest_address("255.255.255.255", PORT),
-									"Failed to broadcast on UDP 255.255.255.255:%s" % String(PORT))
+func set_broadcasting(value : bool):
+	if broadcasting != value:
+		if value:
+			broadcasting = not Log.if_error(udp.set_dest_address("255.255.255.255", PORT),
+											"Failed to broadcast on UDP 255.255.255.255:%s" % String(PORT))
+		else:
+			broadcasting = false
+			request_removal()
+		if broadcasting == value:
+			emit_signal("broadcasting_changed")
 
 func stop_serving() -> void:
 	Log.if_error(udp.put_var("stop_serving"),

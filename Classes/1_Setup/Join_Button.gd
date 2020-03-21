@@ -16,8 +16,8 @@ func _pressed() -> void:
 func _connection_succeeded() -> void:
 	Game_Server.server_address = address
 	Sound.play_sfx("res://Assets/SFX/button1.wav")
-	UDP_Broadcast.broadcasting = false
-	UDP_Broadcast.request_removal()
+	Broadcast.broadcasting = false
+	Broadcast.request_removal()
 	Log.if_error(get_tree().change_scene_to(lobby_scene),
 				 "Failed to change scene to lobby_scene")
 	

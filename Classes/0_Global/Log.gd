@@ -2,7 +2,8 @@ extends Node
 
 static func if_error(error : int, message : String) -> int:
 	if error:
-		Sound.play_sfx("res://Assets/SFX/bad.wav", -5, .75)
+		if OS.is_debug_build():
+			Sound.play_sfx("res://Assets/SFX/bad.wav", -5, .75)
 		write(message)
 	return error
 

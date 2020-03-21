@@ -4,6 +4,6 @@ func _ready() -> void:
 	OS.hide_virtual_keyboard()
 	Game_Server.stop_serving()
 	Game_Server.stop_client()
-	UDP_Broadcast.start_listening()
-	UDP_Broadcast.start_broadcasting()
+	Broadcast.start_listening()
+	Broadcast.set_broadcasting(true)
 	Sound.change_music("res://Assets/Music/menu.ogg", 0, 15)

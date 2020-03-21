@@ -50,7 +50,7 @@ func _player_disconnected(net_id : int) -> void:
 		"Play":
 			if is_server:
 				peer.set_refuse_new_connections(false)
-				#UDP_Broadcast.broadcasting = true
+				#Broadcast.broadcasting = true
 				disconnected_players.append(net_id_to_uuid(net_id))
 				print("disconnected_players: %s" % String(disconnected_players))
 
@@ -74,7 +74,7 @@ remote func get_local_data(uuid: String) -> void:
 			return
 		if not disconnected_players.size():
 			peer.set_refuse_new_connections(true)
-			#UDP_Broadcast.broadcasting = false
+			#Broadcast.broadcasting = false
 	if uuid in Global.game_state:
 		Global.game_state[uuid]["net_id"] = net_id
 		rpc_id(net_id, "set_local_data", Global.game_state[uuid])
@@ -116,7 +116,7 @@ func start_serving(retries : int = 3) -> int:
 	return error
 
 func stop_serving() -> void:
-	UDP_Broadcast.stop_serving()
+	Broadcast.stop_serving()
 	if peer.get_connection_status() != 0:
 		peer.close_connection()
 	is_server = false

@@ -17,8 +17,8 @@ func _pressed() -> void:
 		Sound.play_sfx("res://Assets/SFX/bad.wav", -5, .75)
 
 remotesync func start_timer() -> void:
-	UDP_Broadcast.request_removal()
-	UDP_Broadcast.broadcasting = false
+	Broadcast.request_removal()
+	Broadcast.broadcasting = false
 	Sound.play_sfx("res://Assets/SFX/button2.wav")
 	current_players = Global.game_state.size()
 	countdown = 3
@@ -49,7 +49,7 @@ func _on_Timer_timeout() -> void:
 		$Start_Timer.stop()
 		get_node("../Back").set_visible(true)
 		if Game_Server.is_server:
-			UDP_Broadcast.start_broadcasting()
+			Broadcast.set_broadcasting(true)
 			get_node("../My_IP").set_visible(true)
 			disabled = false
 		else:

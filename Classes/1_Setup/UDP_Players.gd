@@ -7,18 +7,27 @@ var error_label := load("res://Screens/Components/Error.tscn")
 func _ready() -> void:
 	Log.if_error(Global.connect("udp_data_changed", self, "_on_udp_data_changed"),
 				 'Failed: Global.connect("udp_data_changed", self, "_on_udp_data_changed")')
-	if not UDP_Broadcast.broadcasting:
+	Log.if_error(Broadcast.connect("broadcasting_changed", self, "_on_broadcasting_changed"),
+				 'Failed: Broadcasting.connect("broadcasting_changed", self, "_on_broadcasting_changed")')
+	_on_broadcasting_changed()
+
+func _on_broadcasting_changed() -> void:
+	if not Broadcast.broadcasting:
+		for child in get_children():
+			child.queue_free()
 		var instance
 		instance = error_label.instance()
 		instance.text = "broadcasting failed"
 		add_child(instance)
-		
+
 func _on_udp_data_changed() -> void:
-	if UDP_Broadcast.broadcasting:
+	if Broadcast.broadcasting:
 		for child in get_children():
 			child.queue_free()
 		for player in Global.udp_data.keys():
 			create_player_label(Global.udp_data[player], player)
+	else:
+		_on_broadcasting_changed()
 #	if OS.is_debug_build():
 #		var udp_data = {"1": {"is_server": false, "name": "bob"},
 #					   "3": {"is_server": false, "name": "race"},
