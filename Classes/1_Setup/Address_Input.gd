@@ -31,6 +31,4 @@ func set_Go_Button(value : String) -> void:
 	if value.find(":") > 0:
 		var address_array = value.rsplit(":", true, 1)
 		Go.address["ip"] = address_array[0]
-		print(Go.address["ip"])
 		Go.address["port"] = address_array[1]
-		print(Go.address["port"])

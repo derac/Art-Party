@@ -7,3 +7,6 @@ func _ready() -> void:
 	Broadcast.start_listening()
 	Broadcast.set_broadcasting(true)
 	Sound.change_music("res://Assets/Music/menu.ogg", 0, 15)
+
+func _exit_tree():
+	Broadcast.listening = false
